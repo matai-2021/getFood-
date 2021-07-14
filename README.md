@@ -1,9 +1,31 @@
 # getFood( )
 Kris, Koko, Kritika, Rodrigo, Zac
+'The Food Waste Reducer'
 
-Food Waste Reducer
+// ------------------------------------------------
+// ------------------------------------------------
+Thursday 15/07/2021
 
-14/07/2021
+Planning: 
+- Wireframe setup
+    - Wimsicle(?) / Sketch or AdobeXD
+- Clean up / setup server side
+
+
+Redux - Rodrigo - presentation?
+What actions are needed?
+
+Zac - basic components
+Rodrigo - initial setup of Redux with toolkit. Then maybe a quick update on others / tutorial
+Kritika - finish digital wireframing by lunch. Then we need to discuss styling. Leave off until next week or start this week?
+Kris - finish server side cleaning by lunch? Get basic database setup. Routes, database functions All that done today maybe
+
+
+// ------------------------------------------------
+// ------------------------------------------------
+er
+
+Wednesday 14/07/2021
 
 https://files.slack.com/files-pri/T02SQPVAC-F028CNTF1BK/20210714_174808.jpg
 https://files.slack.com/files-pri/T02SQPVAC-F027X2VDTSR/20210714_174816.jpg
@@ -178,3 +200,6 @@ Things to think of WHILE planning your project and AFTER discussing the things a
 - Draw your wireframes, make some user stories
 Things to remember in general:
 To have fun!
+
+
+
