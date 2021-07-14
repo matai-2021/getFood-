@@ -4,6 +4,15 @@ Kris, Koko, Kritika, Rodrigo, Zac
 Food Waste Reducer
 
 14/07/2021
+
+https://files.slack.com/files-pri/T02SQPVAC-F028CNTF1BK/20210714_174808.jpg
+https://files.slack.com/files-pri/T02SQPVAC-F027X2VDTSR/20210714_174816.jpg
+https://files.slack.com/files-pri/T02SQPVAC-F028CNTJJ2D/20210714_174757.jpg
+https://files.slack.com/files-pri/T02SQPVAC-F0286AN93B6/image_from_ios.jpg
+https://files.slack.com/files-pri/T02SQPVAC-F02804NQC4A/image_from_ios.jpg
+https://files.slack.com/files-pri/T02SQPVAC-F027KCU48LX/image_from_ios.jpg
+https://files.slack.com/files-pri/T02SQPVAC-F0286ANFB8C/image_from_ios.jpg
+
 What do we want out of this?
 - Fun 
 - Learn & practice
