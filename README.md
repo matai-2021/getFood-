@@ -1,7 +1,7 @@
 # getFood( )
 Kris, Koko, Kritika, Rodrigo, Zac
 
-Food Wate Reducer
+Food Waste Reducer
 
 14/07/2021
 What do we want out of this?
