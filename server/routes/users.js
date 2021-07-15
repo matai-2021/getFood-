@@ -1,14 +1,13 @@
 const express = require('express')
-const { useParams } = require('react-router-dom')
 
 const db = require('../db/users')
 
 const router = express.Router()
 
-// GET fetchUser - for profile page 
+// GET fetchUser - for profile page
 router.get('/:id', (req, res) => {
-    const id = useParams()
-  db.getUserById()
+  const id = Number(req.params.id)
+  db.getUserById(id)
     .then(user => {
       res.json(user)
       return null
