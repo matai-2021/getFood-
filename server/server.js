@@ -15,4 +15,3 @@ server.use('/api/v1/users', userRoutes)
 // server.use('/api/v1/orders', orderRoutes)
 
 module.exports = server
-
