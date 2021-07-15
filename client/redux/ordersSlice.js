@@ -11,7 +11,7 @@ export const getOrders = createAsyncThunk(
   }
 )
 
-const usersSlice = createSlice({
+const ordersSlice = createSlice({
   name: 'users',
   initialState: [],
   reducers: {},
@@ -21,12 +21,9 @@ const usersSlice = createSlice({
     },
     [getOrders.fulfilled]: (state, action) => {
       console.log('Data fetched successfully')
-      return action.payload.items
-    },
-    [getOrders.fulfilled]: (state, action) => {
-      state.push(action.payload.user)
+      return action.payload.orders
     }
   }
 })
 
-export default usersSlice.reducer
+export default ordersSlice.reducer

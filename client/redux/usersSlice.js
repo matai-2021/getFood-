@@ -41,7 +41,7 @@ const usersSlice = createSlice({
     },
     [getUser.fulfilled]: (state, action) => {
       console.log('Data fetched successfully')
-      return action.payload.items
+      return action.payload.users
     },
     [addUser.fulfilled]: (state, action) => {
       state.push(action.payload.user)
