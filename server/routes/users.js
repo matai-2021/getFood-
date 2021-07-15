@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 
 // GET fetchUser - for profile page
 router.get('/:id', (req, res) => {
-  const id = Number(req.params.id)
+  const id = Number(req.params)
   db.getUserById(id)
     .then(user => {
       res.json(user)
@@ -25,21 +25,22 @@ router.get('/:id', (req, res) => {
     })
     .catch(err => {
       console.log(err)
-      res.status(500).json({ message: 'Unable ' })
+      res.status(500).json({ message: 'Unable to fetch user' })
     })
 })
 
 // POST registerUser
 router.post('/', (req, res) => {
-  const { newUser } = req.params.newUser
-  db.addUser(newUser)
+  console.log(req.params)
+  const { newUser } = req.params
+  db.addUser({ newUser })
     .then(results => {
       res.status(201).json({ results })
       return null
     })
     .catch(err => {
       console.log(err)
-      res.status(500).json({ message: 'Unable to add new register' })
+      res.status(500).json({ message: 'Unable to register new user' })
     })
 })
 
