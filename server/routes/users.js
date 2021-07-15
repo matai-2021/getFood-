@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 
 // GET fetchUser - for profile page
 router.get('/:id', (req, res) => {
-  const id = Number(req.params)
+  const id = Number(req.params.id)
   db.getUserById(id)
     .then(user => {
       res.json(user)
