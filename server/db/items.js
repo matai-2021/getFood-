@@ -4,7 +4,8 @@ module.exports = {
   getItems,
   addItem,
   updateItem,
-  deleteItem
+  deleteItem,
+  claimItem
 }
 
 function getItems (db = connection) {

@@ -49,7 +49,7 @@ const exampleOrder = [{
     isDispatched: false,
     claimedBy_id: 1,
     datetimeCreated: '21/2/2021 11:23',
-    agreedCollectionTime: 0 //references index in exampleItem.collectionTimes
+    // agreedCollectionTime: 0 //references index in exampleItem.collectionTimes
 }]
 
 /// ITEMS
