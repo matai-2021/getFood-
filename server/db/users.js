@@ -39,7 +39,9 @@ function addUser (newUser, db = connection) {
   })
 }
 
-function editProfile (id, db = connection) {}
+function editProfile (id, db = connection) {
+  // stretch
+}
 
 function deleteAccount (id, db = connection) {
   return db('users')
