@@ -42,7 +42,7 @@ function updateItem (updatedItem, db = connection) {
       description,
       isClaimed: isClaimed
     })
-    .then((ids) => console.log(ids[0]))
+    .then((ids) => console.log(`Item successfully created at ID # ${ids[0]}`))
 }
 
 function claimItem (item, db = connection) {
