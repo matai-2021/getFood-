@@ -29,17 +29,17 @@ const exampleItem = [{
     description: 'here is some text',
     dateCreated: '12/4/2021',
     expiryDate: '12/2/2021',
-    isClaimed: false,
-    collectionTimes: [{
-        date: '21/2/23',
-        startTime: '1100',
-        endTime: '1200'
-    }, 
-    {
-        date: '21/2/23',
-        startTime: '1300',
-        endTime: '1400'
-    }]
+    isClaimed: false
+    // collectionTimes: [{
+    //     date: '21/2/23',
+    //     startTime: '1100',
+    //     endTime: '1200'
+    // }, 
+    // {
+    //     date: '21/2/23',
+    //     startTime: '1300',
+    //     endTime: '1400'
+    // }]
 }]
 
 const exampleOrder = [{

@@ -29,11 +29,11 @@ function addUser (newUser, db = connection) {
     .insert({ 
       name,
       username,
-      dateCreated, 
+      date_created: dateCreated, 
       location, 
-      isCompany, 
+      is_company: isCompany, 
       email, 
-      auth0id 
+      auth0_id: auth0id 
     })
     .then((ids) => console.log(ids[0]))
   })
