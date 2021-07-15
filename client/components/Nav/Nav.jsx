@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+// import { useSelector } from 'react-redux'
 // import { useAuth0 } from '@auth0/auth0-react'
 
 // import {
@@ -22,7 +22,7 @@ export default function Nav () {
   //   const login = getLoginFn(useAuth0)
   //   const logout = getLogoutFn(useAuth0)
   //   const register = getRegisterFn(useAuth0)
-  const gardenId = useSelector(globalState => globalState.user?.gardenId)
+  // const gardenId = useSelector(globalState => globalState.user?.gardenId)
 
   function handleRegister (event) {
     // event.preventDefault()
@@ -48,15 +48,15 @@ export default function Nav () {
       {open && <div className='nav-menu-toggle' onClick={toggleMenu}>
         <Link to="/" className='nav-link'>Home</Link>
 
-        {/* <IfNotAuthenticated> */}
-        <a href="/" onClick={handleLogin} className='nav-link'>Sign in</a>
-        <a href="/" onClick={handleRegister} className='nav-link'>Register</a>
-        {/* </IfNotAuthenticated> */}
-
         {/* <IfAuthenticated> */}
         <Link to="/profile" className='nav-link'>My Profile</Link>
         <a href="/" onClick={handleLogoff} className='nav-link'>Log out</a>
         {/* </IfAuthenticated> */}
+
+        {/* <IfNotAuthenticated> */}
+        <a href="/" onClick={handleLogin} className='nav-link'>Sign in</a>
+        <a href="/" onClick={handleRegister} className='nav-link'>Register</a>
+        {/* </IfNotAuthenticated> */}
 
         {/* <div className='close-btn' onClick={toggleMenu} ><IoClose/></div> */}
       </div>
@@ -65,7 +65,6 @@ export default function Nav () {
         <Link to="/" className='nav-link'>Home</Link>
 
         {/* <IfAuthenticated> */}
-        <Link to={`/gardens/${gardenId}`} className='nav-link'>My Garden</Link>
         <Link to="/profile" className='nav-link'>My Profile</Link>
         <a href="/" onClick={handleLogoff} className='nav-link'>Log out</a>
         {/* </IfAuthenticated> */}
