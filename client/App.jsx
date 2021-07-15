@@ -3,10 +3,10 @@ import { Route } from 'react-router-dom'
 // import { useAuth0 } from '@auth0/auth0-react'
 
 import Header from './components/Header'
-import Home from './pages/Home/Home'
-import Profile from './pages/Profile/Profile'
-import Error from './components/Error/Error'
-import AddItem from './pages/admin/AddItem/AddItem'
+import Home from './pages/Home'
+import Profile from './pages/Profile'
+import Error from './components/Error'
+import AddItem from './pages/AddItem'
 
 // import { cacheUser } from './auth-utils'
 
