@@ -32,6 +32,7 @@ function addItem (newItem, db = connection) {
 function updateItem (updatedItem, db = connection) {
   const { name, location, quantity, img, description, isClaimed } = updatedItem
   return db('items')
+  .where('id', id)
   .update({
     name, 
     location, 
@@ -39,6 +40,16 @@ function updateItem (updatedItem, db = connection) {
     img, 
     description, 
     is_claimed: isClaimed
+  })
+  .then((ids) => console.log(ids[0]))
+}
+
+function claimItem (item, db = connection) {
+  const { id, isClaimed } = item
+  return db('items')
+  .where('id', id)
+  .update({ 
+    is_claimed: !isClaimed
   })
   .then((ids) => console.log(ids[0]))
 }

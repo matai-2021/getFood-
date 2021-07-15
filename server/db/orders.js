@@ -10,8 +10,10 @@ function getOrders (db = connection) {
   return db('orders').select()
 }
 
-function createOrder (db = connection) {
-    return db('orders').select()
+function createOrder (order, db = connection) {
+    const { itemId, userId, claimedById } = order
+    return db('orders')
+    .insert
 }
 
 function updateOrderStatus (id, db = connection) {
