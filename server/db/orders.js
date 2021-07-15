@@ -19,7 +19,11 @@ function createOrder (order, db = connection) {
       item_id: itemId,
       user_id: userId,
       claimed_by_id: claimedById,
+<<<<<<< HEAD
       is_dispatched: false
+=======
+      is_dispatched: isDispatched
+>>>>>>> 16e1ad3513f841c0f9a37d9e7cb78c0c1f82470c
     })
 }
 
