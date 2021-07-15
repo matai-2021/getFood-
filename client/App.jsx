@@ -4,8 +4,8 @@ import { Route } from 'react-router-dom'
 
 import Header from './components/Header'
 import Home from './pages/Home/Home'
-// import Profile from './pages/Profile/Profile'
-// import Error from './components/Error/Error'
+import Profile from './pages/Profile/Profile'
+import Error from './components/Error/Error'
 
 // import { cacheUser } from './auth-utils'
 
@@ -14,11 +14,11 @@ export default function App () {
   console.log('this is App.jsx')
   return (
     <>
-      {/* <Error /> */}
+      <Error />
       <Header />
       <main className='container'>
         <Route exact path='/' component={Home} />
-        {/* <Route path='/profile' component={Profile} /> */}
+        <Route path='/profile' component={Profile} />
       </main>
     </>
   )

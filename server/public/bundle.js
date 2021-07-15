@@ -2514,27 +2514,92 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => /* binding */ App
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Header */ "./client/components/Header.jsx");
 /* harmony import */ var _pages_Home_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/Home/Home */ "./client/pages/Home/Home.jsx");
+/* harmony import */ var _pages_Profile_Profile__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/Profile/Profile */ "./client/pages/Profile/Profile.jsx");
+/* harmony import */ var _components_Error_Error__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Error/Error */ "./client/components/Error/Error.jsx");
 
  // import { useAuth0 } from '@auth0/auth0-react'
 
 
- // import Profile from './pages/Profile/Profile'
-// import Error from './components/Error/Error'
-// import { cacheUser } from './auth-utils'
+
+
+ // import { cacheUser } from './auth-utils'
 
 function App() {
   //   cacheUser(useAuth0)
   console.log('this is App.jsx');
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Header__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("main", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Error_Error__WEBPACK_IMPORTED_MODULE_4__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Header__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("main", {
     className: "container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Route, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
     exact: true,
     path: "/",
     component: _pages_Home_Home__WEBPACK_IMPORTED_MODULE_2__.default
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+    path: "/profile",
+    component: _pages_Profile_Profile__WEBPACK_IMPORTED_MODULE_3__.default
   })));
+}
+
+/***/ }),
+
+/***/ "./client/components/Error/Error.jsx":
+/*!*******************************************!*\
+  !*** ./client/components/Error/Error.jsx ***!
+  \*******************************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => /* binding */ Error
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _errorHelper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./errorHelper */ "./client/components/Error/errorHelper.js");
+
+
+
+function Error() {
+  var error = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)(function (globalState) {
+    return globalState.error;
+  });
+  return error ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("article", {
+    className: "message is-danger",
+    role: "alert"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "message-header"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, error), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+    className: "delete",
+    onClick: _errorHelper__WEBPACK_IMPORTED_MODULE_2__.hide
+  }, "\u2715"))) : null;
+}
+
+/***/ }),
+
+/***/ "./client/components/Error/errorHelper.js":
+/*!************************************************!*\
+  !*** ./client/components/Error/errorHelper.js ***!
+  \************************************************/
+/*! namespace exports */
+/*! export hide [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "hide": () => /* binding */ hide
+/* harmony export */ });
+// import { dispatch } from '../../store'
+// import { hideError } from '../../actions/error'
+function hide() {//   dispatch(hideError())
 }
 
 /***/ }),
@@ -2727,6 +2792,35 @@ function Home() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("main", {
     className: "container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Welcome to getFood()"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "A food conserving project by getFood()!!!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Please log in to get started, or checkout our About page")));
+}
+
+/***/ }),
+
+/***/ "./client/pages/Profile/Profile.jsx":
+/*!******************************************!*\
+  !*** ./client/pages/Profile/Profile.jsx ***!
+  \******************************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => /* binding */ Profile
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+ // import { useSelector } from 'react-redux'
+// import { Register } from '../../components/Registration/Register'
+// import { View } from '../../components/Registration/View'
+// import { getState } from '../../store'
+
+function Profile() {
+  // const user = useSelector(globalState => globalState.user)
+  //   const user = getState().user
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "This is the profile page, to be updated with Auth0");
 }
 
 /***/ }),
