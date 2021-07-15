@@ -1,0 +1,11 @@
+@use './vars';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1em;
+    font-family: vars.$paragraph;
+    line-height: 1.5;
+}

@@ -1,0 +1,12 @@
+@use './vars';
+
+h1 {
+
+}
+
+.page-title {
+    font-size: 2.5rem;
+    color: vars.$purple;
+    padding-bottom: vars.$base-size;
+    font-family: vars.$heading;
+}
