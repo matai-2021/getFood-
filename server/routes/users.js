@@ -4,6 +4,17 @@ const db = require('../db/users')
 
 const router = express.Router()
 
+router.get('/', (req, res) => {
+  db.getAllUsers()
+    .then((users) => {
+      res.json(users)
+      return null
+    })
+    .catch((err) => {
+      res.status(500).send('DATABASE ERROR: ' + err.message)
+    })
+})
+
 // GET fetchUser - for profile page
 router.get('/:id', (req, res) => {
   const id = Number(req.params.id)

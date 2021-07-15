@@ -4,7 +4,13 @@ module.exports = {
   getUserById,
   addUser,
   editProfile,
-  deleteAccount
+  deleteAccount,
+  getAllUsers
+}
+
+function getAllUsers (db = connection) {
+  return db('users')
+    .select()
 }
 
 function getUserById (id, db = connection) {
