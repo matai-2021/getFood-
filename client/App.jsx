@@ -27,7 +27,7 @@ export default function App () {
         <Route path='/profilesetup' component={ProfileSetup} />
         <Route path='/about' component={About} />
         <Route path='/myitems' component={MyItems} />
-        <Route path='/event/new' component={AddItem} />
+        <Route path='/item/new' component={AddItem} />
 
       </main>
     </>
