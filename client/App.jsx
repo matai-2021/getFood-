@@ -16,7 +16,6 @@ import ItemListing from './components/ItemListing'
 
 export default function App () {
 //   cacheUser(useAuth0)
-  console.log('this is App.jsx')
   return (
     <>
       <Error />
@@ -25,10 +24,10 @@ export default function App () {
         <Route exact path='/' component={Home} />
         <Route path='/' component={ItemListing} /> {/* Show Item Listing when logged in? */}
         <Route path='/profile' component={Profile} />
-        <Route path='/profile/new' component={AddItem} />
         <Route path='/profilesetup' component={ProfileSetup} />
         <Route path='/about' component={About} />
         <Route path='/myitems' component={MyItems} />
+        <Route path='/event/new' component={AddItem} />
 
       </main>
     </>
