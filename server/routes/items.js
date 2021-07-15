@@ -7,7 +7,7 @@ const router = express.Router()
 router.get('/', (req, res) => {
   db.getItems()
     .then(results => {
-      res.json({ items: results.map(item => item.name) })
+      res.json({ items: results.map(item => item) })
       return null
     })
     .catch(err => {
