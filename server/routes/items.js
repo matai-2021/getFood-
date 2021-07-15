@@ -20,8 +20,8 @@ router.post('/add', (req, res) => {
   const { name, location, userId, quantity, img, description, expiryDate } = req.body
   const item = { name, location, userId, quantity, img, description, expiryDate }
   db.addItem(item)
-    .then(result => {
-      res.status(201).json({ result })
+    .then(() => {
+      res.status(201).json('Item successfully added')
       return null
     })
     .catch(err => {
@@ -30,4 +30,16 @@ router.post('/add', (req, res) => {
     })
 })
 
+
+
 module.exports = router
+
+// POST DATA SHAPE
+// {
+//   "name": "Chocolate Bar",
+//   "expiryDate": "3/08 13:00",
+//   "location": "Waterview, Auckland",
+//   "quantity": 6,
+//   "description": "good shape",
+//   "img": "img"
+// }
