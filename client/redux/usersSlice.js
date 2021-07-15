@@ -1,10 +1,10 @@
 import request from 'superagent'
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
-export const getUser = createAsyncThunk(
-  'users/getUser',
+export const getUsers = createAsyncThunk(
+  'users/getUsers',
   async () => {
-    const res = await request('/api/v1/users/1')
+    const res = await request('/api/v1/users')
     if (res.ok) {
       console.log(res.body)
       return await res.body
@@ -33,14 +33,14 @@ export const deleteUser = createAsyncThunk(
 )
 
 const usersSlice = createSlice({
-  name: 'user',
+  name: 'users',
   initialState: [],
   reducers: {},
   extraReducers: {
-    [getUser.pending]: (state, action) => {
+    [getUsers.pending]: (state, action) => {
       console.log('Fetching data...')
     },
-    [getUser.fulfilled]: (state, action) => {
+    [getUsers.fulfilled]: (state, action) => {
       console.log('Data fetched successfully')
       return action.payload
     },

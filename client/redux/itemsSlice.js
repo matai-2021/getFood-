@@ -16,7 +16,7 @@ export const addItem = createAsyncThunk(
   async (payload) => {
     const res = await request.post('/api/v1/items').send(payload)
     if (res.ok) {
-      return await res.body
+      return await res.body.items
     }
   }
 )
@@ -31,10 +31,10 @@ const itemsSlice = createSlice({
     },
     [getItems.fulfilled]: (state, action) => {
       console.log('Data fetched successfully')
-      return action.payload
+      return action.payload.items
     },
     [addItem.fulfilled]: (state, action) => {
-      state.push(action.payload)
+      state.push(action.payload.items)
     }
   }
 })
