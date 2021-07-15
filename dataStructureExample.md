@@ -1,6 +1,7 @@
 const exampleUsers = [{
     id: 1,
     name: 'Kris Wood',
+    username: 'kris1234',
     dateCreated: '1/2/2021',
     location: 'Mount Albert, 1025',
     isCompany: false,
@@ -29,6 +30,16 @@ const exampleItem = [{
     dateCreated: '12/4/2021',
     expiryDate: '12/2/2021',
     isClaimed: false
+    // collectionTimes: [{
+    //     date: '21/2/23',
+    //     startTime: '1100',
+    //     endTime: '1200'
+    // }, 
+    // {
+    //     date: '21/2/23',
+    //     startTime: '1300',
+    //     endTime: '1400'
+    // }]
 }]
 
 const exampleOrder = [{
@@ -38,7 +49,7 @@ const exampleOrder = [{
     isDispatched: false,
     claimedBy_id: 1,
     datetimeCreated: '21/2/2021 11:23',
-    agreedCollectionTime: 0 //references index in exampleItem.collectionTimes
+    // agreedCollectionTime: 0 //references index in exampleItem.collectionTimes
 }]
 
 /// ITEMS
@@ -58,4 +69,3 @@ const exampleOrder = [{
 // PATCH editProfile - in profile page
 // GET fetchUser - for profile page 
 // DELETE closeAccount - deletes user account 
-
