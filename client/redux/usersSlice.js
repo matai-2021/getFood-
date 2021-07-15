@@ -4,8 +4,9 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 export const getUser = createAsyncThunk(
   'users/getUser',
   async () => {
-    const res = await request('/api/v1/users')
+    const res = await request('/api/v1/users/1')
     if (res.ok) {
+      console.log(res.body)
       return await res.body
     }
   }
@@ -32,7 +33,7 @@ export const deleteUser = createAsyncThunk(
 )
 
 const usersSlice = createSlice({
-  name: 'users',
+  name: 'user',
   initialState: [],
   reducers: {},
   extraReducers: {
@@ -41,10 +42,10 @@ const usersSlice = createSlice({
     },
     [getUser.fulfilled]: (state, action) => {
       console.log('Data fetched successfully')
-      return action.payload.users
+      return action.payload
     },
     [addUser.fulfilled]: (state, action) => {
-      state.push(action.payload.user)
+      state.push(action.payload)
     },
     [deleteUser.fulfilled]: (state, action) => {
       return state.filter(user => user.id !== action.payload.id)

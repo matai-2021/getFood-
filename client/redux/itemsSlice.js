@@ -27,14 +27,14 @@ const itemsSlice = createSlice({
   reducers: {},
   extraReducers: {
     [getItems.pending]: (state, action) => {
-      console.log('Fetching data...');
+      console.log('Fetching data...')
     },
     [getItems.fulfilled]: (state, action) => {
-      console.log('Data fetched successfully');
-      return action.payload.items
+      console.log('Data fetched successfully')
+      return action.payload
     },
     [addItem.fulfilled]: (state, action) => {
-      state.push(action.payload.item)
+      state.push(action.payload)
     }
   }
 })
