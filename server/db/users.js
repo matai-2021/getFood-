@@ -42,7 +42,9 @@ function addUser (newUser, db = connection) {
 function editProfile (id, db = connection) {}
 
 function deleteAccount (id, db = connection) {
-  
+  return db('users')
+  .where('id', id)
+  .delete()
 }
 
 
