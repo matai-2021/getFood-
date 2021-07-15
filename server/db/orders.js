@@ -12,7 +12,7 @@ function getOrders (db = connection) {
 
 function createOrder (order, db = connection) {
   const dateCreated = Date.now()
-  const { itemId, userId, claimedById } = order
+  const { itemId, userId, claimedById, isDispatched } = order
   return db('orders')
     .insert({
       date_created: dateCreated,

@@ -26,6 +26,5 @@ exports.seed = knex =>
       email: 'eatwell@gmail.com',
       isClaimed: 'false',
       img: 'img'
-
     }
   ])
