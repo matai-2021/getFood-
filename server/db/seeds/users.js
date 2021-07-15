@@ -1,17 +1,23 @@
-exports.seed = function (knex) {
-  // Deletes ALL existing entries
-  return knex('users').del()
-    .then(function () {
-      return knex('table_name').insert([
+exports.seed = knex =>
+  knex('users').del()
+    .then(() =>
+      knex('users').insert([
         {
           id: 1,
-          name: 'name',
-          dateCreated: 'dateCreated',
-          location: 'location',
-          isCompany: 'isCompany',
-          email: 'email',
-          auth0Id: 'auth0Id'
+          name: 'Kris Wood',
+          dateCreated: '15/07 14:00',
+          location: 'Glenfield, Auckland',
+          isCompany: 'true',
+          email: 'krisWood@gmail.com',
+          auth0Id: 'jwrghwo'
+        },
+        {
+          id: 2,
+          name: 'Koko Ono',
+          dateCreated: '15/07 14:40',
+          location: 'Avondale, Auckland',
+          isCompany: 'false',
+          email: 'kokoono@gmail.com',
+          auth0Id: 'lkfjgwh'
         }
-      ])
-    })
-}
+      ]))
