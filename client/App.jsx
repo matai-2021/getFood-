@@ -22,7 +22,6 @@ export default function App () {
       <Error />
       <Header />
       <main className='container'>
-        
         <Route exact path='/' component={Home} />
         <Route path='/' component={ItemListing} /> {/* Show Item Listing when logged in? */}
         <Route path='/profile' component={Profile} />
