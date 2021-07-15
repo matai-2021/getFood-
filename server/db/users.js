@@ -1,31 +1,56 @@
 const connection = require('./connection')
 
 module.exports = {
-  getUser,
+  getUserById,
   addUser,
   editProfile,
-  deleteAccount
+  deleteAccount,
+  userExists
 }
 
-function getUser (db = connection) {
-  return db('users').select()
+function getUserById (id, db = connection) {
+  return db('users')
+  .select()
+  .where('id', id)
 }
 
 function addUser (newUser, db = connection) {
   const dateCreated = Date.now() //what is the format of this date?
-  const { name, location, isCompany, email, auth0id } = newUser
-  return db('users')
-  .insert({ 
-    name,
-    dateCreated, 
-    location, 
-    isCompany, 
-    email, 
-    auth0id 
+  const { name, username, location, isCompany, email, auth0id } = newUser
+  return userExists(username)
+  .then((exists) => {
+    if (exists) {
+      throw new Error('User exists')
+    }
+    return false
   })
-  .then((ids) => console.log(ids[0]))
+  .then(() => {
+    return db('users')
+    .insert({ 
+      name,
+      username,
+      dateCreated, 
+      location, 
+      isCompany, 
+      email, 
+      auth0id 
+    })
+    .then((ids) => console.log(ids[0]))
+  })
 }
 
-function editProfile (db = connection) {}
+function editProfile (id, db = connection) {}
 
-function deleteAccount (db = connection) {}
+function deleteAccount (id, db = connection) {
+  
+}
+
+
+function userExists (username, db = connection) {
+  return db('users')
+    .count('id as n')
+    .where('username', username)
+    .then((count) => {
+      return count[0].n > 0
+    })
+}

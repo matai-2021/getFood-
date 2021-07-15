@@ -1,6 +1,7 @@
 const exampleUsers = [{
     id: 1,
     name: 'Kris Wood',
+    username: 'kris1234',
     dateCreated: '1/2/2021',
     location: 'Mount Albert, 1025',
     isCompany: false,

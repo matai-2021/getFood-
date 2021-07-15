@@ -6,7 +6,7 @@ const router = express.Router()
 
 // GET fetchUser - for profile page 
 // router.get('/', (req, res) => {
-//   db.getUser()
+//   db.getUserById()
 //     .then(results => {
 //       res.json({ users: results.map(user => user.name) })
 //       return null
