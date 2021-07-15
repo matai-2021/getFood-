@@ -10,12 +10,15 @@ export default function Profile () {
 
   return (
     <div>
-      This is the profile page, to be updated with Auth0
+      (This is the profile page, to be updated with Auth0)
       {
         // user.gardenId
         //   ? (<View user={user}/>)
         //   : (<Register user={user}/>)
       }
+      <p>Name: </p>
+      <p>Email: </p>
+      <p>Location: </p>
     </div>
   )
 }
