@@ -50,10 +50,12 @@ const exampleOrder = [{
 /// ORDERS
 // GET fetchOrders - gets all orders where user_id matches logged in user
 // POST claimItem set isClaimed to true & creates new order in DB
+// PATCH updateOrderStatus - change isDistpached (stretch)
 
 
 /// USERS
-// POST registerUser - 
-// PATCH editProfile -
+// POST registerUser
+// PATCH editProfile - in profile page
 // GET fetchUser - for profile page 
+// DELETE closeAccount - deletes user account 
 
