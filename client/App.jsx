@@ -5,8 +5,12 @@ import { Route } from 'react-router-dom'
 import Header from './components/Header'
 import Home from './pages/Home'
 import Profile from './pages/Profile'
+import ProfileSetup from './pages/ProfileSetUp'
 import Error from './components/Error'
 import AddItem from './pages/AddItem'
+import About from './pages/About'
+import MyItems from './pages/MyItems'
+import ItemListing from './components/ItemListing'
 
 // import { cacheUser } from './auth-utils'
 
@@ -19,8 +23,13 @@ export default function App () {
       <Header />
       <main className='container'>
         <Route exact path='/' component={Home} />
+        <Route path='/' component={ItemListing} /> {/* Show Item Listing when logged in? */}
         <Route path='/profile' component={Profile} />
         <Route path='/profile/new' component={AddItem} />
+        <Route path='/profilesetup' component={ProfileSetup} />
+        <Route path='/about' component={About} />
+        <Route path='/myitems' component={MyItems} />
+
       </main>
     </>
   )

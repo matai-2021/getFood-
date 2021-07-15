@@ -47,6 +47,8 @@ export default function Nav () {
     <nav className="nav" >
       {open && <div className='nav-menu-toggle' onClick={toggleMenu}>
         <Link to="/" className='nav-link'>Home</Link>
+        <Link to="/about" className='nav-link'>About Us</Link>
+        <Link to="/myitems" className='nav-link'>My Items</Link>
 
         {/* <IfAuthenticated> */}
         <Link to="/profile" className='nav-link'>My Profile</Link>
@@ -63,6 +65,8 @@ export default function Nav () {
       }
       {!open && <div className='nav-menu'>
         <Link to="/" className='nav-link'>Home</Link>
+        <Link to="/about" className='nav-link'>About</Link>
+        <Link to="/myitems" className='nav-link'>My Items</Link>
 
         {/* <IfAuthenticated> */}
         <Link to="/profile" className='nav-link'>My Profile</Link>
