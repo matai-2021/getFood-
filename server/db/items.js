@@ -23,9 +23,9 @@ function addItem (newItem, db = connection) {
       quantity,
       img,
       description,
-      date_created: dateCreated,
-      expiry_date: expiryDate,
-      is_claimed: false
+      dateCreated: dateCreated,
+      expiryDate: expiryDate,
+      isClaimed: false
     })
     .then((ids) => console.log(ids[0]))
 }
@@ -40,9 +40,9 @@ function updateItem (updatedItem, db = connection) {
       quantity,
       img,
       description,
-      is_claimed: isClaimed
+      isClaimed: isClaimed
     })
-    .then((ids) => console.log(ids[0]))
+    .then((ids) => console.log(`Item successfully created at ID # ${ids[0]}`))
 }
 
 function claimItem (item, db = connection) {
@@ -50,7 +50,7 @@ function claimItem (item, db = connection) {
   return db('items')
     .where('id', id)
     .update({
-      is_claimed: !isClaimed
+      isClaimed: !isClaimed
     })
     .then((ids) => console.log(ids[0]))
 }
