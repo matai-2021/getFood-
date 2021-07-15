@@ -48,5 +48,3 @@ function deleteItem (id, db = connection) {
   .where('id', id)
   .delete()
 }
-
-
