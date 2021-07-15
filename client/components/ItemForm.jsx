@@ -34,7 +34,7 @@ export default function ItemForm (props) {
               name='name'
               className='input is-normal'
               type='text'
-              placeholder='event name'
+              placeholder='item name'
               value={name}
               onChange={handleChange}
             />
@@ -62,7 +62,7 @@ export default function ItemForm (props) {
               id='description'
               name='description'
               className='textarea is-normal'
-              placeholder='event description'
+              placeholder='item description'
               value={description}
               onChange={handleChange}
             />

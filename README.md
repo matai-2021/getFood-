@@ -1,6 +1,30 @@
-# getFood( )
+# getFood()
 Kris, Koko, Kritika, Rodrigo, Zac
 'The Food Waste Reducer'
+
+// ------------------------------------------------
+// ------------------------------------------------
+Friday 16/07/2021
+
+Things done yesterday: 
+- Digitla Wireframe (yay Kritika!!)
+- Basic component layouts done
+- Redux actions for MVP done
+- Server side for MVP done
+
+Note:
+- Keep pushing whatever is working to your branch first!
+
+Today:
+- Koko: files for images. When done, to check for next
+- Kris: Routes finished, a few more to write. Now we can access db. 
+    Start working on Auth0
+    Also Deployment. If not Heroku or AWS, Netlify(?) 
+- Goal by end of today. Server finished, working Dev branch.
+- Kritika: Setup folders for SASS. Folders currently 80% empty. Reference for Gardenz. Need to make sections. To check with Prue for correct way.
+        HTML structures.
+- Rodrigo: Post images check, pacakage? Redux is working. Getting data is working. Not tested Post yet. Logics are there, but need to test/make it work
+- Zac: component re-render on refresh page issue, then work on HTML/CSS
 
 // ------------------------------------------------
 // ------------------------------------------------
@@ -8,7 +32,7 @@ Thursday 15/07/2021
 
 Planning: 
 - Wireframe setup
-    - Wimsicle(?) / Sketch or AdobeXD
+    - Wimsicle / Sketch or AdobeXD
 - Clean up / setup server side
 
 
@@ -23,8 +47,6 @@ Kris - finish server side cleaning by lunch? Get basic database setup. Routes, d
 
 // ------------------------------------------------
 // ------------------------------------------------
-er
-
 Wednesday 14/07/2021
 
 https://files.slack.com/files-pri/T02SQPVAC-F028CNTF1BK/20210714_174808.jpg
@@ -177,9 +199,9 @@ App for reference:
 OLIO
 
 
-// -------------------------------------------
+// ------------------------------------------------
 // Lache's guideline
-// -------------------------------------------
+// ------------------------------------------------
 
 A quick reminder of some of the things you should discuss today :v:
 Things to discuss BEFORE planning your project:

@@ -51,6 +51,7 @@ export default function Home () {
             placeholder="Add an Item" />
         </form>
       </main>
+
     </>
   )
 }

@@ -7,23 +7,23 @@ module.exports = {
 }
 
 function getOrdersByUserId (id, db = connection) {
-  return db('orders').select()
+  console.log(id)
+  return db('orders')
+    .where('id', id)
+    .select()
 }
 
 function createOrder (order, db = connection) {
   const dateCreated = Date.now()
-  const { itemId, userId, claimedById, isDispatched } = order
+  const { itemId, userId, claimedById } = order
+  console.log(order)
   return db('orders')
     .insert({
-      date_created: dateCreated,
+      dateCreated: dateCreated,
       item_id: itemId,
       user_id: userId,
-      claimed_by_id: claimedById,
-<<<<<<< HEAD
-      is_dispatched: false
-=======
-      is_dispatched: isDispatched
->>>>>>> 16e1ad3513f841c0f9a37d9e7cb78c0c1f82470c
+      claimedBy_id: claimedById,
+      isDispatched: false
     })
 }
 
@@ -32,7 +32,7 @@ function updateOrderStatus (order, db = connection) {
   return db('orders')
     .where('id', id)
     .update({
-      is_dispatched: !isDispatched
+      isDispatched: !isDispatched
     })
     .then((ids) => console.log(ids[0]))
 }
