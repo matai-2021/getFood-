@@ -69,4 +69,3 @@ const exampleOrder = [{
 // PATCH editProfile - in profile page
 // GET fetchUser - for profile page 
 // DELETE closeAccount - deletes user account 
-
