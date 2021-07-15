@@ -5,7 +5,6 @@ module.exports = {
   addUser,
   editProfile,
   deleteAccount
-  // userExists
 }
 
 function getUserById (id, db = connection) {
