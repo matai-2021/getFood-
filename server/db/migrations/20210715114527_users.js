@@ -6,7 +6,7 @@ exports.up = function (knex) {
     table.string('location')
     table.boolean('isCompany')
     table.string('email')
-    table.string('auth0id')
+    table.string('auth0Id')
   })
 }
 

@@ -8,6 +8,7 @@ export default function Header () {
   return (
     <header>
       <Nav />
+      <p>getFood! (Change to logo here, always stay up)</p>
     </header>
   )
 }
