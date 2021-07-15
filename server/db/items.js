@@ -30,12 +30,17 @@ function addItem (newItem, db = connection) {
 }
 
 function updateItem (updatedItem, db = connection) {
-  const { name, location, userId, quantity, img, description, expiryDate, isClaimed } = newItem
+  const { name, location, quantity, img, description, isClaimed } = updatedItem
   return db('items')
   .update({
-    
+    name, 
+    location, 
+    quantity, 
+    img, 
+    description, 
+    is_claimed: isClaimed
   })
-
+  .then((ids) => console.log(ids[0]))
 }
 
 function deleteItem (id, db = connection) {
