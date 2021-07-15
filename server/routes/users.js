@@ -5,10 +5,10 @@ const db = require('../db/users')
 
 const router = express.Router()
 
-// GET fetchUser - for profile page 
+// GET fetchUser - for profile page
 router.get('/:id', (req, res) => {
-    const id = useParams()
-  db.getUserById()
+  const { id } = useParams()
+  db.getUserById(id)
     .then(user => {
       res.json(user)
       return null
