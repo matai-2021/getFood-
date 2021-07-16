@@ -7,7 +7,7 @@ exports.seed = knex =>
           name: 'Kris Wood',
           dateCreated: '15/07 14:00',
           location: 'Glenfield, Auckland',
-          isCompany: 'true',
+          isCompany: true,
           email: 'krisWood@gmail.com',
           auth0Id: 'jwrghwo'
         },
@@ -16,7 +16,7 @@ exports.seed = knex =>
           name: 'Koko Ono',
           dateCreated: '15/07 14:40',
           location: 'Avondale, Auckland',
-          isCompany: 'false',
+          isCompany: false,
           email: 'kokoono@gmail.com',
           auth0Id: 'lkfjgwh'
         }
