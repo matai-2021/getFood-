@@ -1,23 +1,24 @@
 @charset "utf-8";
 
-// 1 - HELPERS 
-// *** All variables, mixins.scss and functions.scss ***
-@use  './1-helpers/'
-// 2 - Base 
-// *** It includes basic styles to HTML tags like H1, H2, section, article, ul ***
+// @use  './0-tools/_tools';
+// // 1 - HELPERS 
+// // *** All variables, mixins.scss and functions.scss ***
+
+// // 2 - Base 
+// // *** It includes basic styles to HTML tags like H1, H2, section, article, ul ***
 
 @use './2-base/_base';
 
-// 3 - LAYOUT 
-// *** Header, footer, reusable components classes ***
-@use './3-layout/_layout';
+// // 3 - LAYOUT 
+// // *** Header, footer, reusable components classes ***
+// @use './3-layout/_layout';
 
-// 4 - MODULES 
-// *** Similar to layout but for smaller groups of elements like buttons, cards, sliders ***
-@use './4-modules/_modules';
+// // 4 - MODULES 
+// // *** Similar to layout but for smaller groups of elements like buttons, cards, sliders ***
+// @use './4-modules/_modules';
 
 // 5 - PAGES 
 // *** For single pages only. And only for overrides. Make sure you can't add the CSS in 4 & 5 before using this. ***
-@use './5-pages/';
+// @use './5-pages/';
 
 // NO DIRECT STYLES IN THIS FILE MAKE A NEW FILE AND IMPORT IT.
