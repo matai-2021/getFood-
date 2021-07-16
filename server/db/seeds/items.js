@@ -11,7 +11,7 @@ exports.seed = knex =>
       description: 'good shape',
       email: 'vegelover@gmail.com',
       isClaimed: false,
-      img: 'img'
+      img: '/images/apple.jpg'
 
     },
     {
@@ -25,6 +25,6 @@ exports.seed = knex =>
       description: 'a bit bruised',
       email: 'eatwell@gmail.com',
       isClaimed: false,
-      img: 'img'
+      img: '/images/potatoes.jpg'
     }
   ])

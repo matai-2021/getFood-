@@ -5,7 +5,15 @@ module.exports = {
   addItem,
   updateItem,
   deleteItem,
-  claimItem
+  claimItem,
+  getItemsById
+}
+
+function getItemsById (id, db = connection) {
+  console.log('id', id)
+  return db('items')
+    .where('id', id)
+    .select()
 }
 
 function getItems (db = connection) {
