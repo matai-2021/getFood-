@@ -23,12 +23,12 @@ export default function App () {
       <main className='container'>
         <Route exact path='/' component={Home} />
         <Route path='/' component={ItemListing} /> {/* Show Item Listing when logged in? */}
-        <Route path='/profile' component={Profile} />
-        <Route path='/profilesetup' component={ProfileSetup} />
-        <Route path='/about' component={About} />
-        <Route path='/myitems' component={MyItems} />
-        <Route path='/item/new' component={AddItem} />
-        <Route path='/item/:id' component={ItemDetails} />
+        <Route exact path='/profile' component={Profile} />
+        <Route exact path='/profilesetup' component={ProfileSetup} />
+        <Route exact path='/about' component={About} />
+        <Route exact path='/myitems' component={MyItems} />
+        <Route exact path='/item/new' component={AddItem} />
+        <Route exact path='/item/:id' component={ItemDetails} />
       </main>
     </>
   )
