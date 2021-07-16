@@ -18,15 +18,17 @@ export default function ItemListing () {
     <section className='items-wrapper'>
       <Link to='/item/new' className='button-blue'>Add Item</Link>
       {items.map(item => (
-        <SingleItem
-          key={item.id}
-          name={item.name}
-          description={item.description}
-          expiryDate={item.expiryDate}
-          quantity={item.quantity}
-          email={item.email}
-          img={item.img}
-        />
+        <React.Fragment key={item.id} >
+          <SingleItem
+            name={item.name}
+            description={item.description}
+            expiryDate={item.expiryDate}
+            quantity={item.quantity}
+            email={item.email}
+            img={item.img}
+          />
+          <Link to={`/item/${item.id}`}className='item-link'>View More...</Link>
+        </React.Fragment>
       ))}
     </section>
   )
