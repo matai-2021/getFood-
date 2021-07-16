@@ -6,10 +6,9 @@ import { useParams } from 'react-router'
 export default function ItemDetails () {
   const { id } = useParams()
   const dispatch = useDispatch()
-  const items = useSelector(state => state.items)
-  const item = items.find(item => item.id === id)
+  const items = useSelector(state => state.items[0])
+  // const singleItem = items.find(item => item.id === id)
   console.log(items)
-  console.log(item)
 
   useEffect(() => {
     dispatch(getItems())
@@ -23,13 +22,19 @@ export default function ItemDetails () {
     <>
       <section className='card-container'>
         <button>Go back</button>
-        <div style={{ width: '90%', height: '200px', backgroundColor: 'pink' }}>Image will go here</div>
+        <img
+          src={items?.img}
+          alt={items?.name}
+          style={{ width: '90%', height: '200px', backgroundColor: 'pink' }}
+        />
         <article>
-          <h1>Bag of potatoes</h1>
-          <h1>Pick up location: LA</h1>
-          <h1>Description Description Description Description
-        Description Description Description Description Description
-          </h1>
+          <h1>{items?.name}</h1>
+          <h1>Pick up location: {items?.location}</h1>
+          <h1>Description: {items?.description}</h1>
+          <h1>Quantity: {items?.quantity}</h1>
+          <h1>Exp. Data: {items?.expiryDate}</h1>
+          <h1>Date Created: {items?.dateCreated}</h1>
+          <h1>Email: {items?.email}</h1>
           <button>Edit item</button>
           <button onClick={() => handleDelete(id)}>Delete item</button>
         </article>

@@ -10,12 +10,13 @@ export default function ItemForm (props) {
   })
 
   function handleChange (e) {
-
+    setForm(e.target.value)
   }
 
   function handleSubmit (e) {
     e.preventDefault()
     props.submitEvent(form)
+    setForm({})
   }
 
   const { name, date, description } = form
