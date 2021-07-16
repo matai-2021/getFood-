@@ -1,15 +1,33 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { getItems } from '../redux/itemsSlice'
 import { Link } from 'react-router-dom'
 
-export default function ItemListing ({ events }) {
-  return (
-    <>
+// Components
+import SingleItem from './SingleItem'
 
-      <section>
-        <div className='is-flex'>
-          <Link to='/item/new' className='button'>Add New Item</Link>
-        </div>
-      </section>
-    </>
+export default function ItemListing () {
+  const items = useSelector(state => state.items)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(getItems())
+  }, [])
+
+  return (
+    <section className='items-wrapper'>
+      <Link to='/item/new' className='button-blue'>Add Item</Link>
+      {items.map(item => (
+        <SingleItem
+          key={item.id}
+          name={item.name}
+          description={item.description}
+          expiryDate={item.expiryDate}
+          quantity={item.quantity}
+          email={item.email}
+          img={item.img}
+        />
+      ))}
+    </section>
   )
 }
