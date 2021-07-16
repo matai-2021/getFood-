@@ -31,11 +31,12 @@ router.get('/:id', (req, res) => {
 
 // POST registerUser
 router.post('/', (req, res) => {
-  console.log(req.params)
-  const { newUser } = req.params
-  db.addUser({ newUser })
-    .then(results => {
-      res.status(201).json({ results })
+  console.log(req.body)
+  const { name, dateCreated, location, isCompany, email, auth0Id } = req.body
+  const newUser = { name, dateCreated, location, isCompany, email, auth0Id }
+  db.addUser(newUser)
+    .then((newUser) => {
+      res.status(201).json(newUser)
       return null
     })
     .catch(err => {
