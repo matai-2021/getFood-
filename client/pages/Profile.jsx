@@ -8,9 +8,7 @@ export default function Profile () {
   const dispatch = useDispatch()
   const users = useSelector(state => state.users[0])
   const { user } = useAuth0() // user, isLoading
-  const { name, picture, email, items } = user // given_name, family_name, nickname, sub
-
-  console.log(users)
+  const { name, picture, email } = user // given_name, family_name, nickname, sub
 
   useEffect(() => {
     dispatch(getUsers())
@@ -19,17 +17,17 @@ export default function Profile () {
   return (
     <>
       <section className='card-container'>
-        {/* <img */}
-        {/* // src={items?.img} */}
-        {/* // alt={items?.name} */}
-        {/* // style={{ width: '90%', height: '200px', backgroundColor: 'pink' }} */}
-        {/* // /> */}
+        <img
+          src={picture && users?.img}
+          alt="Profile pic"
+          style={{ width: '90%', height: '200px', backgroundColor: 'pink' }}
+        />
         <article>
           <img src={picture} alt="Profile pic"/>
           <p>Name: {name}</p>
           <p>Email: {email}</p>
           <p>Location: {users?.location}</p>
-          <button>Delete My Account</button>
+          <button onClick={() => handleDelete()}>Delete My Account</button>
         </article>
       </section>
     </>
