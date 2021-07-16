@@ -27,10 +27,6 @@ export default function Home () {
     setValue('')
   }
 
-  // const handleDelete = (itemId) => {
-  //   dispatch(deleteItem({ id: itemId }))
-  // }
-
   return (
     <section className='flex-container'>
       <main className='container'>

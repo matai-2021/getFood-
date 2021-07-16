@@ -13,7 +13,7 @@ export const getUsers = createAsyncThunk(
 )
 
 export const getUserById = createAsyncThunk(
-  'users/getUsers',
+  'users/getUserById',
   async (payload) => {
     const res = await request(`/api/v1/users${payload.id}`)
     if (res.ok) {
@@ -28,7 +28,11 @@ export const addUser = createAsyncThunk(
   async (payload) => {
     const res = await request.post('/api/v1/users').send(payload)
     if (res.ok) {
-      return await res.body
+      const newUser = {
+        id: res.body.id,
+        name: payload.name
+      }
+      return newUser
     }
   }
 )

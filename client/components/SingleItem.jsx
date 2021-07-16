@@ -1,9 +1,7 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 export default function SingleItem (props) {
   const {
-    id,
     name,
     email,
     description,
@@ -30,8 +28,6 @@ export default function SingleItem (props) {
         <p>
           <strong>email: </strong>{email}
         </p>
-
-        <Link to={`/items/${id}`}className='item-link'>View More...</Link>
       </div>
       <div className='item-img'>
         <img src={img} alt={img} />
