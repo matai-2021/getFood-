@@ -1982,7 +1982,15 @@ __webpack_require__.r(__webpack_exports__);
  // import WaitIndicator from '../components/WaitIndicator/WaitIndicator'
 
 function Header() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("header", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Nav__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "getFood! (Change to logo here, always stay up)"));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("header", {
+    className: "header-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "getFood! (Change to logo here, always stay up)"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Nav__WEBPACK_IMPORTED_MODULE_1__.default, null));
+}
+{
+  /* <header>
+  <Nav />
+  <p>getFood! (Change to logo here, always stay up)</p>
+  </header> */
 }
 
 /***/ }),

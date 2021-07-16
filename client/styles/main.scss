@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-// @use  './0-tools/_tools';
+@use  './0-tools/_tools';
 // // 1 - HELPERS 
 // // *** All variables, mixins.scss and functions.scss ***
 
@@ -11,7 +11,7 @@
 
 // // 3 - LAYOUT 
 // // *** Header, footer, reusable components classes ***
-// @use './3-layout/_layout';
+@use './3-layout/_layout';
 
 // // 4 - MODULES 
 // // *** Similar to layout but for smaller groups of elements like buttons, cards, sliders ***
