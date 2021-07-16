@@ -1,0 +1,18 @@
+@use "sass:math";
+@use '../1-helpers/functions';
+@use '../1-helpers/mixins';
+@use '../1-helpers/vars';
+
+.container {
+    position: relative;
+    max-width: 100%;
+    padding: 0 vars.$base-size * 3;
+  }
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    @include mixins.media-queries(mobile, min) {
+      flex-direction: row;
+    }
+  }

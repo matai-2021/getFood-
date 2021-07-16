@@ -1,0 +1,11 @@
+@use '../1-helpers/mixins';
+@use '../1-helpers/functions';
+@use '../1-helpers/vars';
+
+.form-title {
+    color: vars.$primary;
+    font-family: vars.$heading;
+    font-size: x-large;
+    font-weight: bold;
+  }
+

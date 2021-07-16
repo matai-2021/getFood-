@@ -2476,7 +2476,7 @@ function Profile() {
 /*! namespace exports */
 /*! export default [provided] [no usage info] [missing usage info prevents renaming] */
 /*! other exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_require__, __webpack_require__.n, __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
+/*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2487,9 +2487,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
 /* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
-/* harmony import */ var _profileSetUpHelper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./profileSetUpHelper */ "./client/pages/profileSetUpHelper.js");
-/* harmony import */ var _profileSetUpHelper__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_profileSetUpHelper__WEBPACK_IMPORTED_MODULE_3__);
 
 
 
@@ -2497,22 +2494,21 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__.default)(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
-
-
+ // import { useHistory } from 'react-router-dom'
+// import { profileSetUp } from './profileSetUpHelper'
 
 function ProfileSetUp() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)({
-    firstName: '',
-    lastName: '',
+    name: '',
+    location: '',
     // username needed? Auth0 has username/email so not here?
-    email: '',
-    location: ''
+    isCompany: false,
+    email: ''
   }),
       _useState2 = (0,_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1__.default)(_useState, 2),
       form = _useState2[0],
-      setForm = _useState2[1];
+      setForm = _useState2[1]; // const history = useHistory()
 
-  var history = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useHistory)();
 
   function handleChange(e) {
     var _e$target = e.target,
@@ -2521,49 +2517,29 @@ function ProfileSetUp() {
     setForm(_objectSpread(_objectSpread({}, form), {}, (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__.default)({}, name, value)));
   }
 
-  function handleClick(e) {
-    e.preventDefault();
-    (0,_profileSetUpHelper__WEBPACK_IMPORTED_MODULE_3__.profileSetUp)(form, history.push);
+  function handleClick(e) {// e.preventDefault()
+    // profileSetUp(form, history.push)
   }
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(react__WEBPACK_IMPORTED_MODULE_2__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("form", {
-    className: "column"
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(react__WEBPACK_IMPORTED_MODULE_2__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("div", {
+    className: "flex-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("article", {
+    className: "form-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("h3", {
+    className: "form-title"
+  }, "Profile Setup"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("form", {
+    className: "form-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("div", {
     className: "field"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("label", {
     htmlFor: "firstName",
     className: "label"
-  }, "First Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("input", {
+  }, "Full name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("input", {
     className: "input",
-    id: "firstName",
-    name: "firstName",
-    value: form.firstName,
-    placeholder: "First Name",
-    onChange: handleChange
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("div", {
-    className: "field"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("label", {
-    htmlFor: "lastName",
-    className: "label"
-  }, "Last Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("input", {
-    className: "input",
-    id: "lastName",
-    name: "lastName",
-    value: form.lastName,
-    placeholder: "Last Name",
-    onChange: handleChange
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("div", {
-    className: "field"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("label", {
-    htmlFor: "email",
-    className: "label"
-  }, "Email"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("input", {
-    className: "input",
-    id: "email",
-    type: "email",
-    name: "email",
-    value: form.email,
-    placeholder: "Email",
+    id: "fullName",
+    name: "fullName",
+    value: form.name,
+    placeholder: "fullName",
     onChange: handleChange
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("div", {
     className: "field"
@@ -2578,52 +2554,38 @@ function ProfileSetUp() {
     value: form.location,
     placeholder: "location",
     onChange: handleChange
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("div", {
+    className: "field"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("label", {
+    htmlFor: "location",
+    className: "label"
+  }, "Are you a business?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("input", {
+    className: "input",
+    id: "isCompany",
+    type: "checkbox",
+    name: "isCompany" // value={form.isCompany}
+    ,
+    placeholder: "isCompany"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("div", {
+    className: "field"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("label", {
+    htmlFor: "email",
+    className: "label"
+  }, "Email"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("input", {
+    className: "input",
+    id: "email",
+    type: "email",
+    name: "email",
+    value: form.email,
+    placeholder: "Email",
+    onChange: handleChange
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("button", {
     type: "button",
     className: "button",
     onClick: handleClick,
     "data-testid": "submitButton"
-  }, "Finish Profile Setup")));
+  }, "Save")))));
 }
-
-/***/ }),
-
-/***/ "./client/pages/profileSetUpHelper.js":
-/*!********************************************!*\
-  !*** ./client/pages/profileSetUpHelper.js ***!
-  \********************************************/
-/*! unknown exports (runtime-defined) */
-/*! runtime requirements:  */
-/***/ (() => {
-
-// import { register, isAuthenticated, config } from '../../../auth'
-// import { dispatch } from '../../../store'
-// import { setUser } from '../../../actions/user'
-// import { setWaiting } from '../../../actions/waiting'
-// import { showError } from '../../../actions/error'
-// export function profileSetUp (user) {
-//   const { firstName, lastName, username, password, gardenId, email } = user
-//   dispatch(setWaiting())
-//   return register({
-//     firstName,
-//     lastName,
-//     email,
-//     location
-//   }, config)
-//     .then(() => {
-//       if (isAuthenticated()) {
-//         dispatch(setUser())
-//       } else {
-//         throw new Error('Not authenticated')
-//       }
-//       return null
-//     })
-//     .catch((error) => {
-//       error.message === 'USERNAME_UNAVAILABLE'
-//         ? dispatch(showError('This username is not available'))
-//         : dispatch(showError(error.message))
-//     })
-// }
 
 /***/ }),
 
@@ -5609,13 +5571,10 @@ var index = react__WEBPACK_IMPORTED_MODULE_0__.createContext || createReactConte
   \*********************************/
 /*! namespace exports */
 /*! exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.* */
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/*! runtime requirements:  */
+/***/ (() => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
+throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: expected more input.\n  ╷\n6 │ @use\n  │     ^\n  ╵\n  client/styles/3-layout/__layout.scss 6:5  @use\n  client/styles/main.scss 14:1              root stylesheet\n    at processResult (/Users/zachary/Workspace/getFood-/node_modules/webpack/lib/NormalModule.js:583:19)\n    at /Users/zachary/Workspace/getFood-/node_modules/webpack/lib/NormalModule.js:676:5\n    at /Users/zachary/Workspace/getFood-/node_modules/loader-runner/lib/LoaderRunner.js:399:11\n    at /Users/zachary/Workspace/getFood-/node_modules/loader-runner/lib/LoaderRunner.js:251:18\n    at context.callback (/Users/zachary/Workspace/getFood-/node_modules/loader-runner/lib/LoaderRunner.js:124:13)\n    at /Users/zachary/Workspace/getFood-/node_modules/sass-loader/dist/index.js:62:7\n    at Function.call$2 (/Users/zachary/Workspace/getFood-/node_modules/sass/sass.dart.js:93650:16)\n    at _render_closure1.call$2 (/Users/zachary/Workspace/getFood-/node_modules/sass/sass.dart.js:82010:12)\n    at _RootZone.runBinary$3$3 (/Users/zachary/Workspace/getFood-/node_modules/sass/sass.dart.js:27550:18)\n    at _FutureListener.handleError$1 (/Users/zachary/Workspace/getFood-/node_modules/sass/sass.dart.js:26099:19)");
 
 /***/ }),
 
