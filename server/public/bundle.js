@@ -2979,6 +2979,7 @@ var usersSlice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_4__.createSlice)({
   \*********************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
+/*! CommonJS bailout: module.exports is used directly at 9:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -3007,6 +3008,8 @@ module.exports = function callBoundIntrinsic(name, allowMissing) {
   \*****************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
+/*! CommonJS bailout: module.exports is used directly at 23:0-14 */
+/*! CommonJS bailout: module.exports is used directly at 44:17-31 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -3067,6 +3070,7 @@ if ($defineProperty) {
   \*************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module */
+/*! CommonJS bailout: module.exports is used directly at 7:2-16 */
 /***/ ((module) => {
 
 
@@ -3254,6 +3258,7 @@ Emitter.prototype.hasListeners = function(event){
   \***************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module */
+/*! CommonJS bailout: module.exports is used directly at 1:0-14 */
 /***/ ((module) => {
 
 module.exports = stringify
@@ -3442,6 +3447,7 @@ function replaceGetterValues (replacer) {
   \******************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module */
+/*! CommonJS bailout: module.exports is used directly at 10:0-14 */
 /***/ ((module) => {
 
 "use strict";
@@ -3507,6 +3513,7 @@ module.exports = function bind(that) {
   \*********************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
+/*! CommonJS bailout: module.exports is used directly at 5:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -3525,6 +3532,7 @@ module.exports = Function.prototype.bind || implementation;
   \*********************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
+/*! CommonJS bailout: module.exports is used directly at 252:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -3868,6 +3876,7 @@ module.exports = function GetIntrinsic(name, allowMissing) {
   \*******************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
+/*! CommonJS bailout: module.exports is used directly at 6:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -3894,6 +3903,7 @@ module.exports = function hasNativeSymbols() {
   \*******************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module */
+/*! CommonJS bailout: module.exports is used directly at 4:0-14 */
 /***/ ((module) => {
 
 "use strict";
@@ -3949,6 +3959,7 @@ module.exports = function hasSymbols() {
   \***************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
+/*! CommonJS bailout: module.exports is used directly at 5:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -4922,6 +4933,7 @@ function createMemoryHistory(props) {
   \**********************************************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
+/*! CommonJS bailout: module.exports is used directly at 103:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -5569,12 +5581,11 @@ var index = react__WEBPACK_IMPORTED_MODULE_0__.createContext || createReactConte
 /*!*********************************!*\
   !*** ./client/styles/main.scss ***!
   \*********************************/
-/*! namespace exports */
-/*! exports [not provided] [no usage info] */
+/*! unknown exports (runtime-defined) */
 /*! runtime requirements:  */
 /***/ (() => {
 
-throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: expected more input.\n  ╷\n6 │ @use\n  │     ^\n  ╵\n  client/styles/3-layout/__layout.scss 6:5  @use\n  client/styles/main.scss 14:1              root stylesheet\n    at processResult (/Users/zachary/Workspace/getFood-/node_modules/webpack/lib/NormalModule.js:583:19)\n    at /Users/zachary/Workspace/getFood-/node_modules/webpack/lib/NormalModule.js:676:5\n    at /Users/zachary/Workspace/getFood-/node_modules/loader-runner/lib/LoaderRunner.js:399:11\n    at /Users/zachary/Workspace/getFood-/node_modules/loader-runner/lib/LoaderRunner.js:251:18\n    at context.callback (/Users/zachary/Workspace/getFood-/node_modules/loader-runner/lib/LoaderRunner.js:124:13)\n    at /Users/zachary/Workspace/getFood-/node_modules/sass-loader/dist/index.js:62:7\n    at Function.call$2 (/Users/zachary/Workspace/getFood-/node_modules/sass/sass.dart.js:93650:16)\n    at _render_closure1.call$2 (/Users/zachary/Workspace/getFood-/node_modules/sass/sass.dart.js:82010:12)\n    at _RootZone.runBinary$3$3 (/Users/zachary/Workspace/getFood-/node_modules/sass/sass.dart.js:27550:18)\n    at _FutureListener.handleError$1 (/Users/zachary/Workspace/getFood-/node_modules/sass/sass.dart.js:26099:19)");
+throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: Undefined variable.\n  ╷\n6 │     color: vars.$primary;\n  │            ^^^^^^^^^^^^^\n  ╵\n  client/styles/3-layout/_form.scss 6:12    @use\n  client/styles/3-layout/__layout.scss 2:1  @use\n  client/styles/main.scss 14:1              root stylesheet\n    at processResult (/Users/zachary/Workspace/getFood-/node_modules/webpack/lib/NormalModule.js:583:19)\n    at /Users/zachary/Workspace/getFood-/node_modules/webpack/lib/NormalModule.js:676:5\n    at /Users/zachary/Workspace/getFood-/node_modules/loader-runner/lib/LoaderRunner.js:399:11\n    at /Users/zachary/Workspace/getFood-/node_modules/loader-runner/lib/LoaderRunner.js:251:18\n    at context.callback (/Users/zachary/Workspace/getFood-/node_modules/loader-runner/lib/LoaderRunner.js:124:13)\n    at /Users/zachary/Workspace/getFood-/node_modules/sass-loader/dist/index.js:62:7\n    at Function.call$2 (/Users/zachary/Workspace/getFood-/node_modules/sass/sass.dart.js:93650:16)\n    at _render_closure1.call$2 (/Users/zachary/Workspace/getFood-/node_modules/sass/sass.dart.js:82010:12)\n    at _RootZone.runBinary$3$3 (/Users/zachary/Workspace/getFood-/node_modules/sass/sass.dart.js:27550:18)\n    at _FutureListener.handleError$1 (/Users/zachary/Workspace/getFood-/node_modules/sass/sass.dart.js:26099:19)");
 
 /***/ }),
 
@@ -5584,6 +5595,7 @@ throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugi
   \*********************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module */
+/*! CommonJS bailout: module.exports is used directly at 65:0-14 */
 /***/ ((module) => {
 
 "use strict";
@@ -5687,6 +5699,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
   \**********************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: __webpack_require__, module */
+/*! CommonJS bailout: module.exports is used directly at 37:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var hasMap = typeof Map === 'function' && Map.prototype;
@@ -6167,6 +6180,7 @@ function arrObjKeys(obj, inspect) {
   \***************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
+/*! CommonJS bailout: module.exports is used directly at 102:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -6282,6 +6296,7 @@ module.exports = checkPropTypes;
   \************************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
+/*! CommonJS bailout: module.exports is used directly at 38:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -6886,6 +6901,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
   \******************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
+/*! CommonJS bailout: module.exports is used directly at 14:2-16 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 /**
@@ -6913,6 +6929,7 @@ if (true) {
   \*************************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module */
+/*! CommonJS bailout: module.exports is used directly at 12:0-14 */
 /***/ ((module) => {
 
 "use strict";
@@ -36866,6 +36883,7 @@ if (true) {
   \*****************************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module */
+/*! CommonJS bailout: module.exports is used directly at 1:0-14 */
 /***/ ((module) => {
 
 module.exports = Array.isArray || function (arr) {
@@ -36881,6 +36899,7 @@ module.exports = Array.isArray || function (arr) {
   \************************************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
+/*! CommonJS bailout: module.exports is used directly at 6:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var isarray = __webpack_require__(/*! isarray */ "./node_modules/react-router/node_modules/isarray/index.js")
@@ -40765,6 +40784,7 @@ if ( true && typeof isCrushed.name === 'string' && isCrushed.name !== 'isCrushed
   \*****************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module */
+/*! CommonJS bailout: module.exports is used directly at 732:31-45 */
 /***/ ((module) => {
 
 /**
@@ -42153,6 +42173,14 @@ exports.unstable_wrap = unstable_wrap;
 /*! export unstable_wrapCallback [provided] [no usage info] [missing usage info prevents renaming] */
 /*! other exports [not provided] [no usage info] */
 /*! runtime requirements: __webpack_exports__ */
+/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 52:26-46 */
+/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 125:13-33 */
+/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 149:24-44 */
+/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 193:15-35 */
+/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 381:28-48 */
+/*! CommonJS bailout: exports.unstable_shouldYield(...) prevents optimization as exports is passed as call context at 405:74-102 */
+/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 418:20-40 */
+/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 517:20-40 */
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -42878,6 +42906,7 @@ if (false) {} else {
   \********************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
+/*! CommonJS bailout: module.exports is used directly at 58:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -43015,6 +43044,7 @@ module.exports = function getSideChannel() {
   \***************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module */
+/*! CommonJS bailout: module.exports is used directly at 41:0-14 */
 /***/ ((module) => {
 
 "use strict";
@@ -43069,6 +43099,10 @@ module.exports = Agent;
   \***********************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_exports__, __webpack_require__ */
+/*! CommonJS bailout: module.exports is used directly at 46:0-14 */
+/*! CommonJS bailout: module.exports is used directly at 60:10-24 */
+/*! CommonJS bailout: exports is used directly at 60:0-7 */
+/*! CommonJS bailout: exports is used directly at 61:14-21 */
 /***/ ((module, exports, __webpack_require__) => {
 
 "use strict";
@@ -44103,6 +44137,7 @@ request.put = function (url, data, fn) {
   \**************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module */
+/*! CommonJS bailout: module.exports is used directly at 16:0-14 */
 /***/ ((module) => {
 
 "use strict";
@@ -44132,6 +44167,7 @@ module.exports = isObject;
   \*****************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
+/*! CommonJS bailout: module.exports is used directly at 14:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -44926,6 +44962,7 @@ RequestBase.prototype._setTimeouts = function () {
   \******************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
+/*! CommonJS bailout: module.exports is used directly at 12:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -45191,6 +45228,7 @@ exports.cleanHeader = function (header, changesOrigin) {
   \****************************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module */
+/*! CommonJS bailout: module.exports is used directly at 11:0-14 */
 /***/ ((module) => {
 
 "use strict";
@@ -45227,6 +45265,7 @@ module.exports = {
   \**************************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
+/*! CommonJS bailout: module.exports is used directly at 7:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -45251,6 +45290,7 @@ module.exports = {
   \**************************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
+/*! CommonJS bailout: module.exports is used directly at 239:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -45527,6 +45567,7 @@ module.exports = function (str, opts) {
   \******************************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
+/*! CommonJS bailout: module.exports is used directly at 210:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -45830,6 +45871,7 @@ module.exports = function (object, opts) {
   \**************************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
+/*! CommonJS bailout: module.exports is used directly at 240:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";

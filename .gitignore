@@ -1,3 +1,6 @@
+# database 
+dev.sqlite3
+
 # Logs
 logs
 *.log
@@ -107,9 +110,6 @@ dist
 # Bundle
 bundle.js
 bundle.js.map
-
-# DB
-dev.sqlite3
 
 # package-lock
 package-lock.json
