@@ -35,7 +35,7 @@ router.post('/', (req, res) => {
   const newUser = { name, dateCreated, location, isCompany, email, auth0Id }
   db.addUser(newUser)
     .then((newUser) => {
-      res.status(201).json(newUser)
+      res.status(201).json({ newUser })
       return null
     })
     .catch(err => {
