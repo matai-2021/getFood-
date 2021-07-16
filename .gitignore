@@ -111,5 +111,10 @@ dist
 bundle.js
 bundle.js.map
 
+<<<<<<< HEAD
 # DB
 dev.sqlite3
+=======
+# package-lock
+package-lock.json
+>>>>>>> 70694157f5f1ebfcc5bbfc8548c48939020291e7

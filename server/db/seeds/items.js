@@ -25,6 +25,6 @@ exports.seed = knex =>
       description: 'a bit bruised',
       email: 'eatwell@gmail.com',
       isClaimed: false,
-      img: '/images/potatoes.jpg'
+      img: '/images/potatoes.jpeg'
     }
   ])
