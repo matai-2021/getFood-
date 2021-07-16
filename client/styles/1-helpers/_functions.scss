@@ -1,0 +1,5 @@
+@use "sass:math";
+
+@function colWidth($col, $total: 12) {
+  @return math.percentage(math.div($col, $total));
+}

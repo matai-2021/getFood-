@@ -1,0 +1,21 @@
+@use '../1-helpers/vars';
+@use '../1-helpers/functions';
+@use '../1-helpers/mixins';
+
+header {
+    height: 100px;
+    background-color: vars.$yellow;
+    display: flex;
+    justify-content: space-between;
+}
+
+// .logo-image {
+//     width: 15rem;
+//     padding-left: vars.$base-size;
+//     height: 100%;
+
+//     @include mixins.media-queries(mobile, min) {
+//         padding-left: vars.$base-size * 3;
+//         width: 20rem;
+//     }
+// }

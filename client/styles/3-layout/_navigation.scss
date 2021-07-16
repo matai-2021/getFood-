@@ -1,0 +1,110 @@
+@use '../1-helpers/vars';
+@use '../1-helpers/functions';
+@use '../1-helpers/mixins';
+
+.nav {
+    width: auto;
+}
+
+.nav-link {
+    display: none;
+    font-size: vars.$base-size * 1.5;
+    font-family: vars.$paragraph;
+    color: vars.$purple;
+    text-decoration: none;
+
+    &:hover {
+        color: vars.$purple;
+    }
+
+    @include mixins.media-queries(mobile, min) {
+        display: block;
+        padding-left: vars.$base-size;
+        font-size: vars.$base-size;
+    }
+}
+
+.hamburger {
+    cursor: pointer;
+    color: #fff;
+    font-size: vars.$base-size * 2.5;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-right: vars.$base-size;
+
+    &:hover {
+        color: vars.$purple;
+    }
+
+    @include mixins.media-queries(mobile, min) {
+        display: none;
+    }
+}
+
+.close-btn {
+    cursor: pointer;
+    color: #fff;
+    font-size: vars.$base-size * 3;
+    position: absolute;
+    top: 22px;
+    right: 12px;
+
+    &:hover {
+        color: vars.$purple;
+    }
+
+    @include mixins.media-queries(mobile, min) {
+        display: none;
+    }
+}
+
+.nav-menu {
+    height: 100%;
+    display: flex;
+	background-color: vars.$yellow;
+
+    @include mixins.media-queries(mobile, min) {
+		flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        // padding-bottom: vars.$base-size;
+        padding-right: vars.$base-size * 3;
+    }
+}
+
+.nav-menu-toggle {
+    background-color: vars.$yellow;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width:100vw;
+    height: 50vh;
+    z-index: 100;
+    animation: growDown 300ms ease-in-out forwards;
+    transform-origin: top center;
+    position: relative;
+    left: -241px;
+    top: 0;
+
+    @keyframes growDown {
+        0% {
+          transform: scaleY(0)
+        }
+        80% {
+          transform: scaleY(1.1)
+        }
+        100% {
+          transform: scaleY(1)
+        }
+      }
+
+    & .nav-link {
+        display: block;
+    }
+
+    @include mixins.media-queries(mobile, min) {
+       display: none;
+    } 
+}
