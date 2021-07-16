@@ -38,8 +38,8 @@ export default function Home () {
         {/* {users && users.map(user => (
           <h1 key={user.id}>{user.name}</h1>
         ))} */}
-        {items.map(item => (
-          <h1 key={item?.id}>{item?.name}</h1>
+        {items && items.map(item => (
+          <h1 key={item.id}>{item.name}</h1>
         ))}
         <p>A food conserving project by getFood</p>
         <p>Please log in to get started, or checkout our About page</p>
