@@ -1,0 +1,11 @@
+@use "sass:math";
+@use '../1-helpers/mixins';
+@use '../1-helpers/functions';
+@use '../1-helpers/vars';
+
+.page-title {
+    font-size: 2rem;
+    color: rgba(35, 108, 243, 0.533);
+    padding-bottom: vars.$base-size;
+    font-family: vars.$heading;
+}

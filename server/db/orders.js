@@ -1,34 +1,57 @@
 const connection = require('./connection')
 
 module.exports = {
-  getOrders,
+  getOrdersByUserId,
   createOrder,
-  updateOrderStatus
+  updateOrderStatus,
+  getAllOrders,
+  deleteOrderById
 }
 
-function getOrders (db = connection) {
-  return db('orders').select()
+// GET all orders
+function getAllOrders (db = connection) {
+  return db('orders')
+    .select()
 }
 
-function createOrder (order, db = connection) {
-    const dateCreated = Date.now()
-    const { itemId, userId, claimedById } = order
-    return db('orders')
-    .insert({
-        date_created: dateCreated,
-        item_id: itemId, 
-        user_id: userId, 
-        claimed_by_id: claimedById,
-        is_dispatched: isDispatched
-    })
-}
-
-function updateOrderStatus (order, db = connection) {
-    const { id, isDispatched } = order
-    return db('orders')
+// GET order by  ID
+function getOrdersByUserId (id, db = connection) {
+  return db('orders')
     .where('id', id)
-    .update({ 
-      is_dispatched: !isDispatched
+    .select()
+}
+
+// POST new order
+function createOrder (itemId, db = connection) {
+  const dateCreated = Date.now()
+  const userId = 0 // getItemById()
+  const claimedById = 0 // getCurrentUser()
+  console.log('DB: ', itemId)
+  return db('orders')
+    .insert({
+      dateCreated: dateCreated,
+      item_id: itemId,
+      user_id: userId,
+      claimedBy_id: claimedById,
+      isDispatched: false
     })
-    .then((ids) => console.log(ids[0]))
-  }
+}
+
+// UPDATE order status
+function updateOrderStatus (order, db = connection) {
+  console.log('DB: ', order)
+  const { id, isDispatched } = order
+  return db('orders')
+    .where('id', id)
+    .update({
+      isDispatched: isDispatched
+    })
+    .then(() => console.log('Order updated'))
+}
+
+// DELETE order by ID
+function deleteOrderById (id, db = connection) {
+  return db('orders')
+    .where('id', id)
+    .delete()
+}
