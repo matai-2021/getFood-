@@ -34,7 +34,7 @@ router.delete('/:id', (req, res) => {
   const id = Number(req.params.id)
   db.deleteItem(id)
     .then(() => {
-      res.status(201).json(`Item successfully deleted`)
+      res.status(201).json('Item successfully deleted')
       return null
     })
     .catch(err => {
@@ -44,15 +44,16 @@ router.delete('/:id', (req, res) => {
 })
 
 router.patch('/', (req, res) => {
-  const updatedItem = req.params.updatedItem
+  const { id, name, location, quantity, img, description, isClaimed } = req.body
+  const updatedItem = { id, name, location, quantity, img, description, isClaimed }
   db.updateItem(updatedItem)
     .then(() => {
-      res.status(201).json('Item successfully deleted')
+      res.status(201).json('Item successfully updated')
       return null
     })
     .catch(err => {
       console.log(err)
-      res.status(500).json({ message: 'Unable to delete item' })
+      res.status(500).json({ message: 'Unable to update item' })
     })
 })
 
@@ -66,4 +67,18 @@ module.exports = router
 //   "quantity": 6,
 //   "description": "good shape",
 //   "img": "img"
+// }
+
+// DELETE DATA SHAPE
+// req.params :id
+
+// UPDATE DATA SHAPE
+// {
+//   "id": "",
+//   "name": "",
+//   "location": "",
+//   "quantity": "",
+//   "img": "",
+//   "description": "",
+//   "isClaimed": ""
 // }
