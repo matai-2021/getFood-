@@ -35,6 +35,7 @@ function createOrder (itemId, db = connection) {
       claimedBy_id: claimedById,
       isDispatched: false
     })
+    .then((ids) => ids[0])
 }
 
 // UPDATE order status

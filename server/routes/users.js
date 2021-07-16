@@ -34,8 +34,8 @@ router.post('/', (req, res) => {
   console.log(req.params)
   const { newUser } = req.params
   db.addUser({ newUser })
-    .then(results => {
-      res.status(201).json({ results })
+    .then(result => {
+      res.status(201).json({ result })
       return null
     })
     .catch(err => {

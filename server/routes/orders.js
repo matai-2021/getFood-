@@ -37,8 +37,8 @@ router.post('/', (req, res) => {
   console.log('route: ', req.body.itemId)
 
   db.createOrder(itemId)
-    .then(() => {
-      res.status(201).json('Item successfully added')
+    .then((id) => {
+      res.status(201).json({ id })
       return null
     })
     .catch(err => {

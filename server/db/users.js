@@ -31,7 +31,7 @@ function addUser (newUser, db = connection) {
       email,
       auth0Id: auth0id
     })
-    .then((ids) => console.log(ids[0]))
+    .then((ids) => ids[0])
 }
 
 function editProfile (id, db = connection) {
