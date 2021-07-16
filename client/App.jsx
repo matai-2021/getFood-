@@ -11,7 +11,7 @@ import AddItem from './pages/AddItem'
 import About from './pages/About'
 import MyItems from './pages/MyItems'
 import ItemListing from './components/ItemListing'
-
+import ItemDetails from './components/ItemDetails'
 // import { cacheUser } from './auth-utils'
 
 export default function App () {
@@ -28,7 +28,7 @@ export default function App () {
         <Route path='/about' component={About} />
         <Route path='/myitems' component={MyItems} />
         <Route path='/item/new' component={AddItem} />
-
+        <Route path='/item/:id' component={ItemDetails} />
       </main>
     </>
   )

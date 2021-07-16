@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 
 import { profileSetUp } from './profileSetUpHelper'
 
-export default function Register () {
+export default function ProfileSetUp () {
   const [form, setForm] = useState({
     firstName: '',
     lastName: '',

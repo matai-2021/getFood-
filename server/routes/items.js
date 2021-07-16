@@ -5,6 +5,19 @@ const db = require('../db/items')
 const router = express.Router()
 
 router.get('/', (req, res) => {
+  const id = req.body.id
+  db.getItemsById(id)
+    .then(item => {
+      res.json(item[0].user_id)
+      return null
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json({ message: 'Unable to get items' })
+    })
+})
+
+router.get('/', (req, res) => {
   db.getItems()
     .then(results => {
       res.json({ items: results.map(item => item) })
@@ -20,8 +33,8 @@ router.post('/add', (req, res) => {
   const { name, location, userId, quantity, img, description, expiryDate } = req.body
   const item = { name, location, userId, quantity, img, description, expiryDate }
   db.addItem(item)
-    .then(() => {
-      res.status(201).json('Item successfully added')
+    .then((id) => {
+      res.status(201).json({ id })
       return null
     })
     .catch(err => {
