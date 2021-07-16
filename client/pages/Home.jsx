@@ -27,9 +27,9 @@ export default function Home () {
     setValue('')
   }
 
-  const handleDelete = (itemId) => {
-    dispatch(deleteItem({ id: itemId }))
-  }
+  // const handleDelete = (itemId) => {
+  //   dispatch(deleteItem({ id: itemId }))
+  // }
 
   return (
     <>
