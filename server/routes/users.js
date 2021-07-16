@@ -31,12 +31,24 @@ router.get('/:id', (req, res) => {
 
 // POST registerUser
 router.post('/', (req, res) => {
-  console.log(req.body)
   const { name, dateCreated, location, isCompany, email, auth0Id } = req.body
   const newUser = { name, dateCreated, location, isCompany, email, auth0Id }
   db.addUser(newUser)
     .then((newUser) => {
       res.status(201).json(newUser)
+      return null
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json({ message: 'Unable to register new user' })
+    })
+})
+
+router.delete('/:id', (req, res) => {
+  const id = Number(req.params.id)
+  db.deleteAccount(id)
+    .then(() => {
+      res.status(201).json('Account successfully deleted')
       return null
     })
     .catch(err => {

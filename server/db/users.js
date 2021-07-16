@@ -3,7 +3,7 @@ const connection = require('./connection')
 module.exports = {
   getUserById,
   addUser,
-  editProfile,
+  // editProfile,
   deleteAccount,
   getAllUsers
 }
@@ -34,9 +34,9 @@ function addUser (newUser, db = connection) {
     .then((ids) => console.log(ids[0]))
 }
 
-function editProfile (id, db = connection) {
-  // stretch
-}
+// function editProfile (id, db = connection) {
+// stretch
+// }
 
 function deleteAccount (id, db = connection) {
   return db('users')
