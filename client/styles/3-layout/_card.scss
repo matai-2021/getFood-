@@ -1,0 +1,49 @@
+@use '../1-helpers/vars';
+@use '../1-helpers/functions';
+@use '../1-helpers/mixins';
+
+.card-container {
+	display: flex;
+	width: vars.$base-size * 10;
+	background-color: vars.$yellow;
+	flex-direction: column;
+	text-align: left;
+	padding: vars.$base-size * 1;
+	border: none;
+	margin: vars.$base-size * 4;
+	margin-right: 0;
+  
+	@include mixins.media-queries(tablet, min) {
+		width: functions.colWidth(5);
+	}
+  }
+
+  .card-text-container {
+    padding-bottom: vars.$base-size * 6;
+    margin-left: vars.$base-size * 2;
+    margin-right: vars.$base-size * 2;
+}
+
+
+.card-title {
+    font-size: 2.5rem;
+    color: white;
+    padding-bottom: vars.$base-size;
+    font-family: vars.$heading;
+}
+
+.card-sub-title {
+    color: white;
+    font-family: vars.$heading;
+}
+
+.card-text {
+    color: white;
+    font-family: vars.$paragraph;
+}
+
+.button-inline-container {
+    display: flex;
+    display: inline-block;
+    padding: vars.$base-size;
+}

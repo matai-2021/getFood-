@@ -2,9 +2,10 @@
 @use './typography';
 // @use '../1-helpers/vars';
 
-// * {
-//     box-sizing: border-box;
-// }
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
 
 // body {
 //     font-size: 1em;

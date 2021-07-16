@@ -4,7 +4,7 @@ const db = require('../db/items')
 
 const router = express.Router()
 
-router.get('/', (req, res) => {
+router.get('/item', (req, res) => {
   const id = req.body.id
   db.getItemsById(id)
     .then(item => {

@@ -35,7 +35,7 @@ function addItem (newItem, db = connection) {
       expiryDate: expiryDate,
       isClaimed: false
     })
-    .then((ids) => console.log(`Item successfuly added on ID #${ids[0]}`))
+    .then((ids) => ids[0])
 }
 
 function updateItem (updatedItem, db = connection) {

@@ -1,11 +1,23 @@
 import request from 'superagent'
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
-export const getUser = createAsyncThunk(
-  'users/getUser',
+export const getUsers = createAsyncThunk(
+  'users/getUsers',
   async () => {
     const res = await request('/api/v1/users')
     if (res.ok) {
+      console.log(res.body)
+      return await res.body
+    }
+  }
+)
+
+export const getUserById = createAsyncThunk(
+  'users/getUsers',
+  async (payload) => {
+    const res = await request(`/api/v1/users${payload.id}`)
+    if (res.ok) {
+      console.log(res.body)
       return await res.body
     }
   }
@@ -36,15 +48,19 @@ const usersSlice = createSlice({
   initialState: [],
   reducers: {},
   extraReducers: {
-    [getUser.pending]: (state, action) => {
+    [getUsers.pending]: (state, action) => {
       console.log('Fetching data...')
     },
-    [getUser.fulfilled]: (state, action) => {
+    [getUsers.fulfilled]: (state, action) => {
       console.log('Data fetched successfully')
-      return action.payload.users
+      return action.payload
+    },
+    [getUserById.fulfilled]: (state, action) => {
+      console.log('Data fetched successfully')
+      return action.payload
     },
     [addUser.fulfilled]: (state, action) => {
-      state.push(action.payload.user)
+      state.push(action.payload)
     },
     [deleteUser.fulfilled]: (state, action) => {
       return state.filter(user => user.id !== action.payload.id)
