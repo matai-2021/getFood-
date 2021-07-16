@@ -20,7 +20,6 @@ router.get('/', (req, res) => {
 // GET getOrderByUserId - for profile page
 router.get('/:id', (req, res) => {
   const id = Number(req.params.id)
-  console.log('route: ', id)
   db.getOrdersByUserId(id)
     .then(order => {
       res.json(order)
@@ -33,23 +32,51 @@ router.get('/:id', (req, res) => {
 })
 
 // POST createOrder
-// router.post('/', (req, res) => {
+router.post('/', (req, res) => {
+  const { itemId } = Number(req.body.itemId)
+  console.log('route: ', req.body.itemId)
+
+  db.createOrder(itemId)
+    .then(() => {
+      res.status(201).json('Item successfully added')
+      return null
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json({ message: 'Unable to add item' })
+    })
+})
 
 // PATCH updateOrderStatus
-// router.patch('/:id', (req, res) => {
-//   const order = Number(req.params.order)
-//   db.updateOrderStatus(order)
-//     .then(order => {
-//       res.json(order)
-//       return null
-//     })
-//     .catch(err => {
-//       console.log(err)
-//       res.status(500).json({ message: 'Somthing went wrong' })
-//     })
-// })
+router.patch('/:id', (req, res) => {
+  const order = {
+    id: Number(req.params.id),
+    isDispatched: req.body.isDispatched
+  }
+  console.log('route: ', order)
+  db.updateOrderStatus(order)
+    .then(order => {
+      res.status(200).json('Order updated successfully')
+      return null
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json({ message: 'Unable to update order' })
+    })
+})
 
 // DELETE createOrder
-// router.post('/', (req, res) => {
+router.delete('/:id', (req, res) => {
+  const id = Number(req.params.id)
+  db.deleteOrderById(id)
+    .then(() => {
+      res.status(201).json('Order successfully deleted')
+      return null
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json({ message: 'Unable to delete order' })
+    })
+})
 
 module.exports = router
