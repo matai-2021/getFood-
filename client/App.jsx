@@ -14,21 +14,30 @@ import ItemListing from './components/ItemListing'
 import ItemDetails from './components/ItemDetails'
 // import { cacheUser } from './auth-utils'
 
+import { useAuth0 } from '@auth0/auth0-react'
+
 export default function App () {
 //   cacheUser(useAuth0)
+  const { isAuthenticated } = useAuth0()
+
   return (
     <>
       <Error />
       <Header />
       <main className='container'>
-        <Route exact path='/' component={Home} />
-        <Route path='/' component={ItemListing} /> {/* Show Item Listing when logged in? */}
-        <Route exact path='/profile' component={Profile} />
-        <Route exact path='/profilesetup' component={ProfileSetup} />
-        <Route exact path='/about' component={About} />
-        <Route exact path='/myitems' component={MyItems} />
-        <Route exact path='/item/new' component={AddItem} />
-        <Route exact path='/item/:id' component={ItemDetails} />
+        { !isAuthenticated && (
+          <Route exact path='/' component={Home} />
+        )}
+        { isAuthenticated && (
+          <Route exact path='/' component={ItemListing} />
+        )}
+
+        <Route path='/profile' component={Profile} />
+        <Route path='/profilesetup' component={ProfileSetup} />
+        <Route path='/about' component={About} />
+        <Route path='/myitems' component={MyItems} />
+        <Route path='/item/new' component={AddItem} />
+        <Route path='/item/:id' component={ItemDetails} />
       </main>
     </>
   )
