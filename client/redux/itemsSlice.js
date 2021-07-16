@@ -16,7 +16,21 @@ export const addItem = createAsyncThunk(
   async (payload) => {
     const res = await request.post('/api/v1/items/add').send(payload)
     if (res.ok) {
-      return await res.body
+      const newItem = {
+        id: res.body.id,
+        name: payload.name
+      }
+      return newItem
+    }
+  }
+)
+
+export const deleteItem = createAsyncThunk(
+  'items/deleteItems',
+  async (payload) => {
+    const res = await request.delete(`/api/v1/items/${payload.id}`)
+    if (res.ok) {
+      return { id: payload.id }
     }
   }
 )
@@ -34,7 +48,10 @@ const itemsSlice = createSlice({
       return action.payload.items
     },
     [addItem.fulfilled]: (state, action) => {
-      state.push(action.payload.item)
+      state.push(action.payload)
+    },
+    [deleteItem.fulfilled]: (state, action) => {
+      return state.filter(item => item.id !== action.payload.id)
     }
   }
 })

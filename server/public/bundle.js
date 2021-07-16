@@ -2102,17 +2102,40 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => /* binding */ ItemListing
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _redux_itemsSlice__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../redux/itemsSlice */ "./client/redux/itemsSlice.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _SingleItem__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SingleItem */ "./client/components/SingleItem.jsx");
 
 
-function ItemListing(_ref) {
-  var events = _ref.events;
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "is-flex"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
+
+ // Components
+
+
+function ItemListing() {
+  var items = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)(function (state) {
+    return state.items;
+  });
+  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    dispatch((0,_redux_itemsSlice__WEBPACK_IMPORTED_MODULE_2__.getItems)());
+  }, []);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
+    className: "items-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
     to: "/item/new",
-    className: "button"
-  }, "Add New Item"))));
+    className: "button-blue"
+  }, "Add Item"), items.map(function (item) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_SingleItem__WEBPACK_IMPORTED_MODULE_3__.default, {
+      key: item.id,
+      name: item.name,
+      description: item.description,
+      expiryDate: item.expiryDate,
+      quantity: item.quantity,
+      email: item.email,
+      img: item.img
+    });
+  }));
 }
 
 /***/ }),
@@ -2234,6 +2257,50 @@ function Nav() {
     onClick: handleRegister,
     className: "nav-link"
   }, "Register")));
+}
+
+/***/ }),
+
+/***/ "./client/components/SingleItem.jsx":
+/*!******************************************!*\
+  !*** ./client/components/SingleItem.jsx ***!
+  \******************************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => /* binding */ SingleItem
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
+
+function SingleItem(props) {
+  var id = props.id,
+      name = props.name,
+      email = props.email,
+      description = props.description,
+      quantity = props.quantity,
+      img = props.img,
+      expiryDate = props.expiryDate;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
+    className: "item-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "item-details"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Name: "), name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Description: "), description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Expiry Date: "), expiryDate), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Quantity: "), quantity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "email: "), email), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
+    to: "/items/".concat(id),
+    className: "item-link"
+  }, "View More...")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "item-img"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+    src: img,
+    alt: img
+  })));
 }
 
 /***/ }),
@@ -2368,9 +2435,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _redux_usersSlice__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../redux/usersSlice */ "./client/redux/usersSlice.js");
-/* harmony import */ var _redux_itemsSlice__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../redux/itemsSlice */ "./client/redux/itemsSlice.js");
-
+/* harmony import */ var _redux_itemsSlice__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../redux/itemsSlice */ "./client/redux/itemsSlice.js");
 
 
 
@@ -2382,17 +2447,12 @@ function Home() {
       setValue = _useState2[1];
 
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useDispatch)();
-  var users = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useSelector)(function (state) {
-    return state.users;
-  });
   var items = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useSelector)(function (state) {
     return state.items;
   });
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-    dispatch((0,_redux_usersSlice__WEBPACK_IMPORTED_MODULE_3__.getUsers)());
-    dispatch((0,_redux_itemsSlice__WEBPACK_IMPORTED_MODULE_4__.getItems)());
+    dispatch((0,_redux_itemsSlice__WEBPACK_IMPORTED_MODULE_3__.getItems)());
   }, []);
-  console.log(users);
   console.log(items);
 
   var handleChange = function handleChange(event) {
@@ -2402,19 +2462,29 @@ function Home() {
 
   var handleSubmit = function handleSubmit(event) {
     event.preventDefault();
-    dispatch((0,_redux_itemsSlice__WEBPACK_IMPORTED_MODULE_4__.addItem)({
+    dispatch((0,_redux_itemsSlice__WEBPACK_IMPORTED_MODULE_3__.addItem)({
       name: value
     }));
-    dispatch((0,_redux_itemsSlice__WEBPACK_IMPORTED_MODULE_4__.getItems)());
+    dispatch((0,_redux_itemsSlice__WEBPACK_IMPORTED_MODULE_3__.getItems)());
     setValue('');
+  };
+
+  var handleDelete = function handleDelete(itemId) {
+    dispatch((0,_redux_itemsSlice__WEBPACK_IMPORTED_MODULE_3__.deleteItem)({
+      id: itemId
+    }));
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("main", {
     className: "container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("h1", null, "Welcome to getFood"), items && items.map(function (item) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("h1", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("h1", null, "Welcome to getFood"), items.map(function (item) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
       key: item.id
-    }, item.name);
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("h1", null, item.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", {
+      onClick: function onClick() {
+        return handleDelete(item.id);
+      }
+    }, "delete"));
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", null, "A food conserving project by getFood"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", null, "Please log in to get started, or checkout our About page"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("form", {
     onSubmit: handleSubmit
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("input", {
@@ -2647,6 +2717,7 @@ function Register() {
 /*! namespace exports */
 /*! export addItem [provided] [no usage info] [missing usage info prevents renaming] */
 /*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! export deleteItem [provided] [no usage info] [missing usage info prevents renaming] */
 /*! export getItems [provided] [no usage info] [missing usage info prevents renaming] */
 /*! other exports [not provided] [no usage info] */
 /*! runtime requirements: __webpack_require__, __webpack_require__.n, __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
@@ -2657,6 +2728,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "getItems": () => /* binding */ getItems,
 /* harmony export */   "addItem": () => /* binding */ addItem,
+/* harmony export */   "deleteItem": () => /* binding */ deleteItem,
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
@@ -2706,7 +2778,7 @@ var getItems = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_4__.createAsyncThunk
 })));
 var addItem = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_4__.createAsyncThunk)('items/postItem', /*#__PURE__*/function () {
   var _ref2 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__.default)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().mark(function _callee2(payload) {
-    var res;
+    var res, newItem;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
@@ -2718,17 +2790,17 @@ var addItem = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_4__.createAsyncThunk)
             res = _context2.sent;
 
             if (!res.ok) {
-              _context2.next = 7;
+              _context2.next = 6;
               break;
             }
 
-            _context2.next = 6;
-            return res.body;
+            newItem = {
+              id: res.body.id,
+              name: payload.name
+            };
+            return _context2.abrupt("return", newItem);
 
           case 6:
-            return _context2.abrupt("return", _context2.sent);
-
-          case 7:
           case "end":
             return _context2.stop();
         }
@@ -2738,6 +2810,40 @@ var addItem = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_4__.createAsyncThunk)
 
   return function (_x) {
     return _ref2.apply(this, arguments);
+  };
+}());
+var deleteItem = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_4__.createAsyncThunk)('items/deleteItems', /*#__PURE__*/function () {
+  var _ref3 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__.default)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().mark(function _callee3(payload) {
+    var res;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().wrap(function _callee3$(_context3) {
+      while (1) {
+        switch (_context3.prev = _context3.next) {
+          case 0:
+            _context3.next = 2;
+            return superagent__WEBPACK_IMPORTED_MODULE_3___default().delete("/api/v1/items/".concat(payload.id));
+
+          case 2:
+            res = _context3.sent;
+
+            if (!res.ok) {
+              _context3.next = 5;
+              break;
+            }
+
+            return _context3.abrupt("return", {
+              id: payload.id
+            });
+
+          case 5:
+          case "end":
+            return _context3.stop();
+        }
+      }
+    }, _callee3);
+  }));
+
+  return function (_x2) {
+    return _ref3.apply(this, arguments);
   };
 }());
 var itemsSlice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_4__.createSlice)({
@@ -2750,7 +2856,11 @@ var itemsSlice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_4__.createSlice)({
     console.log('Data fetched successfully');
     return action.payload.items;
   }), (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__.default)(_extraReducers, addItem.fulfilled, function (state, action) {
-    state.push(action.payload.item);
+    state.push(action.payload);
+  }), (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__.default)(_extraReducers, deleteItem.fulfilled, function (state, action) {
+    return state.filter(function (item) {
+      return item.id !== action.payload.id;
+    });
   }), _extraReducers)
 });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (itemsSlice.reducer);
@@ -2875,6 +2985,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! export addUser [provided] [no usage info] [missing usage info prevents renaming] */
 /*! export default [provided] [no usage info] [missing usage info prevents renaming] */
 /*! export deleteUser [provided] [no usage info] [missing usage info prevents renaming] */
+/*! export getUserById [provided] [no usage info] [missing usage info prevents renaming] */
 /*! export getUsers [provided] [no usage info] [missing usage info prevents renaming] */
 /*! other exports [not provided] [no usage info] */
 /*! runtime requirements: __webpack_require__, __webpack_require__.n, __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
@@ -2884,6 +2995,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "getUsers": () => /* binding */ getUsers,
+/* harmony export */   "getUserById": () => /* binding */ getUserById,
 /* harmony export */   "addUser": () => /* binding */ addUser,
 /* harmony export */   "deleteUser": () => /* binding */ deleteUser,
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
@@ -2934,7 +3046,7 @@ var getUsers = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_4__.createAsyncThunk
     }
   }, _callee);
 })));
-var addUser = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_4__.createAsyncThunk)('users/addUser', /*#__PURE__*/function () {
+var getUserById = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_4__.createAsyncThunk)('users/getUsers', /*#__PURE__*/function () {
   var _ref2 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__.default)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().mark(function _callee2(payload) {
     var res;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().wrap(function _callee2$(_context2) {
@@ -2942,23 +3054,24 @@ var addUser = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_4__.createAsyncThunk)
         switch (_context2.prev = _context2.next) {
           case 0:
             _context2.next = 2;
-            return superagent__WEBPACK_IMPORTED_MODULE_3___default().post('/api/v1/users').send(payload);
+            return superagent__WEBPACK_IMPORTED_MODULE_3___default()("/api/v1/users".concat(payload.id));
 
           case 2:
             res = _context2.sent;
 
             if (!res.ok) {
-              _context2.next = 7;
+              _context2.next = 8;
               break;
             }
 
-            _context2.next = 6;
+            console.log(res.body);
+            _context2.next = 7;
             return res.body;
 
-          case 6:
+          case 7:
             return _context2.abrupt("return", _context2.sent);
 
-          case 7:
+          case 8:
           case "end":
             return _context2.stop();
         }
@@ -2970,7 +3083,7 @@ var addUser = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_4__.createAsyncThunk)
     return _ref2.apply(this, arguments);
   };
 }());
-var deleteUser = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_4__.createAsyncThunk)('users/deleteUser', /*#__PURE__*/function () {
+var addUser = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_4__.createAsyncThunk)('users/addUser', /*#__PURE__*/function () {
   var _ref3 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__.default)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().mark(function _callee3(payload) {
     var res;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().wrap(function _callee3$(_context3) {
@@ -2978,21 +3091,23 @@ var deleteUser = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_4__.createAsyncThu
         switch (_context3.prev = _context3.next) {
           case 0:
             _context3.next = 2;
-            return superagent__WEBPACK_IMPORTED_MODULE_3___default().delete("/api/v1/users/".concat(payload.id));
+            return superagent__WEBPACK_IMPORTED_MODULE_3___default().post('/api/v1/users').send(payload);
 
           case 2:
             res = _context3.sent;
 
             if (!res.ok) {
-              _context3.next = 5;
+              _context3.next = 7;
               break;
             }
 
-            return _context3.abrupt("return", {
-              id: payload.id
-            });
+            _context3.next = 6;
+            return res.body;
 
-          case 5:
+          case 6:
+            return _context3.abrupt("return", _context3.sent);
+
+          case 7:
           case "end":
             return _context3.stop();
         }
@@ -3004,6 +3119,40 @@ var deleteUser = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_4__.createAsyncThu
     return _ref3.apply(this, arguments);
   };
 }());
+var deleteUser = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_4__.createAsyncThunk)('users/deleteUser', /*#__PURE__*/function () {
+  var _ref4 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__.default)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().mark(function _callee4(payload) {
+    var res;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().wrap(function _callee4$(_context4) {
+      while (1) {
+        switch (_context4.prev = _context4.next) {
+          case 0:
+            _context4.next = 2;
+            return superagent__WEBPACK_IMPORTED_MODULE_3___default().delete("/api/v1/users/".concat(payload.id));
+
+          case 2:
+            res = _context4.sent;
+
+            if (!res.ok) {
+              _context4.next = 5;
+              break;
+            }
+
+            return _context4.abrupt("return", {
+              id: payload.id
+            });
+
+          case 5:
+          case "end":
+            return _context4.stop();
+        }
+      }
+    }, _callee4);
+  }));
+
+  return function (_x3) {
+    return _ref4.apply(this, arguments);
+  };
+}());
 var usersSlice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_4__.createSlice)({
   name: 'users',
   initialState: [],
@@ -3011,6 +3160,9 @@ var usersSlice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_4__.createSlice)({
   extraReducers: (_extraReducers = {}, (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__.default)(_extraReducers, getUsers.pending, function (state, action) {
     console.log('Fetching data...');
   }), (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__.default)(_extraReducers, getUsers.fulfilled, function (state, action) {
+    console.log('Data fetched successfully');
+    return action.payload;
+  }), (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__.default)(_extraReducers, getUserById.fulfilled, function (state, action) {
     console.log('Data fetched successfully');
     return action.payload;
   }), (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__.default)(_extraReducers, addUser.fulfilled, function (state, action) {
@@ -3031,7 +3183,6 @@ var usersSlice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_4__.createSlice)({
   \*************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module */
-/*! CommonJS bailout: module.exports is used directly at 7:2-16 */
 /***/ ((module) => {
 
 
@@ -3219,7 +3370,6 @@ Emitter.prototype.hasListeners = function(event){
   \***************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module */
-/*! CommonJS bailout: module.exports is used directly at 1:0-14 */
 /***/ ((module) => {
 
 module.exports = stringify
@@ -4348,7 +4498,6 @@ function createMemoryHistory(props) {
   \**********************************************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 103:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -4744,7 +4893,6 @@ __webpack_require__.r(__webpack_exports__);
   \*********************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module */
-/*! CommonJS bailout: module.exports is used directly at 65:0-14 */
 /***/ ((module) => {
 
 "use strict";
@@ -4848,7 +4996,6 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
   \***************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 102:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -4964,7 +5111,6 @@ module.exports = checkPropTypes;
   \************************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 38:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -5569,7 +5715,6 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
   \******************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 14:2-16 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 /**
@@ -5597,7 +5742,6 @@ if (true) {
   \*************************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module */
-/*! CommonJS bailout: module.exports is used directly at 12:0-14 */
 /***/ ((module) => {
 
 "use strict";
@@ -35223,7 +35367,6 @@ if (true) {
   \*****************************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module */
-/*! CommonJS bailout: module.exports is used directly at 1:0-14 */
 /***/ ((module) => {
 
 module.exports = Array.isArray || function (arr) {
@@ -35239,7 +35382,6 @@ module.exports = Array.isArray || function (arr) {
   \************************************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 6:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var isarray = __webpack_require__(/*! isarray */ "./node_modules/react-router/node_modules/isarray/index.js")
@@ -38853,7 +38995,6 @@ if ( true && typeof isCrushed.name === 'string' && isCrushed.name !== 'isCrushed
   \*****************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module */
-/*! CommonJS bailout: module.exports is used directly at 732:31-45 */
 /***/ ((module) => {
 
 /**
@@ -40242,16 +40383,6 @@ exports.unstable_wrap = unstable_wrap;
 /*! export unstable_wrapCallback [provided] [no usage info] [missing usage info prevents renaming] */
 /*! other exports [not provided] [no usage info] */
 /*! runtime requirements: __webpack_exports__ */
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 52:26-46 */
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 125:13-33 */
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 149:24-44 */
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 193:15-35 */
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 548:28-48 */
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 565:25-45 */
-/*! CommonJS bailout: exports.unstable_shouldYield(...) prevents optimization as exports is passed as call context at 578:74-102 */
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 591:20-40 */
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 695:20-40 */
-/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 804:24-44 */
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -41175,7 +41306,6 @@ if (false) {} else {
   \***************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module */
-/*! CommonJS bailout: module.exports is used directly at 41:0-14 */
 /***/ ((module) => {
 
 "use strict";
@@ -41230,10 +41360,6 @@ module.exports = Agent;
   \***********************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_exports__, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 46:0-14 */
-/*! CommonJS bailout: module.exports is used directly at 60:10-24 */
-/*! CommonJS bailout: exports is used directly at 60:0-7 */
-/*! CommonJS bailout: exports is used directly at 61:14-21 */
 /***/ ((module, exports, __webpack_require__) => {
 
 "use strict";
@@ -42268,7 +42394,6 @@ request.put = function (url, data, fn) {
   \**************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module */
-/*! CommonJS bailout: module.exports is used directly at 16:0-14 */
 /***/ ((module) => {
 
 "use strict";
@@ -42298,7 +42423,6 @@ module.exports = isObject;
   \*****************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 14:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -43093,7 +43217,6 @@ RequestBase.prototype._setTimeouts = function () {
   \******************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 12:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -43359,7 +43482,6 @@ exports.cleanHeader = function (header, changesOrigin) {
   \****************************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 13:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -43399,7 +43521,6 @@ module.exports = util.assign(
   \**************************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 7:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -43424,7 +43545,6 @@ module.exports = {
   \**************************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 237:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -43695,7 +43815,6 @@ module.exports = function (str, opts) {
   \******************************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 194:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -43980,7 +44099,6 @@ module.exports = function (object, opts) {
   \**************************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module */
-/*! CommonJS bailout: module.exports is used directly at 237:0-14 */
 /***/ ((module) => {
 
 "use strict";

@@ -12,6 +12,17 @@ export const getUsers = createAsyncThunk(
   }
 )
 
+export const getUserById = createAsyncThunk(
+  'users/getUsers',
+  async (payload) => {
+    const res = await request(`/api/v1/users${payload.id}`)
+    if (res.ok) {
+      console.log(res.body)
+      return await res.body
+    }
+  }
+)
+
 export const addUser = createAsyncThunk(
   'users/addUser',
   async (payload) => {
@@ -41,6 +52,10 @@ const usersSlice = createSlice({
       console.log('Fetching data...')
     },
     [getUsers.fulfilled]: (state, action) => {
+      console.log('Data fetched successfully')
+      return action.payload
+    },
+    [getUserById.fulfilled]: (state, action) => {
       console.log('Data fetched successfully')
       return action.payload
     },

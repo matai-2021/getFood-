@@ -1,20 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { getUsers } from '../redux/usersSlice'
-import { getItems, addItem } from '../redux/itemsSlice'
+import { getItems, addItem, deleteItem } from '../redux/itemsSlice'
 
 export default function Home () {
   const [value, setValue] = useState('')
   const dispatch = useDispatch()
-  const users = useSelector(state => state.users)
   const items = useSelector(state => state.items)
 
   useEffect(() => {
-    dispatch(getUsers())
     dispatch(getItems())
   }, [])
 
-  console.log(users)
   console.log(items)
 
   const handleChange = (event) => {
@@ -31,6 +27,10 @@ export default function Home () {
     setValue('')
   }
 
+  const handleDelete = (itemId) => {
+    dispatch(deleteItem({ id: itemId }))
+  }
+
   return (
     <>
       <main className='container'>
@@ -38,8 +38,11 @@ export default function Home () {
         {/* {users && users.map(user => (
           <h1 key={user.id}>{user.name}</h1>
         ))} */}
-        {items && items.map(item => (
-          <h1 key={item.id}>{item.name}</h1>
+        {items.map(item => (
+          <div key={item.id}>
+            <h1>{item.name}</h1>
+            <button onClick={() => handleDelete(item.id)}>delete</button>
+          </div>
         ))}
         <p>A food conserving project by getFood</p>
         <p>Please log in to get started, or checkout our About page</p>
