@@ -5,22 +5,39 @@ import { Route } from 'react-router-dom'
 import Header from './components/Header'
 import Home from './pages/Home'
 import Profile from './pages/Profile'
+import ProfileSetup from './pages/ProfileSetUp'
 import Error from './components/Error'
 import AddItem from './pages/AddItem'
-
+import About from './pages/About'
+import MyItems from './pages/MyItems'
+import ItemListing from './components/ItemListing'
+import ItemDetails from './components/ItemDetails'
 // import { cacheUser } from './auth-utils'
+
+import { useAuth0 } from '@auth0/auth0-react'
 
 export default function App () {
 //   cacheUser(useAuth0)
-  console.log('this is App.jsx')
+  const { isAuthenticated } = useAuth0()
+
   return (
     <>
       <Error />
       <Header />
       <main className='container'>
-        <Route exact path='/' component={Home} />
+        { !isAuthenticated && (
+          <Route exact path='/' component={Home} />
+        )}
+        { isAuthenticated && (
+          <Route exact path='/' component={ItemListing} />
+        )}
+
         <Route path='/profile' component={Profile} />
-        <Route path='/profile/new' component={AddItem} />
+        <Route path='/profilesetup' component={ProfileSetup} />
+        <Route path='/about' component={About} />
+        <Route path='/myitems' component={MyItems} />
+        <Route path='/item/new' component={AddItem} />
+        <Route path='/item/:id' component={ItemDetails} />
       </main>
     </>
   )

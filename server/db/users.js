@@ -3,8 +3,14 @@ const connection = require('./connection')
 module.exports = {
   getUserById,
   addUser,
-  editProfile,
-  deleteAccount
+  // editProfile,
+  deleteAccount,
+  getAllUsers
+}
+
+function getAllUsers (db = connection) {
+  return db('users')
+    .select()
 }
 
 function getUserById (id, db = connection) {
@@ -15,22 +21,22 @@ function getUserById (id, db = connection) {
 
 function addUser (newUser, db = connection) {
   const dateCreated = Date.now() // what is the format of this date?
-  const { name, location, isCompany, email, auth0id } = newUser
+  const { name, location, isCompany, email, auth0Id } = newUser
   return db('users')
     .insert({
       name,
-      date_created: dateCreated,
+      dateCreated: dateCreated,
       location,
-      is_company: isCompany,
+      isCompany: isCompany,
       email,
-      auth0_id: auth0id
+      auth0Id: auth0Id
     })
     .then((ids) => console.log(ids[0]))
 }
 
-function editProfile (id, db = connection) {
-  // stretch
-}
+// function editProfile (id, db = connection) {
+// stretch
+// }
 
 function deleteAccount (id, db = connection) {
   return db('users')

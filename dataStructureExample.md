@@ -10,13 +10,13 @@ const exampleUsers = [{
     auth0id: 'djkhfsdfhsdfnk'
 },
 {
-    id: 2,
-    name: 'Koko',
-    location: 'Mount Albert, 1025',
-    isCompany: false,
-    ratings: [4, 4, 2, 5, 1, 6],
-    email: 'kriswd0@gmail.com',
-    auth0id: 'djkhfsdfhsdfnk'
+  id: 2,
+  name: 'Koko',
+  location: 'Mount Albert, 1025',
+  isCompany: false,
+  ratings: [4, 4, 2, 5, 1, 6],
+  email: 'kriswd0@gmail.com',
+  auth0id: 'djkhfsdfhsdfnk'
 }]
 
 const exampleItem = [{
@@ -62,7 +62,6 @@ const exampleOrder = [{
 // GET fetchOrders - gets all orders where user_id matches logged in user
 // POST claimItem set isClaimed to true & creates new order in DB
 // PATCH updateOrderStatus - change isDistpached (stretch)
-
 
 /// USERS
 // POST registerUser
