@@ -1,2 +1,2 @@
-.page-title{color:rgba(35,108,243,.533);font-size:2rem}
+@import url(https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap);@import url(https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500&display=swap);.page-title{color:rgba(35,108,243,.533);font-family:Roboto Slab,serif;font-size:2rem;padding-bottom:1rem}
 /*# sourceMappingURL=styles.min.css.map*/

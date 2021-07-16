@@ -20,8 +20,8 @@ router.post('/add', (req, res) => {
   const { name, location, userId, quantity, img, description, expiryDate } = req.body
   const item = { name, location, userId, quantity, img, description, expiryDate }
   db.addItem(item)
-    .then(result => {
-      res.status(201).json({ result })
+    .then(() => {
+      res.status(201).json('Item successfully added')
       return null
     })
     .catch(err => {
@@ -30,4 +30,55 @@ router.post('/add', (req, res) => {
     })
 })
 
+router.delete('/:id', (req, res) => {
+  const id = Number(req.params.id)
+  db.deleteItem(id)
+    .then(() => {
+      res.status(201).json('Item successfully deleted')
+      return null
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json({ message: 'Unable to delete item' })
+    })
+})
+
+router.patch('/', (req, res) => {
+  const { id, name, location, quantity, img, description, isClaimed } = req.body
+  const updatedItem = { id, name, location, quantity, img, description, isClaimed }
+  db.updateItem(updatedItem)
+    .then(() => {
+      res.status(201).json('Item successfully updated')
+      return null
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json({ message: 'Unable to update item' })
+    })
+})
+
 module.exports = router
+
+// POST DATA SHAPE
+// {
+//   "name": "Chocolate Bar",
+//   "expiryDate": "3/08 13:00",
+//   "location": "Waterview, Auckland",
+//   "quantity": 6,
+//   "description": "good shape",
+//   "img": "img"
+// }
+
+// DELETE DATA SHAPE
+// req.params :id
+
+// UPDATE DATA SHAPE
+// {
+//   "id": "",
+//   "name": "",
+//   "location": "",
+//   "quantity": "",
+//   "img": "",
+//   "description": "",
+//   "isClaimed": ""
+// }
