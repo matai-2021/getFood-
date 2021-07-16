@@ -6,9 +6,19 @@ import Nav from './Nav'
 
 export default function Header () {
   return (
-    <header>
-      <Nav />
+    <header className="header-container">
       <p>getFood! (Change to logo here, always stay up)</p>
+
+      {/* <Link className="logo-wrapper" to="/">
+  <img src='/images/gardenzLogo.svg' alt="gardenzlogo" className='logo-image' />
+</Link> */}
+      <Nav />
     </header>
+
   )
 }
+
+{ /* <header>
+<Nav />
+<p>getFood! (Change to logo here, always stay up)</p>
+</header> */ }

@@ -34,16 +34,7 @@ export default function Home () {
   return (
     <>
       <main className='container'>
-        <h1>Welcome to getFood</h1>
-        {/* {users && users.map(user => (
-          <h1 key={user.id}>{user.name}</h1>
-        ))} */}
-        {items.map(item => (
-          <div key={item.id}>
-            <h1>{item.name}</h1>
-            <button onClick={() => handleDelete(item.id)}>delete</button>
-          </div>
-        ))}
+        <h1 className='page-title'>Welcome to getFood</h1>
         <p>A food conserving project by getFood</p>
         <p>Please log in to get started, or checkout our About page</p>
         <form onSubmit={handleSubmit}>

@@ -51,7 +51,7 @@ export default function Nav () {
         <Link to="/myitems" className='nav-link'>My Items</Link>
 
         {/* <IfAuthenticated> */}
-        <Link to="/profile" className='nav-link'>My Profile</Link>
+        <Link to="/profile" className='nav-link' >My Profile</Link>
         <a href="/" onClick={handleLogoff} className='nav-link'>Log out</a>
         {/* </IfAuthenticated> */}
 
