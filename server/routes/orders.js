@@ -1,20 +1,34 @@
 const express = require('express')
 
-const db = require('../db/users')
+const db = require('../db/orders')
 
 const router = express.Router()
 
 // GET getOrderByUserId - for profile page
-router.get('/:id', (req, res) => {
-  const id = Number(req.params.id)
-  db.getOrdersByUserId(id)
-    .then(user => {
-      res.json(user)
+router.get('/', (req, res) => {
+  db.getAllOrders()
+    .then(order => {
+      res.status(200).json(order)
       return null
     })
     .catch(err => {
       console.log(err)
-      res.status(500).json({ message: 'Unable to get User by ID' })
+      res.status(500).json({ message: 'Unable to get all orders' })
+    })
+})
+
+// GET getOrderByUserId - for profile page
+router.get('/:id', (req, res) => {
+  const id = Number(req.params.id)
+  console.log('route: ', id)
+  db.getOrdersByUserId(id)
+    .then(order => {
+      res.json(order)
+      return null
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json({ message: 'Unable to get order by ID' })
     })
 })
 
@@ -34,3 +48,8 @@ router.get('/:id', (req, res) => {
 //       res.status(500).json({ message: 'Somthing went wrong' })
 //     })
 // })
+
+// DELETE createOrder
+// router.post('/', (req, res) => {
+
+module.exports = router

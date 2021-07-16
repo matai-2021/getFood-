@@ -3,16 +3,26 @@ const connection = require('./connection')
 module.exports = {
   getOrdersByUserId,
   createOrder,
-  updateOrderStatus
+  updateOrderStatus,
+  getAllOrders
+  // deleteOrderById
 }
 
+// GET all orders
+function getAllOrders (db = connection) {
+  return db('orders')
+    .select()
+}
+
+// GET order by  ID
 function getOrdersByUserId (id, db = connection) {
-  console.log(id)
+  console.log('DB: ', id)
   return db('orders')
     .where('id', id)
     .select()
 }
 
+// POST new order
 function createOrder (order, db = connection) {
   const dateCreated = Date.now()
   const { itemId, userId, claimedById } = order
@@ -27,6 +37,7 @@ function createOrder (order, db = connection) {
     })
 }
 
+// UPDATE order status
 function updateOrderStatus (order, db = connection) {
   const { id, isDispatched } = order
   return db('orders')
@@ -36,3 +47,14 @@ function updateOrderStatus (order, db = connection) {
     })
     .then((ids) => console.log(ids[0]))
 }
+
+// DELETE order by ID
+// function deleteOrderById (id, db = connection) {
+//   const { id, isDispatched } = order
+//   return db('orders')
+//     .where('id', id)
+//     .update({
+//       isDispatched: !isDispatched
+//     })
+//     .then((ids) => console.log(ids[0]))
+// }
