@@ -108,5 +108,5 @@ dist
 bundle.js
 bundle.js.map
 
-# package-lock
-package-lock.json
+# DB
+dev.sqlite3

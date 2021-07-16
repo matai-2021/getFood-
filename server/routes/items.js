@@ -20,8 +20,8 @@ router.post('/add', (req, res) => {
   const { name, location, userId, quantity, img, description, expiryDate } = req.body
   const item = { name, location, userId, quantity, img, description, expiryDate }
   db.addItem(item)
-    .then(() => {
-      res.status(201).json('Item successfully added')
+    .then((id) => {
+      res.status(201).json({ id })
       return null
     })
     .catch(err => {
