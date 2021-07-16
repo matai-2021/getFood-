@@ -30,7 +30,31 @@ router.post('/add', (req, res) => {
     })
 })
 
+router.delete('/:id', (req, res) => {
+  const id = Number(req.params.id)
+  db.deleteItem(id)
+    .then(() => {
+      res.status(201).json(`Item successfully deleted`)
+      return null
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json({ message: 'Unable to delete item' })
+    })
+})
 
+router.patch('/', (req, res) => {
+  const updatedItem = req.params.updatedItem
+  db.updateItem(updatedItem)
+    .then(() => {
+      res.status(201).json('Item successfully deleted')
+      return null
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json({ message: 'Unable to delete item' })
+    })
+})
 
 module.exports = router
 
