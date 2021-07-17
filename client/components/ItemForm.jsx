@@ -126,6 +126,10 @@ export default function ItemForm (props) {
             />
           </div>
           <div className="field">
+            <label
+              htmlFor='img'
+              className='label'
+            >Image:</label>
             <input
               type="file"
               name="img"
