@@ -17,17 +17,12 @@ export default function Profile () {
   return (
     <>
       <section className='card-container'>
-        <img
-          src={picture && users?.img}
-          alt="Profile pic"
-          style={{ width: '90%', height: '200px', backgroundColor: 'pink' }}
-        />
         <article>
           <img src={picture} alt="Profile pic"/>
           <p>Name: {name}</p>
           <p>Email: {email}</p>
           <p>Location: {users?.location}</p>
-          <button onClick={() => handleDelete()}>Delete My Account</button>
+          <button>Delete My Account</button>
         </article>
       </section>
     </>

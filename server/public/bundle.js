@@ -2566,10 +2566,11 @@ function ItemDetails() {
 
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
   var items = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)(function (state) {
-    return state.items[0];
-  }); // const singleItem = items.find(item => item.id === id)
-
-  console.log(items);
+    return state.items;
+  });
+  var singleItem = items.find(function (item) {
+    return item.id === Number(id);
+  });
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     dispatch((0,_redux_itemsSlice__WEBPACK_IMPORTED_MODULE_2__.getItems)());
   }, []);
@@ -2583,14 +2584,14 @@ function ItemDetails() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
     className: "card-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", null, "Go back"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: items === null || items === void 0 ? void 0 : items.img,
-    alt: items === null || items === void 0 ? void 0 : items.name,
+    src: singleItem === null || singleItem === void 0 ? void 0 : singleItem.img,
+    alt: singleItem === null || singleItem === void 0 ? void 0 : singleItem.name,
     style: {
       width: '90%',
       height: '200px',
       backgroundColor: 'pink'
     }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("article", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, items === null || items === void 0 ? void 0 : items.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Pick up location: ", items === null || items === void 0 ? void 0 : items.location), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Description: ", items === null || items === void 0 ? void 0 : items.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Quantity: ", items === null || items === void 0 ? void 0 : items.quantity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Exp. Data: ", items === null || items === void 0 ? void 0 : items.expiryDate), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Date Created: ", items === null || items === void 0 ? void 0 : items.dateCreated), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Email: ", items === null || items === void 0 ? void 0 : items.email), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", null, "Edit item"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("article", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, singleItem === null || singleItem === void 0 ? void 0 : singleItem.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Pick up location: ", singleItem === null || singleItem === void 0 ? void 0 : singleItem.location), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Description: ", singleItem === null || singleItem === void 0 ? void 0 : singleItem.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Quantity: ", singleItem === null || singleItem === void 0 ? void 0 : singleItem.quantity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Exp. Data: ", singleItem === null || singleItem === void 0 ? void 0 : singleItem.expiryDate), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Date Created: ", singleItem === null || singleItem === void 0 ? void 0 : singleItem.dateCreated), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Email: ", singleItem === null || singleItem === void 0 ? void 0 : singleItem.email), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", null, "Edit item"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
     onClick: function onClick() {
       return handleDelete(id);
     }
@@ -3138,22 +3139,10 @@ function Profile() {
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
     className: "card-container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: picture && (users === null || users === void 0 ? void 0 : users.img),
-    alt: "Profile pic",
-    style: {
-      width: '90%',
-      height: '200px',
-      backgroundColor: 'pink'
-    }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("article", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("article", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: picture,
     alt: "Profile pic"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Name: ", name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Email: ", email), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Location: ", users === null || users === void 0 ? void 0 : users.location), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
-    onClick: function onClick() {
-      return handleDelete();
-    }
-  }, "Delete My Account"))));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Name: ", name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Email: ", email), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Location: ", users === null || users === void 0 ? void 0 : users.location), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", null, "Delete My Account"))));
 }
 
 /***/ }),
