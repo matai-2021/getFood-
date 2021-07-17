@@ -18,7 +18,7 @@ export default function Profile () {
 
   return (
     <div>
-      <img src={picture} alt="Profile pic"/>
+      <img src={picture && users?.img} alt="Profile pic"/>
       <p>Name: {name}</p>
       <p>Email: {email}</p>
       <p>Location: {users?.location}</p>
