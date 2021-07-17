@@ -30,7 +30,7 @@ export default function Profile () {
           <p>Location: {users?.location}</p>
           <button onClick={() => handleDelete(users?.id)}>Delete My Account</button>
           {/* Below link is not actually a button, will need to change later */}
-          <Link to={'/profilesetup'} className=''>Edit Profile</Link>
+          <Link to={'/profilesetup'} className=''>Setup Profile</Link>
         </article>
       </section>
     </>

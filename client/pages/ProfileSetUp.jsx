@@ -4,14 +4,14 @@ import React, { useEffect } from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
 
 import {
-  // useSelector,
+  useSelector,
   useDispatch
 } from 'react-redux'
 import { getUsers } from '../redux/usersSlice'
 
 export default function ProfileSetUp () {
   const dispatch = useDispatch()
-  const users = useSelector(state => state.users[0]) // only used for {users?.location} from auth profile?
+  const users = useSelector(state => state.users[0]) // used for bringing in data for users.location in input field
   const { user } = useAuth0()
   const { name, picture, email } = user
   // const [form, setForm] = useState({
@@ -57,7 +57,7 @@ export default function ProfileSetUp () {
                 id='location'
                 type='location'
                 name='location'
-                value={form.location}
+                value={users.location}
                 placeholder='location'
                 onChange={handleChange}
               ></input>
@@ -76,6 +76,32 @@ export default function ProfileSetUp () {
               ></input>
             </div>
 
+            <div className="field">
+              <label htmlFor='companyName' className='label'>Business Name</label>
+              <input
+                className='input'
+                id='companyName'
+                type='companyName'
+                name='companyName'
+                value={users.companyName}
+                placeholder='companyName'
+                onChange={handleChange}
+              ></input>
+            </div>
+
+            <div className="field">
+              <label htmlFor='phone' className='label'>Phone</label>
+              <input
+                className='input'
+                id='phone'
+                type='phone'
+                name='phone'
+                value={users.phone}
+                placeholder='phone'
+                onChange={handleChange}
+              ></input>
+            </div>
+
             <button
               type='button'
               className='button'
@@ -84,6 +110,7 @@ export default function ProfileSetUp () {
             >
           Save Profile
             </button>
+
           </form>
         </article>
       </div>

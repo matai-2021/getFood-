@@ -2460,7 +2460,7 @@ function App() {
     path: "/myitems",
     component: _pages_MyItems__WEBPACK_IMPORTED_MODULE_8__.default
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
-    path: "/item/new",
+    path: "/itemnew",
     component: _pages_AddItem__WEBPACK_IMPORTED_MODULE_6__.default
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
     path: "/item/:id",
@@ -2642,7 +2642,6 @@ function ItemForm(props) {
   }
 
   var name = form.name,
-      date = form.date,
       description = form.description; // below might be not good
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("h2", {
@@ -2663,18 +2662,6 @@ function ItemForm(props) {
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
     className: "field"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("label", {
-    htmlFor: "date",
-    className: "label"
-  }, "Date"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("textarea", {
-    id: "date",
-    name: "date",
-    className: "textarea is-normal",
-    placeholder: "date",
-    value: description,
-    onChange: handleChange
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
-    className: "field"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("label", {
     htmlFor: "description",
     className: "label"
   }, "Description"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("textarea", {
@@ -2687,17 +2674,7 @@ function ItemForm(props) {
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", {
     className: "button mt-4",
     onClick: handleSubmit
-  }, props.action))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
-    className: "column is-half"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("h2", {
-    className: "title is-5 mb-4"
-  }, "Item Preview"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
-    className: "box"
-  }, name ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("h2", {
-    className: "title is-5 is-flex-grow-1"
-  }, name) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("h2", {
-    className: "title is-5 is-flex-grow-1"
-  }, "Your name here"), date ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", null, date) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", null, "Your date here"), description ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", null, description) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", null, "Your description here"))));
+  }, props.action))));
 }
 
 /***/ }),
@@ -2739,7 +2716,7 @@ function ItemListing() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
     className: "items-wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-    to: "/item/new",
+    to: "/itemnew",
     className: "button-blue"
   }, "Add Item"), items.map(function (item) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
@@ -3160,7 +3137,7 @@ function Profile() {
   }, "Delete My Account"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
     to: '/profilesetup',
     className: ""
-  }, "Edit Profile"))));
+  }, "Setup Profile"))));
 }
 
 /***/ }),
@@ -3192,9 +3169,9 @@ __webpack_require__.r(__webpack_exports__);
 
 function ProfileSetUp() {
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useDispatch)();
-  var users = useSelector(function (state) {
+  var users = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useSelector)(function (state) {
     return state.users[0];
-  }); // only used for {users?.location} from auth profile?
+  }); // used for bringing in data for users.location in input field
 
   var _useAuth = (0,_auth0_auth0_react__WEBPACK_IMPORTED_MODULE_1__.useAuth0)(),
       user = _useAuth.user;
@@ -3249,7 +3226,7 @@ function ProfileSetUp() {
     id: "location",
     type: "location",
     name: "location",
-    value: form.location,
+    value: users.location,
     placeholder: "location",
     onChange: handleChange
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -3264,6 +3241,32 @@ function ProfileSetUp() {
     name: "isCompany" // value={form.isCompany}
     ,
     placeholder: "isCompany"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "field"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+    htmlFor: "companyName",
+    className: "label"
+  }, "Business Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    className: "input",
+    id: "companyName",
+    type: "companyName",
+    name: "companyName",
+    value: users.companyName,
+    placeholder: "companyName",
+    onChange: handleChange
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "field"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+    htmlFor: "phone",
+    className: "label"
+  }, "Phone"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    className: "input",
+    id: "phone",
+    type: "phone",
+    name: "phone",
+    value: users.phone,
+    placeholder: "phone",
+    onChange: handleChange
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
     type: "button",
     className: "button",
