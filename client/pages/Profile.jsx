@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
+import { Link } from 'react-router-dom'
 
 import { useSelector, useDispatch } from 'react-redux'
-import { getUsers } from '../redux/usersSlice'
+import { getUsers, deleteUser } from '../redux/usersSlice'
 
 export default function Profile () {
   const dispatch = useDispatch()
@@ -10,18 +11,28 @@ export default function Profile () {
   const { user } = useAuth0() // user, isLoading
   const { name, picture, email } = user // given_name, family_name, nickname, sub
 
-  console.log(users)
-
   useEffect(() => {
     dispatch(getUsers())
   }, [])
 
+  // whole account will be deleted db.deleteAccount is set up in server/routes/users.js
+  const handleDelete = (itemId) => {
+    dispatch(deleteUser({ id: itemId }))
+  }
+
   return (
-    <div>
-      <img src={picture} alt="Profile pic"/>
-      <p>Name: {name}</p>
-      <p>Email: {email}</p>
-      <p>Location: {users?.location}</p>
-    </div>
+    <>
+      <section className='card-container'>
+        <article>
+          <img src={picture} alt="Profile pic"/>
+          <p>Name: {name}</p>
+          <p>Email: {email}</p>
+          <p>Location: {users?.location}</p>
+          <button onClick={() => handleDelete(users?.id)}>Delete My Account</button>
+          {/* Below link is not actually a button, will need to change later */}
+          <Link to={'/profilesetup'} className=''>Setup Profile</Link>
+        </article>
+      </section>
+    </>
   )
 }

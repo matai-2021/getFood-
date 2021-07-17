@@ -6,9 +6,8 @@ import { useParams } from 'react-router'
 export default function ItemDetails () {
   const { id } = useParams()
   const dispatch = useDispatch()
-  const items = useSelector(state => state.items[0])
-  // const singleItem = items.find(item => item.id === id)
-  console.log(items)
+  const items = useSelector(state => state.items)
+  const singleItem = items.find(item => item.id === Number(id))
 
   useEffect(() => {
     dispatch(getItems())
@@ -23,20 +22,21 @@ export default function ItemDetails () {
       <section className='card-container'>
         <button>Go back</button>
         <img
-          src={items?.img}
-          alt={items?.name}
+          src={singleItem?.img}
+          alt={singleItem?.name}
           style={{ width: '90%', height: '200px', backgroundColor: 'pink' }}
         />
         <article>
-          <h1>{items?.name}</h1>
-          <h1>Pick up location: {items?.location}</h1>
-          <h1>Description: {items?.description}</h1>
-          <h1>Quantity: {items?.quantity}</h1>
-          <h1>Exp. Data: {items?.expiryDate}</h1>
-          <h1>Date Created: {items?.dateCreated}</h1>
-          <h1>Email: {items?.email}</h1>
+          <h1>{singleItem?.name}</h1>
+          <h1>Pick up location: {singleItem?.location}</h1>
+          <h1>Description: {singleItem?.description}</h1>
+          <h1>Quantity: {singleItem?.quantity}</h1>
+          <h1>Exp. Data: {singleItem?.expiryDate}</h1>
+          <h1>Date Created: {singleItem?.dateCreated}</h1>
+          <h1>Email: {singleItem?.email}</h1>
           <button>Edit item</button>
           <button onClick={() => handleDelete(id)}>Delete item</button>
+          <button >Claim this item</button>
         </article>
       </section>
     </>
