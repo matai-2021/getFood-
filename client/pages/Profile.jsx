@@ -1,28 +1,38 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
+import { Link } from 'react-router-dom'
 
-// import { useSelector } from 'react-redux'
-// import { Register } from '../../components/Registration/Register'
-// import { View } from '../../components/Registration/View'
-// import { getState } from '../../store'
+import { useSelector, useDispatch } from 'react-redux'
+import { getUsers, deleteUser } from '../redux/usersSlice'
 
 export default function Profile () {
-  // const user = useSelector(globalState => globalState.user)
-//   const user = getState().user
+  const dispatch = useDispatch()
+  const users = useSelector(state => state.users[0])
   const { user } = useAuth0() // user, isLoading
   const { name, picture, email } = user // given_name, family_name, nickname, sub
 
+  useEffect(() => {
+    dispatch(getUsers())
+  }, [])
+
+  // whole account will be deleted db.deleteAccount is set up in server/routes/users.js
+  const handleDelete = (itemId) => {
+    dispatch(deleteUser({ id: itemId }))
+  }
+
   return (
-    <div>
-      {
-        // user.gardenId
-        //   ? (<View user={user}/>)
-        //   : (<Register user={user}/>)
-      }
-      <img src={picture} alt="Profile pic"/>
-      <p>Name: {name}</p>
-      <p>Email: {email}</p>
-      <p>Location: </p>
-    </div>
+    <>
+      <section className='card-container'>
+        <article>
+          <img src={picture} alt="Profile pic"/>
+          <p>Name: {name}</p>
+          <p>Email: {email}</p>
+          <p>Location: {users?.location}</p>
+          <button onClick={() => handleDelete(users?.id)}>Delete My Account</button>
+          {/* Below link is not actually a button, will need to change later */}
+          <Link to={'/profilesetup'} className=''>Setup Profile</Link>
+        </article>
+      </section>
+    </>
   )
 }

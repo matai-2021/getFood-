@@ -31,12 +31,11 @@ export default function App () {
         { isAuthenticated && (
           <Route exact path='/' component={ItemListing} />
         )}
-
         <Route path='/profile' component={Profile} />
         <Route path='/profilesetup' component={ProfileSetup} />
         <Route path='/about' component={About} />
         <Route path='/myitems' component={MyItems} />
-        <Route path='/item/new' component={AddItem} />
+        <Route path='/itemnew' component={AddItem} />
         <Route path='/item/:id' component={ItemDetails} />
       </main>
     </>

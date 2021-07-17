@@ -30,8 +30,7 @@ export default function SingleItem (props) {
         <p>
           <strong>email: </strong>{email}
         </p>
-
-        <Link to={`/items/${id}`}className='item-link'>View More...</Link>
+        <Link to={`/item/${id}`}className='item-link'>View More...</Link>
       </div>
       <div className='item-img'>
         <img src={img} alt={img} />

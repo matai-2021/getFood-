@@ -4,7 +4,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 export const getItems = createAsyncThunk(
   'items/getItems',
   async () => {
-    const res = await request('/api/v1/items/')
+    const res = await request('/api/v1/items')
     if (res.ok) {
       return await res.body
     }

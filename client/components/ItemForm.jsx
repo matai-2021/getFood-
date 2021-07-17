@@ -10,15 +10,16 @@ export default function ItemForm (props) {
   })
 
   function handleChange (e) {
-
+    setForm(e.target.value)
   }
 
   function handleSubmit (e) {
     e.preventDefault()
     props.submitEvent(form)
+    setForm({})
   }
 
-  const { name, date, description } = form
+  const { name, description } = form
   // below might be not good
   return (
     <>
@@ -36,20 +37,6 @@ export default function ItemForm (props) {
               type='text'
               placeholder='item name'
               value={name}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="field">
-            <label
-              htmlFor='date'
-              className='label'
-            >Date</label>
-            <textarea
-              id='date'
-              name='date'
-              className='textarea is-normal'
-              placeholder='date'
-              value={description}
               onChange={handleChange}
             />
           </div>
@@ -73,24 +60,7 @@ export default function ItemForm (props) {
           >{props.action}</button>
         </form>
       </div>
-      <div className='column is-half'>
-        <h2 className='title is-5 mb-4'>Item Preview</h2>
-        <div className='box'>
-          {name
-            ? <h2 className='title is-5 is-flex-grow-1'>{name}</h2>
-            : <h2 className='title is-5 is-flex-grow-1'>Your name here</h2>
-          }
-          {date
-            ? <p>{date}</p>
-            : <p>Your date here</p>
-          }
-          {description
-            ? <p>{description}</p>
-            : <p>Your description here</p>
-          }
-
-        </div>
-      </div>
+      {/* We could implement Item preview like in gardenz */}
     </>
   )
 }
