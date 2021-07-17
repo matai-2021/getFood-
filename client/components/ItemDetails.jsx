@@ -36,6 +36,7 @@ export default function ItemDetails () {
           <h1>Email: {singleItem?.email}</h1>
           <button>Edit item</button>
           <button onClick={() => handleDelete(id)}>Delete item</button>
+          <button >Claim this item</button>
         </article>
       </section>
     </>
