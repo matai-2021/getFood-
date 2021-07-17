@@ -20,6 +20,7 @@ export default function ItemListing () {
       {items.map(item => (
         <React.Fragment key={item.id} >
           <SingleItem
+            id={item.id}
             name={item.name}
             description={item.description}
             expiryDate={item.expiryDate}
@@ -27,7 +28,6 @@ export default function ItemListing () {
             email={item.email}
             img={item.img}
           />
-          <Link to={`/item/${item.id}`}className='item-link'>View More...</Link>
         </React.Fragment>
       ))}
     </section>
