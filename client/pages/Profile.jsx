@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
+import { Link } from 'react-router-dom'
 
 import { useSelector, useDispatch } from 'react-redux'
 import { getUsers, deleteUser } from '../redux/usersSlice'
@@ -27,6 +28,8 @@ export default function Profile () {
           <p>Email: {email}</p>
           <p>Location: {users?.location}</p>
           <button onClick={() => handleDelete(users?.id)}>Delete My Account</button>
+          {/* Below link is not actually a button, will need to change later */}
+          <Link to={'/profilesetup'} className=''>Edit Profile</Link>
         </article>
       </section>
     </>
