@@ -16,7 +16,6 @@ export default function AddItem () {
 
   return (
     <ItemForm
-      action='Create Item'
       submitEvent={submitEvent}
     />
   )
