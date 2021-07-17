@@ -10,7 +10,7 @@ import Error from './components/Error'
 import AddItem from './pages/AddItem'
 import About from './pages/About'
 import MyItems from './pages/MyItems'
-import ItemListing from './components/ItemListing'
+import ItemListing from './pages/ItemListing'
 import ItemDetails from './components/ItemDetails'
 // import { cacheUser } from './auth-utils'
 

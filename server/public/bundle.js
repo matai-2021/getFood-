@@ -2414,7 +2414,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_AddItem__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/AddItem */ "./client/pages/AddItem.jsx");
 /* harmony import */ var _pages_About__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/About */ "./client/pages/About.jsx");
 /* harmony import */ var _pages_MyItems__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pages/MyItems */ "./client/pages/MyItems.jsx");
-/* harmony import */ var _components_ItemListing__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/ItemListing */ "./client/components/ItemListing.jsx");
+/* harmony import */ var _pages_ItemListing__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./pages/ItemListing */ "./client/pages/ItemListing.jsx");
 /* harmony import */ var _components_ItemDetails__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/ItemDetails */ "./client/components/ItemDetails.jsx");
 /* harmony import */ var _auth0_auth0_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @auth0/auth0-react */ "./node_modules/@auth0/auth0-react/dist/auth0-react.esm.js");
 
@@ -2446,7 +2446,7 @@ function App() {
   }), isAuthenticated && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
     exact: true,
     path: "/",
-    component: _components_ItemListing__WEBPACK_IMPORTED_MODULE_9__.default
+    component: _pages_ItemListing__WEBPACK_IMPORTED_MODULE_9__.default
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
     path: "/profile",
     component: _pages_Profile__WEBPACK_IMPORTED_MODULE_3__.default
@@ -2675,62 +2675,6 @@ function ItemForm(props) {
     className: "button mt-4",
     onClick: handleSubmit
   }, props.action))));
-}
-
-/***/ }),
-
-/***/ "./client/components/ItemListing.jsx":
-/*!*******************************************!*\
-  !*** ./client/components/ItemListing.jsx ***!
-  \*******************************************/
-/*! namespace exports */
-/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
-/*! other exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => /* binding */ ItemListing
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _redux_itemsSlice__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../redux/itemsSlice */ "./client/redux/itemsSlice.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _SingleItem__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SingleItem */ "./client/components/SingleItem.jsx");
-
-
-
- // Components
-
-
-function ItemListing() {
-  var items = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)(function (state) {
-    return state.items;
-  });
-  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    dispatch((0,_redux_itemsSlice__WEBPACK_IMPORTED_MODULE_2__.getItems)());
-  }, []);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
-    className: "items-wrapper"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-    to: "/itemnew",
-    className: "button-blue"
-  }, "Add Item"), items.map(function (item) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-      key: item.id
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_SingleItem__WEBPACK_IMPORTED_MODULE_3__.default, {
-      id: item.id,
-      name: item.name,
-      description: item.description,
-      expiryDate: item.expiryDate,
-      quantity: item.quantity,
-      email: item.email,
-      img: item.img
-    }));
-  }));
 }
 
 /***/ }),
@@ -3050,6 +2994,62 @@ function Home() {
 
 /***/ }),
 
+/***/ "./client/pages/ItemListing.jsx":
+/*!**************************************!*\
+  !*** ./client/pages/ItemListing.jsx ***!
+  \**************************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => /* binding */ ItemListing
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _redux_itemsSlice__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../redux/itemsSlice */ "./client/redux/itemsSlice.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _components_SingleItem__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/SingleItem */ "./client/components/SingleItem.jsx");
+
+
+
+ // Components
+
+
+function ItemListing() {
+  var items = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)(function (state) {
+    return state.items;
+  });
+  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    dispatch((0,_redux_itemsSlice__WEBPACK_IMPORTED_MODULE_2__.getItems)());
+  }, []);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
+    className: "items-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+    to: "/itemnew",
+    className: "button-blue"
+  }, "Add Item"), items.map(function (item) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+      key: item.id
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_SingleItem__WEBPACK_IMPORTED_MODULE_3__.default, {
+      id: item.id,
+      name: item.name,
+      description: item.description,
+      expiryDate: item.expiryDate,
+      quantity: item.quantity,
+      email: item.email,
+      img: item.img
+    }));
+  }));
+}
+
+/***/ }),
+
 /***/ "./client/pages/MyItems.jsx":
 /*!**********************************!*\
   !*** ./client/pages/MyItems.jsx ***!
@@ -3246,7 +3246,7 @@ function ProfileSetUp() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
     htmlFor: "companyName",
     className: "label"
-  }, "Business Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+  }, "Business Name if applicable"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     className: "input",
     id: "companyName",
     type: "companyName",
