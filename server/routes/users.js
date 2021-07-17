@@ -4,6 +4,7 @@ const db = require('../db/users')
 
 const router = express.Router()
 
+// GET fetch all users
 router.get('/', (req, res) => {
   db.getAllUsers()
     .then((users) => {
@@ -31,8 +32,8 @@ router.get('/:id', (req, res) => {
 
 // POST registerUser
 router.post('/', (req, res) => {
-  const { name, dateCreated, location, isCompany, email, auth0Id } = req.body
-  const newUser = { name, dateCreated, location, isCompany, email, auth0Id }
+  const { name, dateCreated, location, isCompany, email, auth0Id, companyName, phone } = req.body
+  const newUser = { name, dateCreated, location, isCompany, email, auth0Id, companyName, phone }
   db.addUser(newUser)
     .then((newUser) => {
       res.status(201).json({ newUser })
