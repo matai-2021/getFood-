@@ -15,7 +15,7 @@ export default function Profile () {
   }, [])
 
   const handleDelete = (itemId) => {
-    dispatch(deleteUser({ id: itemId }))
+    dispatch(deleteUser({ id: itemId })) // whole account will be deleted db.deleteAccount is set up in server/routes/users.js
   }
 
   return (
