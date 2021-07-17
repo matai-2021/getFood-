@@ -12,6 +12,7 @@ import About from './pages/About'
 import MyItems from './pages/MyItems'
 import ItemListing from './components/ItemListing'
 import ItemDetails from './components/ItemDetails'
+import Footer from './components/Footer'
 // import { cacheUser } from './auth-utils'
 
 import { useAuth0 } from '@auth0/auth0-react'
@@ -39,6 +40,7 @@ export default function App () {
         <Route path='/item/new' component={AddItem} />
         <Route path='/item/:id' component={ItemDetails} />
       </main>
+      <Footer />
     </>
   )
 }
