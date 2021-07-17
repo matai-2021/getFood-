@@ -17,6 +17,7 @@ router.get('/item', (req, res) => {
     })
 })
 
+// GET all items
 router.get('/', (req, res) => {
   db.getItems()
     .then(results => {
