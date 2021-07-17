@@ -57,6 +57,7 @@
     "@babel/preset-react": "^7.12.5",
     "@testing-library/react": "11.2.2",
     "babel-loader": "^8.2.1",
+    "cheerio": "^1.0.0-rc.10",
     "css-loader": "^5.0.1",
     "css-minimizer-webpack-plugin": "^3.0.2",
     "eslint": "7.9.0",
