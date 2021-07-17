@@ -4,7 +4,7 @@ import { getItems } from '../redux/itemsSlice'
 import { Link } from 'react-router-dom'
 
 // Components
-import SingleItem from './SingleItem'
+import SingleItem from '../components/SingleItem'
 
 export default function ItemListing () {
   const items = useSelector(state => state.items)
