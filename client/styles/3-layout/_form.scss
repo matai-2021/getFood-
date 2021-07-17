@@ -14,6 +14,13 @@
     font-family: vars.$paragraph;
     font-weight: bold;
   }
+
+  .labelgrey {
+    color: vars.$grey;
+    font-family: vars.$paragraph;
+    font-weight: bold;
+  }
+  
   
   .form-button-primary {
     background-color: vars.$black;
@@ -37,3 +44,18 @@
       color: vars.$black;
     }
   }
+
+  .form-box {
+    height: vars.$base-size * 1.75; // or 100%?
+    width: vars.$base-size * 20;
+    font-family: vars.$paragraph;
+    margin-bottom: 1rem;
+  }
+
+  .check-box {
+    // height: vars.$base-size;
+    // width: vars.$base-size;
+    font-family: vars.$paragraph;
+    // margin-bottom: 1rem;
+  }
+  

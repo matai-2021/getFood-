@@ -44,20 +44,29 @@ export default function ProfileSetUp () {
                 <img src={picture} alt="Profile Pic"/>
               </div>
               <div className='field'>
-                <label htmlFor='firstName' className='label'>Full name: {name}</label>
+                <label htmlFor='firstName' className='labelgrey'>Full name</label>
               </div>
               <div className='field'>
-                <label htmlFor='email' className='label'>email: {email}</label>
+                <label htmlFor='firstName' className='label'>{name}</label>
+              </div>
+              <div className='field'>
+                <label htmlFor='email' className='labelgrey'>Email</label>
+              </div>
+              <div className='field'>
+                <label htmlFor='email' className='label'>{email}</label>
               </div>
               {/* <div className='field'>
               <label htmlFor='location' className='label'>Area: {users?.location}</label>
             </div> */}
+
               <div className="field">
-                <label htmlFor='location' className='label'>Address</label>
+                <label htmlFor='location' className='labelgrey'>Address</label>
+              </div>
+              <div className="field">
                 <input
                   className='form-box'
                   id='location'
-                  type='location'
+                  type='text'
                   name='location'
                   value={users.location}
                   placeholder='Your Address'
@@ -67,23 +76,26 @@ export default function ProfileSetUp () {
 
               {/* Update this, to be True/False */}
               <div className="field">
-                <label htmlFor='location' className='label'>Are you a business?</label>
+                <label htmlFor='location' className='labelgrey'>Are you a business?</label>
+              </div>
+              <div className="field">
                 <input
                   className='form-box'
                   id='isCompany'
                   type='checkbox'
                   name='isCompany'
-                  // value={form.isCompany}
-                  placeholder='isCompany'
+                  value={users.isCompany}
                 ></input>
               </div>
 
               <div className="field">
-                <label htmlFor='companyName' className='label'>Business Name</label>
+                <label htmlFor='companyName' className='labelgrey'>Business Name</label>
+              </div>
+              <div className="field">
                 <input
                   className='form-box'
                   id='companyName'
-                  type='companyName'
+                  type='text'
                   name='companyName'
                   value={users.companyName}
                   placeholder='Only if applicable'
@@ -92,11 +104,13 @@ export default function ProfileSetUp () {
               </div>
 
               <div className="field">
-                <label htmlFor='phone' className='label'>Phone</label>
+                <label htmlFor='phone' className='labelgrey'>Phone</label>
+              </div>
+              <div className="field">
                 <input
                   className='form-box'
                   id='phone'
-                  type='phone'
+                  type='text'
                   name='phone'
                   value={users.phone}
                   placeholder='Phone Number'
