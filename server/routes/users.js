@@ -53,7 +53,7 @@ router.delete('/:id', (req, res) => {
     })
     .catch(err => {
       console.log(err)
-      res.status(500).json({ message: 'Unable to register new user' })
+      res.status(500).json({ message: 'Unable to delete account' })
     })
 })
 
