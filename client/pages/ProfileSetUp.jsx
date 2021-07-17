@@ -11,7 +11,7 @@ import { getUsers } from '../redux/usersSlice'
 
 export default function ProfileSetUp () {
   const dispatch = useDispatch()
-  // const users = useSelector(state => state.users[0]) // only used for {users?.location} from auth profile?
+  const users = useSelector(state => state.users[0]) // only used for {users?.location} from auth profile?
   const { user } = useAuth0()
   const { name, picture, email } = user
   // const [form, setForm] = useState({
@@ -57,7 +57,7 @@ export default function ProfileSetUp () {
                 id='location'
                 type='location'
                 name='location'
-                // value={form.location}
+                value={form.location}
                 placeholder='location'
                 onChange={handleChange}
               ></input>
