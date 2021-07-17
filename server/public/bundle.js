@@ -3193,7 +3193,9 @@ function ProfileSetUp() {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     dispatch((0,_redux_usersSlice__WEBPACK_IMPORTED_MODULE_3__.getUsers)());
   }, []);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
+    className: "card-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("article", {
     className: "form-container"
@@ -3221,13 +3223,13 @@ function ProfileSetUp() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
     htmlFor: "location",
     className: "label"
-  }, "Location"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-    className: "input",
+  }, "Address"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    className: "form-box",
     id: "location",
     type: "location",
     name: "location",
     value: users.location,
-    placeholder: "location",
+    placeholder: "Your Address",
     onChange: handleChange
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "field"
@@ -3235,7 +3237,7 @@ function ProfileSetUp() {
     htmlFor: "location",
     className: "label"
   }, "Are you a business?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-    className: "input",
+    className: "form-box",
     id: "isCompany",
     type: "checkbox",
     name: "isCompany" // value={form.isCompany}
@@ -3246,13 +3248,13 @@ function ProfileSetUp() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
     htmlFor: "companyName",
     className: "label"
-  }, "Business Name if applicable"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-    className: "input",
+  }, "Business Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    className: "form-box",
     id: "companyName",
     type: "companyName",
     name: "companyName",
     value: users.companyName,
-    placeholder: "companyName",
+    placeholder: "Only if applicable",
     onChange: handleChange
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "field"
@@ -3260,19 +3262,19 @@ function ProfileSetUp() {
     htmlFor: "phone",
     className: "label"
   }, "Phone"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-    className: "input",
+    className: "form-box",
     id: "phone",
     type: "phone",
     name: "phone",
     value: users.phone,
-    placeholder: "phone",
+    placeholder: "Phone Number",
     onChange: handleChange
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
     type: "button",
-    className: "button",
+    className: "form-button-primary",
     onClick: handleClick,
     "data-testid": "submitButton"
-  }, "Save Profile")))));
+  }, "Save Profile"))))));
 }
 
 /***/ }),

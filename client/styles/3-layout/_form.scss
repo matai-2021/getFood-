@@ -9,3 +9,31 @@
     font-weight: bold;
   }
 
+  .label {
+    color: vars.$black;
+    font-family: vars.$paragraph;
+    font-weight: bold;
+  }
+  
+  .form-button-primary {
+    background-color: vars.$black;
+    padding: vars.$base-size;
+    border-radius: vars.$base-size * 0.15;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: vars.$base-size * 0.5;
+  
+    @include mixins.media-queries(tablet, min) {
+      width: 50%;
+    }
+  
+    &:hover{
+      background-color: whitesmoke;
+      border: none;
+      color: vars.$black;
+    }
+  }
