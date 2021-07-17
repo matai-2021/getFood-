@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
 
 import { useSelector, useDispatch } from 'react-redux'
-import { getUsers } from '../redux/usersSlice'
+import { getUsers, deleteUser } from '../redux/usersSlice'
 
 export default function Profile () {
   const dispatch = useDispatch()
@@ -10,18 +10,25 @@ export default function Profile () {
   const { user } = useAuth0() // user, isLoading
   const { name, picture, email } = user // given_name, family_name, nickname, sub
 
-  console.log(users)
-
   useEffect(() => {
     dispatch(getUsers())
   }, [])
 
+  const handleDelete = (itemId) => {
+    dispatch(deleteUser({ id: itemId }))
+  }
+
   return (
-    <div>
-      <img src={picture && users?.img} alt="Profile pic"/>
-      <p>Name: {name}</p>
-      <p>Email: {email}</p>
-      <p>Location: {users?.location}</p>
-    </div>
+    <>
+      <section className='card-container'>
+        <article>
+          <img src={picture} alt="Profile pic"/>
+          <p>Name: {name}</p>
+          <p>Email: {email}</p>
+          <p>Location: {users?.location}</p>
+          <button onClick={() => handleDelete(users?.id)}>Delete My Account</button>
+        </article>
+      </section>
+    </>
   )
 }
