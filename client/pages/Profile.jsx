@@ -21,18 +21,22 @@ export default function Profile () {
   }
 
   return (
-    <>
-      <section className='card-container'>
-        <article>
-          <img src={picture} alt="Profile pic"/>
-          <p>Name: {name}</p>
-          <p>Email: {email}</p>
-          <p>Location: {users?.location}</p>
-          <button onClick={() => handleDelete(users?.id)}>Delete My Account</button>
-          {/* Below link is not actually a button, will need to change later */}
-          <Link to={'/profilesetup'} className=''>Setup Profile</Link>
-        </article>
-      </section>
-    </>
+    <section className='card-container'>
+      <div>
+        <img src={picture} alt="Profile pic"/>
+        <p>
+          <strong>Name: </strong>{name}
+        </p>
+        <p>
+          <strong>Email: </strong>{email}
+        </p>
+        <p>
+          <strong>Location: </strong>{users?.location}
+        </p>
+        <button onClick={() => handleDelete(users?.id)}>Delete My Account</button>
+        {/* Below link is not actually a button, will need to change later */}
+        <Link to={'/profilesetup'} className=''>Setup Profile</Link>
+      </div>
+    </section>
   )
 }
