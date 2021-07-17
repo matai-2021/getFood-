@@ -4,7 +4,7 @@ import { getItems } from '../redux/itemsSlice'
 import { Link } from 'react-router-dom'
 
 // Components
-import SingleItem from './SingleItem'
+import SingleItem from '../components/SingleItem'
 
 export default function ItemListing () {
   const items = useSelector(state => state.items)
@@ -16,7 +16,7 @@ export default function ItemListing () {
 
   return (
     <section className='items-wrapper'>
-      <Link to='/item/new' className='button-blue'>Add Item</Link>
+      <Link to='/itemnew' className='button-blue'>Add Item</Link>
       {items.map(item => (
         <React.Fragment key={item.id} >
           <SingleItem
