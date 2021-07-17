@@ -24,7 +24,6 @@ export default function ItemForm (props) {
   return (
     <>
       <div>
-        <h2 className='title is-5 mb-4'>Item Details</h2>
         <form>
           <div className="field">
             <label
@@ -75,22 +74,6 @@ export default function ItemForm (props) {
         </form>
       </div>
       <div className='column is-half'>
-        <h2 className='title is-5 mb-4'>Item Preview</h2>
-        <div className='box'>
-          {name
-            ? <h2 className='title is-5 is-flex-grow-1'>{name}</h2>
-            : <h2 className='title is-5 is-flex-grow-1'>Your name here</h2>
-          }
-          {date
-            ? <p>{date}</p>
-            : <p>Your date here</p>
-          }
-          {description
-            ? <p>{description}</p>
-            : <p>Your description here</p>
-          }
-
-        </div>
       </div>
     </>
   )
