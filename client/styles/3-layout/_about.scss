@@ -1,0 +1,68 @@
+@use "sass:math";
+@use '../1-helpers/functions';
+@use '../1-helpers/mixins';
+@use '../1-helpers/vars';
+
+.container {
+    text-align: center;
+    margin: 30px auto;
+    position: relative;
+    max-width: 100%;
+    padding: 0 vars.$base-size * 3;
+    font-family: vars.$paragraph;
+  }
+  
+  .flex-container {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    @include mixins.media-queries(mobile, min) {
+      flex-direction: row;
+    }
+    // font-family: vars.$heading;
+}
+
+.flex-column {
+    flex-direction: column;
+    
+    &-reverse {
+        flex-direction: column-reverse;
+    }
+}
+
+.flex-row {
+    margin: 30px auto;
+    text-align: center;
+    width: 300px;
+
+    flex-direction: row;
+  
+    &-reverse {
+      flex-direction: row-reverse;
+    }
+    a:link, a:visited {
+        margin: 20px;
+        background-color: vars.$purple;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        &:hover {
+            background-color: vars.$black;
+          }
+    }
+  }
+
+  .img-holder {
+      margin: 20px auto;
+      border-radius: 50%;
+      background-color: black;
+      width: 200px;
+      height: 200px;
+  }
+
+
+
+
+  
