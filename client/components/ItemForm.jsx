@@ -23,13 +23,8 @@ export default function ItemForm (props) {
     props.submitEvent(form)
   }
 
-<<<<<<< HEAD
   const { name, quantity, expiryDate, location, description, email } = form
 
-=======
-  const { name, description } = form
-  // below might be not good
->>>>>>> d7c006e695888f8b15944c501c472b11bae4f125
   return (
     <>
       <div>
@@ -52,7 +47,6 @@ export default function ItemForm (props) {
           <div className="field">
             <label
               htmlFor='description'
-<<<<<<< HEAD
               className='label'
             >Description</label>
             <textarea
@@ -67,8 +61,6 @@ export default function ItemForm (props) {
           <div className="field">
             <label
               htmlFor='expiryDate'
-=======
->>>>>>> d7c006e695888f8b15944c501c472b11bae4f125
               className='label'
             >Expiry Date</label>
             <textarea
@@ -127,10 +119,6 @@ export default function ItemForm (props) {
           </button>
         </form>
       </div>
-<<<<<<< HEAD
-=======
-      {/* We could implement Item preview like in gardenz */}
->>>>>>> d7c006e695888f8b15944c501c472b11bae4f125
     </>
   )
 }
