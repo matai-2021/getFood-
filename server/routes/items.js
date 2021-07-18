@@ -30,8 +30,8 @@ router.get('/', (req, res) => {
 })
 
 router.post('/add', (req, res) => {
-  const { name, location, userId, quantity, img, description, expiryDate } = req.body
-  const item = { name, location, userId, quantity, img, description, expiryDate }
+  const { name, location, userId, quantity, img, description, expiryDate, email } = req.body
+  const item = { name, location, userId, quantity, img, description, expiryDate, email }
   db.addItem(item)
     .then((id) => {
       res.status(201).json({ id })
