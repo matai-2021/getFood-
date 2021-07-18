@@ -4,7 +4,6 @@
 
 .items-wrapper {
   margin: auto;
-  padding-top: 50px;
 }
 
 .item-container {
@@ -34,5 +33,9 @@
   height: 170px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 5px;
+  @include mixins.media-queries(mobile, max) {
+    flex-direction: column;
+    padding: 10px;
+  }
 
 }

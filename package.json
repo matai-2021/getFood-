@@ -45,6 +45,7 @@
     "express": "^4.17.1",
     "knex": "^0.21.17",
     "pg": "^8.5.1",
+    "react-icons": "^4.2.0",
     "superagent": "^6.1.0"
   },
   "devDependencies": {

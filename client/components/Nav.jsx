@@ -1,17 +1,15 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-// import { useSelector } from 'react-redux'
 import { useAuth0 } from '@auth0/auth0-react'
 
 // // React-Icons Import
-// import { GiHamburgerMenu } from 'react-icons/gi'
-// import { IoClose } from 'react-icons/io5'
+import { GiHamburgerMenu } from 'react-icons/gi'
+import { IoClose } from 'react-icons/io5'
 
 export default function Nav () {
   const { loginWithRedirect, logout, isAuthenticated } = useAuth0() // isLoading
 
   const [open, setOpen] = useState(false)
-  // const gardenId = useSelector(globalState => globalState.user?.gardenId)
 
   function handleRegister () {
     loginWithRedirect()
@@ -50,7 +48,7 @@ export default function Nav () {
           </>
         )}
 
-        {/* <div className='close-btn' onClick={toggleMenu} ><IoClose/></div> */}
+        <div className='close-btn' onClick={toggleMenu} ><IoClose/></div>
       </div>
       }
       {!open && <div className='nav-menu'>
@@ -72,7 +70,7 @@ export default function Nav () {
           </>
         )}
 
-        {/* <div className='hamburger' onClick={toggleMenu} ><GiHamburgerMenu/></div> */}
+        <div className='hamburger' onClick={toggleMenu} ><GiHamburgerMenu/></div>
       </div>
       }
     </nav>

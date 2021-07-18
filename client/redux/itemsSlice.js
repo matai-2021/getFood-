@@ -17,8 +17,8 @@ export const addItem = createAsyncThunk(
     const res = await request.post('/api/v1/items/add').send(payload)
     if (res.ok) {
       const newItem = {
-        id: res.body.id,
-        name: payload.name
+        ...payload,
+        id: res.body.id
       }
       return newItem
     }

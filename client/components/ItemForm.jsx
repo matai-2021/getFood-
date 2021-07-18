@@ -1,31 +1,46 @@
-// used for adding item
 import React, { useState } from 'react'
 
 export default function ItemForm (props) {
-  const [form, setForm] = useState(props.formData || {
+  const [form, setForm] = useState({
     name: '',
-    date: '',
-    quantity: 0,
-    description: ''
+    quantity: '',
+    expiryDate: '',
+    location: '',
+    description: '',
+    email: '',
+    img: null
   })
 
   function handleChange (e) {
-    setForm(e.target.value)
+    const { name, value } = e.target
+    setForm({
+      ...form,
+      [name]: value
+    })
   }
 
   function handleSubmit (e) {
     e.preventDefault()
     props.submitEvent(form)
-    setForm({})
   }
 
-  const { name, description } = form
-  // below might be not good
+  function handleImg (e) {
+    if (e.target.files && e.target.files[0]) {
+      const img = e.target.files[0]
+      setForm({
+        ...form,
+        img: URL.createObjectURL(img)
+      })
+    }
+  }
+
+  const { name, quantity, expiryDate, location, description, email } = form
+
   return (
     <>
       <div>
         <h2 className='title is-5 mb-4'>Item Details</h2>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="field">
             <label
               htmlFor='name'
@@ -54,13 +69,78 @@ export default function ItemForm (props) {
               onChange={handleChange}
             />
           </div>
-          <button
-            className='button mt-4'
-            onClick={handleSubmit}
-          >{props.action}</button>
+          <div className="field">
+            <label
+              htmlFor='expiryDate'
+              className='label'
+            >Expiry Date</label>
+            <textarea
+              id='expiryDate'
+              name='expiryDate'
+              className='textarea is-normal'
+              placeholder='exp date'
+              value={expiryDate}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="field">
+            <label
+              htmlFor='quantity'
+              className='label'
+            >Quantity</label>
+            <textarea
+              id='quantity'
+              name='quantity'
+              className='textarea is-normal'
+              placeholder='quantity'
+              value={quantity}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="field">
+            <label
+              htmlFor='location'
+              className='label'
+            >Location</label>
+            <textarea
+              id='location'
+              name='location'
+              className='textarea is-normal'
+              placeholder='item location'
+              value={location}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="field">
+            <label
+              htmlFor='email'
+              className='label'
+            >Email:</label>
+            <textarea
+              id='email'
+              name='email'
+              className='textarea is-normal'
+              placeholder='email'
+              value={email}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="field">
+            <label
+              htmlFor='img'
+              className='label'
+            >Image:</label>
+            <input
+              type="file"
+              name="img"
+              onChange={handleImg}
+            />
+          </div>
+          <button className='button-purple'>
+            Create Item
+          </button>
         </form>
       </div>
-      {/* We could implement Item preview like in gardenz */}
     </>
   )
 }

@@ -1,0 +1,48 @@
+@use '../1-helpers/vars';
+@use '../1-helpers/functions';
+@use '../1-helpers/mixins';
+
+
+.footer {
+  background: vars.$yellow;
+  color: vars.$purple;
+  text-align: center;
+  padding: 1em 0;
+  font-size: vars.$base-size;
+
+  & a {
+    color: inherit;
+    text-decoration: none;
+    font-size: vars.$base-size * 1.7;
+  }
+
+  & .footer-link {
+    font-weight: vars.$base-size * 2;
+  }
+
+  & .footer-link:hover, 
+  .social-list-link:hover {
+    opacity: 0.7;
+  }
+
+  & .footer-link:hover{
+    text-decoration: underline;
+  }
+
+  & .social-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 1em 0 0;
+    padding: 0;
+  }
+
+  & .social-list-item {
+    margin: 0 0.2em;
+  }
+
+  & .social-list-link {
+    padding: 0.5em;
+  }
+
+}
