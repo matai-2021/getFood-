@@ -7,7 +7,12 @@
     "fullstack"
   ],
   "engines": {
-    "node": "14.x"
+    "node": "15.5.0",
+    "npm": "6.14.11"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matai-2021/getFood-.git"
   },
   "scripts": {
     "start": "node server",
