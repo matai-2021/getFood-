@@ -12,7 +12,10 @@ export default function Nav () {
   const [open, setOpen] = useState(false)
 
   function handleRegister () {
-    loginWithRedirect()
+    loginWithRedirect({
+      redirectUri: `${window.location.origin}`,
+      screen_hint: 'signup'
+    })
   }
 
   function handleLogin () {
