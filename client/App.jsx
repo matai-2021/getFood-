@@ -6,7 +6,6 @@ import Header from './components/Header'
 import Home from './pages/Home'
 import Profile from './pages/Profile'
 import ProfileSetup from './pages/ProfileSetUp'
-import Error from './components/Error'
 import AddItem from './pages/AddItem'
 import About from './pages/About'
 import MyItems from './pages/MyItems'
@@ -23,22 +22,23 @@ export default function App () {
 
   return (
     <>
-      <Error />
-      <Header />
-      <main className='container'>
-        { !isAuthenticated && (
-          <Route exact path='/' component={Home} />
-        )}
-        { isAuthenticated && (
-          <Route exact path='/' component={ItemListing} />
-        )}
-        <Route path='/profile' component={Profile} />
-        <Route path='/profilesetup' component={ProfileSetup} />
-        <Route path='/about' component={About} />
-        <Route path='/myitems' component={MyItems} />
-        <Route path='/itemnew' component={AddItem} />
-        <Route path='/item/:id' component={ItemDetails} />
-      </main>
+      <div className='page-container'>
+        <Header />
+        <main className='container'>
+          { !isAuthenticated && (
+            <Route exact path='/' component={Home} />
+          )}
+          { isAuthenticated && (
+            <Route exact path='/' component={ItemListing} />
+          )}
+          <Route path='/profile' component={Profile} />
+          <Route path='/profilesetup' component={ProfileSetup} />
+          <Route path='/about' component={About} />
+          <Route path='/myitems' component={MyItems} />
+          <Route path='/itemnew' component={AddItem} />
+          <Route path='/item/:id' component={ItemDetails} />
+        </main>
+      </div>
       <Footer />
     </>
   )

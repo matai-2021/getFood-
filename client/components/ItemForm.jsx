@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 export default function ItemForm (props) {
   const [form, setForm] = useState({
     name: '',
-    quantity: 0,
+    quantity: '',
     expiryDate: '',
     location: '',
     description: '',
