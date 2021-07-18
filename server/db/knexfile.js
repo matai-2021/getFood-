@@ -1,8 +1,4 @@
 const path = require('path')
-const parse = require('pg-connection-string').parse
-
-// Parse the environment variable into an object containing User, Password, Host, Port etc at separate key-value pairs
-const pgconfig = parse(process.env.DATABASE_URL)
 
 module.exports = {
   development: {
@@ -23,7 +19,7 @@ module.exports = {
 
   production: {
     client: 'postgresql',
-    connection: pgconfig,
+    connection: process.env.DATABASE_URL,
     pool: {
       min: 2,
       max: 10
