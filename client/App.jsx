@@ -10,7 +10,7 @@ import Error from './components/Error'
 import AddItem from './pages/AddItem'
 import About from './pages/About'
 import MyItems from './pages/MyItems'
-import ItemListing from './components/ItemListing'
+import ItemListing from './pages/ItemListing'
 import ItemDetails from './components/ItemDetails'
 import Footer from './components/Footer'
 // import { cacheUser } from './auth-utils'
@@ -32,12 +32,11 @@ export default function App () {
         { isAuthenticated && (
           <Route exact path='/' component={ItemListing} />
         )}
-
         <Route path='/profile' component={Profile} />
         <Route path='/profilesetup' component={ProfileSetup} />
         <Route path='/about' component={About} />
         <Route path='/myitems' component={MyItems} />
-        <Route path='/item/new' component={AddItem} />
+        <Route path='/itemnew' component={AddItem} />
         <Route path='/item/:id' component={ItemDetails} />
       </main>
       <Footer />

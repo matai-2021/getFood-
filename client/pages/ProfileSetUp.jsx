@@ -1,52 +1,55 @@
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
 // import { useHistory } from 'react-router-dom'
 // import { profileSetUp } from './profileSetUpHelper'
+import { useAuth0 } from '@auth0/auth0-react'
+
+import {
+  useSelector,
+  useDispatch
+} from 'react-redux'
+import { getUsers } from '../redux/usersSlice'
 
 export default function ProfileSetUp () {
-  const [form, setForm] = useState({
-    name: '',
-    location: '',
-    // username needed? Auth0 has username/email so not here?
-    isCompany: false,
-    email: ''
-  })
-  // const history = useHistory()
+  const dispatch = useDispatch()
+  const users = useSelector(state => state.users[0]) // used for bringing in data for users.location in input field
+  const { user } = useAuth0()
+  const { name, picture, email } = user
+  // const [form, setForm] = useState({
+  // })
 
   function handleChange (e) {
-    const { name, value } = e.target
-    setForm({
-      ...form,
-      [name]: value
-    })
+    // const { name, value } = e.target
+    // setForm({
+    //   ...form,
+    //   [name]: value
+    // })
   }
 
   function handleClick (e) {
-    // e.preventDefault()
-    // profileSetUp(form, history.push)
   }
+  useEffect(() => {
+    dispatch(getUsers())
+  }, [])
 
   return (
     <>
-      {/* <div className='column'>
-        <img src='./images/comGardenPlant.png' alt='Person gardening with trowel' />
-      </div> */}
       <div className='flex-container'>
         <article className='form-container'>
           <h3 className='form-title'>Profile Setup</h3>
           <form className='form-container'>
 
             <div className='field'>
-              <label htmlFor='firstName' className='label'>Full name</label>
-              <input
-                className='input'
-                id='fullName'
-                name='fullName'
-                value={form.name}
-                placeholder='fullName'
-                onChange={handleChange}
-              ></input>
+              <img src={picture} alt="Profile Pic"/>
             </div>
-
+            <div className='field'>
+              <label htmlFor='firstName' className='label'>Full name: {name}</label>
+            </div>
+            <div className='field'>
+              <label htmlFor='email' className='label'>email: {email}</label>
+            </div>
+            {/* <div className='field'>
+              <label htmlFor='location' className='label'>Area: {users?.location}</label>
+            </div> */}
             <div className="field">
               <label htmlFor='location' className='label'>Location</label>
               <input
@@ -54,7 +57,7 @@ export default function ProfileSetUp () {
                 id='location'
                 type='location'
                 name='location'
-                value={form.location}
+                value={users.location}
                 placeholder='location'
                 onChange={handleChange}
               ></input>
@@ -74,14 +77,27 @@ export default function ProfileSetUp () {
             </div>
 
             <div className="field">
-              <label htmlFor='email' className='label'>Email</label>
+              <label htmlFor='companyName' className='label'>Business Name if applicable</label>
               <input
                 className='input'
-                id='email'
-                type='email'
-                name='email'
-                value={form.email}
-                placeholder='Email'
+                id='companyName'
+                type='companyName'
+                name='companyName'
+                value={users.companyName}
+                placeholder='companyName'
+                onChange={handleChange}
+              ></input>
+            </div>
+
+            <div className="field">
+              <label htmlFor='phone' className='label'>Phone</label>
+              <input
+                className='input'
+                id='phone'
+                type='phone'
+                name='phone'
+                value={users.phone}
+                placeholder='phone'
                 onChange={handleChange}
               ></input>
             </div>
@@ -92,8 +108,9 @@ export default function ProfileSetUp () {
               onClick={handleClick}
               data-testid='submitButton'
             >
-          Save
+          Save Profile
             </button>
+
           </form>
         </article>
       </div>
