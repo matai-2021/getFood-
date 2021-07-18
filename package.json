@@ -22,11 +22,14 @@
     "dev:client": "npm run webpack -- --watch",
     "dev:server": "nodemon --watch server server/index.js",
     "build": "run-p build:client build:server",
-    "build:client": "npm run webpack -- --mode production",
-    "build:server": "npm run knex -- migrate:latest",
+    "build:client": "npm run webpack -- --mode=production",
+    "build:server": "npm run db:migrate",
+    "db:migrate": "npm run knex migrate:latest",
+    "db:seed": "npm run knex seed:run",
+    "db:reset": "npm run knex migrate:rollback && npm run db:migrate && npm run db:seed",
     "lint": "eslint --ext .js,.jsx .",
     "webpack": "webpack --config ./client/webpack.config.js",
-    "knex": "knex --knexfile ./server/db/knexfile.js"
+    "knex": "knex --knexfile server/db/knexfile.js"
   },
   "babel": {
     "presets": [
