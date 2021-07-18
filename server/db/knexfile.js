@@ -25,7 +25,7 @@ module.exports = {
   },
 
   production: {
-    client: 'postgresql',
+    client: 'pg',
     connection: pgconfig,
     pool: {
       min: 2,
