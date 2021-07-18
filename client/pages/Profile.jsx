@@ -9,7 +9,7 @@ export default function Profile () {
   const dispatch = useDispatch()
   const users = useSelector(state => state.users[0])
   const { user } = useAuth0() // user, isLoading
-  const { name, picture, email } = user // given_name, family_name, nickname, sub
+  const { name, picture, email } = user
 
   useEffect(() => {
     dispatch(getUsers())
