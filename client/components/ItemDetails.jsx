@@ -34,9 +34,9 @@ export default function ItemDetails () {
           <h1>Exp. Data: {singleItem?.expiryDate}</h1>
           <h1>Date Created: {singleItem?.dateCreated}</h1>
           <h1>Email: {singleItem?.email}</h1>
-          <button>Edit item</button>
-          <button onClick={() => handleDelete(id)}>Delete item</button>
-          <button >Claim this item</button>
+          <button className='button-purple'>Edit item</button>
+          <button className='button-purple' onClick={() => handleDelete(id)}>Delete item</button>
+          <button className='button-purple'>Claim this item</button>
         </article>
       </section>
     </>

@@ -1,0 +1,18 @@
+@use '../1-helpers/vars';
+
+.button-purple {
+    background-color: #6458F5;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
