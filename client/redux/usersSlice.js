@@ -6,7 +6,6 @@ export const getUsers = createAsyncThunk(
   async () => {
     const res = await request('/api/v1/users')
     if (res.ok) {
-      console.log(res.body)
       return await res.body
     }
   }
@@ -17,7 +16,6 @@ export const getUserById = createAsyncThunk(
   async (payload) => {
     const res = await request(`/api/v1/users${payload.id}`)
     if (res.ok) {
-      console.log(res.body)
       return await res.body
     }
   }

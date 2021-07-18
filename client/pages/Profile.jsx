@@ -7,7 +7,7 @@ import { getUsers, deleteUser } from '../redux/usersSlice'
 
 export default function Profile () {
   const dispatch = useDispatch()
-  const users = useSelector(state => state.users[0])
+  const users = useSelector(state => state.users)
   const { user } = useAuth0() // user, isLoading
   const { name, picture, email } = user
 

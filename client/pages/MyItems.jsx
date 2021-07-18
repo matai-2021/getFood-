@@ -10,6 +10,7 @@ export default function About () {
   const dispatch = useDispatch()
   const items = useSelector(state => state.items)
   const singleItem = items.find(item => item.id === Number(id))
+  // currently returns undefined
 
   useEffect(() => {
     dispatch(getItems())
@@ -25,9 +26,9 @@ export default function About () {
           style={{ width: '90%', height: '200px', backgroundColor: 'pink' }}
         />
         <h1>My Items page</h1>
-        <p>To show both items posted and claimed items here? Stretch?</p>
+        <p>To show both items posted and claimed items here? Stretch? Do we need claim button??</p>
         <article>
-          <button className='button-purple'>Claim this item</button>
+          <button className='button-purple'>Delete</button>
         </article>
       </section>
     </>
