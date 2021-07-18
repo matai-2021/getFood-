@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   render(
     <Auth0Provider
       domain="kjw-00.au.auth0.com"
-      clientId="Z53G9NYAZ1N6j0Wq7a8dII6pfWmJt8hN"
+      clientId="dJNHf2F6MBNdsIgPUeSW0OHdaquBnUDH"
       redirectUri={window.location.origin}
     >
       <Provider store={store}>

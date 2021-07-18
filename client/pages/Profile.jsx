@@ -8,8 +8,9 @@ import { getUsers, deleteUser } from '../redux/usersSlice'
 export default function Profile () {
   const dispatch = useDispatch()
   const users = useSelector(state => state.users[0])
-  const { user } = useAuth0() // user, isLoading
-  const { name, picture, email } = user // given_name, family_name, nickname, sub
+  const { user, isLoading } = useAuth0() // user, isLoading
+  console.log('user', user, isLoading)
+  // const { name, picture, email } = user // given_name, family_name, nickname, sub
 
   useEffect(() => {
     dispatch(getUsers())
@@ -23,14 +24,14 @@ export default function Profile () {
   return (
     <main className='container'>
       <h1>My Profile</h1>
-      <img className="img-holder" src={picture} alt="Profile pic"/>
+      <img className="img-holder" src={user?.picture} alt="Profile pic"/>
       <div className="parent flex-container">
         <div className="child flex-row">
           <h2>
-            <strong>Name: </strong>{name}
+            <strong>Name: </strong>{user?.name}
           </h2>
           <p>
-            <strong>Email: </strong>{email}
+            <strong>Email: </strong>{user?.email}
           </p>
           <p>
             <strong>Location: </strong>{users?.location}
