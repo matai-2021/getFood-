@@ -7,8 +7,16 @@
     margin: 0;
 }
 
-// body {
-//     font-size: 1em;
-//     font-family: vars.$paragraph;
-//     line-height: 1.5;
-// }
+#app {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-container {
+    flex: 1 0 auto;
+}
+
+footer {
+    flex-shrink: 0;
+}
