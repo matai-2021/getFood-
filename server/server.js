@@ -15,3 +15,8 @@ server.use('/api/v1/users', userRoutes)
 server.use('/api/v1/orders', orderRoutes)
 
 module.exports = server
+
+server.get('*', (req, res) => {
+  const appPath = path.join(__dirname, 'public', 'index.html')
+  res.sendFile(appPath)
+})
