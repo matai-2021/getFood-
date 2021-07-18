@@ -1,6 +1,8 @@
 import React from 'react'
-// import { useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
+// import { useHistory } from 'react-router-dom'
+// import { getItems } from '../redux/itemsSlice'
+// import { useParams } from 'react-router'
 import { addItem } from '../redux/itemsSlice'
 
 import ItemForm from '../components/ItemForm'
