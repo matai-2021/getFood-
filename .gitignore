@@ -106,10 +106,3 @@ dist
 
 # TernJS port file
 .tern-port
-
-# Bundle
-bundle.js
-bundle.js.map
-
-# DB
-dev.sqlite3
