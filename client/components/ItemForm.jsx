@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 export default function ItemForm (props) {
   const [form, setForm] = useState({
     name: '',
-    quantity: 0,
+    quantity: '',
     expiryDate: '',
     location: '',
     description: '',
@@ -126,13 +126,17 @@ export default function ItemForm (props) {
             />
           </div>
           <div className="field">
+            <label
+              htmlFor='img'
+              className='label'
+            >Image:</label>
             <input
               type="file"
               name="img"
               onChange={handleImg}
             />
           </div>
-          <button className='button mt-4'>
+          <button className='button-purple'>
             Create Item
           </button>
         </form>
