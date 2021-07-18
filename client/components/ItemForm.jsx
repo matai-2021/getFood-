@@ -7,7 +7,8 @@ export default function ItemForm (props) {
     expiryDate: '',
     location: '',
     description: '',
-    email: ''
+    email: '',
+    img: null
   })
 
   function handleChange (e) {
@@ -21,6 +22,16 @@ export default function ItemForm (props) {
   function handleSubmit (e) {
     e.preventDefault()
     props.submitEvent(form)
+  }
+
+  function handleImg (e) {
+    if (e.target.files && e.target.files[0]) {
+      const img = e.target.files[0]
+      setForm({
+        ...form,
+        img: URL.createObjectURL(img)
+      })
+    }
   }
 
   const { name, quantity, expiryDate, location, description, email } = form
@@ -112,6 +123,13 @@ export default function ItemForm (props) {
               placeholder='email'
               value={email}
               onChange={handleChange}
+            />
+          </div>
+          <div className="field">
+            <input
+              type="file"
+              name="img"
+              onChange={handleImg}
             />
           </div>
           <button className='button mt-4'>
