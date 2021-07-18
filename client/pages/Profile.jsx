@@ -26,9 +26,9 @@ export default function Profile () {
       <img className="img-holder" src={picture} alt="Profile pic"/>
       <div className="parent flex-container">
         <div className="child flex-row">
-          <h2>
+          <p>
             <strong>Name: </strong>{name}
-          </h2>
+          </p>
           <p>
             <strong>Email: </strong>{email}
           </p>
