@@ -55,11 +55,11 @@
   }
 
   .img-holder {
-      margin: 20px auto;
-      border-radius: 50%;
-      background-color: black;
-      width: 200px;
-      height: 200px;
+    width: 300px;
+    border-radius: 50%;
+    height: 300px;
+    margin: 20px auto;
+    border: 2px solid vars.$purple;
   }
 
 
