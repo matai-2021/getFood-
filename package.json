@@ -26,7 +26,7 @@
     "build:server": "npm run knex -- migrate:latest",
     "lint": "eslint --ext .js,.jsx .",
     "webpack": "webpack --config ./client/webpack.config.js",
-    "knex": "knex --knexfile ./server/db/knexfile.js"
+    "knex": "knex --knexfile ./tmp/build_b02bf47b/server/db/knexfile.js"
   },
   "babel": {
     "presets": [
@@ -53,11 +53,11 @@
     "express": "^4.17.1",
     "pg": "^8.5.1",
     "react-icons": "^4.2.0",
+    "knex": "^0.21.17",
     "superagent": "^6.1.0"
   },
   "devDependencies": {
     "@babel/core": "7.13.0",
-    "knex": "^0.21.17",
     "@babel/plugin-proposal-class-properties": "^7.14.5",
     "@babel/plugin-proposal-object-rest-spread": "^7.12.1",
     "@babel/plugin-transform-runtime": "7.14.5",
