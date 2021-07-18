@@ -9,8 +9,8 @@ export default function Header () {
     <header className="header-container">
       <p>getFood! (Change to logo here, always stay up)</p>
 
-      <Link className="logo-wrapper" to="/">
-        <img src='public/images/getFood-logo-01.svg' alt="getFood" className='logo-image' />
+      <Link className='logo-image' to="/">
+        <img src='/images/getFood-logo.png' alt="getFood" className='logo-image' />
       </Link>
       <Nav />
     </header>
