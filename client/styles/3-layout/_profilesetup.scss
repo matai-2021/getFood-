@@ -31,9 +31,14 @@
 .field {
     margin-bottom: 1rem;
 }
+
 .fieldleft {
     text-align: left;
     margin-bottom: 1rem;
+}
+
+.fieldleftinput {
+  text-align: left;
 }
 
 
@@ -44,6 +49,12 @@
   }
 
   .labelgrey {
+    color: vars.$grey;
+    font-family: vars.$paragraph;
+    font-weight: bold;
+  }
+
+  .labelgreyinput{
     color: vars.$grey;
     font-family: vars.$paragraph;
     font-weight: bold;
