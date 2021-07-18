@@ -77,7 +77,7 @@ export default function ProfileSetUp () {
             </div>
 
             <div className="field">
-              <label htmlFor='companyName' className='label'>Business Name</label>
+              <label htmlFor='companyName' className='label'>Business Name if applicable</label>
               <input
                 className='input'
                 id='companyName'

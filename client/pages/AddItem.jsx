@@ -7,16 +7,15 @@ import ItemForm from '../components/ItemForm'
 
 export default function AddItem () {
   const dispatch = useDispatch()
-  //   const history = useHistory()
+  // const history = useHistory()
 
   function submitEvent (event) {
-    event.preventDefault()
     dispatch(addItem(event))
+    // history.push('/')
   }
 
   return (
     <ItemForm
-      action='Create Item'
       submitEvent={submitEvent}
     />
   )

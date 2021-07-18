@@ -21,18 +21,25 @@ export default function Profile () {
   }
 
   return (
-    <>
-      <section className='card-container'>
-        <article>
-          <img src={picture} alt="Profile pic"/>
-          <p>Name: {name}</p>
-          <p>Email: {email}</p>
-          <p>Location: {users?.location}</p>
-          <button onClick={() => handleDelete(users?.id)}>Delete My Account</button>
+    <main className='container'>
+      <h1>My Profile</h1>
+      <img className="img-holder" src={picture} alt="Profile pic"/>
+      <div className="parent flex-container">
+        <div className="child flex-row">
+          <h2>
+            <strong>Name: </strong>{name}
+          </h2>
+          <p>
+            <strong>Email: </strong>{email}
+          </p>
+          <p>
+            <strong>Location: </strong>{users?.location}
+          </p>
           {/* Below link is not actually a button, will need to change later */}
           <Link to={'/profilesetup'} className=''>Setup Profile</Link>
-        </article>
-      </section>
-    </>
+          <button onClick={() => handleDelete(users?.id)}>Delete My Account</button>
+        </div>
+      </div>
+    </main>
   )
 }
