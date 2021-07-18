@@ -29,7 +29,7 @@
     "db:reset": "npm run knex migrate:rollback && npm run db:migrate && npm run db:seed",
     "lint": "eslint --ext .js,.jsx .",
     "webpack": "webpack --config ./client/webpack.config.js",
-    "knex": "knex --knexfile server/db/knexfile.js"
+    "knex": "knex --knexfile ./server/db/knexfile.js"
   },
   "babel": {
     "presets": [
