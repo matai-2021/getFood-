@@ -119,7 +119,7 @@ export default function ProfileSetUp () {
 
               <button
                 type='button'
-                className='button-purple'
+                className='btn-grad'
                 onClick={handleClick}
                 data-testid='submitButton'
               >
