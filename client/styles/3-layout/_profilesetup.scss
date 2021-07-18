@@ -1,0 +1,89 @@
+@use '../1-helpers/mixins';
+@use '../1-helpers/functions';
+@use '../1-helpers/vars';
+
+// .container2 {
+//     text-align: center;
+//     margin: 30px auto;
+//     position: relative;
+//     max-width: 100%;
+//     padding: 0 vars.$base-size * 3;
+//     font-family: vars.$paragraph;
+//   }
+.form-title2 {
+    color: vars.$black;
+    font-family: vars.$purple;
+    font-size: x-large;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+.flex-containerleft {
+    text-align: left;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    @include mixins.media-queries(mobile, min) {
+      flex-direction: row;
+    }
+  }
+  
+.field {
+    margin-bottom: 1rem;
+}
+.fieldleft {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+
+  .label {
+    color: vars.$black;
+    font-family: vars.$paragraph;
+    font-weight: bold;
+  }
+
+  .labelgrey {
+    color: vars.$grey;
+    font-family: vars.$paragraph;
+    font-weight: bold;
+  }
+  
+  // not being used right now
+  .form-button-primary {
+    background-color: vars.$black;
+    padding: vars.$base-size;
+    border-radius: vars.$base-size * 0.15;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: vars.$base-size * 0.5;
+  
+    @include mixins.media-queries(tablet, min) {
+      width: 50%;
+    }
+  
+    &:hover{
+      background-color: whitesmoke;
+      border: none;
+      color: vars.$black;
+    }
+  }
+
+  .form-box {
+    height: vars.$base-size * 1.75; // or 100%?
+    width: vars.$base-size * 20;
+    font-family: vars.$paragraph;
+    // margin-bottom: 1rem;
+  }
+
+  .check-box {
+    // height: vars.$base-size;
+    // width: vars.$base-size;
+    font-family: vars.$paragraph;
+    // margin-bottom: 1rem;
+  }
+  
