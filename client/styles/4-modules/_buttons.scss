@@ -1,5 +1,8 @@
 @use '../1-helpers/vars';
+@use '../1-helpers/functions';
+@use '../1-helpers/mixins';
 
+// Old design for reference
 .button-purple {
   cursor: pointer;
     background-color: #6458F5;
@@ -22,3 +25,42 @@
   .button-purple:active {
     transform: scale(0.9);
   }
+
+  // New design to use
+  .btn-grad {background-image: linear-gradient(to right, #4776E6 0%, #8E54E9  51%, #4776E6  100%)}
+  .btn-grad {
+    font-size: 16px;
+    cursor: pointer;
+    margin: 4px 2px;
+    //  margin: 10px;
+    //  padding: 15px 45px; 
+    padding: 20px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+     text-align: center;
+     transition: 0.5s;
+     background-size: 200% auto;
+     color: white;            
+     box-shadow: 0 0 20px rgb(202, 202, 202);
+     border: none;
+     border-radius: 30px;
+     display: block;
+     transition: 0.2s all;
+     text-decoration: none;
+     display: inline-block;
+   }
+
+   .btn-grad:hover {
+     background-position: right center; /* change the direction of the change here */
+    //  color: #fff;
+     opacity: 0.7;
+     text-decoration: none;
+     border: none;
+   }
+   .btn-grad:active {
+    transform: scale(0.9);
+    border: none;
+  }
+  

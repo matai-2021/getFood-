@@ -27,7 +27,7 @@ export default function About () {
         <h1>My Items page</h1>
         <p>To show both items posted and claimed items here? Stretch?</p>
         <article>
-          <button className='button-purple'>Claim this item</button>
+          <button className='btn-grad'>Claim this item</button>
         </article>
       </section>
     </>
