@@ -9,13 +9,12 @@ header {
     justify-content: space-between;
 }
 
-// .logo-image {
-//     width: 15rem;
-//     padding-left: vars.$base-size;
-//     height: 100%;
+.logo-image {
+    width: 15rem;
+    height: 100%;
 
-//     @include mixins.media-queries(mobile, min) {
-//         padding-left: vars.$base-size * 3;
-//         width: 20rem;
-//     }
-// }
+    @include mixins.media-queries(mobile, min) {
+        padding-left: vars.$base-size * 3;
+        width: 20rem;
+    }
+}

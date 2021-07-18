@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { getItems, deleteItem } from '../redux/itemsSlice'
 import { useParams } from 'react-router'
+import { Link } from 'react-router-dom'
 
 export default function ItemDetails () {
   const { id } = useParams()
@@ -20,7 +21,7 @@ export default function ItemDetails () {
   return (
     <>
       <section className='card-container'>
-        <button>Go back</button>
+        <Link to={'/'}className='item-link'>Go back</Link>
         <img
           src={singleItem?.img}
           alt={singleItem?.name}

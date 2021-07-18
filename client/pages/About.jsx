@@ -11,19 +11,19 @@ export default function About () {
             <h2>Our Story</h2>
             <img className="img-holder" src="https://christihegstad.com/content/uploads/2017/11/Plant-Grow-Seedling-Sunshine-.jpg"/>
             <p>Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-            <a className="button" href="https://www.trademe.co.nz/c/community/article/our-story">Read more</a>
+            <a className="button-purple" href="https://www.trademe.co.nz/c/community/article/our-story">Read more</a>
           </div>
           <div className="child flex-row">
             <h2>Vision & Values</h2>
             <img className="img-holder" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQKg7kMLOxRLbsBt-Gs9d_l75wVO9LfZAUcw&usqp=CAU"/>
             <p>Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-            <a className="button" href="https://www.trademe.co.nz/c/community/article/vision-and-values">Read more</a>
+            <a className="button-purple" href="https://www.trademe.co.nz/c/community/article/vision-and-values">Read more</a>
           </div>
           <div className="child flex-row">
             <h2>Community Rules</h2>
             <img className="img-holder" src="https://ychef.files.bbci.co.uk/976x549/p0842qj5.jpg"/>
             <p>Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-            <a className="button" href="#">Read more</a>
+            <a className="button-purple" href="#">Read more</a>
           </div>
         </div>
       </main>

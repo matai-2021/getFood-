@@ -128,7 +128,7 @@ export default function ItemForm (props) {
               onChange={handleImg}
             />
           </div>
-          <button className='button mt-4'>
+          <button className='button-purple'>
             Create Item
           </button>
         </form>
