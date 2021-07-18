@@ -3,9 +3,9 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
 module.exports = {
-  entry: ['./client/index.js', './client/styles/main.scss'],
+  entry: [path.join(__dirname, 'index.js'), path.join(__dirname, 'styles/main.scss')],
   output: {
-    path: path.join(__dirname, '..', 'server', 'public'),
+    path: path.join(__dirname, '../server/public'),
     filename: 'bundle.js'
   },
   mode: 'development',
