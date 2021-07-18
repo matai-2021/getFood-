@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-// import { useSelector } from 'react-redux'
 import { useAuth0 } from '@auth0/auth0-react'
 
 // // React-Icons Import
@@ -11,7 +10,6 @@ export default function Nav () {
   const { loginWithRedirect, logout, isAuthenticated } = useAuth0() // isLoading
 
   const [open, setOpen] = useState(false)
-  // const gardenId = useSelector(globalState => globalState.user?.gardenId)
 
   function handleRegister () {
     loginWithRedirect()

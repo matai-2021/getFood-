@@ -1,6 +1,7 @@
 @use '../1-helpers/vars';
 
 .button-purple {
+  cursor: pointer;
     background-color: #6458F5;
     border: none;
     border-radius: 3px;
@@ -15,4 +16,9 @@
     padding-right: 2rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    transition: 0.2s all;
+  }
+
+  .button-purple:active {
+    transform: scale(0.9);
   }
