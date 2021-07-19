@@ -3,16 +3,17 @@
 @use '../1-helpers/mixins';
 
 .card-container {
-	display: flex;
-	width: vars.$base-size * 10;
-	// background-color: vars.$yellow;
+    display: flex;
+    // height: vars.$base-size * 20;
+    justify-content: center;
+	width: auto;
 	flex-direction: column;
 	text-align: left;
 	padding: vars.$base-size * 1;
 	border: none;
     border-radius: 6px;
 	margin: vars.$base-size * 4;
-	margin-right: 0;
+	// margin-right: 0;
     box-shadow: 0 0 20px rgb(212, 212, 212);
   
 	@include mixins.media-queries(tablet, min) {
@@ -21,9 +22,11 @@
   }
 
   .card-text-container {
-    padding-bottom: vars.$base-size * 6;
-    margin-left: vars.$base-size * 2;
-    margin-right: vars.$base-size * 2;
+    margin-top: vars.$base-size * 1; 
+    margin-bottom: vars.$base-size * 1;  
+    // padding-bottom: vars.$base-size * 6;
+    // margin-left: vars.$base-size * 2;
+    // margin-right: vars.$base-size * 2;
 }
 
 .card-title {
@@ -47,4 +50,13 @@
     display: flex;
     display: inline-block;
     padding: vars.$base-size;
+}
+
+.card-img {
+    // width: vars.$base-size * 40;
+    width: auto;
+    border-radius: 5px;
+    height: vars.$base-size * 20;
+    // margin: auto;
+    object-fit: cover;
 }

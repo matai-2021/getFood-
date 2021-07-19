@@ -21,19 +21,20 @@ export default function ItemDetails () {
     <>
       <section className='card-container'>
         <Link to={'/'}className='item-link'>Go back</Link>
-        <img
+        <img className='card-img'
           src={singleItem?.img}
           alt={singleItem?.name}
-          style={{ width: '90%', height: '200px', backgroundColor: 'pink' }}
         />
         <article>
-          <h1>{singleItem?.name}</h1>
-          <h1>Pick up location: {singleItem?.location}</h1>
-          <h1>Description: {singleItem?.description}</h1>
-          <h1>Quantity: {singleItem?.quantity}</h1>
-          <h1>Exp. Data: {singleItem?.expiryDate}</h1>
-          <h1>Date Created: {singleItem?.dateCreated}</h1>
-          <h1>Email: {singleItem?.email}</h1>
+          <h1 className='item-title'>{singleItem?.name}</h1>
+          <h1 className='page-paragraph'>Pick up location: {singleItem?.location}</h1>
+          <h1 className='page-paragraph'>Description: {singleItem?.description}</h1>
+          <h1 className='page-paragraph'>Quantity: {singleItem?.quantity}</h1>
+          <h1 className='page-paragraph'>Exp. Data: {singleItem?.expiryDate}</h1>
+          <h1 className='page-paragraph'>Date Created: {singleItem?.dateCreated}</h1>
+          <h1 className='page-paragraph'>Email: {singleItem?.email}</h1>
+        </article>
+        <article>
           <button className='btn-grad'>Edit</button>
           <button className='btn-grad' onClick={() => handleDelete(id)}>Delete</button>
         </article>
