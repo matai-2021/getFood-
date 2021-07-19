@@ -29,6 +29,7 @@ router.get('/', (req, res) => {
     })
 })
 
+// adding new item
 router.post('/add', (req, res) => {
   const { name, location, userId, quantity, img, description, expiryDate, email } = req.body
   const item = { name, location, userId, quantity, img, description, expiryDate, email }
@@ -56,9 +57,10 @@ router.delete('/:id', (req, res) => {
     })
 })
 
+// updating item. For both Edit and Claimed?
 router.patch('/', (req, res) => {
-  const { id, name, location, quantity, img, description, isClaimed } = req.body
-  const updatedItem = { id, name, location, quantity, img, description, isClaimed }
+  const { id, name, location, quantity, img, description, isClaimed, claimedById } = req.body
+  const updatedItem = { id, name, location, quantity, img, description, isClaimed, claimedById }
   db.updateItem(updatedItem)
     .then(() => {
       res.status(201).json('Item successfully updated')
@@ -69,6 +71,18 @@ router.patch('/', (req, res) => {
       res.status(500).json({ message: 'Unable to update item' })
     })
 })
+
+// sweet as organics release 3, for Patching to /api/v1/orders
+// router.patch('/', (req, res) => {
+//   db.editOrderStatus(req.body.id, req.body.newStatus)
+//     .then((changedOrder) => {
+//       res.status(201).json(changedOrder)
+//       return null
+//     })
+//     .catch((err) => {
+//       res.status(500).send('failed to change order status: ' + err.message)
+//     })
+// })
 
 module.exports = router
 
@@ -87,11 +101,12 @@ module.exports = router
 
 // UPDATE DATA SHAPE
 // {
-//   "id": "",
+//   "id": 0,
 //   "name": "",
 //   "location": "",
 //   "quantity": "",
 //   "img": "",
 //   "description": "",
-//   "isClaimed": ""
+//   "isClaimed": "",
+//   "claimedById": 0,
 // }

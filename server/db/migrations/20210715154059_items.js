@@ -2,7 +2,7 @@ exports.up = function (knex) {
   return knex.schema.createTable('items', function (table) {
     table.increments('id')
     table.string('name')
-    table.integer('user_id')// .references('users.id')
+    table.integer('user_id').references('users.id')
     table.string('dateCreated')
     table.string('expiryDate')
     table.string('location')
