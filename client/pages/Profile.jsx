@@ -6,34 +6,24 @@ import { useSelector, useDispatch } from 'react-redux'
 import { getUsers, deleteUser, addUser } from '../redux/usersSlice'
 
 export default function Profile () {
-  const dispatch = useDispatch()
-  const usersFromDB = useSelector(state => state.users)
-  const { user: auth0userdata } = useAuth0()
-  // console.log('userExists', userExists)
-  console.log('from DB: ', usersFromDB)
-  console.log('from auth0: ', auth0userdata)
-  console.log('auth0userdata.email', auth0userdata?.sub)
-  // console.log('getUserById(1)', dispatch(getUserById(1)))
-
   useEffect(() => {
-    dispatch(getUsers())
-    handleProfile(userExists)
+    // dispatch(getUsers())
+    const { user: auth0userdata } = useAuth0()
+    const newUser = {
+      email: auth0userdata?.email,
+      auth0Id: auth0userdata?.sub
+    }
+    dispatch(addUser(newUser))
   }, [])
 
-  const userExists = usersFromDB.find(u => u.auth0Id === auth0userdata?.sub)
+  const usersFromDB = useSelector(state => state.users)
+  const dispatch = useDispatch()
 
-  function handleProfile (userExists) {
-    if (userExists === undefined) {
-      console.log('User does not exist!!!')
-      const newUser = {
-        email: auth0userdata?.email,
-        auth0Id: auth0userdata?.sub
-      }
-      dispatch(addUser(newUser))
-      console.log('Created new user')
-    }
-    console.log('working')
-  }
+  // const userExists = usersFromDB.find(u => u.auth0Id === auth0userdata?.sub)
+  // if (userExists === undefined) {
+  //   console.log('User does not exist!!!')
+  //   console.log('created user')
+  // }
 
   // whole account will be deleted db.deleteAccount is set up in server/routes/users.js
   const handleDelete = (itemId) => {
@@ -43,7 +33,7 @@ export default function Profile () {
   return (
     <main className='container'>
       <h1>My Profile</h1>
-      <img className="img-holder" src={auth0userdata?.picture} alt="Profile pic"/>
+      <img className="img-holder" src={userExists?.picture} alt="Profile pic"/>
       <div className="parent flex-container">
         <div className="child flex-row">
           <h2>
