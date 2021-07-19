@@ -28,11 +28,11 @@ export default function Profile () {
   }
 
   return (
-    <main className='container'>
+    <div className='profile-container'>
       <h1 className='page-title'>My Profile</h1>
       <img className="img-holder" src={auth0userdata?.picture} alt="Profile pic"/>
-      <div className="parent flex-container">
-        <div className="child flex-row">
+      <div className="profile-card">
+        <div className="profile-card-data">
           {/* {isAuthenticated && (
             <> */}
           <h2 className='page-paragraph'>
@@ -54,6 +54,6 @@ export default function Profile () {
           )} */}
         </div>
       </div>
-    </main>
+    </div>
   )
 }
