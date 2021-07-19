@@ -3,7 +3,7 @@
 @use '../1-helpers/mixins';
 @use '../1-helpers/vars';
 
-.container {
+.about-page-container {
     text-align: center;
     margin: 30px auto;
     position: relative;
@@ -70,8 +70,38 @@
     border: 2px solid vars.$purple;
   }
 
+  .horizontal-line {
+    height: math.div(vars.$base-size, 6);
+    width: vars.$base-size * 4;
+    background-color: vars.$lightpurple;
+    align-self: center;
+    margin-top: vars.$base-size;
+    margin-bottom: vars.$base-size * 2;
+  }
 
-
+  .heading-container {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    text-align: center;
+    margin: auto;
+    position: relative;
+    max-width: 100%;
+    flex-direction: column;
+    margin-top: vars.$base-size * 2;
+    margin-bottom: vars.$base-size * 2;
+  }
+  
+  // .flex-container {
+  //   margin: auto;
+  //   display: flex;
+  //   flex-direction: column;
+  //   @include mixins.media-queries(mobile, min) {
+  //     flex-direction: row;
+  //   }
+  //   // font-family: vars.$heading;
+// }
 
 
   

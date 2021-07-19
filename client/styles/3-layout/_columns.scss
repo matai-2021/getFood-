@@ -4,6 +4,8 @@
 @use '../1-helpers/vars';
 
 .container {
+  display: flex;
+  justify-content: center;
   position: relative;
   max-width: 100%;
   padding: 0 vars.$base-size * 3;
