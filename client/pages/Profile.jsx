@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
-import { useAuth0 } from '@auth0/auth0-react'
+import { useAuth0, withAuthenticationRequired } from '@auth0/auth0-react'
 import { Link } from 'react-router-dom'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { deleteUser, addUser, getUsers } from '../redux/usersSlice'
 
-export default function Profile () {
+function Profile () {
   const dispatch = useDispatch()
   const { user: auth0userdata, isAuthenticated } = useAuth0()
   const users = useSelector(state => state.users)
@@ -57,3 +57,9 @@ export default function Profile () {
     </main>
   )
 }
+
+export default withAuthenticationRequired(Profile, {
+  displayName: 'Redirect',
+  // returnTo: window.location.origin,
+  onRedirecting: () => <p>Checking authentication please wait...</p>
+})
