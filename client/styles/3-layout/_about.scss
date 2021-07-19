@@ -69,29 +69,6 @@
     margin: 20px auto;
     border: 2px solid vars.$purple;
   }
-
-  .horizontal-line {
-    height: math.div(vars.$base-size, 6);
-    width: vars.$base-size * 4;
-    background-color: vars.$lightpurple;
-    align-self: center;
-    margin-top: vars.$base-size;
-    margin-bottom: vars.$base-size * 2;
-  }
-
-  .heading-container {
-    display: flex;
-    align-items: center;
-    align-self: center;
-    align-content: center;
-    text-align: center;
-    margin: auto;
-    position: relative;
-    max-width: 100%;
-    flex-direction: column;
-    margin-top: vars.$base-size * 2;
-    margin-bottom: vars.$base-size * 2;
-  }
   
   // .flex-container {
   //   margin: auto;

@@ -22,18 +22,18 @@ export default function Profile () {
 
   return (
     <main className='container'>
-      <h1>My Profile</h1>
+      <h1 className='page-title'>My Profile</h1>
       <img className="img-holder" src={picture} alt="Profile pic"/>
       <div className="parent flex-container">
         <div className="child flex-row">
-          <p>
-            <strong>Name: </strong>{name}
+          <p className='page-paragraph'>
+            Name: {name}
           </p>
-          <p>
-            <strong>Email: </strong>{email}
+          <p className='page-paragraph'>
+            Email: {email}
           </p>
-          <p>
-            <strong>Location: </strong>{users?.location}
+          <p className='page-paragraph'>
+            Location: {users?.location}
           </p>
           {/* Below link is not actually a button, will need to change later */}
           <Link to={'/profilesetup'} className='btn-grad'>Edit Profile</Link>

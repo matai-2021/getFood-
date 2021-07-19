@@ -29,6 +29,7 @@
   // New design to use
   .btn-grad {background-image: linear-gradient(to right, #4776E6 0%, #8E54E9  51%, #4776E6  100%)}
   .btn-grad {
+    font-family: vars.$paragraph;
     font-size: 16px;
     cursor: pointer;
     // margin: 4px 2px;
