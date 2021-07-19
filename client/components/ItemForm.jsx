@@ -47,7 +47,7 @@ export default function ItemForm (props) {
           <div className="field">
             <label
               htmlFor='name'
-              className='label'>Item Name</label>
+              className='label'>Item Name:</label>
             <input
               id='name'
               name='name'
@@ -62,7 +62,7 @@ export default function ItemForm (props) {
             <label
               htmlFor='description'
               className='label'
-            >Description</label>
+            >Description:</label>
             <textarea
               id='description'
               name='description'
@@ -76,7 +76,7 @@ export default function ItemForm (props) {
             <label
               htmlFor='expiryDate'
               className='label'
-            >Expiry Date</label>
+            >Expiry Date:</label>
             <textarea
               id='expiryDate'
               name='expiryDate'
@@ -87,12 +87,8 @@ export default function ItemForm (props) {
             />
           </div>
           <div className="field">
-            <label
-              htmlFor='quantity'
-              className='label'
-            >Quantity</label>
-            <textarea
-              id='quantity'
+            <label htmlFor='quantity' className='label'>Quantity:</label>
+            <textarea id='quantity'
               name='quantity'
               className='textarea is-normal'
               placeholder='quantity'
@@ -104,7 +100,7 @@ export default function ItemForm (props) {
             <label
               htmlFor='location'
               className='label'
-            >Location</label>
+            >Location:</label>
             <textarea
               id='location'
               name='location'
