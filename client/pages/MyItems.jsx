@@ -20,7 +20,7 @@ export default function ItemDetails () {
   return (
     <>
       <section className='card-container'>
-        <Link to={'/'}className='item-link'>Go back</Link>
+        <Link to={'/'}className='link-button'>Go back</Link>
         <img className='card-img'
           src={singleItem?.img}
           alt={singleItem?.name}

@@ -2,10 +2,11 @@ import React from 'react'
 
 export default function Home () {
   return (
-    <section>
+    <section className='heading-container'>
       <h1 className='page-title'>Welcome to getFood</h1>
-      <p>A food conserving project by the getFood group</p>
-      <p>Please log in to get started, or checkout our About page</p>
+      <div className='horizontal-line'></div>
+      <p className='page-paragraph '>A food conserving project by the getFood group</p>
+      <p className='page-paragraph '>Please log in to get started, or checkout our About page</p>
     </section>
   )
 }

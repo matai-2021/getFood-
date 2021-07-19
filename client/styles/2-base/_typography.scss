@@ -28,3 +28,9 @@
     font-family: vars.$heading;
     padding: 1rem 0rem 1rem 0rem;
 }
+
+.footer-text {
+    font-size: vars.$base-size;
+    color: vars.$purple;
+    font-family: vars.$paragraph; 
+}
