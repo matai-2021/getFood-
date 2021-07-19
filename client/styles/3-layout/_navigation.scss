@@ -1,6 +1,7 @@
 @use '../1-helpers/vars';
 @use '../1-helpers/functions';
 @use '../1-helpers/mixins';
+@use '../2-base/typography';
 
 .nav {
     width: auto;
@@ -8,19 +9,22 @@
 
 .nav-link {
     display: none;
-    font-size: vars.$base-size * 1.5;
-    font-family: vars.$paragraph;
+    // font-size: 300px;
+    // font-family: vars.$paragraph;
     color: vars.$purple;
     text-decoration: none;
+    font-size: vars.$base-size * 2;
+    font-family: vars.$heading;
 
     &:hover {
-        color: vars.$purple;
+        color: vars.$lightpurple;
     }
 
     @include mixins.media-queries(mobile, min) {
         display: block;
         padding-left: vars.$base-size;
-        font-size: vars.$base-size;
+        font-size: vars.$base-size * 1.2;
+        font-family: vars.$paragraph;
     }
 }
 
@@ -62,7 +66,7 @@
 .nav-menu {
     height: 100%;
     display: flex;
-	background-color: vars.$yellow;
+	// background-color: vars.$yellow;
 
     @include mixins.media-queries(mobile, min) {
 		flex-direction: row;
