@@ -11,9 +11,9 @@ import { getUsers } from '../redux/usersSlice'
 
 export default function ProfileSetUp () {
   const dispatch = useDispatch()
-  const usersFromDB = useSelector(state => state.users)
+  const users = useSelector(state => state.users)
   const { user: auth0userdata } = useAuth0()
-  const userExists = usersFromDB.find(u => u.auth0Id === auth0userdata?.sub)
+  const sessionUser = users.find(user => user.auth0Id === auth0userdata?.sub)
 
   // const [form, setForm] = useState({
   // })
@@ -46,12 +46,12 @@ export default function ProfileSetUp () {
 
               <div className='fieldleft'>
                 <label htmlFor='firstName' className='labelgrey'>Name:  </label>
-                <label htmlFor='firstName' className='label'>{userExists.name}</label>
+                <label htmlFor='firstName' className='label'>{sessionUser.name}</label>
               </div>
 
               <div className='fieldleft'>
                 <label htmlFor='email' className='labelgrey'>Email:  </label>
-                <label htmlFor='email' className='label'>{userExists.email}</label>
+                <label htmlFor='email' className='label'>{sessionUser.email}</label>
               </div>
               <div className='fieldleft'>
               </div>
@@ -68,7 +68,7 @@ export default function ProfileSetUp () {
                   id='location'
                   type='text'
                   name='location'
-                  value={userExists.location}
+                  value={sessionUser.location}
                   placeholder='Your Address'
                   onChange={handleChange}
                 ></input>
@@ -84,7 +84,7 @@ export default function ProfileSetUp () {
                   id='isCompany'
                   type='checkbox'
                   name='isCompany'
-                  value={userExists.isCompany}
+                  value={sessionUser.isCompany}
                 ></input>
               </div>
 
@@ -97,7 +97,7 @@ export default function ProfileSetUp () {
                   id='companyName'
                   type='text'
                   name='companyName'
-                  value={userExists.companyName}
+                  value={sessionUser.companyName}
                   placeholder='Only if applicable'
                   onChange={handleChange}
                 ></input>
@@ -112,7 +112,7 @@ export default function ProfileSetUp () {
                   id='phone'
                   type='text'
                   name='phone'
-                  value={userExists.phone}
+                  value={sessionUser.phone}
                   placeholder='Phone Number'
                   onChange={handleChange}
                 ></input>
