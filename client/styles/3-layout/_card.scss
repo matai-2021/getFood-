@@ -13,8 +13,9 @@
     border-radius: 3px;
 	margin: vars.$base-size * 4;
 	margin-right: 0;
+    width: auto;
   
-	@include mixins.media-queries(tablet, min) {
+	@include mixins.media-queries(mobile, min) {
 		width: functions.colWidth(5);
 	}
   }
