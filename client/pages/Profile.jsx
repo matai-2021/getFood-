@@ -17,19 +17,23 @@ export default function Profile () {
 
   useEffect(() => {
     dispatch(getUsers())
+    handleProfile(userExists)
   }, [])
 
   const userExists = usersFromDB.find(u => u.auth0Id === auth0userdata?.sub)
-  if (userExists === undefined) {
-    console.log('User does not exist!!!')
-    const newUser = {
-      email: auth0userdata?.email,
-      auth0Id: auth0userdata?.sub
+
+  function handleProfile (userExists) {
+    if (userExists === undefined) {
+      console.log('User does not exist!!!')
+      const newUser = {
+        email: auth0userdata?.email,
+        auth0Id: auth0userdata?.sub
+      }
+      dispatch(addUser(newUser))
+      console.log('Created new user')
     }
-    dispatch(addUser(newUser))
-    console.log('Created new user')
+    console.log('working')
   }
-  console.log('working')
 
   // whole account will be deleted db.deleteAccount is set up in server/routes/users.js
   const handleDelete = (itemId) => {
