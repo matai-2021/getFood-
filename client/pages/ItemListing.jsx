@@ -9,6 +9,7 @@ import SingleItem from '../components/SingleItem'
 export default function ItemListing () {
   const items = useSelector(state => state.items)
   const dispatch = useDispatch()
+  console.log(items)
 
   useEffect(() => {
     dispatch(getItems())
@@ -18,6 +19,7 @@ export default function ItemListing () {
     <section className='items-wrapper'>
       <Link to='/itemnew' className='btn-grad'>Add Item</Link>
       {items.map(item => (
+        !item.isClaimed &&
         <React.Fragment key={item.id} >
           <SingleItem
             id={item.id}
