@@ -7,20 +7,24 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 import { IoClose } from 'react-icons/io5'
 
 export default function Nav () {
-  const { loginWithRedirect, logout, isAuthenticated } = useAuth0() // isLoading
+  const { loginWithRedirect, logout, isAuthenticated } = useAuth0() // isLoading, user
 
   const [open, setOpen] = useState(false)
 
   function handleRegister () {
-    loginWithRedirect()
+    loginWithRedirect({
+      redirectUri: `${window.location.origin}/profile`,
+      screen_hint: 'signup'
+    })
   }
 
   function handleLogin () {
-    loginWithRedirect()
+    loginWithRedirect({ redirectUri: `${window.location.origin}/profile` })
   }
 
   function handleLogoff () {
-    logout({ returnTo: window.location.origin })
+    logout()
+    // logout({ returnTo: window.location.origin })
   }
 
   const toggleMenu = () => {

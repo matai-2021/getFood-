@@ -15,22 +15,23 @@ export default function SingleItem (props) {
   return (
     <section className='item-container'>
       <div className='item-details'>
-        <p>
-          <strong>Name: </strong>{name}
+        <h1 className='item-title'>
+          {name}
+        </h1>
+        <div className='horizontal-line-single-item'></div>
+        <p className='page-paragraph'>
+          Description: {description}
         </p>
-        <p>
-          <strong>Description: </strong>{description}
+        <p className='page-paragraph'>
+          Expiry Date:{expiryDate}
         </p>
-        <p>
-          <strong>Expiry Date: </strong>{expiryDate}
+        <p className='page-paragraph'>
+          Quantity: {quantity}
         </p>
-        <p>
-          <strong>Quantity: </strong>{quantity}
+        <p className='page-paragraph'>
+          email: {email}
         </p>
-        <p>
-          <strong>email: </strong>{email}
-        </p>
-        <Link to={`/item/${id}`}className='item-link'>Item Details</Link>
+        <Link to={`/item/${id}`}className='item-details-btn'>Item Details</Link>
       </div>
       <div className='item-img'>
         <img src={img} alt={img} />

@@ -9,7 +9,10 @@ exports.seed = knex =>
           location: 'Glenfield, Auckland',
           isCompany: true,
           email: 'krisWood@gmail.com',
-          auth0Id: 'jwrghwo'
+          auth0Id: 'linkedin|q2wRHxm1K1',
+          companyName: 'Woody Grill',
+          phone: '0211996925',
+          profilePic: '/images/profile/kris.jpg'
         },
         {
           id: 2,
@@ -18,6 +21,9 @@ exports.seed = knex =>
           location: 'Avondale, Auckland',
           isCompany: false,
           email: 'kokoono@gmail.com',
-          auth0Id: 'lkfjgwh'
+          auth0Id: 'lkfjgwh',
+          companyName: null,
+          phone: '0211996925',
+          profilePic: '/images/profile/kris.jpg'
         }
       ]))

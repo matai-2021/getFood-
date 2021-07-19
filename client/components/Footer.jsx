@@ -4,7 +4,7 @@ import { AiFillFacebook, AiFillInstagram, AiFillTwitterCircle } from 'react-icon
 export default function Footer () {
   return (
     <footer className="footer">
-      <h3>&copy; getFood</h3>
+      <h3 className='footer-text'>&copy; getFood</h3>
       <ul className="social-list">
         <li className="social-list-item">
           <a

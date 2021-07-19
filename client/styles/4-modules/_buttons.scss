@@ -29,15 +29,13 @@
   // New design to use
   .btn-grad {background-image: linear-gradient(to right, #4776E6 0%, #8E54E9  51%, #4776E6  100%)}
   .btn-grad {
+    font-family: vars.$paragraph;
     font-size: 16px;
     cursor: pointer;
-    margin: 4px 2px;
-    //  margin: 10px;
+    // margin: 4px 2px;
+    margin: 10px;
     //  padding: 15px 45px; 
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+     padding: 1rem 5rem 1rem 5rem;
      text-align: center;
      transition: 0.5s;
      background-size: 200% auto;
@@ -53,13 +51,71 @@
 
    .btn-grad:hover {
      background-position: right center; /* change the direction of the change here */
-    //  color: #fff;
-     opacity: 0.7;
+    //  opacity: 0.7;
      text-decoration: none;
      border: none;
+     font-family: vars.$paragraph;
    }
    .btn-grad:active {
     transform: scale(0.9);
     border: none;
+    font-family: vars.$paragraph;
+  }
+
+.link-button {
+    display: flex;
+    justify-content: flex-end;
+    font-family: vars.$paragraph;
+    color: vars.$grey;
+    text-decoration: none;
+    margin-bottom: vars.$base-size;
+  }
+  .link-button:hover {
+    opacity: 0.7;
+    text-decoration: none;
+    border: none;
+    font-family: vars.$paragraph;
+    color: vars.$grey;
+  }
+  .link-button:active {
+   text-decoration: none;
+   border: none;
+   font-family: vars.$paragraph;
+ }
+
+ .item-details-btn {background-image: linear-gradient(to right, #DD5E89 0%, #F7BB97  51%, #DD5E89  100%)}
+  .item-details-btn {
+    font-family: vars.$paragraph;
+    font-size: 16px;
+    cursor: pointer;
+    // margin: 4px 2px;
+    margin-top: vars.$base-size;
+    margin-bottom: vars.$base-size * 2;
+    //  padding: 15px 45px; 
+     padding: 0.5rem 2.5rem 0.5rem 2.5rem;
+     text-align: center;
+     transition: 0.5s;
+     background-size: 200% auto;
+     color: white;            
+     box-shadow: 0 0 20px rgb(202, 202, 202);
+     border: none;
+     border-radius: 30px;
+     display: block;
+     transition: 0.2s all;
+     text-decoration: none;
+     display: inline-block;
+   }
+
+   .item-details-btn:hover {
+     background-position: right center; /* change the direction of the change here */
+    //  opacity: 0.7;
+     text-decoration: none;
+     border: none;
+     font-family: vars.$paragraph;
+   }
+   .item-details-btn:active {
+    transform: scale(0.9);
+    border: none;
+    font-family: vars.$paragraph;
   }
   

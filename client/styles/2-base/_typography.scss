@@ -4,8 +4,33 @@
 @use '../1-helpers/vars';
 
 .page-title {
-    font-size: 2rem;
-    color: rgba(35, 108, 243, 0.533);
-    padding-bottom: vars.$base-size;
+    font-size: vars.$base-size * 2.5;
+    color:  vars.$purple;
     font-family: vars.$heading;
+}
+
+.page-sub-title {
+    font-size: vars.$base-size * 1.5;
+    color: vars.$lightpurple;
+    font-family: vars.$heading;
+}
+
+.page-paragraph {
+    font-size: vars.$base-size;
+    color:  vars.$grey;
+    font-family: vars.$paragraph; 
+}
+
+// inside cards
+.item-title {
+    font-size: vars.$base-size * 2;
+    color:  vars.$purple;
+    font-family: vars.$heading;
+    padding: 1rem 0rem 1rem 0rem;
+}
+
+.footer-text {
+    font-size: vars.$base-size;
+    color: vars.$purple;
+    font-family: vars.$paragraph; 
 }

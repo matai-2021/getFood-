@@ -16,22 +16,38 @@ function getAllUsers (db = connection) {
 function getUserById (id, db = connection) {
   return db('users')
     .select()
-    .where('id', id)
+    .where('auth0Id', id)
+}
+
+function userExists (auth0Id, db = connection) {
+  return db('users')
+    .count('id as n')
+    .where('auth0Id', auth0Id)
+    .then((count) => {
+      return count[0].n > 0
+    })
 }
 
 function addUser (newUser, db = connection) {
-  const dateCreated = Date.now() // what is the format of this date?
-  const { name, location, isCompany, email, auth0Id } = newUser
-  return db('users')
-    .insert({
-      name,
-      dateCreated: dateCreated,
-      location,
-      isCompany: isCompany,
-      email,
-      auth0Id: auth0Id
+  const { email, auth0Id, name } = newUser
+  userExists(auth0Id)
+    .then((exists) => {
+      if (!exists) {
+        const timestamp = new Date()
+        const dateCreated = timestamp.toDateString()
+        return db('users')
+          .insert({
+            dateCreated,
+            email,
+            auth0Id,
+            name
+          })
+      }
+      return null
     })
-    .then((ids) => console.log(ids[0]))
+    .catch((err) => {
+      console.error(err.message)
+    })
 }
 
 // function editProfile (id, db = connection) {

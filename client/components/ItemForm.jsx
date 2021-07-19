@@ -42,97 +42,107 @@ export default function ItemForm (props) {
   return (
     <>
       <div>
-        <h2 className='title is-5 mb-4'>Item Details</h2>
+        <h2 className='form-title2'>Item Details</h2>
         <form onSubmit={handleSubmit}>
-          <div className="field">
+          <div className="fieldleftinput">
             <label
               htmlFor='name'
-              className='label'>Item Name</label>
+              className='label'>Item Name:</label>
+          </div>
+          <div className="field">
             <input
               id='name'
               name='name'
-              className='input is-normal'
+              className='form-box'
               type='text'
-              placeholder='item name'
+              placeholder='Your item name'
               value={name}
               onChange={handleChange}
             />
           </div>
-          <div className="field">
+          <div className="fieldleftinput">
             <label
               htmlFor='description'
               className='label'
-            >Description</label>
+            >Description:</label>
+          </div>
+          <div className="field">
             <textarea
               id='description'
               name='description'
-              className='textarea is-normal'
-              placeholder='item description'
+              className='form-box'
+              placeholder='e.g. "In good condition, stored in a bag"'
               value={description}
               onChange={handleChange}
             />
           </div>
-          <div className="field">
+          <div className="fieldleftinput">
             <label
               htmlFor='expiryDate'
               className='label'
-            >Expiry Date</label>
+            >Expiry Date:</label>
+          </div>
+          <div className="field">
             <textarea
               id='expiryDate'
               name='expiryDate'
-              className='textarea is-normal'
-              placeholder='exp date'
+              className='form-box'
+              placeholder='Expiry date if applicable'
               value={expiryDate}
               onChange={handleChange}
             />
           </div>
+          <div className="fieldleftinput">
+            <label htmlFor='quantity' className='label'>Quantity:</label>
+          </div>
           <div className="field">
-            <label
-              htmlFor='quantity'
-              className='label'
-            >Quantity</label>
-            <textarea
-              id='quantity'
+            <textarea id='quantity'
               name='quantity'
-              className='textarea is-normal'
-              placeholder='quantity'
+              className='form-box'
+              placeholder='Quantity'
               value={quantity}
               onChange={handleChange}
             />
           </div>
-          <div className="field">
+          <div className="fieldleftinput">
             <label
               htmlFor='location'
               className='label'
-            >Location</label>
+            >Pickup location:</label>
+          </div>
+          <div className="field">
             <textarea
               id='location'
               name='location'
-              className='textarea is-normal'
-              placeholder='item location'
+              className='form-box'
+              placeholder='Pickup location for this item'
               value={location}
               onChange={handleChange}
             />
           </div>
-          <div className="field">
+          <div className="fieldleftinput">
             <label
               htmlFor='email'
               className='label'
             >Email:</label>
+          </div>
+          <div className="field">
             <textarea
               id='email'
               name='email'
-              className='textarea is-normal'
-              placeholder='email'
+              className='form-box'
+              placeholder='Email for contact'
               value={email}
               onChange={handleChange}
             />
           </div>
-          <div className="field">
+          <div>
             <label
               htmlFor='img'
               className='label'
-            >Image:</label>
+            >Image:  </label>
+          </div>
+          <div className="field">
             <input
               type="file"
               name="img"

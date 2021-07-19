@@ -3,7 +3,7 @@
 @use '../1-helpers/mixins';
 @use '../1-helpers/vars';
 
-.container {
+.about-page-container {
     text-align: center;
     margin: 30px auto;
     position: relative;
@@ -69,9 +69,16 @@
     margin: 20px auto;
     border: 2px solid vars.$purple;
   }
-
-
-
+  
+  // .flex-container {
+  //   margin: auto;
+  //   display: flex;
+  //   flex-direction: column;
+  //   @include mixins.media-queries(mobile, min) {
+  //     flex-direction: row;
+  //   }
+  //   // font-family: vars.$heading;
+// }
 
 
   
