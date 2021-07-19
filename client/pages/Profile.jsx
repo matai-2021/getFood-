@@ -7,9 +7,9 @@ import { getUsers, deleteUser } from '../redux/usersSlice'
 
 export default function Profile () {
   const dispatch = useDispatch()
-  const users = useSelector(state => state.users[0])
+  const users = useSelector(state => state.users)
   const { user } = useAuth0() // user, isLoading
-  const { name, picture, email } = user // given_name, family_name, nickname, sub
+  const { name, picture, email } = user
 
   useEffect(() => {
     dispatch(getUsers())
@@ -26,9 +26,9 @@ export default function Profile () {
       <img className="img-holder" src={picture} alt="Profile pic"/>
       <div className="parent flex-container">
         <div className="child flex-row">
-          <h2>
+          <p>
             <strong>Name: </strong>{name}
-          </h2>
+          </p>
           <p>
             <strong>Email: </strong>{email}
           </p>
@@ -36,7 +36,7 @@ export default function Profile () {
             <strong>Location: </strong>{users?.location}
           </p>
           {/* Below link is not actually a button, will need to change later */}
-          <Link to={'/profilesetup'} className=''>Setup Profile</Link>
+          <Link to={'/profilesetup'} className='btn-grad'>Edit Profile</Link>
           <button className='btn-grad' onClick={() => handleDelete(users?.id)}>Delete My Account</button>
         </div>
       </div>

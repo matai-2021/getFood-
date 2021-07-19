@@ -16,7 +16,7 @@
 	// margin-right: 0;
     box-shadow: 0 0 20px rgb(212, 212, 212);
   
-	@include mixins.media-queries(tablet, min) {
+	@include mixins.media-queries(mobile, min) {
 		width: functions.colWidth(5);
 	}
   }
