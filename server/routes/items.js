@@ -74,9 +74,9 @@ router.patch('/', (req, res) => {
 
 // Claiming item, so just updating isClaimed and claimedBy?
 router.patch('/claim', (req, res) => {
-  const { id, claimedById } = req.body
+  const { id, isClaimed, claimedById } = req.body
   console.log(req.body)
-  const claimedItem = { id, claimedById }
+  const claimedItem = { id, isClaimed, claimedById }
   db.claimItem(claimedItem)
     .then((changedItem) => {
       res.status(201).json(changedItem)

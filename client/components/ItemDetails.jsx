@@ -17,7 +17,7 @@ export default function ItemDetails () {
 
   const handleClaim = (itemId) => {
     const claimedById = 1
-    dispatch(claimItem({ id: itemId, isClaimed: false, claimedById: claimedById }))
+    dispatch(claimItem({ id: itemId, isClaimed: true, claimedById: claimedById }))
     history.push('/claim')
   }
 

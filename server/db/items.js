@@ -56,13 +56,13 @@ function updateItem (updatedItem, db = connection) {
 
 function claimItem (claimedItem, db = connection) {
   const { id, isClaimed, claimedById } = claimedItem
+  console.log('iscaliemd', isClaimed)
   return db('items')
     .where('id', id)
     .update({
       isClaimed,
       claimedById
     })
-    .then((ids) => console.log(ids[0]))
 }
 
 // sweet as organics updating order status function
