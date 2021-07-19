@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 
 export default function ItemForm (props) {
+  const history = useHistory()
   const [form, setForm] = useState({
     name: '',
     quantity: '',
@@ -22,6 +24,7 @@ export default function ItemForm (props) {
   function handleSubmit (e) {
     e.preventDefault()
     props.submitEvent(form)
+    history.push('/message')
   }
 
   function handleImg (e) {
@@ -132,7 +135,7 @@ export default function ItemForm (props) {
               onChange={handleImg}
             />
           </div>
-          <button className='button-purple'>
+          <button className='btn-grad'>
             Create Item
           </button>
         </form>

@@ -12,6 +12,9 @@ import MyItems from './pages/MyItems'
 import ItemListing from './pages/ItemListing'
 import ItemDetails from './components/ItemDetails'
 import Footer from './components/Footer'
+import AddMsg from './components/Messages/AddMsg'
+import DeleteMsg from './components/Messages/DeleteMsg'
+import ClaimMsg from './components/Messages/ClaimMsg'
 // import { cacheUser } from './auth-utils'
 
 import { useAuth0 } from '@auth0/auth0-react'
@@ -37,6 +40,9 @@ export default function App () {
           <Route path='/myitems' component={MyItems} />
           <Route path='/itemnew' component={AddItem} />
           <Route path='/item/:id' component={ItemDetails} />
+          <Route path='/message' component={AddMsg} />
+          <Route path='/delete' component={DeleteMsg} />
+          <Route path='/claim' component={ClaimMsg} />
         </main>
       </div>
       <Footer />
