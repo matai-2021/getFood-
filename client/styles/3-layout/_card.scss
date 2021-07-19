@@ -60,3 +60,22 @@
     // margin: auto;
     object-fit: cover;
 }
+
+.card-container-horizontal {
+    display: flex;
+    // height: vars.$base-size * 20;
+    justify-content: center;
+	width: vars.$base-size * 20;
+	flex-direction: column;
+	text-align: left;
+	padding: vars.$base-size * 1;
+	border: none;
+    border-radius: 6px;
+	margin: vars.$base-size * 4;
+	// margin-right: 0;
+    box-shadow: 0 0 20px rgb(212, 212, 212);
+  
+	@include mixins.media-queries(mobile, min) {
+		width: functions.colWidth(5);
+	}
+}
