@@ -7,6 +7,9 @@ exports.up = function (knex) {
     table.boolean('isCompany')
     table.string('email')
     table.string('auth0Id')
+    table.string('companyName')
+    table.string('phone')
+    table.string('profilePic')
   })
 }
 

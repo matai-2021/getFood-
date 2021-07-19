@@ -21,7 +21,8 @@ function getItems (db = connection) {
 }
 
 function addItem (newItem, db = connection) {
-  const dateCreated = Date.now() // what is the format of this date?
+  const timestamp = new Date()
+  const dateCreated = timestamp.toDateString()
   const { name, location, userId, quantity, img, description, expiryDate, email } = newItem
   return db('items')
     .insert({
