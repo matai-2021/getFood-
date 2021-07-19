@@ -16,8 +16,8 @@ export default function ItemDetails () {
   }, [])
 
   const handleClaim = () => {
-    const newClaimedById = 1 // to link with Auth0 for getting user's id logged in
-    dispatch(claimItem(id, newClaimedById))
+    const ClaimedById = 1 // to link with Auth0 for getting user's id logged in
+    dispatch(claimItem(id, ClaimedById))
     history.push('/claim')
   }
 

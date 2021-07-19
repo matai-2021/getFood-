@@ -30,6 +30,9 @@ Zac:
 - Finish Claim functionality
 - Help on styling
 
+
+Backup plans:
+- (Zac - hasn't shared yet) myItems to show only items that are isClaimed=true, not by logged in user's id?
 // ------------------------------------------------
 // ------------------------------------------------
 Monday 19/07/2021
