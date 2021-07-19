@@ -13,7 +13,7 @@ export default function Nav () {
 
   function handleRegister () {
     loginWithRedirect({
-      redirectUri: `${window.location.origin}`,
+      redirectUri: `${window.location.origin}/profile`,
       screen_hint: 'signup'
     })
   }

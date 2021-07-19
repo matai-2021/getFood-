@@ -11,9 +11,10 @@ import { getUsers } from '../redux/usersSlice'
 
 export default function ProfileSetUp () {
   const dispatch = useDispatch()
-  const users = useSelector(state => state.users[0]) // used for bringing in data for users.location in input field
-  const { user } = useAuth0()
-  const { name, picture, email } = user
+  const usersFromDB = useSelector(state => state.users)
+  const { user: auth0userdata } = useAuth0()
+  const userExists = usersFromDB.find(u => u.auth0Id === auth0userdata?.sub)
+
   // const [form, setForm] = useState({
   // })
 
@@ -36,7 +37,7 @@ export default function ProfileSetUp () {
       <section className='container'>
         {/* section className container makes in middle */}
         <div className='field'>
-          <img className="img-holdersmall" src={picture} alt="Profile Pic"/>
+          <img className="img-holdersmall" src={auth0userdata.picture} alt="Profile Pic"/>
         </div>
         <div className='parent flex-container'>
           <article className='parent flex-container'>
@@ -45,12 +46,12 @@ export default function ProfileSetUp () {
 
               <div className='fieldleft'>
                 <label htmlFor='firstName' className='labelgrey'>Name:  </label>
-                <label htmlFor='firstName' className='label'>{name}</label>
+                <label htmlFor='firstName' className='label'>{userExists.name}</label>
               </div>
 
               <div className='fieldleft'>
                 <label htmlFor='email' className='labelgrey'>Email:  </label>
-                <label htmlFor='email' className='label'>{email}</label>
+                <label htmlFor='email' className='label'>{userExists.email}</label>
               </div>
               <div className='fieldleft'>
               </div>
@@ -67,7 +68,7 @@ export default function ProfileSetUp () {
                   id='location'
                   type='text'
                   name='location'
-                  value={users.location}
+                  value={userExists.location}
                   placeholder='Your Address'
                   onChange={handleChange}
                 ></input>
@@ -83,7 +84,7 @@ export default function ProfileSetUp () {
                   id='isCompany'
                   type='checkbox'
                   name='isCompany'
-                  value={users.isCompany}
+                  value={userExists.isCompany}
                 ></input>
               </div>
 
@@ -96,7 +97,7 @@ export default function ProfileSetUp () {
                   id='companyName'
                   type='text'
                   name='companyName'
-                  value={users.companyName}
+                  value={userExists.companyName}
                   placeholder='Only if applicable'
                   onChange={handleChange}
                 ></input>
@@ -111,7 +112,7 @@ export default function ProfileSetUp () {
                   id='phone'
                   type='text'
                   name='phone'
-                  value={users.phone}
+                  value={userExists.phone}
                   placeholder='Phone Number'
                   onChange={handleChange}
                 ></input>
