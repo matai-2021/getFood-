@@ -10,9 +10,9 @@ exports.seed = knex =>
       quantity: '6',
       description: 'good shape',
       email: 'vegelover@gmail.com',
+      img: '/images/apple.jpg',
       isClaimed: false,
-      img: '/images/apple.jpg'
-
+      claimedById: null
     },
     {
       id: 2,
@@ -24,7 +24,8 @@ exports.seed = knex =>
       quantity: '9',
       description: 'a bit bruised',
       email: 'eatwell@gmail.com',
-      isClaimed: false,
-      img: '/images/potatoes.jpeg'
+      img: '/images/potatoes.jpeg',
+      isClaimed: true,
+      claimedById: 1
     }
   ])

@@ -5,6 +5,7 @@ Kris, Koko, Kritika, Rodrigo, Zac
 https://whimsical.com/getfood-JfoEWmZzgLJTabRX5iejtA
 
 Monday 19/07/2021
+
 Not all notes written here, but main changes to do:
 Orders table obsolete, modify items table for createdById, claimedById to use for hiding items when claimed, and to show on myItems component.
 
@@ -16,6 +17,8 @@ Zac - table routes dbfunction, and then frontend with kris? For reducers etc
 
 Discussion with Don for Auth0
 Remove Hashrouter and use BrowserRouter, modify server.js to have the star which sends json. This should be all. Refer to Gardenz
+
+(Also, we have been utilising the kanban board on github for keeping track of our ticket/issues. Thanks for the setup Koko!)
 
 // ------------------------------------------------
 // ------------------------------------------------
