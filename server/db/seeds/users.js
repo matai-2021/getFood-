@@ -25,5 +25,127 @@ exports.seed = knex =>
           companyName: null,
           phone: '0211996925',
           profilePic: '/images/profile/kris.jpg'
-        }
+        },
+        {
+          id: 2,
+          name: 'Koko Ono',
+          dateCreated: '15/07 14:40',
+          location: 'Avondale, Auckland',
+          isCompany: false,
+          email: 'kokoono@gmail.com',
+          auth0Id: 'lkfjgwh',
+          companyName: null,
+          phone: '0211996925',
+          profilePic: '/images/profile/kris.jpg'
+        },
+        {
+          id: 2,
+          name: 'Koko Ono',
+          dateCreated: '15/07 14:40',
+          location: 'Avondale, Auckland',
+          isCompany: false,
+          email: 'kokoono@gmail.com',
+          auth0Id: 'lkfjgwh',
+          companyName: null,
+          phone: '0211996925',
+          profilePic: '/images/profile/kris.jpg'
+        },
+        {
+          id: 2,
+          name: 'Koko Ono',
+          dateCreated: '15/07 14:40',
+          location: 'Avondale, Auckland',
+          isCompany: false,
+          email: 'kokoono@gmail.com',
+          auth0Id: 'lkfjgwh',
+          companyName: null,
+          phone: '0211996925',
+          profilePic: '/images/profile/kris.jpg'
+        },
+        {
+          id: 2,
+          name: 'Koko Ono',
+          dateCreated: '15/07 14:40',
+          location: 'Avondale, Auckland',
+          isCompany: false,
+          email: 'kokoono@gmail.com',
+          auth0Id: 'lkfjgwh',
+          companyName: null,
+          phone: '0211996925',
+          profilePic: '/images/profile/kris.jpg'
+        },
+        {
+          id: 2,
+          name: 'Koko Ono',
+          dateCreated: '15/07 14:40',
+          location: 'Avondale, Auckland',
+          isCompany: false,
+          email: 'kokoono@gmail.com',
+          auth0Id: 'lkfjgwh',
+          companyName: null,
+          phone: '0211996925',
+          profilePic: '/images/profile/kris.jpg'
+        },
+        {
+          id: 2,
+          name: 'Koko Ono',
+          dateCreated: '15/07 14:40',
+          location: 'Avondale, Auckland',
+          isCompany: false,
+          email: 'kokoono@gmail.com',
+          auth0Id: 'lkfjgwh',
+          companyName: null,
+          phone: '0211996925',
+          profilePic: '/images/profile/kris.jpg'
+        },
+        {
+          id: 2,
+          name: 'Koko Ono',
+          dateCreated: '15/07 14:40',
+          location: 'Avondale, Auckland',
+          isCompany: false,
+          email: 'kokoono@gmail.com',
+          auth0Id: 'lkfjgwh',
+          companyName: null,
+          phone: '0211996925',
+          profilePic: '/images/profile/kris.jpg'
+        },
+        {
+          id: 2,
+          name: 'Koko Ono',
+          dateCreated: '15/07 14:40',
+          location: 'Avondale, Auckland',
+          isCompany: false,
+          email: 'kokoono@gmail.com',
+          auth0Id: 'lkfjgwh',
+          companyName: null,
+          phone: '0211996925',
+          profilePic: '/images/profile/kris.jpg'
+        },
+        {
+          id: 2,
+          name: 'Koko Ono',
+          dateCreated: '15/07 14:40',
+          location: 'Avondale, Auckland',
+          isCompany: false,
+          email: 'kokoono@gmail.com',
+          auth0Id: 'lkfjgwh',
+          companyName: null,
+          phone: '0211996925',
+          profilePic: '/images/profile/kris.jpg'
+        },
+        {
+          id: 2,
+          name: 'Koko Ono',
+          dateCreated: '15/07 14:40',
+          location: 'Avondale, Auckland',
+          isCompany: false,
+          email: 'kokoono@gmail.com',
+          auth0Id: 'lkfjgwh',
+          companyName: null,
+          phone: '0211996925',
+          profilePic: '/images/profile/kris.jpg'
+        },
+        
+        
       ]))
