@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
-import { useAuth0 } from '@auth0/auth0-react'
+import { useAuth0, withAuthenticationRequired } from '@auth0/auth0-react'
 import { Link } from 'react-router-dom'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { deleteUser, addUser, getUsers } from '../redux/usersSlice'
 
-export default function Profile () {
+function Profile () {
   const dispatch = useDispatch()
   const { user: auth0userdata, isAuthenticated } = useAuth0()
   const users = useSelector(state => state.users)
@@ -28,11 +28,11 @@ export default function Profile () {
   }
 
   return (
-    <main className='container'>
+    <div className='profile-container'>
       <h1 className='page-title'>My Profile</h1>
       <img className="img-holder" src={auth0userdata?.picture} alt="Profile pic"/>
-      <div className="parent flex-container">
-        <div className="child flex-row">
+      <div className="profile-card">
+        <div className="profile-card-data">
           {/* {isAuthenticated && (
             <> */}
           <h2 className='page-paragraph'>
@@ -54,6 +54,11 @@ export default function Profile () {
           )} */}
         </div>
       </div>
-    </main>
+    </div>
   )
 }
+
+export default withAuthenticationRequired(Profile, {
+  // Show a message while the user waits to be redirected to the login page.
+  onRedirecting: () => ('Authenticating user...')
+})
