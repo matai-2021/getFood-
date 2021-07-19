@@ -20,7 +20,7 @@ export default function ItemDetails () {
   return (
     <>
       <section className='card-container'>
-        <Link to={'/'}className='item-link'>Go back</Link>
+        <Link to={'/'}className='link-button'>Go back</Link>
         <img className='card-img'
           src={singleItem?.img}
           alt={singleItem?.name}
@@ -36,7 +36,7 @@ export default function ItemDetails () {
         </article>
         <article>
           <button className='btn-grad'>Edit</button>
-          <button className='btn-grad' onClick={() => handleDelete(id)}>Delete</button>
+          <button className='btn-grad' onClick={() => handleDelete(singleItem?.id)}>Delete</button>
         </article>
       </section>
     </>

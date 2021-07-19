@@ -4,14 +4,14 @@
 @use '../1-helpers/vars';
 
 .page-title {
-    font-size: vars.$base-size * 3.5;
+    font-size: vars.$base-size * 2.5;
     color:  vars.$purple;
     font-family: vars.$heading;
 }
 
 .page-sub-title {
     font-size: vars.$base-size * 1.5;
-    color:  vars.$lightpurple;
+    color: vars.$lightpurple;
     font-family: vars.$heading;
 }
 
@@ -27,4 +27,10 @@
     color:  vars.$purple;
     font-family: vars.$heading;
     padding: 1rem 0rem 1rem 0rem;
+}
+
+.footer-text {
+    font-size: vars.$base-size;
+    color: vars.$purple;
+    font-family: vars.$paragraph; 
 }
