@@ -138,5 +138,5 @@ function ProfileSetUp () {
 
 export default withAuthenticationRequired(ProfileSetUp, {
   // Show a message while the user waits to be redirected to the login page.
-  onRedirecting: () => ('Authenticating user...')
+  onRedirecting: () => ('Authenticating...')
 })
