@@ -12,6 +12,15 @@
     margin-bottom: vars.$base-size * 2;
   }
 
+.horizontal-line-single-item {
+    height: math.div(vars.$base-size, 4);
+    width: vars.$base-size * 3;
+    background-color: vars.$lightpurple;
+    align-self: center;
+    margin-bottom: vars.$base-size;
+  }
+ 
+
   .heading-container {
     display: flex;
     align-items: center;
