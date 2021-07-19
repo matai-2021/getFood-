@@ -11,23 +11,6 @@ export const getItems = createAsyncThunk(
   }
 )
 
-// claimItem
-export const claimItem = createAsyncThunk(
-  'items/claimItem',
-  async (payload) => {
-    const res = await request.patch('/api/v1/items/claim').send(payload)
-    // const res = await request.patch('/api/v1/items/claim').send(payload)
-    if (res.ok) {
-      const claimedItem = {
-        ...payload,
-        isClaimed: true,
-        claimedById: res.body.id
-      }
-      return claimedItem
-    }
-  }
-)
-
 export const addItem = createAsyncThunk(
   'items/postItem',
   async (payload) => {
@@ -52,6 +35,23 @@ export const deleteItem = createAsyncThunk(
   }
 )
 
+// claimItem
+export const claimItem = createAsyncThunk(
+  'items/claimItem',
+  async (payload) => {
+    console.log('Payload: ', payload)
+    const res = await request.patch('/api/v1/items/claim').send(payload)
+    if (res.ok) {
+      console.log('res.body: ', res.body)
+      const claimedItem = {
+        ...payload,
+        claimedById: res.body.claimedById
+      }
+      return claimedItem
+    }
+  }
+)
+
 const itemsSlice = createSlice({
   name: 'items',
   initialState: [],
@@ -69,6 +69,10 @@ const itemsSlice = createSlice({
     },
     [deleteItem.fulfilled]: (state, action) => {
       return state.filter(item => item.id !== action.payload.id)
+    },
+    [claimItem.fulfilled]: (state, action) => {
+      // return action.payload
+      return console.log('in action: ', action.payload)
     }
   }
 })

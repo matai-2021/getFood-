@@ -15,11 +15,23 @@ export default function ItemDetails () {
     dispatch(getItems())
   }, [])
 
-  const handleClaim = () => {
-    const ClaimedById = 1 // to link with Auth0 for getting user's id logged in
-    dispatch(claimItem(id, ClaimedById))
+  const handleClaim = (itemId) => {
+    const claimedById = 1
+    dispatch(claimItem({ id: itemId, isClaimed: false, claimedById: claimedById }))
     history.push('/claim')
   }
+
+  // another ver
+  // function completeOrder () {
+  //   const newStatus = 'complete'
+  //   dispatch(updateOrderStatus(id, newStatus))
+  // }
+
+  // then in the Order.jsx, clientside
+  // function cancelOrder () {
+  //   // console.log('coming soon!') // release 3
+  //   props.patchHelper({ id, newStatus: 'cancelled' })
+  // }
 
   return (
     <>
@@ -37,7 +49,7 @@ export default function ItemDetails () {
           <h1 className='page-paragraph'>Exp. Date: {singleItem?.expiryDate}</h1>
           <h1 className='page-paragraph'>Date Created: {singleItem?.dateCreated}</h1>
           <h1 className='page-paragraph'>Email: {singleItem?.email}</h1>
-          <button onClick={handleClaim} className='btn-grad'>
+          <button onClick={() => handleClaim(singleItem?.id) } className='btn-grad'>
             Claim
           </button>
         </article>

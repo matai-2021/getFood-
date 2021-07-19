@@ -55,11 +55,11 @@ function updateItem (updatedItem, db = connection) {
 }
 
 function claimItem (claimedItem, db = connection) {
-  const { id, claimedById } = claimedItem
+  const { id, isClaimed, claimedById } = claimedItem
   return db('items')
     .where('id', id)
     .update({
-      isClaimed: true,
+      isClaimed,
       claimedById
     })
     .then((ids) => console.log(ids[0]))
