@@ -59,10 +59,10 @@ export default function ProfileSetUp () {
               <label htmlFor='location' className='label'>Area: {users?.location}</label>
             </div> */}
 
-              <div className="fieldleft">
+              <div className="fieldleftinput">
                 <label htmlFor='location' className='labelgrey'>Address:  </label>
-                {/* </div>
-              <div className="field"> */}
+              </div>
+              <div className="fieldleft">
                 <input
                   className='form-box'
                   id='location'
@@ -75,10 +75,10 @@ export default function ProfileSetUp () {
               </div>
 
               {/* Update this, to be True/False */}
-              <div className="fieldleft">
+              <div className="fieldleftinput">
                 <label htmlFor='location' className='labelgrey'>Are you a business?  </label>
-                {/* </div>
-              <div className="field"> */}
+              </div>
+              <div className="fieldleft">
                 <input
                   // className='form-box'
                   id='isCompany'
@@ -88,10 +88,10 @@ export default function ProfileSetUp () {
                 ></input>
               </div>
 
-              <div className="fieldleft">
+              <div className="fieldleftinput">
                 <label htmlFor='companyName' className='labelgrey'>Business Name:  </label>
-                {/* </div>
-              <div className="field"> */}
+              </div>
+              <div className="fieldleft">
                 <input
                   className='form-box'
                   id='companyName'
@@ -103,10 +103,10 @@ export default function ProfileSetUp () {
                 ></input>
               </div>
 
-              <div className="fieldleft">
+              <div className="fieldleftinput">
                 <label htmlFor='phone' className='labelgrey'>Phone:  </label>
-                {/* </div>
-              <div className="field"> */}
+              </div>
+              <div className="fieldleft">
                 <input
                   className='form-box'
                   id='phone'
@@ -120,7 +120,7 @@ export default function ProfileSetUp () {
 
               <button
                 type='button'
-                className='button-purple'
+                className='btn-grad'
                 onClick={handleClick}
                 data-testid='submitButton'
               >

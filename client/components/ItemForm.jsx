@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 
 export default function ItemForm (props) {
+  const history = useHistory()
   const [form, setForm] = useState({
     name: '',
     quantity: '',
@@ -22,6 +24,7 @@ export default function ItemForm (props) {
   function handleSubmit (e) {
     e.preventDefault()
     props.submitEvent(form)
+    history.push('/message')
   }
 
   function handleImg (e) {
@@ -39,87 +42,95 @@ export default function ItemForm (props) {
   return (
     <>
       <div>
-        <h2 className='title is-5 mb-4'>Item Details</h2>
+        <h2 className='form-title2'>Item Details</h2>
         <form onSubmit={handleSubmit}>
-          <div className="field">
+          <div className="fieldleftinput">
             <label
               htmlFor='name'
-              className='label'>Item Name</label>
+              className='labelgrey'>Item Name:</label>
+          </div>
+          <div className="field">
             <input
               id='name'
               name='name'
-              className='input is-normal'
+              className='form-box'
               type='text'
               placeholder='item name'
               value={name}
               onChange={handleChange}
             />
           </div>
-          <div className="field">
+          <div className="fieldleftinput">
             <label
               htmlFor='description'
-              className='label'
-            >Description</label>
+              className='labelgrey'
+            >Description:</label>
+          </div>
+          <div className="field">
             <textarea
               id='description'
               name='description'
-              className='textarea is-normal'
+              className='form-box'
               placeholder='item description'
               value={description}
               onChange={handleChange}
             />
           </div>
-          <div className="field">
+          <div className="fieldleftinput">
             <label
               htmlFor='expiryDate'
-              className='label'
-            >Expiry Date</label>
+              className='labelgrey'
+            >Expiry Date:</label>
+          </div>
+          <div className="field">
             <textarea
               id='expiryDate'
               name='expiryDate'
-              className='textarea is-normal'
+              className='form-box'
               placeholder='exp date'
               value={expiryDate}
               onChange={handleChange}
             />
           </div>
+          <div className="fieldleftinput">
+            <label htmlFor='quantity' className='labelgrey'>Quantity:</label>
+          </div>
           <div className="field">
-            <label
-              htmlFor='quantity'
-              className='label'
-            >Quantity</label>
-            <textarea
-              id='quantity'
+            <textarea id='quantity'
               name='quantity'
-              className='textarea is-normal'
+              className='form-box'
               placeholder='quantity'
               value={quantity}
               onChange={handleChange}
             />
           </div>
-          <div className="field">
+          <div className="fieldleftinput">
             <label
               htmlFor='location'
-              className='label'
-            >Location</label>
+              className='labelgrey'
+            >Location:</label>
+          </div>
+          <div className="field">
             <textarea
               id='location'
               name='location'
-              className='textarea is-normal'
+              className='form-box'
               placeholder='item location'
               value={location}
               onChange={handleChange}
             />
           </div>
-          <div className="field">
+          <div className="fieldleftinput">
             <label
               htmlFor='email'
-              className='label'
+              className='labelgrey'
             >Email:</label>
+          </div>
+          <div className="field">
             <textarea
               id='email'
               name='email'
-              className='textarea is-normal'
+              className='form-box'
               placeholder='email'
               value={email}
               onChange={handleChange}
@@ -128,15 +139,17 @@ export default function ItemForm (props) {
           <div className="field">
             <label
               htmlFor='img'
-              className='label'
-            >Image:</label>
+              className='labelgrey'
+            >Image:  </label>
+          </div>
+          <div className="field">
             <input
               type="file"
               name="img"
               onChange={handleImg}
             />
           </div>
-          <button className='button-purple'>
+          <button className='btn-grad'>
             Create Item
           </button>
         </form>
