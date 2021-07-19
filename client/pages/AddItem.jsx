@@ -12,8 +12,10 @@ export default function AddItem () {
   }
 
   return (
-    <ItemForm
-      submitEvent={submitEvent}
-    />
+    <>
+      <ItemForm
+        submitEvent={submitEvent}
+      />
+    </>
   )
 }
