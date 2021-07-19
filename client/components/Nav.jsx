@@ -19,7 +19,7 @@ export default function Nav () {
   }
 
   function handleLogin () {
-    loginWithRedirect({ redirectUri: `${window.location.origin}/profile` })
+    loginWithRedirect({ redirectUri: `${window.location.origin}` })
   }
 
   function handleLogoff () {
