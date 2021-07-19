@@ -8,14 +8,13 @@
 
 .item-container {
   margin-top: 40px;
-  padding: 0 50px;
-  background-color: vars.$yellow;
-  width: 100%;
+  padding: 1rem 2rem 1rem 2rem;
+  width: 60%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: 0 0 20px rgb(212, 212, 212);
   border-radius: 5px;
 
   @include mixins.media-queries(mobile, max) {
@@ -31,7 +30,7 @@
 .item-img > img {
   width: 260px;
   height: 170px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: 0 0 20px rgb(212, 212, 212);
   border-radius: 5px;
   @include mixins.media-queries(mobile, max) {
     flex-direction: column;

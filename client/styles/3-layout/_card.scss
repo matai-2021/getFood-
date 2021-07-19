@@ -5,14 +5,15 @@
 .card-container {
 	display: flex;
 	width: vars.$base-size * 10;
-	background-color: vars.$yellow;
+	// background-color: vars.$yellow;
 	flex-direction: column;
 	text-align: left;
 	padding: vars.$base-size * 1;
 	border: none;
-    border-radius: 3px;
+    border-radius: 6px;
 	margin: vars.$base-size * 4;
 	margin-right: 0;
+    box-shadow: 0 0 20px rgb(212, 212, 212);
   
 	@include mixins.media-queries(tablet, min) {
 		width: functions.colWidth(5);
@@ -24,7 +25,6 @@
     margin-left: vars.$base-size * 2;
     margin-right: vars.$base-size * 2;
 }
-
 
 .card-title {
     font-size: 2.5rem;
