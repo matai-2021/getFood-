@@ -34,8 +34,8 @@ export default function ItemDetails () {
           <h1>Exp. Data: {singleItem?.expiryDate}</h1>
           <h1>Date Created: {singleItem?.dateCreated}</h1>
           <h1>Email: {singleItem?.email}</h1>
-          <button className='button-purple'>Edit</button>
-          <button className='button-purple' onClick={() => handleDelete(id)}>Delete</button>
+          <button className='btn-grad'>Edit</button>
+          <button className='btn-grad' onClick={() => handleDelete(id)}>Delete</button>
         </article>
       </section>
     </>

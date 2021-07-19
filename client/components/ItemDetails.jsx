@@ -36,7 +36,7 @@ export default function ItemDetails () {
           <h1>Exp. Data: {singleItem?.expiryDate}</h1>
           <h1>Date Created: {singleItem?.dateCreated}</h1>
           <h1>Email: {singleItem?.email}</h1>
-          <button onClick={handleClaim} className='button-purple'>
+          <button onClick={handleClaim} className='btn-grad'>
             Claim
           </button>
         </article>
