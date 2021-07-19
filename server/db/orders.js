@@ -24,6 +24,7 @@ function getOrdersByUserId (id, db = connection) {
 // POST new order
 function createOrder (itemId, db = connection) {
   const dateCreated = Date.now()
+  console.log(dateCreated.toDateString())
   const userId = 0 // getItemById()
   const claimedById = 0 // getCurrentUser()
   console.log('DB: ', itemId)

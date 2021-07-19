@@ -21,8 +21,9 @@ function getItems (db = connection) {
 }
 
 function addItem (newItem, db = connection) {
-  const dateCreated = Date.now() // what is the format of this date?
-  const { name, location, userId, quantity, img, description, expiryDate } = newItem
+  const timestamp = new Date()
+  const dateCreated = timestamp.toDateString()
+  const { name, location, userId, quantity, img, description, expiryDate, email } = newItem
   return db('items')
     .insert({
       name,
@@ -33,6 +34,7 @@ function addItem (newItem, db = connection) {
       description,
       dateCreated: dateCreated,
       expiryDate: expiryDate,
+      email,
       isClaimed: false
     })
     .then((ids) => ids[0])

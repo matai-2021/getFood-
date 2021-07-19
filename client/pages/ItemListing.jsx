@@ -16,7 +16,7 @@ export default function ItemListing () {
 
   return (
     <section className='items-wrapper'>
-      <Link to='/itemnew' className='button-purple'>Add Item</Link>
+      <Link to='/itemnew' className='btn-grad'>Add Item</Link>
       {items.map(item => (
         <React.Fragment key={item.id} >
           <SingleItem

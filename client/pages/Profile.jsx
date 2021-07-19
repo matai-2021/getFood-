@@ -1,20 +1,27 @@
 import React, { useEffect } from 'react'
-import { useAuth0 } from '@auth0/auth0-react'
+import { useAuth0, withAuthenticationRequired } from '@auth0/auth0-react'
 import { Link } from 'react-router-dom'
 
-import { useSelector, useDispatch } from 'react-redux'
-import { getUsers, deleteUser } from '../redux/usersSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import { deleteUser, addUser, getUsers } from '../redux/usersSlice'
 
-export default function Profile () {
+function Profile () {
   const dispatch = useDispatch()
-  const users = useSelector(state => state.users[0])
-  const { user } = useAuth0() // user, isLoading
-  const { name, picture, email } = user // given_name, family_name, nickname, sub
-
+  const { user: auth0userdata, isAuthenticated } = useAuth0()
+  const users = useSelector(state => state.users)
   useEffect(() => {
     dispatch(getUsers())
-  }, [])
+    const newUser = {
+      email: auth0userdata?.email,
+      auth0Id: auth0userdata?.sub,
+      name: auth0userdata?.name
+    }
+    if (isAuthenticated && auth0userdata) {
+      dispatch(addUser(newUser))
+    }
+  }, [auth0userdata])
 
+  const sessionUser = users.find(user => user.auth0Id === auth0userdata?.sub)
   // whole account will be deleted db.deleteAccount is set up in server/routes/users.js
   const handleDelete = (itemId) => {
     dispatch(deleteUser({ id: itemId }))
@@ -23,23 +30,36 @@ export default function Profile () {
   return (
     <main className='container'>
       <h1>My Profile</h1>
-      <img className="img-holder" src={picture} alt="Profile pic"/>
+      <img className="img-holder" src={auth0userdata?.picture} alt="Profile pic"/>
       <div className="parent flex-container">
         <div className="child flex-row">
+          {/* {isAuthenticated && (
+            <> */}
           <h2>
-            <strong>Name: </strong>{name}
+            <strong>Name: </strong>{sessionUser?.name}
           </h2>
           <p>
-            <strong>Email: </strong>{email}
+            <strong>Email: </strong>{sessionUser?.email}
           </p>
           <p>
-            <strong>Location: </strong>{users?.location}
+            <strong>Location: </strong>{sessionUser?.location}
+          </p>
+          <p>
+            <strong>Member since: </strong>{sessionUser?.dateCreated}
           </p>
           {/* Below link is not actually a button, will need to change later */}
           <Link to={'/profilesetup'} className=''>Setup Profile</Link>
-          <button onClick={() => handleDelete(users?.id)}>Delete My Account</button>
+          <button onClick={() => handleDelete(sessionUser?.id)}>Delete My Account</button>
+          {/* </>
+          )} */}
         </div>
       </div>
     </main>
   )
 }
+
+export default withAuthenticationRequired(Profile, {
+  displayName: 'Redirect',
+  // returnTo: window.location.origin,
+  onRedirecting: () => <p>Checking authentication please wait...</p>
+})
