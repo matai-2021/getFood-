@@ -7,11 +7,14 @@ header {
     background-color: vars.$yellow;
     display: flex;
     justify-content: space-between;
+    align-content: center;
+    align-items: center;
 }
 
 .logo-image {
-    width: 15rem;
-    height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
 
     @include mixins.media-queries(mobile, min) {
         padding-left: vars.$base-size * 3;
