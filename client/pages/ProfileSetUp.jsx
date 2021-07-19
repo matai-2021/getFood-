@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 // import { useHistory } from 'react-router-dom'
 // import { profileSetUp } from './profileSetUpHelper'
-import { useAuth0 } from '@auth0/auth0-react'
+import { useAuth0, withAuthenticationRequired } from '@auth0/auth0-react'
 
 import {
   useSelector,
@@ -9,7 +9,7 @@ import {
 } from 'react-redux'
 import { getUsers } from '../redux/usersSlice'
 
-export default function ProfileSetUp () {
+function ProfileSetUp () {
   const dispatch = useDispatch()
   const users = useSelector(state => state.users)
   const { user: auth0userdata } = useAuth0()
@@ -135,3 +135,8 @@ export default function ProfileSetUp () {
     </>
   )
 }
+
+export default withAuthenticationRequired(ProfileSetUp, {
+  // Show a message while the user waits to be redirected to the login page.
+  onRedirecting: () => ('Authenticating...')
+})
