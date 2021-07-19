@@ -28,32 +28,33 @@ export default function Profile () {
   }
 
   return (
-    <main className='container'>
-      <h1 className='page-title'>My Profile</h1>
-      <img className="img-holder" src={auth0userdata?.picture} alt="Profile pic"/>
-      <div className="parent flex-container">
-        <div className="child flex-row">
-          {/* {isAuthenticated && (
-            <> */}
-          <h2 className='page-paragraph'>
-            Name: {sessionUser?.name}
-          </h2>
-          <p className='page-paragraph'>
-            Email: {sessionUser?.email}
-          </p>
-          <p className='page-paragraph'>
-            Location: {sessionUser?.location}
-          </p>
-          <p className='page-paragraph'>
-            Member since: {sessionUser?.dateCreated}
-          </p>
-          {/* Below link is not actually a button, will need to change later */}
-          <Link to={'/profilesetup'} className='btn-grad'>Setup Profile</Link>
-          <button className='btn-grad' onClick={() => handleDelete(sessionUser?.id)}>Delete My Account</button>
-          {/* </>
-          )} */}
-        </div>
+    <section className='flex-column'>
+      <div className='heading-container'>
+        <h1 className='page-title'>My Profile</h1>
+        <div className='horizontal-line'></div>
       </div>
-    </main>
+      <img className="img-holder" src={auth0userdata?.picture} alt="Profile pic"/>
+      <div className="child flex-row">
+        {/* {isAuthenticated && (
+            <> */}
+        <h2 className='page-sub-title'>
+            Name: {sessionUser?.name}
+        </h2>
+        <p className='page-paragraph'>
+            Email: {sessionUser?.email}
+        </p>
+        <p className='page-paragraph'>
+            Location: {sessionUser?.location}
+        </p>
+        <p className='page-paragraph'>
+            Member since: {sessionUser?.dateCreated}
+        </p>
+        {/* Below link is not actually a button, will need to change later */}
+        <Link to={'/profilesetup'} className='btn-grad'>Setup Profile</Link>
+        <button className='btn-grad' onClick={() => handleDelete(sessionUser?.id)}>Delete My Account</button>
+        {/* </>
+          )} */}
+      </div>
+    </section>
   )
 }
