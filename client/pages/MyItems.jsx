@@ -36,7 +36,7 @@ export default function ItemDetails () {
         </article>
         <article>
           <button className='btn-grad'>Edit</button>
-          <button className='btn-grad' onClick={() => handleDelete(id)}>Delete</button>
+          <button className='btn-grad' onClick={() => handleDelete(singleItem?.id)}>Delete</button>
         </article>
       </section>
     </>

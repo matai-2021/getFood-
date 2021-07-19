@@ -2,14 +2,13 @@
 @use '../1-helpers/functions';
 @use '../1-helpers/mixins';
 
-// .items-wrapper {
-//   margin: auto;
-// }
+.items-wrapper {
+  width: 900px;
+}
 
 .item-container {
   margin-top: 40px;
   padding: 1rem 2rem 1rem 2rem;
-  width: vars.$base-size * 60;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
