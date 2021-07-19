@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 // import { useHistory } from 'react-router-dom'
 // import { profileSetUp } from './profileSetUpHelper'
 import { useAuth0 } from '@auth0/auth0-react'
+import CheckoutForm from '../components/Address'
 
 import {
   useSelector,
@@ -101,6 +102,7 @@ export default function ProfileSetUp () {
                 onChange={handleChange}
               ></input>
             </div>
+            <CheckoutForm />
 
             <button
               type='button'
