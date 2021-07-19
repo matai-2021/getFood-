@@ -1,19 +1,21 @@
-// to show both items posted and claimed items?
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { getItems, deleteItem } from '../redux/itemsSlice'
-import { useParams } from 'react-router'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
-export default function About () {
-  const { id } = useParams()
+export default function ItemDetails () {
+  const history = useHistory()
   const dispatch = useDispatch()
-  const items = useSelector(state => state.items)
-  const singleItem = items.find(item => item.id === Number(id))
+  const singleItem = useSelector(state => state.items[0])
 
   useEffect(() => {
     dispatch(getItems())
   }, [])
+
+  const handleDelete = (itemId) => {
+    dispatch(deleteItem({ id: itemId }))
+    history.push('/delete')
+  }
 
   return (
     <>
@@ -24,10 +26,16 @@ export default function About () {
           alt={singleItem?.name}
           style={{ width: '90%', height: '200px', backgroundColor: 'pink' }}
         />
-        <h1>My Items page</h1>
-        <p>To show both items posted and claimed items here? Stretch?</p>
         <article>
-          <button className='button-purple'>Claim this item</button>
+          <h1>{singleItem?.name}</h1>
+          <h1>Pick up location: {singleItem?.location}</h1>
+          <h1>Description: {singleItem?.description}</h1>
+          <h1>Quantity: {singleItem?.quantity}</h1>
+          <h1>Exp. Data: {singleItem?.expiryDate}</h1>
+          <h1>Date Created: {singleItem?.dateCreated}</h1>
+          <h1>Email: {singleItem?.email}</h1>
+          <button className='button-purple'>Edit</button>
+          <button className='button-purple' onClick={() => handleDelete(id)}>Delete</button>
         </article>
       </section>
     </>

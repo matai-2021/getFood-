@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { getItems, deleteItem } from '../redux/itemsSlice'
+import { getItems } from '../redux/itemsSlice'
 import { useParams } from 'react-router'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 export default function ItemDetails () {
+  const history = useHistory()
   const { id } = useParams()
   const dispatch = useDispatch()
   const items = useSelector(state => state.items)
@@ -14,8 +15,8 @@ export default function ItemDetails () {
     dispatch(getItems())
   }, [])
 
-  const handleDelete = (itemId) => {
-    dispatch(deleteItem({ id: itemId }))
+  const handleClaim = (e) => {
+    history.push('/claim')
   }
 
   return (
@@ -35,9 +36,9 @@ export default function ItemDetails () {
           <h1>Exp. Data: {singleItem?.expiryDate}</h1>
           <h1>Date Created: {singleItem?.dateCreated}</h1>
           <h1>Email: {singleItem?.email}</h1>
-          <button className='button-purple'>Edit item</button>
-          <button className='button-purple' onClick={() => handleDelete(id)}>Delete item</button>
-          <button className='button-purple'>Claim this item</button>
+          <button onClick={handleClaim} className='button-purple'>
+            Claim
+          </button>
         </article>
       </section>
     </>
