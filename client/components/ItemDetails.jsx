@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { getItems } from '../redux/itemsSlice'
 import { useParams } from 'react-router'
 import { Link, useHistory } from 'react-router-dom'
+// import { claimItem } from '../../server/db/items'
 
 export default function ItemDetails () {
   const history = useHistory()
@@ -15,9 +16,23 @@ export default function ItemDetails () {
     dispatch(getItems())
   }, [])
 
-  const handleClaim = (e) => {
+  const handleClaim = () => {
+    // const newClaimedById = 1
+    // dispatch(claimItem(id, newClaimedById))
     history.push('/claim')
   }
+
+  // another ver
+  // function completeOrder () {
+  //   const newStatus = 'complete'
+  //   dispatch(updateOrderStatus(id, newStatus))
+  // }
+
+  // then in the Order.jsx, clientside
+  // function cancelOrder () {
+  //   // console.log('coming soon!') // release 3
+  //   props.patchHelper({ id, newStatus: 'cancelled' })
+  // }
 
   return (
     <>

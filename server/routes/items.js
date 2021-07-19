@@ -57,10 +57,10 @@ router.delete('/:id', (req, res) => {
     })
 })
 
-// updating item. For both Edit and Claimed?
+// updating item for stretch? For both Edit and Claimed?
 router.patch('/', (req, res) => {
-  const { id, name, location, quantity, img, description, isClaimed, claimedById } = req.body
-  const updatedItem = { id, name, location, quantity, img, description, isClaimed, claimedById }
+  const { id, name, location, quantity, img, description } = req.body
+  const updatedItem = { id, name, location, quantity, img, description }
   db.updateItem(updatedItem)
     .then(() => {
       res.status(201).json('Item successfully updated')
@@ -71,6 +71,22 @@ router.patch('/', (req, res) => {
       res.status(500).json({ message: 'Unable to update item' })
     })
 })
+
+// Claiming item, so just updating isClaimed and claimedBy?
+router.patch('/claim', (req, res) => {
+  const { id, claimedById } = req.body
+  const claimedItem = { id, claimedById }
+  db.claimItem(claimedItem)
+    .then((changedItem) => {
+      res.status(201).json(changedItem)
+      return null
+    })
+    .catch((err) => {
+      res.status(500).send('failed at claiming item: ' + err.message)
+    })
+})
+
+module.exports = router
 
 // sweet as organics release 3, for Patching to /api/v1/orders
 // router.patch('/', (req, res) => {
@@ -83,8 +99,6 @@ router.patch('/', (req, res) => {
 //       res.status(500).send('failed to change order status: ' + err.message)
 //     })
 // })
-
-module.exports = router
 
 // POST DATA SHAPE
 // {
@@ -107,6 +121,5 @@ module.exports = router
 //   "quantity": "",
 //   "img": "",
 //   "description": "",
-//   "isClaimed": "",
-//   "claimedById": 0,
+//   "isClaimed": ""
 // }

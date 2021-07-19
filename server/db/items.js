@@ -40,7 +40,7 @@ function addItem (newItem, db = connection) {
 }
 
 function updateItem (updatedItem, db = connection) {
-  const { id, name, location, quantity, img, description, isClaimed } = updatedItem
+  const { id, name, location, quantity, img, description } = updatedItem
   return db('items')
     .where('id', id)
     .update({
@@ -48,21 +48,32 @@ function updateItem (updatedItem, db = connection) {
       location,
       quantity,
       img,
-      description,
-      isClaimed: isClaimed
+      description
     })
     .then((ids) => console.log(`Item successfully created at ID # ${ids[0]}`))
 }
 
-function claimItem (item, db = connection) {
-  const { id, isClaimed } = item
+function claimItem (claimedItem, db = connection) {
+  const { id, isClaimed, claimedById } = claimedItem
   return db('items')
     .where('id', id)
     .update({
-      isClaimed: !isClaimed
+      isClaimed: !isClaimed,
+      claimedById
     })
     .then((ids) => console.log(ids[0]))
 }
+
+// sweet as organics updating order status function
+// function editOrderStatus (id, newStatus, db = connection) {
+//   return orderExists(id, db)
+//     .then(() => {
+//       return db('orders')
+//         .update({ status: newStatus })
+//         .where('id', id)
+//     })
+//     .then(() => findOrderById(id, db))
+// }
 
 function deleteItem (id, db = connection) {
   return db('items')

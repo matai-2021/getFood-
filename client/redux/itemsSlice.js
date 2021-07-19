@@ -25,6 +25,22 @@ export const addItem = createAsyncThunk(
   }
 )
 
+// claimItem
+export const claimItem = createAsyncThunk(
+  'items/claimItem',
+  async (payload) => {
+    const res = await request.patch('/api/v1/items/claim').send(payload)
+    if (res.ok) {
+      const claimedItem = {
+        ...payload,
+        isClaimed: true,
+        claimedById: res.body.id
+      }
+      return claimedItem
+    }
+  }
+)
+
 export const deleteItem = createAsyncThunk(
   'items/deleteItems',
   async (payload) => {
