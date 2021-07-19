@@ -32,6 +32,7 @@
   height: 170px;
   box-shadow: 0 0 20px rgb(212, 212, 212);
   border-radius: 5px;
+  
   @include mixins.media-queries(mobile, min) {
     flex-direction: column;
     padding: 0px;
