@@ -24,7 +24,7 @@ export default function ItemDetails () {
         {
           items.length
             ? items.map(item => (
-              <>
+              <React.Fragment key={item?.id}>
                 <img className='card-img'
                   src={item?.img}
                   alt={item?.name}
@@ -42,7 +42,7 @@ export default function ItemDetails () {
                   <button className='btn-grad'>Edit</button>
                   <button className='btn-grad' onClick={() => handleDelete(item?.id)}>Delete</button>
                 </article>
-              </>
+              </React.Fragment>
             )) : <h1>No Items Found</h1> }
 
       </section>

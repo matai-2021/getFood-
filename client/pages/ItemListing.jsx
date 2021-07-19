@@ -9,7 +9,6 @@ import SingleItem from '../components/SingleItem'
 export default function ItemListing () {
   const items = useSelector(state => state.items)
   const dispatch = useDispatch()
-  console.log(items)
 
   useEffect(() => {
     dispatch(getItems())
