@@ -6,7 +6,7 @@ import { Link, useHistory } from 'react-router-dom'
 export default function ItemDetails () {
   const history = useHistory()
   const dispatch = useDispatch()
-  const items = useSelector(state => state.items.filter(item => !item.isClaimed))
+  const items = useSelector(state => state.items.filter(item => item.isClaimed))
 
   useEffect(() => {
     dispatch(getItems())
