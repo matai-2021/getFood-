@@ -23,9 +23,12 @@ router.get('/', (req, res) => {
       res.json({ items: results.map(item => item) })
       return null
     })
-    .catch(err => {
-      console.log(err)
-      res.status(500).json({ message: 'Unable to get items' })
+    .catch(() => {
+      res.status(500).json({
+        error: {
+          title: 'Unable to get items'
+        }
+      })
     })
 })
 
@@ -38,9 +41,12 @@ router.post('/add', (req, res) => {
       res.status(201).json({ id })
       return null
     })
-    .catch(err => {
-      console.log(err)
-      res.status(500).json({ message: 'Unable to add item' })
+    .catch(() => {
+      res.status(500).json({
+        error: {
+          title: 'Unable to add item'
+        }
+      })
     })
 })
 
@@ -48,7 +54,7 @@ router.delete('/:id', (req, res) => {
   const id = Number(req.params.id)
   db.deleteItem(id)
     .then(() => {
-      res.status(201).json('Item successfully deleted')
+      res.status(202).json('Item successfully deleted')
       return null
     })
     .catch(err => {
@@ -75,15 +81,18 @@ router.patch('/', (req, res) => {
 // Claiming item, so just updating isClaimed and claimedBy?
 router.patch('/claim', (req, res) => {
   const { id, isClaimed, claimedById } = req.body
-  // console.log(req.body)
   const claimedItem = { id, isClaimed, claimedById }
   db.claimItem(claimedItem)
     .then((changedItem) => {
       res.status(201).json(changedItem)
       return null
     })
-    .catch((err) => {
-      res.status(500).send('failed at claiming item: ' + err.message)
+    .catch(() => {
+      res.status(500).json({
+        error: {
+          title: 'Unable to update item'
+        }
+      })
     })
 })
 
