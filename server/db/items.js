@@ -56,7 +56,6 @@ function updateItem (updatedItem, db = connection) {
 
 function claimItem (claimedItem, db = connection) {
   const { id, isClaimed, claimedById } = claimedItem
-  console.log('iscaliemd', isClaimed)
   return db('items')
     .where('id', id)
     .update({
