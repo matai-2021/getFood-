@@ -25,7 +25,7 @@ function ItemDetails () {
   const handleClaim = (itemId) => {
     const claimedById = sessionUser?.id
     dispatch(claimItem({ id: itemId, isClaimed: true, claimedById: claimedById }))
-    history.push('/claim')
+    history.push('/claimMsg')
   }
 
   return (

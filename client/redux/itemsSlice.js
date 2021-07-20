@@ -35,14 +35,21 @@ export const deleteItem = createAsyncThunk(
   }
 )
 
-// claimItem
+export const editItem = createAsyncThunk(
+  'item/editItem',
+  async (payload) => {
+    const res = await request.patch('/api/v1/items/edit')
+    if (res.ok) {
+      return payload
+    }
+  }
+)
+
 export const claimItem = createAsyncThunk(
   'items/claimItem',
   async (payload) => {
-    // console.log('Payload: ', payload)
     const res = await request.patch('/api/v1/items/claim').send(payload)
     if (res.ok) {
-      // console.log('res.body: ', res.body)
       return payload
     }
   }
@@ -54,10 +61,8 @@ const itemsSlice = createSlice({
   reducers: {},
   extraReducers: {
     [getItems.pending]: (state, action) => {
-      // console.log('Fetching data...')
     },
     [getItems.fulfilled]: (state, action) => {
-      // console.log('Data fetched successfully')
       return action.payload.items
     },
     [addItem.fulfilled]: (state, action) => {
@@ -67,8 +72,6 @@ const itemsSlice = createSlice({
       return state.filter(item => item.id !== action.payload.id)
     },
     [claimItem.fulfilled]: (state, action) => {
-      // because action.payload only returns one array of the updated fruit, the state becomes only one fruit.
-      // to prevent this, we map this and only when item.id equals payload.id, we return the updated array. Other fruits, return the same array (item)
       return state.map(item => {
         if (item.id === action.payload.id) {
           return action.payload
