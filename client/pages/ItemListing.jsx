@@ -30,7 +30,7 @@ export default function ItemListing () {
             img={item.img}
           />
         </React.Fragment>
-      ))}
+      )).reverse()}
     </section>
   )
 }
