@@ -33,6 +33,23 @@ const mockItem = [
   }
 ]
 
+const mockItemId = [
+  {
+    id: 2,
+    name: 'Potato',
+    user_id: '3',
+    dateCreated: '13/08 13:00',
+    expiryDate: '3/09 10:00',
+    location: 'Avondale, Auckland',
+    quantity: 9,
+    description: 'a bit bruised',
+    email: 'eatwell@gmail.com',
+    isClaimed: 0,
+    img: '/images/potatoes.jpeg'
+  },
+  {}
+]
+
 describe('GET /api/v1/items/', () => {
   it('Truthy', () => {
     // expect.assertions(1)
@@ -63,7 +80,7 @@ describe('GET /api/v1/items/', () => {
       })
   })
 
-  it('Has name property', () => {
+  it('Has name property name', () => {
     db.getItems.mockImplementation(() => {
       return Promise.resolve(mockItem)
     })
@@ -76,4 +93,37 @@ describe('GET /api/v1/items/', () => {
         return null
       })
   })
+
+  it('Error test', () => {
+    db.getItems.mockImplementation(() => {
+      const errorData = 'hello'
+      return Promise.resolve(errorData)
+    })
+    return request(server)
+      .get('/api/v1/items/')
+      .expect('Content-Type', /json/)
+      .expect(500)
+      .then(res => {
+        expect(res.body.error).toBeUndefined()
+        return null
+      })
+  })
 })
+
+// describe('GET item by id /api/v1/items/', () => {
+//   it('Truthy', () => {
+//     // expect.assertions(1)
+//     db.getItemsById.mockImplementation((id) => {
+//       expect(id).toBe(2)
+//       return Promise.resolve(mockItem)
+//     })
+//     return request(server)
+//       .get('/api/v1/items/')
+//       .expect('Content-Type', /json/)
+//       .expect(200)
+//       .then(res => {
+//         expect(res).toBeTruthy()
+//         return null
+//       })
+//   })
+// })
