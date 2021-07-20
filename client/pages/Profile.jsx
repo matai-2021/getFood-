@@ -29,13 +29,16 @@ function Profile () {
 
   return (
     <div className='profile-container'>
-      <h1 className='page-title'>My Profile</h1>
+      <div className='heading-container'>
+        <h1 className='page-title'>My Profile</h1>
+        <div className='horizontal-line'></div>
+      </div>
       <img className="img-holder" src={auth0userdata?.picture} alt="Profile pic"/>
-      <div className="profile-card">
-        <div className="profile-card-data">
+      <div className="profile-text-and-button-container">
+        <div className="profile-text-container">
           {/* {isAuthenticated && (
             <> */}
-          <h2 className='page-paragraph'>
+          <h2 className='page-sub-title'>
             Name: {sessionUser?.name}
           </h2>
           <p className='page-paragraph'>
@@ -47,6 +50,8 @@ function Profile () {
           <p className='page-paragraph'>
             Member since: {sessionUser?.dateCreated}
           </p>
+        </div>
+        <div className='profile-button-container'>
           {/* Below link is not actually a button, will need to change later */}
           <Link to={'/profilesetup'} className='btn-grad'>Setup Profile</Link>
           <button className='btn-grad' onClick={() => handleDelete(sessionUser?.id)}>Delete My Account</button>

@@ -43,7 +43,7 @@ export default function ItemDetails () {
                   <button className='btn-grad' onClick={() => handleDelete(item?.id)}>Delete</button>
                 </article>
               </React.Fragment>
-            )).reverse() : <h1>No Items Found</h1> }
+            )) : <h1>No Items Found</h1> }
 
       </section>
     </>

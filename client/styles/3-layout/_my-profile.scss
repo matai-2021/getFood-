@@ -3,5 +3,37 @@
 @use '../1-helpers/vars';
 
 .profile-container {
+  display: flex;
   margin-top: 40px;
+  flex-direction: column;
+}
+
+.profile-text-and-button-container {
+  display: flex;
+  margin: 30px;
+  // width: 600px;
+  // height: 200px;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  padding: vars.$base-size * 1;
+  box-shadow: 0 0 20px rgb(212, 212, 212);
+}
+
+.profile-text-container {
+  align-items: center;
+  margin-bottom: vars.$base-size * 2;
+}
+
+.profile-button-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+    @include mixins.media-queries(tablet, min) {
+      align-items: center;
+      flex-direction: row;
+}
 }

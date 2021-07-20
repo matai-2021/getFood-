@@ -3,20 +3,27 @@ import { useSelector, useDispatch } from 'react-redux'
 import { getItems, claimItem } from '../redux/itemsSlice'
 import { useParams } from 'react-router'
 import { Link, useHistory } from 'react-router-dom'
+import { getUsers } from '../redux/usersSlice'
+import { useAuth0, withAuthenticationRequired } from '@auth0/auth0-react'
 
-export default function ItemDetails () {
+function ItemDetails () {
   const history = useHistory()
   const { id } = useParams()
   const dispatch = useDispatch()
   const items = useSelector(state => state.items)
   const singleItem = items.find(item => item.id === Number(id))
+  const { user: auth0userdata } = useAuth0()
+  const users = useSelector(state => state.users)
 
   useEffect(() => {
     dispatch(getItems())
-  }, [])
+    dispatch(getUsers())
+  }, [auth0userdata])
+
+  const sessionUser = users.find(user => user.auth0Id === auth0userdata?.sub)
 
   const handleClaim = (itemId) => {
-    const claimedById = 1
+    const claimedById = sessionUser?.id
     dispatch(claimItem({ id: itemId, isClaimed: true, claimedById: claimedById }))
     history.push('/claim')
   }
@@ -45,3 +52,8 @@ export default function ItemDetails () {
     </>
   )
 }
+
+export default withAuthenticationRequired(ItemDetails, {
+  // Show a message while the user waits to be redirected to the login page.
+  onRedirecting: () => ('Authenticating user...')
+})
