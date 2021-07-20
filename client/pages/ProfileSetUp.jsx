@@ -34,37 +34,41 @@ function ProfileSetUp () {
 
   return (
     <>
-      <section className='container'>
+      <section className='containerps'>
         {/* section className container makes in middle */}
-        <div className='field'>
-          <img className="img-holdersmall" src={auth0userdata.picture} alt="Profile Pic"/>
+        <div className='field-ps'>
+          <img className="img-holderps" src={auth0userdata.picture} alt="Profile Pic"/>
         </div>
-        <div className='parent flex-container'>
-          <article className='parent flex-container'>
-            <form className='form-container'>
-              <h3 className='form-title2'>Profile Setup</h3>
-
-              <div className='fieldleft'>
-                <label htmlFor='firstName' className='labelgrey'>Name:  </label>
-                <label htmlFor='firstName' className='label'>{sessionUser.name}</label>
+        <div className='parent flex-containerps'>
+          <article className='parent flex-containerps'>
+            <form className=''>
+              {/* <h3 className='form-title2'>Profile Setup</h3> */}
+              <div className='heading-containerps'>
+                <h1 className='page-title'>Profile Setup</h1>
+                <div className='horizontal-line'></div>
               </div>
 
-              <div className='fieldleft'>
-                <label htmlFor='email' className='labelgrey'>Email:  </label>
-                <label htmlFor='email' className='label'>{sessionUser.email}</label>
+              <div className='fieldleftps'>
+                <label htmlFor='firstName' className='labelpurpleps'>Name:  </label>
+                <label htmlFor='firstName' className='labelps'>{sessionUser.name}</label>
               </div>
-              <div className='fieldleft'>
+
+              <div className='fieldleftps'>
+                <label htmlFor='email' className='labelpurpleps'>Email:  </label>
+                <label htmlFor='email' className='labelps'>{sessionUser.email}</label>
+              </div>
+              <div className='fieldleftps'>
               </div>
               {/* <div className='field'>
               <label htmlFor='location' className='label'>Area: {users?.location}</label>
             </div> */}
 
-              <div className="fieldleftinput">
-                <label htmlFor='location' className='labelgrey'>Address:  </label>
+              <div className="fieldleftinputps">
+                <label htmlFor='location' className='labelpurpleps'>Address:  </label>
               </div>
-              <div className="fieldleft">
+              <div className="fieldleftps">
                 <input
-                  className='form-box'
+                  className='form-boxps'
                   id='location'
                   type='text'
                   name='location'
@@ -75,10 +79,10 @@ function ProfileSetUp () {
               </div>
 
               {/* Update this, to be True/False */}
-              <div className="fieldleftinput">
-                <label htmlFor='location' className='labelgrey'>Are you a business?  </label>
+              <div className="fieldleftinputps">
+                <label htmlFor='location' className='labelpurpleps'>Are you a business?  </label>
               </div>
-              <div className="fieldleft">
+              <div className="fieldleftps">
                 <input
                   // className='form-box'
                   id='isCompany'
@@ -88,12 +92,12 @@ function ProfileSetUp () {
                 ></input>
               </div>
 
-              <div className="fieldleftinput">
-                <label htmlFor='companyName' className='labelgrey'>Business Name:  </label>
+              <div className="fieldleftinputps">
+                <label htmlFor='companyName' className='labelpurpleps'>Business Name:  </label>
               </div>
-              <div className="fieldleft">
+              <div className="fieldleftps">
                 <input
-                  className='form-box'
+                  className='form-boxps'
                   id='companyName'
                   type='text'
                   name='companyName'
@@ -103,12 +107,12 @@ function ProfileSetUp () {
                 ></input>
               </div>
 
-              <div className="fieldleftinput">
-                <label htmlFor='phone' className='labelgrey'>Phone:  </label>
+              <div className="fieldleftinputps">
+                <label htmlFor='phone' className='labelpurpleps'>Phone:  </label>
               </div>
-              <div className="fieldleft">
+              <div className="fieldleftps">
                 <input
-                  className='form-box'
+                  className='form-boxps'
                   id='phone'
                   type='text'
                   name='phone'

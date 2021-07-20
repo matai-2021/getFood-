@@ -97,39 +97,3 @@ router.patch('/claim', (req, res) => {
 })
 
 module.exports = router
-
-// sweet as organics release 3, for Patching to /api/v1/orders
-// router.patch('/', (req, res) => {
-//   db.editOrderStatus(req.body.id, req.body.newStatus)
-//     .then((changedOrder) => {
-//       res.status(201).json(changedOrder)
-//       return null
-//     })
-//     .catch((err) => {
-//       res.status(500).send('failed to change order status: ' + err.message)
-//     })
-// })
-
-// POST DATA SHAPE
-// {
-//   "name": "Chocolate Bar",
-//   "expiryDate": "3/08 13:00",
-//   "location": "Waterview, Auckland",
-//   "quantity": 6,
-//   "description": "good shape",
-//   "img": "img"
-// }
-
-// DELETE DATA SHAPE
-// req.params :id
-
-// UPDATE DATA SHAPE
-// {
-//   "id": 0,
-//   "name": "",
-//   "location": "",
-//   "quantity": "",
-//   "img": "",
-//   "description": "",
-//   "isClaimed": ""
-// }

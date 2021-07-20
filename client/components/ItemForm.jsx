@@ -42,95 +42,99 @@ export default function ItemForm (props) {
   return (
     <>
       <div>
-        <h2 className='form-title2'>Item Details</h2>
+        {/* <h2 className='form-title-profilesetup'>Item Details</h2> */}
+        <div className='heading-container'>
+          <h1 className='page-title'>Item Details</h1>
+          <div className='horizontal-line'></div>
+        </div>
         <form onSubmit={handleSubmit}>
-          <div className="fieldleftinput">
+          <div className="fieldleftif">
             <label
               htmlFor='name'
-              className='label'>Item Name:</label>
+              className='labelif'>Item Name:</label>
           </div>
-          <div className="field">
+          <div className="fieldif">
             <input
               id='name'
               name='name'
-              className='form-box'
+              className='form-boxif'
               type='text'
               placeholder='Your item name'
               value={name}
               onChange={handleChange}
             />
           </div>
-          <div className="fieldleftinput">
+          <div className="fieldleftif">
             <label
               htmlFor='description'
-              className='label'
+              className='labelif'
             >Description:</label>
           </div>
-          <div className="field">
+          <div className="fieldif">
             <textarea
               id='description'
               name='description'
-              className='form-box'
+              className='form-boxif'
               placeholder='e.g. "In good condition, stored in a bag"'
               value={description}
               onChange={handleChange}
             />
           </div>
-          <div className="fieldleftinput">
+          <div className="fieldleftif">
             <label
               htmlFor='expiryDate'
-              className='label'
+              className='labelif'
             >Expiry Date:</label>
           </div>
-          <div className="field">
+          <div className="fieldif">
             <textarea
               id='expiryDate'
               name='expiryDate'
-              className='form-box'
+              className='form-boxif'
               placeholder='Expiry date if applicable'
               value={expiryDate}
               onChange={handleChange}
             />
           </div>
-          <div className="fieldleftinput">
-            <label htmlFor='quantity' className='label'>Quantity:</label>
+          <div className="fieldleftif">
+            <label htmlFor='quantity' className='labelif'>Quantity:</label>
           </div>
-          <div className="field">
+          <div className="fieldif">
             <textarea id='quantity'
               name='quantity'
-              className='form-box'
+              className='form-boxif'
               placeholder='Quantity'
               value={quantity}
               onChange={handleChange}
             />
           </div>
-          <div className="fieldleftinput">
+          <div className="fieldleftif">
             <label
               htmlFor='location'
-              className='label'
+              className='labelif'
             >Pickup location:</label>
           </div>
-          <div className="field">
+          <div className="fieldif">
             <textarea
               id='location'
               name='location'
-              className='form-box'
+              className='form-boxif'
               placeholder='Pickup location for this item'
               value={location}
               onChange={handleChange}
             />
           </div>
-          <div className="fieldleftinput">
+          <div className="fieldleftif">
             <label
               htmlFor='email'
-              className='label'
+              className='labelif'
             >Email:</label>
           </div>
-          <div className="field">
+          <div className="fieldif">
             <textarea
               id='email'
               name='email'
-              className='form-box'
+              className='form-boxif'
               placeholder='Email for contact'
               value={email}
               onChange={handleChange}
@@ -139,10 +143,10 @@ export default function ItemForm (props) {
           <div>
             <label
               htmlFor='img'
-              className='label'
+              className='labelif'
             >Image:  </label>
           </div>
-          <div className="field">
+          <div className="fieldif">
             <input
               type="file"
               name="img"

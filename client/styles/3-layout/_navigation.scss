@@ -30,7 +30,7 @@
 
 .hamburger {
     cursor: pointer;
-    color: #fff;
+    color: vars.$purple;
     font-size: vars.$base-size * 2.5;
     height: 100%;
     display: flex;
@@ -38,7 +38,7 @@
     padding-right: vars.$base-size;
 
     &:hover {
-        color: vars.$purple;
+        color: vars.$lightpurple;
     }
 
     @include mixins.media-queries(mobile, min) {
@@ -48,14 +48,14 @@
 
 .close-btn {
     cursor: pointer;
-    color: #fff;
+    color: vars.$purple;
     font-size: vars.$base-size * 3;
     position: absolute;
     top: 22px;
     right: 12px;
 
     &:hover {
-        color: vars.$purple;
+        color: vars.$lightpurple;
     }
 
     @include mixins.media-queries(mobile, min) {
@@ -78,7 +78,7 @@
 }
 
 .nav-menu-toggle {
-    background-color: vars.$yellow;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -90,7 +90,7 @@
     transform-origin: top center;
     position: relative;
     left: -240px;
-    top: 0;
+    top: 180px;
 
     @keyframes growDown {
         0% {

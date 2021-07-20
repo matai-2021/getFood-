@@ -9,7 +9,6 @@ import SingleItem from '../components/SingleItem'
 export default function ItemListing () {
   const items = useSelector(state => state.items)
   const dispatch = useDispatch()
-  // console.log(items)
 
   useEffect(() => {
     dispatch(getItems())
@@ -17,7 +16,12 @@ export default function ItemListing () {
 
   return (
     <section className='items-wrapper'>
-      <Link to='/itemnew' className='btn-grad'>Add Item</Link>
+      <div className='item-heading-container'>
+        <h1 className='item-heading'>Live Feed</h1>
+        {/* <div className='horizontal-line'></div> */}
+        {/* <p className='page-paragraph'>You can add a food item here.</p> */}
+        <Link to='/itemnew' className='btn-grad add-item-btn'>Add Item</Link>
+      </div>
       {items.map(item => (
         !item.isClaimed &&
         <React.Fragment key={item.id} >
@@ -31,7 +35,7 @@ export default function ItemListing () {
             img={item.img}
           />
         </React.Fragment>
-      ))}
+      )).reverse()}
     </section>
   )
 }

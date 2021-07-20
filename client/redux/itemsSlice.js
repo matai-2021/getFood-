@@ -67,17 +67,14 @@ const itemsSlice = createSlice({
       return state.filter(item => item.id !== action.payload.id)
     },
     [claimItem.fulfilled]: (state, action) => {
-      // const newArr = state.map(item => {
-      //   if (item.id === action.payload.id) {
-      //     item.isClaimed = true
-      //     return item
-      //   }
-      //   return item
-      // })
-      // return newArr
-
-      return action.payload // returns only one array.. and doesn't change other arrays
-      // return console.log('in action: ', action.payload)
+      // because action.payload only returns one array of the updated fruit, the state becomes only one fruit.
+      // to prevent this, we map this and only when item.id equals payload.id, we return the updated array. Other fruits, return the same array (item)
+      return state.map(item => {
+        if (item.id === action.payload.id) {
+          return action.payload
+        }
+        return item
+      })
     }
   }
 })
