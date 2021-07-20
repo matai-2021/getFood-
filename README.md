@@ -2,9 +2,74 @@
 Kris, Koko, Kritika, Rodrigo, Zac
 'The Food Waste Reducer'
 
+Digital Wireframe:
 https://whimsical.com/getfood-JfoEWmZzgLJTabRX5iejtA
 
+Deployed?! (cheeeeeeers Kris!):
+https://getfoodeda.herokuapp.com/
+
+// ------------------------------------------------
+// ------------------------------------------------
+Tuesday 20/07/2021 
+
+Morning stand-up.
+Kritika:
+- Styling changes with background and to make it look trendy
+
+Kris:
+- Auth0 progress, refreshing on any page to keep auth info
+- Help on Claim and Delete function. 
+    - Claim function to get logged in user's id (linked with auth0id)
+
+Rodrigo:
+- More styling has been done
+- Functionality to finish - help with Claim and delete
+
+Koko:
+- Finish some styling
+- Jump on writing testing in preparation for presentation
+
+Zac:
+- Finish Claim functionality
+- Help on styling
+
+Afternoon standup:
+MVP DONE!!!
+Kris:
+- Finished Auth0 refresh issue
+- Image upload function?
+- Testing
+
+Rodrigo:
+- Small changes for design
+- Improve design and styling
+
+Kritika:
+- Updates on responsiveness, fixes for styling
+
+Koko:
+- Testing improvements, more testing
+
+Zac:
+- Finished Claim function
+- Images for users (from Slack)
+- Form styling improvement, add responsiveness
+- Stretch Edit item. Need to create component + form
+- Address input form - ADDRESSFINDER (but only for one line, not seperated into address, suburb, city etc)
+
+Personal note for Zac, styling to do:
+- Form (card) to refer to Profile.jsx
+- Need all classNames to be unique - copy and paste, rename to use for each _module.scss
+- Label to be purple.
+- Responsiveness for ProfileSetUp
+
+
+Backup plans:
+- (Zac - hasn't shared yet) myItems to show only items that are isClaimed=true, not by logged in user's id?
+// ------------------------------------------------
+// ------------------------------------------------
 Monday 19/07/2021
+
 Not all notes written here, but main changes to do:
 Orders table obsolete, modify items table for createdById, claimedById to use for hiding items when claimed, and to show on myItems component.
 
@@ -16,6 +81,8 @@ Zac - table routes dbfunction, and then frontend with kris? For reducers etc
 
 Discussion with Don for Auth0
 Remove Hashrouter and use BrowserRouter, modify server.js to have the star which sends json. This should be all. Refer to Gardenz
+
+(Also, we have been utilising the kanban board on github for keeping track of our ticket/issues. Thanks for the setup Koko!)
 
 // ------------------------------------------------
 // ------------------------------------------------

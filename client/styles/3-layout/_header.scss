@@ -12,12 +12,13 @@ header {
 }
 
 .logo-image {
-    width: auto;
+    width: 15rem;
     height: auto;
     object-fit: cover;
+    padding-left: 10px;
 
     @include mixins.media-queries(mobile, min) {
-        padding-left: vars.$base-size * 3;
+        padding-left: 20px;
         width: 20rem;
     }
 }

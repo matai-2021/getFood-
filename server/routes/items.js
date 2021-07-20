@@ -29,6 +29,7 @@ router.get('/', (req, res) => {
     })
 })
 
+// adding new item
 router.post('/add', (req, res) => {
   const { name, location, userId, quantity, img, description, expiryDate, email } = req.body
   const item = { name, location, userId, quantity, img, description, expiryDate, email }
@@ -56,9 +57,10 @@ router.delete('/:id', (req, res) => {
     })
 })
 
+// updating item for stretch? For both Edit and Claimed?
 router.patch('/', (req, res) => {
-  const { id, name, location, quantity, img, description, isClaimed } = req.body
-  const updatedItem = { id, name, location, quantity, img, description, isClaimed }
+  const { id, name, location, quantity, img, description } = req.body
+  const updatedItem = { id, name, location, quantity, img, description }
   db.updateItem(updatedItem)
     .then(() => {
       res.status(201).json('Item successfully updated')
@@ -70,28 +72,19 @@ router.patch('/', (req, res) => {
     })
 })
 
+// Claiming item, so just updating isClaimed and claimedBy?
+router.patch('/claim', (req, res) => {
+  const { id, isClaimed, claimedById } = req.body
+  // console.log(req.body)
+  const claimedItem = { id, isClaimed, claimedById }
+  db.claimItem(claimedItem)
+    .then((changedItem) => {
+      res.status(201).json(changedItem)
+      return null
+    })
+    .catch((err) => {
+      res.status(500).send('failed at claiming item: ' + err.message)
+    })
+})
+
 module.exports = router
-
-// POST DATA SHAPE
-// {
-//   "name": "Chocolate Bar",
-//   "expiryDate": "3/08 13:00",
-//   "location": "Waterview, Auckland",
-//   "quantity": 6,
-//   "description": "good shape",
-//   "img": "img"
-// }
-
-// DELETE DATA SHAPE
-// req.params :id
-
-// UPDATE DATA SHAPE
-// {
-//   "id": "",
-//   "name": "",
-//   "location": "",
-//   "quantity": "",
-//   "img": "",
-//   "description": "",
-//   "isClaimed": ""
-// }
