@@ -13,16 +13,16 @@
 	border: none;
     border-radius: 6px;
 	margin: vars.$base-size * 4;
-	// margin-right: 0;
+	margin-right: 0;
     box-shadow: 0 0 20px rgb(212, 212, 212);
-    background-color: white;
-  
-	@include mixins.media-queries(mobile, min) {
-		width: functions.colWidth(5);
+   
+	@include mixins.media-queries(tablet, min) {
+       // width: functions.colWidth(5);
+         width: auto;
 	}
-  }
-
-  .card-text-container {
+}
+ 
+ .card-text-container {
     margin-top: vars.$base-size * 1; 
     margin-bottom: vars.$base-size * 1;  
     // padding-bottom: vars.$base-size * 6;

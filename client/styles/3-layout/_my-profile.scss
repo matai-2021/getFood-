@@ -3,16 +3,16 @@
 @use '../1-helpers/vars';
 
 .profile-container {
-  margin-top: 40px;
   display: flex;
+  margin-top: 40px;
   flex-direction: column;
 }
 
 .profile-text-and-button-container {
+  display: flex;
   margin: 30px;
   // width: 600px;
   // height: 200px;
-  display: flex;
   align-items: center;
   flex-direction: column;
   background-color: white;
@@ -28,6 +28,12 @@
 }
 
 .profile-button-container {
-  align-items: center;
-  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+    @include mixins.media-queries(tablet, min) {
+      align-items: center;
+      flex-direction: row;
+}
 }
