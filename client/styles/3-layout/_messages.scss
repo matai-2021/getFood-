@@ -11,14 +11,16 @@
   justify-content: center;
   align-items: center;
 
-}
+  & h3 {
+    padding: 20px 0;
+    font-family: vars.$heading;
+    color: green;
+  }
 
-.delete-msg>h3,
-.add-msg>h3,
-.claim-msg>h3 {
-  padding: 20px 0;
-  font-family: vars.$heading;
-  color: green;
+  & a {
+    font-family: vars.$paragraph;
+  }
+
 }
 
 .msg-icon {
