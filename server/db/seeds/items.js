@@ -3,7 +3,7 @@ exports.seed = knex =>
     {
       id: 1,
       name: 'Apple',
-      user_id: '2',
+      user_id: '1',
       dateCreated: '13/07 13:00',
       expiryDate: '3/08 13:00',
       location: 'Waterview, Auckland',
@@ -17,7 +17,7 @@ exports.seed = knex =>
     {
       id: 2,
       name: 'Potato',
-      user_id: '3',
+      user_id: '2',
       dateCreated: '13/08 13:00',
       expiryDate: '3/09 10:00',
       location: 'Avondale, Auckland',
@@ -43,12 +43,12 @@ exports.seed = knex =>
     {
       id: 4,
       name: 'Pork Chop',
-      user_id: '3',
+      user_id: '4',
       dateCreated: '14/10 9:00',
       expiryDate: '17/10 10:00',
       location: 'Mission Bay, Auckland',
       quantity: '1',
-      description: 'fresh pork chop needs to be picked up by today.',
+      description: 'Fresh pork chop needs to be picked up by today.',
       email: 'Tj@hotmail.com',
       isClaimed: false,
       img: '/images/pork.jpg'
@@ -56,7 +56,7 @@ exports.seed = knex =>
     {
       id: 5,
       name: 'Pasta',
-      user_id: '3',
+      user_id: '5',
       dateCreated: '12/07 18:40',
       expiryDate: '12/10 10:00',
       location: 'New Lynn, Auckland',
@@ -69,7 +69,7 @@ exports.seed = knex =>
     {
       id: 6,
       name: 'Capsicum',
-      user_id: '3',
+      user_id: '6',
       dateCreated: '14/08 13:00',
       expiryDate: '3/09 10:00',
       location: 'Howick, Auckland',
@@ -82,7 +82,7 @@ exports.seed = knex =>
     {
       id: 7,
       name: 'Self Rising Flour',
-      user_id: '3',
+      user_id: '7',
       dateCreated: '1/06 9:30',
       expiryDate: '1/10 10:00',
       location: 'Manukau, Auckland',
@@ -95,7 +95,7 @@ exports.seed = knex =>
     {
       id: 8,
       name: 'Almonds',
-      user_id: '3',
+      user_id: '8',
       dateCreated: '1/01 19:45',
       expiryDate: '3/09 10:00',
       location: 'Papakura, Auckland',
@@ -108,7 +108,7 @@ exports.seed = knex =>
     {
       id: 9,
       name: 'G/F loaf',
-      user_id: '3',
+      user_id: '9',
       dateCreated: '3/02 13:00',
       expiryDate: '14/02 10:00',
       location: 'Albany, Auckland',
@@ -121,7 +121,7 @@ exports.seed = knex =>
     {
       id: 10,
       name: 'Canola Oil',
-      user_id: '3',
+      user_id: '10',
       dateCreated: '14/5 21:00',
       expiryDate: '13/12 10:00',
       location: 'Massey, Auckland',
@@ -134,20 +134,20 @@ exports.seed = knex =>
     {
       id: 11,
       name: 'Drum Sticks',
-      user_id: '3',
+      user_id: '11',
       dateCreated: '14/08 13:00',
       expiryDate: '3/09 10:00',
       location: 'Penrose, Auckland',
       quantity: '1 Kg',
-      description: 'decided to go Vegetarian',
-      email: 'kokoaono@hotmail.com',
+      description: 'Decided to go Vegetarian',
+      email: 'sam@hotmail.com',
       isClaimed: true,
       img: '/images/chicken.jpg'
     },
     {
       id: 12,
       name: 'Rice Long Grain',
-      user_id: '3',
+      user_id: '1',
       dateCreated: '14/08 13:00',
       expiryDate: '3/09 10:00',
       location: 'Hernbay, Auckland',
@@ -160,12 +160,12 @@ exports.seed = knex =>
     {
       id: 13,
       name: 'Lemons',
-      user_id: '3',
+      user_id: '2',
       dateCreated: '14/12 8:00',
       expiryDate: '22/12 8:00',
       location: 'MtEden, Auckland',
       quantity: '20',
-      description: 'Fresh off my lemon tree in my garden',
+      description: 'Fresh off lemon tree in my garden',
       email: 'karen@gmail.com',
       isClaimed: true,
       img: '/images/lemon.jpg'
@@ -178,7 +178,7 @@ exports.seed = knex =>
       expiryDate: '3/10 10:00',
       location: 'Onehunga, Auckland',
       quantity: '10',
-      description: 'left overe from an event. stored at correct temperature at all time',
+      description: 'left over from an event. stored at correct temperature at all time',
       email: 'brown.s@caterforall.co.nz',
       isClaimed: true,
       img: '/images/pizza.jpeg'
@@ -186,12 +186,12 @@ exports.seed = knex =>
     {
       id: 15,
       name: 'White wine',
-      user_id: '3',
+      user_id: '4',
       dateCreated: '14/08 13:00',
       expiryDate: '3/09 10:00',
       location: 'Mangere, Auckland',
       quantity: '1',
-      description: 'a bottle of unopened wine',
+      description: 'A bottle of unopened wine',
       email: 'sam@hotmail.com',
       isClaimed: true,
       img: '/images/wine.jpg'
@@ -199,12 +199,12 @@ exports.seed = knex =>
     {
       id: 16,
       name: 'Dried Noodle',
-      user_id: '3',
+      user_id: '5',
       dateCreated: '14/08 13:00',
       expiryDate: '3/09 10:00',
       location: 'Mirangi Bay, Auckland',
       quantity: '5 packets',
-      description: 'Changed planned, no londer wanted',
+      description: 'Changed plans, no longer wanted',
       email: 'eatwellbeing@gmail.com',
       isClaimed: true,
       img: '/images/noodles.jpg'
@@ -212,7 +212,7 @@ exports.seed = knex =>
     {
       id: 17,
       name: 'Avocado',
-      user_id: '3',
+      user_id: '6',
       dateCreated: '1/11 17:12',
       expiryDate: '1/12 10:00',
       location: 'Bayview, Auckland',
@@ -225,7 +225,7 @@ exports.seed = knex =>
     {
       id: 18,
       name: 'Tinned Tomato',
-      user_id: '3',
+      user_id: '7',
       dateCreated: '3/3 18:50',
       expiryDate: '3/09 10:00',
       location: 'Titirangi, Auckland',
@@ -238,20 +238,20 @@ exports.seed = knex =>
     {
       id: 19,
       name: 'Ice Cream',
-      user_id: '3',
+      user_id: '8',
       dateCreated: '20/07 11:00',
       expiryDate: '19/09 11:00',
       location: 'Henderson, Auckland',
       quantity: '5 kg',
       description: 'catering size strawberry icecream',
-      email: 'rodrigo@xtra.com',
+      email: 'graduateday@xtra.com',
       isClaimed: true,
       img: '/images/icecream.jpg'
     },
     {
       id: 20,
       name: 'Lettuce',
-      user_id: '3',
+      user_id: '9',
       dateCreated: '7/05 7:10',
       expiryDate: '14/05 10:00',
       location: 'Stonefield, Auckland',
