@@ -25,7 +25,7 @@ exports.seed = knex =>
       description: 'a bit bruised',
       email: 'eatwell@gmail.com',
       isClaimed: false,
-      img: '/images/potatoes.jpeg'
+      img: '/images/potatoes.jpg'
     },
     {
       id: 3,
@@ -38,7 +38,7 @@ exports.seed = knex =>
       description: 'good',
       email: 'eatwellbeing@gmail.com',
       isClaimed: false,
-      img: '/images/onion.jpeg'
+      img: '/images/onion.jpg'
     },
     {
       id: 4,
@@ -51,7 +51,7 @@ exports.seed = knex =>
       description: 'fresh pork chop needs to be picked up by today.',
       email: 'Tj@hotmail.com',
       isClaimed: false,
-      img: '/images/pork.jpeg'
+      img: '/images/pork.jpg'
     },
     {
       id: 5,
@@ -64,7 +64,7 @@ exports.seed = knex =>
       description: 'Unwanted dried pasta',
       email: 'wsmith@gmail.com',
       isClaimed: false,
-      img: '/images/pasta.jpeg'
+      img: '/images/pasta.jpg'
     },
     {
       id: 6,
@@ -77,7 +77,7 @@ exports.seed = knex =>
       description: 'over odered capsicum available from a catering company in Howick',
       email: 'locallyproduce@gmail.com',
       isClaimed: false,
-      img: '/images/capsicum.jpeg'
+      img: '/images/capsicum.jpg'
     },
     {
       id: 7,
@@ -90,7 +90,7 @@ exports.seed = knex =>
       description: 'N/A',
       email: 'caterall@hotmail.com',
       isClaimed: true,
-      img: '/images/flour.jpeg'
+      img: '/images/flour.jpg'
     },
     {
       id: 8,
@@ -103,7 +103,7 @@ exports.seed = knex =>
       description: 'Freshly Toasted Almonds',
       email: 'localproduce@yahoo.com',
       isClaimed: false,
-      img: '/images/almonds.jpeg'
+      img: '/images/almonds.jpg'
     },
     {
       id: 9,
@@ -116,7 +116,7 @@ exports.seed = knex =>
       description: 'Freezable G/F bread',
       email: 'qualitybakery@gmail.com',
       isClaimed: false,
-      img: '/images/loaf.jpeg'
+      img: '/images/loaf.jpg'
     },
     {
       id: 10,
@@ -129,7 +129,7 @@ exports.seed = knex =>
       description: 'unwanted unused oil',
       email: 'serviceproducts@xtra.com',
       isClaimed: true,
-      img: '/images/oil.jpeg'
+      img: '/images/oil.jpg'
     },
     {
       id: 11,
@@ -142,7 +142,7 @@ exports.seed = knex =>
       description: 'decided to go Vegetarian',
       email: 'kokoaono@hotmail.com',
       isClaimed: true,
-      img: '/images/chicken.jpeg'
+      img: '/images/chicken.jpg'
     },
     {
       id: 12,
@@ -155,7 +155,7 @@ exports.seed = knex =>
       description: 'Restaurant closing down sale',
       email: 'thaiblue@gmail.com',
       isClaimed: false,
-      img: '/images/rice.jpeg'
+      img: '/images/rice.jpg'
     },
     {
       id: 13,
@@ -168,7 +168,7 @@ exports.seed = knex =>
       description: 'Fresh off my lemon tree in my garden',
       email: 'karen@gmail.com',
       isClaimed: true,
-      img: '/images/lemon.jpeg'
+      img: '/images/lemon.jpg'
     },
     {
       id: 14,
@@ -181,7 +181,7 @@ exports.seed = knex =>
       description: 'left overe from an event. stored at correct temperature at all time',
       email: 'brown.s@caterforall.co.nz',
       isClaimed: true,
-      img: '/images/pizza.jpeg'
+      img: '/images/pizza.jpg'
     },
     {
       id: 15,
@@ -194,7 +194,7 @@ exports.seed = knex =>
       description: 'a bottle of unopened wine',
       email: 'sam@hotmail.com',
       isClaimed: true,
-      img: '/images/wine.jpeg'
+      img: '/images/wine.jpg'
     },
     {
       id: 16,
@@ -207,7 +207,7 @@ exports.seed = knex =>
       description: 'Changed planned, no londer wanted',
       email: 'eatwellbeing@gmail.com',
       isClaimed: true,
-      img: '/images/noodle.jpeg'
+      img: '/images/noodle.jpg'
     },
     {
       id: 17,
@@ -220,7 +220,7 @@ exports.seed = knex =>
       description: 'Come get avocados off my tree',
       email: 'wilson@hotmail.com',
       isClaimed: false,
-      img: '/images/avocado.jpeg'
+      img: '/images/avocado.jpg'
     },
     {
       id: 18,
@@ -233,7 +233,7 @@ exports.seed = knex =>
       description: 'need to go asap',
       email: 'kelly@hotmail.com',
       isClaimed: true,
-      img: '/images/tomato.jpeg'
+      img: '/images/tomato.jpg'
     },
     {
       id: 19,
@@ -246,7 +246,7 @@ exports.seed = knex =>
       description: 'catering size strawberry icecream',
       email: 'rodrigo@xtra.com',
       isClaimed: true,
-      img: '/images/icecream.jpeg'
+      img: '/images/icecream.jpg'
     },
     {
       id: 20,
@@ -259,6 +259,6 @@ exports.seed = knex =>
       description: 'fresh iceberg lettuce. pick up by tomorrow please',
       email: 'william@wholesomecater.com',
       isClaimed: true,
-      img: '/images/lettuce.jpeg'
+      img: '/images/lettuce.jpg'
     }
   ])
