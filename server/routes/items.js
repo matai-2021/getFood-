@@ -75,7 +75,7 @@ router.patch('/', (req, res) => {
 // Claiming item, so just updating isClaimed and claimedBy?
 router.patch('/claim', (req, res) => {
   const { id, isClaimed, claimedById } = req.body
-  console.log(req.body)
+  // console.log(req.body)
   const claimedItem = { id, isClaimed, claimedById }
   db.claimItem(claimedItem)
     .then((changedItem) => {
@@ -88,18 +88,6 @@ router.patch('/claim', (req, res) => {
 })
 
 module.exports = router
-
-// sweet as organics release 3, for Patching to /api/v1/orders
-// router.patch('/', (req, res) => {
-//   db.editOrderStatus(req.body.id, req.body.newStatus)
-//     .then((changedOrder) => {
-//       res.status(201).json(changedOrder)
-//       return null
-//     })
-//     .catch((err) => {
-//       res.status(500).send('failed to change order status: ' + err.message)
-//     })
-// })
 
 // POST DATA SHAPE
 // {
@@ -114,7 +102,7 @@ module.exports = router
 // DELETE DATA SHAPE
 // req.params :id
 
-// UPDATE DATA SHAPE
+// UPDATE DATA SHAPE (item ver)
 // {
 //   "id": 0,
 //   "name": "",
@@ -124,3 +112,10 @@ module.exports = router
 //   "description": "",
 //   "isClaimed": ""
 // }
+
+// PATCH DATA SHAPE: (claim item ver)
+// {
+//   "id": 3,
+//   "isClaimed": true,
+//  "claimedById": 25
+//  }

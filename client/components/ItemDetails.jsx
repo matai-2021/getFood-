@@ -21,18 +21,6 @@ export default function ItemDetails () {
     history.push('/claim')
   }
 
-  // another ver
-  // function completeOrder () {
-  //   const newStatus = 'complete'
-  //   dispatch(updateOrderStatus(id, newStatus))
-  // }
-
-  // then in the Order.jsx, clientside
-  // function cancelOrder () {
-  //   // console.log('coming soon!') // release 3
-  //   props.patchHelper({ id, newStatus: 'cancelled' })
-  // }
-
   return (
     <>
       <section className='card-container'>
