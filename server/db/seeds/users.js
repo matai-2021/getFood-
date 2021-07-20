@@ -99,7 +99,7 @@ exports.seed = knex =>
           profilePic: '/images/profile/kris.jpg'
         },
         {
-          id: 10,
+          id: 9,
           name: 'Peter Van De Voorn',
           dateCreated: '12/06 10:40',
           location: 'Birkenhead, Auckland',
@@ -111,7 +111,7 @@ exports.seed = knex =>
           profilePic: '/images/profile/kris.jpg'
         },
         {
-          id: 11,
+          id: 10,
           name: 'Ryan Boosher',
           dateCreated: '12/07 11:40',
           location: 'New Lynn, Auckland',
