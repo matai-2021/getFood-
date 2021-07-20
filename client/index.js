@@ -11,12 +11,11 @@ import { Auth0Provider } from '@auth0/auth0-react'
 
 import App from './App'
 
-// const history = useHistory()
-
-const onRedirectCallback = (appState) => {
-  // Use the router's history module to replace the url
-  history.replace(appState?.returnTo || window.location.pathname)
-}
+// const onRedirectCallback = (appState) => {
+//   const history = useHistory()
+//   // Use the router's history module to replace the url
+//   history.push(appState?.returnTo || window.location.pathname)
+// }
 
 document.addEventListener('DOMContentLoaded', () => {
   render(
@@ -24,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
       domain="kjw-00.au.auth0.com"
       clientId="dJNHf2F6MBNdsIgPUeSW0OHdaquBnUDH"
       redirectUri={window.location.origin}
-      onRedirectCallback={onRedirectCallback}
+      // onRedirectCallback={onRedirectCallback}
     >
       <Provider store={store}>
         {/* // changed from Router to HashRouter to make refresh/manual URL work */}

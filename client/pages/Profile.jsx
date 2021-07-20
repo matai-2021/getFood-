@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { deleteUser, addUser, getUsers } from '../redux/usersSlice'
 
+const loading = <img src='./images/loading-buffering1.gif'/>
+
 function Profile () {
   const dispatch = useDispatch()
   const { user: auth0userdata, isAuthenticated } = useAuth0()
@@ -59,6 +61,7 @@ function Profile () {
 }
 
 export default withAuthenticationRequired(Profile, {
+  displayName: 'Loading',
   // Show a message while the user waits to be redirected to the login page.
-  onRedirecting: () => ('Authenticating user...')
+  onRedirecting: () => (loading)
 })
