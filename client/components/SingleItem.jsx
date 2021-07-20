@@ -13,7 +13,7 @@ export default function SingleItem (props) {
   } = props
 
   return (
-    <section className='item-container'>
+    <section className='card-container'>
       <div className='item-details'>
         <h1 className='item-title'>
           {name}
