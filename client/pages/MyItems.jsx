@@ -6,7 +6,7 @@ import { Link, useHistory } from 'react-router-dom'
 export default function ItemDetails () {
   const history = useHistory()
   const dispatch = useDispatch()
-  const singleItem = useSelector(state => state.items[0])
+  const items = useSelector(state => state.items.filter(item => !item.isClaimed))
 
   useEffect(() => {
     dispatch(getItems())
@@ -21,23 +21,30 @@ export default function ItemDetails () {
     <>
       <section className='card-container'>
         <Link to={'/'}className='link-button'>Go back</Link>
-        <img className='card-img'
-          src={singleItem?.img}
-          alt={singleItem?.name}
-        />
-        <article>
-          <h1 className='item-title'>{singleItem?.name}</h1>
-          <h1 className='page-paragraph'>Pick up location: {singleItem?.location}</h1>
-          <h1 className='page-paragraph'>Description: {singleItem?.description}</h1>
-          <h1 className='page-paragraph'>Quantity: {singleItem?.quantity}</h1>
-          <h1 className='page-paragraph'>Exp. Data: {singleItem?.expiryDate}</h1>
-          <h1 className='page-paragraph'>Date Created: {singleItem?.dateCreated}</h1>
-          <h1 className='page-paragraph'>Email: {singleItem?.email}</h1>
-        </article>
-        <article>
-          <button className='btn-grad'>Edit</button>
-          <button className='btn-grad' onClick={() => handleDelete(singleItem?.id)}>Delete</button>
-        </article>
+        {
+          items.length
+            ? items.map(item => (
+              <>
+                <img className='card-img'
+                  src={item?.img}
+                  alt={item?.name}
+                />
+                <article>
+                  <h1 className='item-title'>{item?.name}</h1>
+                  <h1 className='page-paragraph'>Pick up location: {item?.location}</h1>
+                  <h1 className='page-paragraph'>Description: {item?.description}</h1>
+                  <h1 className='page-paragraph'>Quantity: {item?.quantity}</h1>
+                  <h1 className='page-paragraph'>Exp. Data: {item?.expiryDate}</h1>
+                  <h1 className='page-paragraph'>Date Created: {item?.dateCreated}</h1>
+                  <h1 className='page-paragraph'>Email: {item?.email}</h1>
+                </article>
+                <article>
+                  <button className='btn-grad'>Edit</button>
+                  <button className='btn-grad' onClick={() => handleDelete(item?.id)}>Delete</button>
+                </article>
+              </>
+            )) : <h1>No Items Found</h1> }
+
       </section>
     </>
   )

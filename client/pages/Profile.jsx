@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
-import { useAuth0 } from '@auth0/auth0-react'
+import { useAuth0, withAuthenticationRequired } from '@auth0/auth0-react'
 import { Link } from 'react-router-dom'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { deleteUser, addUser, getUsers } from '../redux/usersSlice'
 
-export default function Profile () {
+function Profile () {
   const dispatch = useDispatch()
   const { user: auth0userdata, isAuthenticated } = useAuth0()
   const users = useSelector(state => state.users)
@@ -28,33 +28,42 @@ export default function Profile () {
   }
 
   return (
-    <section className='flex-column'>
+    <div className='profile-container'>
       <div className='heading-container'>
         <h1 className='page-title'>My Profile</h1>
         <div className='horizontal-line'></div>
       </div>
       <img className="img-holder" src={auth0userdata?.picture} alt="Profile pic"/>
-      <div className="child flex-row">
-        {/* {isAuthenticated && (
+      <div className="profile-text-and-button-container">
+        <div className="profile-text-container">
+          {/* {isAuthenticated && (
             <> */}
-        <h2 className='page-sub-title'>
+          <h2 className='page-sub-title'>
             Name: {sessionUser?.name}
-        </h2>
-        <p className='page-paragraph'>
+          </h2>
+          <p className='page-paragraph'>
             Email: {sessionUser?.email}
-        </p>
-        <p className='page-paragraph'>
+          </p>
+          <p className='page-paragraph'>
             Location: {sessionUser?.location}
-        </p>
-        <p className='page-paragraph'>
+          </p>
+          <p className='page-paragraph'>
             Member since: {sessionUser?.dateCreated}
-        </p>
-        {/* Below link is not actually a button, will need to change later */}
-        <Link to={'/profilesetup'} className='btn-grad'>Setup Profile</Link>
-        <button className='btn-grad' onClick={() => handleDelete(sessionUser?.id)}>Delete My Account</button>
-        {/* </>
+          </p>
+        </div>
+        <div className='profile-button-container'>
+          {/* Below link is not actually a button, will need to change later */}
+          <Link to={'/profilesetup'} className='btn-grad'>Setup Profile</Link>
+          <button className='btn-grad' onClick={() => handleDelete(sessionUser?.id)}>Delete My Account</button>
+          {/* </>
           )} */}
+        </div>
       </div>
-    </section>
+    </div>
   )
 }
+
+export default withAuthenticationRequired(Profile, {
+  // Show a message while the user waits to be redirected to the login page.
+  onRedirecting: () => ('Authenticating user...')
+})
