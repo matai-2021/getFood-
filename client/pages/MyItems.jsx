@@ -6,7 +6,7 @@ import { Link, useHistory } from 'react-router-dom'
 export default function ItemDetails () {
   const history = useHistory()
   const dispatch = useDispatch()
-  const items = useSelector(state => state.items.filter(item => !item.isClaimed))
+  const items = useSelector(state => state.items.filter(item => item.isClaimed))
 
   useEffect(() => {
     dispatch(getItems())
@@ -24,7 +24,7 @@ export default function ItemDetails () {
         {
           items.length
             ? items.map(item => (
-              <>
+              <React.Fragment key={item?.id}>
                 <img className='card-img'
                   src={item?.img}
                   alt={item?.name}
@@ -42,9 +42,8 @@ export default function ItemDetails () {
                   <button className='btn-grad'>Edit</button>
                   <button className='btn-grad' onClick={() => handleDelete(item?.id)}>Delete</button>
                 </article>
-              </>
-            )).reverse() : <h1>No Items Found</h1> }
-
+              </React.Fragment>
+            )) : <h1>No Items Found</h1> }
       </section>
     </>
   )

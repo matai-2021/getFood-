@@ -88,34 +88,3 @@ router.patch('/claim', (req, res) => {
 })
 
 module.exports = router
-
-// POST DATA SHAPE
-// {
-//   "name": "Chocolate Bar",
-//   "expiryDate": "3/08 13:00",
-//   "location": "Waterview, Auckland",
-//   "quantity": 6,
-//   "description": "good shape",
-//   "img": "img"
-// }
-
-// DELETE DATA SHAPE
-// req.params :id
-
-// UPDATE DATA SHAPE (item ver)
-// {
-//   "id": 0,
-//   "name": "",
-//   "location": "",
-//   "quantity": "",
-//   "img": "",
-//   "description": "",
-//   "isClaimed": ""
-// }
-
-// PATCH DATA SHAPE: (claim item ver)
-// {
-//   "id": 3,
-//   "isClaimed": true,
-//  "claimedById": 25
-//  }

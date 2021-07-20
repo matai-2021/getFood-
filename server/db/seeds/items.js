@@ -25,7 +25,7 @@ exports.seed = knex =>
       description: 'a bit bruised',
       email: 'eatwell@gmail.com',
       isClaimed: false,
-      img: '/images/potatoes.jpg'
+      img: '/images/potatoes.jpeg'
     },
     {
       id: 3,
@@ -181,7 +181,7 @@ exports.seed = knex =>
       description: 'left overe from an event. stored at correct temperature at all time',
       email: 'brown.s@caterforall.co.nz',
       isClaimed: true,
-      img: '/images/pizza.jpg'
+      img: '/images/pizza.jpeg'
     },
     {
       id: 15,
@@ -207,7 +207,7 @@ exports.seed = knex =>
       description: 'Changed planned, no londer wanted',
       email: 'eatwellbeing@gmail.com',
       isClaimed: true,
-      img: '/images/noodle.jpg'
+      img: '/images/noodles.jpg'
     },
     {
       id: 17,
