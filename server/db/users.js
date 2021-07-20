@@ -1,22 +1,16 @@
 const connection = require('./connection')
 
 module.exports = {
-  getUserById,
   addUser,
   // editProfile,
   deleteAccount,
-  getAllUsers
+  getAllUsers,
+  userExists
 }
 
 function getAllUsers (db = connection) {
   return db('users')
     .select()
-}
-
-function getUserById (id, db = connection) {
-  return db('users')
-    .select()
-    .where('auth0Id', id)
 }
 
 function userExists (auth0Id, db = connection) {
@@ -50,12 +44,12 @@ function addUser (newUser, db = connection) {
     })
 }
 
-// function editProfile (id, db = connection) {
-// stretch
-// }
-
 function deleteAccount (id, db = connection) {
   return db('users')
     .where('id', id)
     .delete()
 }
+
+// function editProfile (id, db = connection) {
+// stretch
+// }
