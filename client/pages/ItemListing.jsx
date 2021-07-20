@@ -18,8 +18,6 @@ export default function ItemListing () {
     <section className='items-wrapper'>
       <div className='item-heading-container'>
         <h1 className='item-heading'>Live Feed</h1>
-        {/* <div className='horizontal-line'></div> */}
-        {/* <p className='page-paragraph'>You can add a food item here.</p> */}
         <Link to='/itemnew' className='btn-grad add-item-btn'>Add Item</Link>
       </div>
       {items.map(item => (
