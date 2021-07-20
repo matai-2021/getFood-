@@ -9,8 +9,6 @@
 
 .nav-link {
     display: none;
-    // font-size: 300px;
-    // font-family: vars.$paragraph;
     color: vars.$purple;
     text-decoration: none;
     font-size: vars.$base-size * 2;
@@ -88,9 +86,9 @@
     z-index: 100;
     animation: growDown 300ms ease-in-out forwards;
     transform-origin: top center;
-    position: relative;
-    left: -240px;
-    top: 160px;
+    position: absolute;
+    left: 0;
+    top: 0;
 
     @keyframes growDown {
         0% {

@@ -25,7 +25,7 @@ export default function ItemDetails () {
     <section className='items-wrapper'>
       <div className='item-heading-container'>
         <h1 className='item-heading'>My Items</h1>
-        <Link to='/itemnew' className='btn-grad add-item-btn'>Add New Item</Link>
+        <Link to='/itemnew' className='btn-grad'>Add New Item</Link>
       </div>
       {items.length ? items.map(item => (
         <React.Fragment key={item.id} >

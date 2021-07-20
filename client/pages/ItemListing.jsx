@@ -18,7 +18,7 @@ export default function ItemListing () {
     <section className='items-wrapper'>
       <div className='item-heading-container'>
         <h1 className='item-heading'>Live Feed</h1>
-        <Link to='/itemnew' className='btn-grad add-item-btn'>Add Item</Link>
+        <Link to='/itemnew' className='btn-grad'>Add Item</Link>
       </div>
       {items.map(item => (
         !item.isClaimed &&

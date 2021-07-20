@@ -4,10 +4,10 @@
 @use '../1-helpers/vars';
 
 .container {
+  margin: auto;
   display: flex;
   justify-content: center;
-  position: relative;
-  max-width: 100%;
+  max-width: 1100px;
 }
 
 .item {
