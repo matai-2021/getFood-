@@ -44,10 +44,11 @@ export default function ItemForm (props) {
       <div>
         {/* <h2 className='form-title-profilesetup'>Item Details</h2> */}
         <div className='heading-container'>
-          <h1 className='page-title'>Item Details</h1>
+          <h1 className='page-title'>Add Item</h1>
           <div className='horizontal-line'></div>
         </div>
-        <form onSubmit={handleSubmit}>
+        {/* refer to this */}
+        <form className="add-item-form-wrapper" onSubmit={handleSubmit}>
           <div className="fieldleftif">
             <label
               htmlFor='name'
@@ -71,7 +72,7 @@ export default function ItemForm (props) {
             >Description:</label>
           </div>
           <div className="fieldif">
-            <textarea
+            <input
               id='description'
               name='description'
               className='form-boxif'
@@ -87,7 +88,7 @@ export default function ItemForm (props) {
             >Expiry Date:</label>
           </div>
           <div className="fieldif">
-            <textarea
+            <input
               id='expiryDate'
               name='expiryDate'
               className='form-boxif'
@@ -100,7 +101,7 @@ export default function ItemForm (props) {
             <label htmlFor='quantity' className='labelif'>Quantity:</label>
           </div>
           <div className="fieldif">
-            <textarea id='quantity'
+            <input id='quantity'
               name='quantity'
               className='form-boxif'
               placeholder='Quantity'
@@ -115,7 +116,7 @@ export default function ItemForm (props) {
             >Pickup location:</label>
           </div>
           <div className="fieldif">
-            <textarea
+            <input
               id='location'
               name='location'
               className='form-boxif'
@@ -131,7 +132,7 @@ export default function ItemForm (props) {
             >Email:</label>
           </div>
           <div className="fieldif">
-            <textarea
+            <input
               id='email'
               name='email'
               className='form-boxif'

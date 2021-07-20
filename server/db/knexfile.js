@@ -3,18 +3,24 @@ const path = require('path')
 module.exports = {
   development: {
     client: 'sqlite3',
+    useNullAsDefault: true,
     connection: {
       filename: path.join(__dirname, 'dev.sqlite3')
-    },
-    useNullAsDefault: true
+    }
   },
 
   test: {
     client: 'sqlite3',
+    useNullAsDefault: true,
     connection: {
       filename: ':memory:'
     },
-    useNullAsDefault: true
+    seeds: {
+      directory: path.join(__dirname, 'seeds')
+    },
+    migrations: {
+      directory: path.join(__dirname, 'migrations')
+    }
   },
 
   production: {

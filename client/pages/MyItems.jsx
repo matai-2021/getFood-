@@ -3,8 +3,10 @@ import { useSelector, useDispatch } from 'react-redux'
 import { getItems, deleteItem } from '../redux/itemsSlice'
 import { Link, useHistory } from 'react-router-dom'
 
+// Components
+import MySingleItem from '../components/MySingleItem'
+
 export default function ItemDetails () {
-  const history = useHistory()
   const dispatch = useDispatch()
   const items = useSelector(state => state.items.filter(item => item.isClaimed))
 
@@ -17,34 +19,28 @@ export default function ItemDetails () {
     history.push('/delete')
   }
 
+  const history = useHistory()
+
   return (
-    <>
-      <section className='card-container'>
-        <Link to={'/'}className='link-button'>Go back</Link>
-        {
-          items.length
-            ? items.map(item => (
-              <React.Fragment key={item?.id}>
-                <img className='card-img'
-                  src={item?.img}
-                  alt={item?.name}
-                />
-                <article>
-                  <h1 className='item-title'>{item?.name}</h1>
-                  <h1 className='page-paragraph'>Pick up location: {item?.location}</h1>
-                  <h1 className='page-paragraph'>Description: {item?.description}</h1>
-                  <h1 className='page-paragraph'>Quantity: {item?.quantity}</h1>
-                  <h1 className='page-paragraph'>Exp. Data: {item?.expiryDate}</h1>
-                  <h1 className='page-paragraph'>Date Created: {item?.dateCreated}</h1>
-                  <h1 className='page-paragraph'>Email: {item?.email}</h1>
-                </article>
-                <article>
-                  <button className='btn-grad'>Edit</button>
-                  <button className='btn-grad' onClick={() => handleDelete(item?.id)}>Delete</button>
-                </article>
-              </React.Fragment>
-            )) : <h1>No Items Found</h1> }
-      </section>
-    </>
+    <section className='items-wrapper'>
+      <div className='item-heading-container'>
+        <h1 className='item-heading'>My Items</h1>
+        <Link to='/itemnew' className='btn-grad'>Add New Item</Link>
+      </div>
+      {items.length ? items.map(item => (
+        <React.Fragment key={item.id} >
+          <MySingleItem
+            id={item.id}
+            name={item.name}
+            description={item.description}
+            expiryDate={item.expiryDate}
+            quantity={item.quantity}
+            email={item.email}
+            img={item.img}
+            handleDelete={handleDelete}
+          />
+        </React.Fragment>
+      )).reverse() : <h1>No Items Found</h1>}
+    </section>
   )
 }
