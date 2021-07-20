@@ -50,6 +50,9 @@ function Profile () {
             Location: {sessionUser?.location}
           </p>
           <p className='page-paragraph'>
+            Phone: {sessionUser?.phone}
+          </p>
+          <p className='page-paragraph'>
             Member since: {sessionUser?.dateCreated}
           </p>
         </div>
