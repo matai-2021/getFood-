@@ -42,12 +42,12 @@ export default function ItemForm (props) {
   return (
     <>
       <div>
-        {/* <h2 className='form-title-profilesetup'>Item Details</h2> */}
         <div className='heading-container'>
           <h1 className='page-title'>Add Item</h1>
           <div className='horizontal-line'></div>
         </div>
-        {/* refer to this */}
+        {/*  */}
+
         <form className="add-item-form-wrapper" onSubmit={handleSubmit}>
           <div className="fieldleftif">
             <label

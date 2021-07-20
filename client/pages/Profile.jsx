@@ -52,6 +52,12 @@ function Profile () {
           <p className='page-paragraph'>
             Member since: {sessionUser?.dateCreated}
           </p>
+          <p className='page-paragraph'>
+            Phone: {sessionUser?.phone}
+          </p>
+          <p className='page-paragraph'>
+            Business Name: {sessionUser?.companyName}
+          </p>
         </div>
         <div className='profile-button-container'>
           {/* Below link is not actually a button, will need to change later */}
