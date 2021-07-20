@@ -36,7 +36,8 @@ export default function ItemListing () {
             img={item.img}
           />
         </React.Fragment>
-      ))}
+      )).reverse()}
+      {/* .reverse() reverses the array order */}
     </section>
   )
 }

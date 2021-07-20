@@ -43,7 +43,7 @@ export default function ItemDetails () {
                   <button className='btn-grad' onClick={() => handleDelete(item?.id)}>Delete</button>
                 </article>
               </>
-            )) : <h1>No Items Found</h1> }
+            )).reverse() : <h1>No Items Found</h1> }
 
       </section>
     </>
