@@ -2,8 +2,11 @@
 Kris, Koko, Kritika, Rodrigo, Zac
 'The Food Waste Reducer'
 
+Digital Wireframe:
 https://whimsical.com/getfood-JfoEWmZzgLJTabRX5iejtA
 
+Deployed?! (cheeeeeeers Kris!):
+https://getfoodeda.herokuapp.com/
 
 // ------------------------------------------------
 // ------------------------------------------------
