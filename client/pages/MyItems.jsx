@@ -44,7 +44,6 @@ export default function ItemDetails () {
                 </article>
               </React.Fragment>
             )) : <h1>No Items Found</h1> }
-
       </section>
     </>
   )

@@ -36,10 +36,6 @@ export default function ItemListing () {
           />
         </React.Fragment>
       )).reverse()}
-<<<<<<< HEAD
-=======
-      {/* .reverse() reverses the array order */}
->>>>>>> 45e4000674951dd1033401d4aeef400c05f37651
     </section>
   )
 }
