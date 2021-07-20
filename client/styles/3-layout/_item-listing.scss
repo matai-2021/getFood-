@@ -18,7 +18,7 @@
   border-radius: 5px;
   background-color: white;
 
-  @include mixins.media-queries(mobile, min) {
+  @include mixins.media-queries(mobile, max) {
     flex-direction: column;
     padding: 10px;
     background-color: white;
@@ -36,7 +36,7 @@
   box-shadow: 0 0 20px rgb(212, 212, 212);
   border-radius: 5px;
   
-  @include mixins.media-queries(mobile, min) {
+  @include mixins.media-queries(mobile, max) {
     flex-direction: column;
     padding: 0px;
   }
