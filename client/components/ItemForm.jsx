@@ -47,6 +47,7 @@ export default function ItemForm (props) {
           <h1 className='page-title'>Add Item</h1>
           <div className='horizontal-line'></div>
         </div>
+        {/* refer to this */}
         <form className="add-item-form-wrapper" onSubmit={handleSubmit}>
           <div className="fieldleftif">
             <label

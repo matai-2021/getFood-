@@ -12,7 +12,7 @@ exports.seed = knex =>
           auth0Id: 'z2wRHxm1K1',
           companyName: null,
           phone: '0211996925',
-          profilePic: '/images/profile/kris.jpg'
+          profilePic: '/images/profile/keisuke.jpg'
         },
         {
           id: 2,
@@ -24,7 +24,7 @@ exports.seed = knex =>
           auth0Id: 'lkfjgwh',
           companyName: null,
           phone: '0210346246',
-          profilePic: '/images/profile/kris.jpg'
+          profilePic: '/images/profile/suji.jpg'
         },
         {
           id: 3,
@@ -36,7 +36,7 @@ exports.seed = knex =>
           auth0Id: 'ksjgjsds',
           companyName: null,
           phone: '0228467492',
-          profilePic: '/images/profile/kris.jpg'
+          profilePic: '/images/profile/josh.jpg'
         },
         {
           id: 4,
@@ -48,7 +48,7 @@ exports.seed = knex =>
           auth0Id: 'lkfjgwh',
           companyName: null,
           phone: '027886925',
-          profilePic: '/images/profile/kris.jpg'
+          profilePic: '/images/profile/eleanor.jpg'
         },
         {
           id: 5,
@@ -60,7 +60,7 @@ exports.seed = knex =>
           auth0Id: 'lkfjgwh',
           companyName: null,
           phone: '0219584760',
-          profilePic: '/images/profile/kris.jpg'
+          profilePic: '/images/profile/ahmad.jpg'
         },
         {
           id: 6,
@@ -72,7 +72,7 @@ exports.seed = knex =>
           auth0Id: 'fksapkv9',
           companyName: null,
           phone: '0278697271',
-          profilePic: '/images/profile/kris.jpg'
+          profilePic: '/images/profile/carter.jpg'
         },
         {
           id: 7,
@@ -84,7 +84,7 @@ exports.seed = knex =>
           auth0Id: 'ghpefsdl',
           companyName: null,
           phone: '021639298',
-          profilePic: '/images/profile/kris.jpg'
+          profilePic: '/images/profile/dylan.jpg'
         },
         {
           id: 8,
@@ -96,7 +96,7 @@ exports.seed = knex =>
           auth0Id: 'jhghodcis',
           companyName: 'mustacheGrooming',
           phone: '022968473',
-          profilePic: '/images/profile/kris.jpg'
+          profilePic: '/images/profile/james.jpg'
         },
         {
           id: 9,
@@ -108,7 +108,7 @@ exports.seed = knex =>
           auth0Id: 'lkfjgwh',
           companyName: 'freshCutLawn',
           phone: '0211286930',
-          profilePic: '/images/profile/kris.jpg'
+          profilePic: '/images/profile/peter.jpg'
         },
         {
           id: 10,
@@ -120,6 +120,6 @@ exports.seed = knex =>
           auth0Id: 'lkhsassh',
           companyName: 'BooshBargainBooze',
           phone: '0211996925',
-          profilePic: '/images/profile/kris.jpg'
+          profilePic: '/images/profile/ryan.jpg'
         }
       ]))

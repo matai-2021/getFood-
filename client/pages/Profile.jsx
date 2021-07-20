@@ -55,7 +55,7 @@ function Profile () {
         </div>
         <div className='profile-button-container'>
           {/* Below link is not actually a button, will need to change later */}
-          <Link to={'/profilesetup'} className='btn-grad'>Setup Profile</Link>
+          <Link to={'/profilesetup'} className='btn-grad'>Edit Profile</Link>
           <button className='btn-grad' onClick={() => handleDelete(sessionUser?.id)}>Delete My Account</button>
           {/* </>
           )} */}
