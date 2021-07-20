@@ -64,12 +64,12 @@ router.delete('/:id', (req, res) => {
 })
 
 // updating item for stretch? For both Edit and Claimed?
-router.patch('/', (req, res) => {
+router.patch('/edit/:id', (req, res) => {
   const { id, name, location, quantity, img, description } = req.body
   const updatedItem = { id, name, location, quantity, img, description }
   db.updateItem(updatedItem)
     .then(() => {
-      res.status(201).json('Item successfully updated')
+      res.status(201).json(updatedItem)
       return null
     })
     .catch(err => {

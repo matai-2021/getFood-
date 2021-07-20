@@ -9,7 +9,8 @@ export default function MySingleItem (props) {
     quantity,
     img,
     expiryDate,
-    handleDelete
+    handleDelete,
+    handleEdit
   } = props
 
   return (
@@ -32,7 +33,10 @@ export default function MySingleItem (props) {
           email: {email}
         </p>
         <div className='btn-wrapper'>
-          <button className='item-details-btn'>Edit</button>
+          <button className='item-details-btn'
+            onClick={() => handleEdit(id)}>
+            Edit
+          </button>
           <button className='item-details-btn'
             onClick={() => handleDelete(id)}>
             Delete

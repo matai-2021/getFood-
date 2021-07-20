@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
-export default function ItemForm (props) {
+export default function EditItemForm (props) {
   const history = useHistory()
   const [form, setForm] = useState({
     name: '',
@@ -24,7 +24,7 @@ export default function ItemForm (props) {
   function handleSubmit (e) {
     e.preventDefault()
     props.submitEvent(form)
-    history.push('/addMsg')
+    history.push('/editMsg')
   }
 
   function handleImg (e) {
@@ -40,10 +40,10 @@ export default function ItemForm (props) {
   const { name, quantity, expiryDate, location, description, email } = form
 
   return (
-    <>
+    <div className='add-item-form'>
       <div>
         <div className='heading-container'>
-          <h1 className='page-title'>Add Item</h1>
+          <h1 className='page-title'>Edit Item</h1>
           <div className='horizontal-line'></div>
         </div>
         <form className="add-item-form-wrapper" onSubmit={handleSubmit}>
@@ -157,6 +157,6 @@ export default function ItemForm (props) {
           </button>
         </form>
       </div>
-    </>
+    </div>
   )
 }
