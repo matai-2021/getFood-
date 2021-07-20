@@ -30,6 +30,36 @@ Zac:
 - Finish Claim functionality
 - Help on styling
 
+Afternoon standup:
+MVP DONE!!!
+Kris:
+- Finished Auth0 refresh issue
+- Image upload function?
+- Testing
+
+Rodrigo:
+- Small changes for design
+- Improve design and styling
+
+Kritika:
+- Updates on responsiveness, fixes for styling
+
+Koko:
+- Testing improvements, more testing
+
+Zac:
+- Finished Claim function
+- Images for users (from Slack)
+- Form styling improvement, add responsiveness
+- Stretch Edit item. Need to create component + form
+- Address input form - ADDRESSFINDER (but only for one line, not seperated into address, suburb, city etc)
+
+Personal note for Zac, styling to do:
+- Form (card) to refer to Profile.jsx
+- Need all classNames to be unique - copy and paste, rename to use for each _module.scss
+- Label to be purple.
+- Responsiveness for ProfileSetUp
+
 
 Backup plans:
 - (Zac - hasn't shared yet) myItems to show only items that are isClaimed=true, not by logged in user's id?
