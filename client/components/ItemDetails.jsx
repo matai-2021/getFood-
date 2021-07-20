@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { getItems } from '../redux/itemsSlice'
+import { getItems, claimItem } from '../redux/itemsSlice'
 import { useParams } from 'react-router'
 import { Link, useHistory } from 'react-router-dom'
 
@@ -15,9 +15,23 @@ export default function ItemDetails () {
     dispatch(getItems())
   }, [])
 
-  const handleClaim = (e) => {
+  const handleClaim = (itemId) => {
+    const claimedById = 1
+    dispatch(claimItem({ id: itemId, isClaimed: true, claimedById: claimedById }))
     history.push('/claim')
   }
+
+  // another ver
+  // function completeOrder () {
+  //   const newStatus = 'complete'
+  //   dispatch(updateOrderStatus(id, newStatus))
+  // }
+
+  // then in the Order.jsx, clientside
+  // function cancelOrder () {
+  //   // console.log('coming soon!') // release 3
+  //   props.patchHelper({ id, newStatus: 'cancelled' })
+  // }
 
   return (
     <>
@@ -32,10 +46,10 @@ export default function ItemDetails () {
           <h1 className='page-paragraph'>Pick up location: {singleItem?.location}</h1>
           <h1 className='page-paragraph'>Description: {singleItem?.description}</h1>
           <h1 className='page-paragraph'>Quantity: {singleItem?.quantity}</h1>
-          <h1 className='page-paragraph'>Exp. Data: {singleItem?.expiryDate}</h1>
+          <h1 className='page-paragraph'>Exp. Date: {singleItem?.expiryDate}</h1>
           <h1 className='page-paragraph'>Date Created: {singleItem?.dateCreated}</h1>
           <h1 className='page-paragraph'>Email: {singleItem?.email}</h1>
-          <button onClick={handleClaim} className='btn-grad'>
+          <button onClick={() => handleClaim(singleItem?.id) } className='btn-grad'>
             Claim
           </button>
         </article>

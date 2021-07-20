@@ -47,7 +47,7 @@ export default function ItemForm (props) {
           <div className="fieldleftinput">
             <label
               htmlFor='name'
-              className='labelgrey'>Item Name:</label>
+              className='label'>Item Name:</label>
           </div>
           <div className="field">
             <input
@@ -55,7 +55,7 @@ export default function ItemForm (props) {
               name='name'
               className='form-box'
               type='text'
-              placeholder='item name'
+              placeholder='Your item name'
               value={name}
               onChange={handleChange}
             />
@@ -63,7 +63,7 @@ export default function ItemForm (props) {
           <div className="fieldleftinput">
             <label
               htmlFor='description'
-              className='labelgrey'
+              className='label'
             >Description:</label>
           </div>
           <div className="field">
@@ -71,7 +71,7 @@ export default function ItemForm (props) {
               id='description'
               name='description'
               className='form-box'
-              placeholder='item description'
+              placeholder='e.g. "In good condition, stored in a bag"'
               value={description}
               onChange={handleChange}
             />
@@ -79,7 +79,7 @@ export default function ItemForm (props) {
           <div className="fieldleftinput">
             <label
               htmlFor='expiryDate'
-              className='labelgrey'
+              className='label'
             >Expiry Date:</label>
           </div>
           <div className="field">
@@ -87,19 +87,19 @@ export default function ItemForm (props) {
               id='expiryDate'
               name='expiryDate'
               className='form-box'
-              placeholder='exp date'
+              placeholder='Expiry date if applicable'
               value={expiryDate}
               onChange={handleChange}
             />
           </div>
           <div className="fieldleftinput">
-            <label htmlFor='quantity' className='labelgrey'>Quantity:</label>
+            <label htmlFor='quantity' className='label'>Quantity:</label>
           </div>
           <div className="field">
             <textarea id='quantity'
               name='quantity'
               className='form-box'
-              placeholder='quantity'
+              placeholder='Quantity'
               value={quantity}
               onChange={handleChange}
             />
@@ -107,15 +107,15 @@ export default function ItemForm (props) {
           <div className="fieldleftinput">
             <label
               htmlFor='location'
-              className='labelgrey'
-            >Location:</label>
+              className='label'
+            >Pickup location:</label>
           </div>
           <div className="field">
             <textarea
               id='location'
               name='location'
               className='form-box'
-              placeholder='item location'
+              placeholder='Pickup location for this item'
               value={location}
               onChange={handleChange}
             />
@@ -123,7 +123,7 @@ export default function ItemForm (props) {
           <div className="fieldleftinput">
             <label
               htmlFor='email'
-              className='labelgrey'
+              className='label'
             >Email:</label>
           </div>
           <div className="field">
@@ -131,15 +131,15 @@ export default function ItemForm (props) {
               id='email'
               name='email'
               className='form-box'
-              placeholder='email'
+              placeholder='Email for contact'
               value={email}
               onChange={handleChange}
             />
           </div>
-          <div className="field">
+          <div>
             <label
               htmlFor='img'
-              className='labelgrey'
+              className='label'
             >Image:  </label>
           </div>
           <div className="field">
