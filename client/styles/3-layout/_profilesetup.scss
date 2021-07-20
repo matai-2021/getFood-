@@ -93,6 +93,20 @@
   }
   
 
+  .profile-text-and-button-containerps {
+    display: flex;
+    margin: 30px;
+    width: 600px;
+    // height: 200px;
+    align-items: left;
+    flex-direction: column;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding: vars.$base-size * 1;
+    box-shadow: 0 0 20px rgb(212, 212, 212);
+    // text-align: left;
+  }
 
   .form-boxps {
     height: vars.$base-size * 1.75; // or 100%?
@@ -104,8 +118,8 @@
   .check-boxps {
     // height: vars.$base-size;
     // width: vars.$base-size;
-    font-family: vars.$paragraph;
-    // margin-bottom: 1rem;
+    // font-family: vars.$paragraph;
+    transform: scale(1.5);
   }
 
   .img-holderps {
