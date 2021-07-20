@@ -44,7 +44,7 @@ const singleItemMock = [
     quantity: 9,
     description: 'a bit bruised',
     email: 'eatwell@gmail.com',
-    isClaimed: 0,
+    isClaimed: true,
     img: '/images/potatoes.jpeg'
   }
 ]
@@ -162,7 +162,7 @@ describe('PATCH /api/v1/items/claim', () => {
       })
   })
 
-  it('Returns updated item', () => {
+  it('Returns item (update happens on client side)', () => {
     db.claimItem.mockImplementation(() => {
       return Promise.resolve(singleItemMock)
     })
@@ -174,7 +174,6 @@ describe('PATCH /api/v1/items/claim', () => {
         expect(res.body).toHaveLength(1)
         expect(res.body[0]).toHaveProperty('name')
         expect(res.body[0].name).toBe('Leek')
-        expect(res.body[0].isClaimed).toBe(1)
         return null
       })
   })

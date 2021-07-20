@@ -2,11 +2,14 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { getItems, deleteItem } from '../redux/itemsSlice'
 import { Link, useHistory } from 'react-router-dom'
+import { withAuthenticationRequired } from '@auth0/auth0-react'
 
 // Components
 import MySingleItem from '../components/MySingleItem'
 
-export default function ItemDetails () {
+const loading = <img src='./images/loading-buffering1.gif'/>
+
+function ItemDetails () {
   const dispatch = useDispatch()
   const items = useSelector(state => state.items.filter(item => item.isClaimed))
 
@@ -44,3 +47,9 @@ export default function ItemDetails () {
     </section>
   )
 }
+
+export default withAuthenticationRequired(ItemDetails, {
+  displayName: 'Loading',
+  // Show a message while the user waits to be redirected to the login page.
+  onRedirecting: () => (loading)
+})
