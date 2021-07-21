@@ -1,4 +1,5 @@
 import React from 'react'
+import HomeDrawing from '../components/HomeDrawing'
 
 export default function Home () {
   return (
@@ -7,6 +8,7 @@ export default function Home () {
       <div className='horizontal-line'></div>
       <p className='page-paragraph '>A food conserving project by the getFood group</p>
       <p className='page-paragraph '>Please log in to get started, or checkout our About page</p>
+      <HomeDrawing />
     </section>
   )
 }

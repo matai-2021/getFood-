@@ -5,6 +5,7 @@
 
 .nav {
     width: auto;
+    z-index: 1;
 }
 
 .nav-link {
@@ -13,6 +14,7 @@
     text-decoration: none;
     font-size: vars.$base-size * 2;
     font-family: vars.$heading;
+    z-index: 1;
 
     &:hover {
         color: vars.$lightpurple;
@@ -23,6 +25,7 @@
         padding-left: vars.$base-size;
         font-size: vars.$base-size * 1.2;
         font-family: vars.$paragraph;
+        z-index: 1;
     }
 }
 
@@ -64,6 +67,7 @@
 .nav-menu {
     height: 100%;
     display: flex;
+    z-index: 1;
 	// background-color: vars.$yellow;
 
     @include mixins.media-queries(mobile, min) {
@@ -72,6 +76,7 @@
         align-items: flex-end;
         // padding-bottom: vars.$base-size;
         padding-right: vars.$base-size * 3;
+        z-index: 1;
     }
 }
 
