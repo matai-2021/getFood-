@@ -19,7 +19,7 @@ export default function About () {
               Founded in 2021, getFood connects neighbours with each other and with local
               businesses so surplus food can be shared, not thrown away.
           </p>
-          <a className="btn-grad" href="https://www.trademe.co.nz/c/community/article/our-story">Read more</a>
+          <a target='_blank' className="btn-grad" href="https://www.google.com" rel="noreferrer">Read more</a>
         </div>
         <div className="child flex-row">
           <h2 className='page-sub-title'>Vision & Values</h2>
@@ -31,7 +31,7 @@ export default function About () {
               getFood is for everybody. It’s a mind-set, not a demographic.
               We hate waste of any variety. We’re caring in our actions and words.
           </p>
-          <a className="btn-grad" href="https://www.trademe.co.nz/c/community/article/vision-and-values">Read more</a>
+          <a target='_blank' className="btn-grad" href="https://www.google.com" rel="noreferrer">Read more</a>
         </div>
         <div className="child flex-row">
           <h2 className='page-sub-title'>Community Rules</h2>
@@ -43,7 +43,7 @@ export default function About () {
               we have some rules that we expect our members to honour in
               order to keep everyone safe.
           </p>
-          <a className="btn-grad" href="#">Read more</a>
+          <a target='_blank' className="btn-grad" href="https://www.google.com" rel="noreferrer">Read more</a>
         </div>
       </div>
     </section>

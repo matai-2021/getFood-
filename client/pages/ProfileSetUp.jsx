@@ -1,6 +1,4 @@
-import React, { useEffect } from 'react'
-// import { useHistory } from 'react-router-dom'
-// import { profileSetUp } from './profileSetUpHelper'
+import React, { useEffect, useState } from 'react'
 import { useAuth0, withAuthenticationRequired } from '@auth0/auth0-react'
 import { Link } from 'react-router-dom'
 
@@ -11,24 +9,19 @@ import {
 import { getUsers } from '../redux/usersSlice'
 
 function ProfileSetUp () {
+  const [form, setForm] = useState({})
   const dispatch = useDispatch()
   const users = useSelector(state => state.users)
   const { user: auth0userdata } = useAuth0()
   const sessionUser = users.find(user => user.auth0Id === auth0userdata?.sub)
 
-  // const [form, setForm] = useState({
-  // })
-
   function handleChange (e) {
-    // const { name, value } = e.target
-    // setForm({
-    //   ...form,
-    //   [name]: value
-    // })
+    const { name, value } = e.target
+    setForm({
+      ...form,
+      [name]: value
+    })
   }
-
-  // function handleClick (e) {
-  // }
 
   useEffect(() => {
     dispatch(getUsers())
