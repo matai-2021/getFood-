@@ -38,7 +38,7 @@ export const deleteItem = createAsyncThunk(
 export const editItem = createAsyncThunk(
   'item/editItem',
   async (payload) => {
-    const res = await request.patch('/api/v1/items/edit')
+    const res = await request.patch(`/api/v1/items/edit/${payload.id}`)
     if (res.ok) {
       return payload
     }
@@ -70,6 +70,9 @@ const itemsSlice = createSlice({
     },
     [deleteItem.fulfilled]: (state, action) => {
       return state.filter(item => item.id !== action.payload.id)
+    },
+    [editItem.fulfilled]: (state, action) => {
+      console.log(action.payload)
     },
     [claimItem.fulfilled]: (state, action) => {
       return state.map(item => {

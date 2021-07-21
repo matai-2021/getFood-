@@ -7,14 +7,14 @@ import ItemForm from '../components/ItemForm'
 export default function AddItem () {
   const dispatch = useDispatch()
 
-  function submitEvent (event) {
-    dispatch(addItem(event))
+  function submitItem (item) {
+    dispatch(addItem(item))
   }
 
   return (
     <div className='add-item-form'>
       <ItemForm
-        submitEvent={submitEvent}
+        submitEvent={submitItem}
       />
     </div>
   )

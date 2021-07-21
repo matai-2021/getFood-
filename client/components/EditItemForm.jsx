@@ -1,8 +1,13 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
+import { editItem } from '../redux/itemsSlice'
+import { useParams } from 'react-router'
 
-export default function EditItemForm (props) {
+export default function EditItemForm () {
+  const { id } = useParams()
   const history = useHistory()
+  const dispatch = useDispatch()
   const [form, setForm] = useState({
     name: '',
     quantity: '',
@@ -23,7 +28,7 @@ export default function EditItemForm (props) {
 
   function handleSubmit (e) {
     e.preventDefault()
-    props.submitEvent(form)
+    dispatch(editItem(Number(id)))
     history.push('/editMsg')
   }
 
@@ -153,7 +158,7 @@ export default function EditItemForm (props) {
             />
           </div>
           <button className='btn-grad'>
-            Create Item
+            Update Item
           </button>
         </form>
       </div>

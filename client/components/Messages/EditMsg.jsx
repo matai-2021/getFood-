@@ -7,7 +7,7 @@ export default function EditMsg () {
     <div className='add-msg'>
       <GrStatusGood className='msg-icon'/>
       <h3>Item was updated successfully!</h3>
-      <Link to='/'>Go back to Home</Link>
+      <Link to='/myitems'>Go back to My Items</Link>
     </div>
   )
 }
