@@ -11,13 +11,13 @@
 //     font-family: vars.$paragraph;
 //   }
 
-.containerps {
+.containerif {
   display: flex;
   justify-content: center;
   position: relative;
   max-width: 100%;
 }
-.form-titleps {
+.form-titleif {
     color: vars.$black;
     font-family: vars.$purple;
     font-size: x-large;
@@ -25,7 +25,7 @@
     margin-bottom: 1rem;
   }
 
-  .flex-containerps {
+  .flex-containerif {
     margin: auto;
     display: flex;
     justify-content: center;
@@ -36,7 +36,7 @@
     }
   }
 
-  .heading-containerps {
+  .heading-containerif {
     display: flex;
     align-items: center;
     align-self: center;
@@ -50,7 +50,7 @@
     margin-bottom: vars.$base-size * 2;
   }
 
-.flex-containerleft {
+.flex-containerleftif {
     text-align: left;
     margin: auto;
     display: flex;
@@ -60,33 +60,32 @@
     }
   }
   
-.fieldps {
+.fieldif {
     margin-bottom: 1rem;
 }
 
-.fieldleftps {
+.fieldleftif {
     text-align: left;
-    margin-bottom: 1rem;
 }
 
-.fieldleftinputps {
+.fieldleftinputif {
   text-align: left;
 }
 
 
-  .labelps {
-    color: vars.$black;
-    font-family: vars.$paragraph;
-    font-weight: bold;
-  }
-
-  .labelpurpleps {
+  .labelif {
     color: vars.$purple;
     font-family: vars.$paragraph;
     font-weight: bold;
   }
 
-  .labelgreyinputps{
+  .labelgreyif {
+    color: vars.$grey;
+    font-family: vars.$paragraph;
+    font-weight: bold;
+  }
+
+  .labelgreyinputif{
     color: vars.$grey;
     font-family: vars.$paragraph;
     font-weight: bold;
@@ -94,21 +93,21 @@
   
 
 
-  .form-boxps {
+  .form-boxif {
     height: vars.$base-size * 1.75; // or 100%?
     width: vars.$base-size * 20;
     font-family: vars.$paragraph;
     // margin-bottom: 1rem;
   }
 
-  .check-boxps {
+  .check-boxif {
     // height: vars.$base-size;
     // width: vars.$base-size;
     font-family: vars.$paragraph;
     // margin-bottom: 1rem;
   }
 
-  .img-holderps {
+  .img-holderif {
     width: 220px;
     border-radius: 50%;
     height: 220px;

@@ -15,6 +15,7 @@ import Footer from './components/Footer'
 import AddMsg from './components/Messages/AddMsg'
 import DeleteMsg from './components/Messages/DeleteMsg'
 import ClaimMsg from './components/Messages/ClaimMsg'
+import HomeDrawing from './components/HomeDrawing'
 // import { cacheUser } from './auth-utils'
 
 import { useAuth0 } from '@auth0/auth0-react'
@@ -43,6 +44,7 @@ export default function App () {
           <Route path='/message' component={AddMsg} />
           <Route path='/delete' component={DeleteMsg} />
           <Route path='/claim' component={ClaimMsg} />
+          <HomeDrawing/>
         </main>
       </div>
       <Footer />
