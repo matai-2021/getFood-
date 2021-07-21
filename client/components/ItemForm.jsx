@@ -46,6 +46,8 @@ export default function ItemForm (props) {
           <h1 className='page-title'>Add Item</h1>
           <div className='horizontal-line'></div>
         </div>
+        {/*  */}
+
         <form className="add-item-form-wrapper" onSubmit={handleSubmit}>
           <div className="fieldleftif">
             <label
@@ -152,9 +154,11 @@ export default function ItemForm (props) {
               onChange={handleImg}
             />
           </div>
-          <button className='btn-grad'>
+          <div className='imgcenter'>
+            <button className='btn-grad'>
             Create Item
-          </button>
+            </button>
+          </div>
         </form>
       </div>
     </>

@@ -47,10 +47,14 @@ export default function EditItemForm () {
   return (
     <div className='add-item-form'>
       <div>
+
+        {/*  */}
         <div className='heading-container'>
           <h1 className='page-title'>Edit Item</h1>
           <div className='horizontal-line'></div>
         </div>
+        {/*  */}
+
         <form className="add-item-form-wrapper" onSubmit={handleSubmit}>
           <div className="fieldleftif">
             <label
@@ -157,9 +161,11 @@ export default function EditItemForm () {
               onChange={handleImg}
             />
           </div>
-          <button className='btn-grad'>
-            Update Item
-          </button>
+          <div className='imgcenter'>
+            <button className='btn-grad'>
+              Update Item
+            </button>
+          </div>
         </form>
       </div>
     </div>
