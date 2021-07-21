@@ -10,29 +10,76 @@ https://getfoodeda.herokuapp.com/
 
 // ------------------------------------------------
 // ------------------------------------------------
-Thursday 22/07/2021
+Thursday 22/07/2021. Presentation day yo
 
-Roleplay: Kris & Koko
-Intro: Kris
-Demo & technical stuff: Rodrigo
-Retro, talk about techinical stuff as well. Kritika talks about what I haven't talked about
+Before dry runs, order of presentation:
+
+1. Roleplay: Kris & Koko
+2. Intro: Kris
+3. Demo & technical stuff: Rodrigo
+4. Retro, talk about techinical stuff as well. Kritika talks about what I haven't talked about
     Challenges: Zac
     Positive: Kritika
-EDA Reflection: Koko
+5. EDA Reflection: Koko
 
 Zac's prep, challenges as a team:
+- First of all had a big MVP 
+    - Meant the stretches weren't so many
+    - Overwork, burnt out
+- Too much work
+    - Lack of sleep
+- Snacks
+- On the backend, component file structure
+- auth0 
 - Styling
     - classNames
     - background
-- auth0 
-- img uploader
-- Component file structure
-- Having a big MVP meant the stretches weren't so many
-- Too much work
-    - Lack of sleep
-- File conflicts - bundle.* 
+- Image uploader
+- File conflicts - bundle.* , styling, dev.sqlite3
+- Deployment. This actually deploys automatically to online whenever we made changes and pushed online, but as the project went on there were more and more things to fix and so right now the online website is not
 
+Prsentation:
+Image upload in public folder
 
+Feedback:
+Prue:
+Just under 10 mins. Kris 1 min
+Rodrigo: 3 mins 10
+Zac: 3mins 12
+Kritika: 1.55
+Koko: 2mins left
+
+Cut down process(Zac's part)
+Just generally Zac to be shorter
+
+Lache:
+Kris good intro. Welcome whanau.
+Rodrigo: one person demo, one person roleplay demo, talking at the same time? Turn up the act
+General: make sure you have image in the folder. have the folder ready to open. Make sure to remove cache.
+Forms - having to fill out do it asap. Prepopulated? or opened on second tab
+
+Other than that,
+Zac: project more to the back of the room.
+Jargon expalnation. Backend, MVP, Heroku, Auth0. A new techinical term, one-liner explanation.
+Don might explain techinical terms before the presentation
+
+Cleaning up what I'm saying, talk about the things that might have gone wrong, and then talk about the roles. So.. seperate sections
+
+Kritika's reflection kinda overlapped with Zac's one.
+
+Kritika: loved points. Both borught in good anectodes (high fives etc.. not saying Agile practice etc).
+
+Don:
+Kris - solid intro.
+Rodrigo: demo.. to be checked again on the afternoon dry run.
+Make sure browser history is clean, when popping out on form. 
+Zac: challenges Refine it more. only 3-4 things. say stretches was not relevant.
+Filesystem jargon.. confusing.
+Don't talk about what app doesn't work. - rDORIGO AS WELL
+Just talk about what's next.
+Kritika: try not to use for notes. If you have to its fine, but
+    Don loved the points, trust, gratitude etc were fantastic.
+What we'd do differetnly. Seemed like an overlap, so need to check
 
 // ------------------------------------------------
 // ------------------------------------------------
