@@ -89,7 +89,7 @@ exports.seed = knex =>
       quantity: '5',
       description: 'N/A',
       email: 'caterall@hotmail.com',
-      isClaimed: true,
+      isClaimed: false,
       img: '/images/flour.jpg'
     },
     {
@@ -128,7 +128,7 @@ exports.seed = knex =>
       quantity: '5 Liter',
       description: 'unwanted unused oil',
       email: 'serviceproducts@xtra.com',
-      isClaimed: true,
+      isClaimed: false,
       img: '/images/oil.jpg'
     },
     {
@@ -141,7 +141,7 @@ exports.seed = knex =>
       quantity: '1 Kg',
       description: 'Decided to go Vegetarian',
       email: 'sam@hotmail.com',
-      isClaimed: true,
+      isClaimed: false,
       img: '/images/chicken.jpg'
     },
     {
@@ -167,7 +167,7 @@ exports.seed = knex =>
       quantity: '20',
       description: 'Fresh off lemon tree in my garden',
       email: 'karen@gmail.com',
-      isClaimed: true,
+      isClaimed: false,
       img: '/images/lemon.jpg'
     },
     {
@@ -180,7 +180,7 @@ exports.seed = knex =>
       quantity: '10',
       description: 'left over from an event. stored at correct temperature at all time',
       email: 'brown.s@caterforall.co.nz',
-      isClaimed: true,
+      isClaimed: false,
       img: '/images/pizza.jpeg'
     },
     {
@@ -193,7 +193,7 @@ exports.seed = knex =>
       quantity: '1',
       description: 'A bottle of unopened wine',
       email: 'sam@hotmail.com',
-      isClaimed: true,
+      isClaimed: false,
       img: '/images/wine.jpg'
     },
     {
@@ -206,7 +206,7 @@ exports.seed = knex =>
       quantity: '5 packets',
       description: 'Changed plans, no longer wanted',
       email: 'eatwellbeing@gmail.com',
-      isClaimed: true,
+      isClaimed: false,
       img: '/images/noodles.jpg'
     },
     {
@@ -232,7 +232,7 @@ exports.seed = knex =>
       quantity: '11',
       description: 'need to go asap',
       email: 'kelly@hotmail.com',
-      isClaimed: true,
+      isClaimed: false,
       img: '/images/tomato.jpg'
     },
     {
@@ -245,7 +245,7 @@ exports.seed = knex =>
       quantity: '5 kg',
       description: 'catering size strawberry icecream',
       email: 'graduateday@xtra.com',
-      isClaimed: true,
+      isClaimed: false,
       img: '/images/icecream.jpg'
     },
     {
@@ -258,7 +258,7 @@ exports.seed = knex =>
       quantity: '10',
       description: 'fresh iceberg lettuce. pick up by tomorrow please',
       email: 'william@wholesomecater.com',
-      isClaimed: true,
+      isClaimed: false,
       img: '/images/lettuce.jpg'
     }
   ])

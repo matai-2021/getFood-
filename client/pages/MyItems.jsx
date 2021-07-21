@@ -15,15 +15,19 @@ function ItemDetails () {
   const users = useSelector(state => state.users)
   const { user: auth0userdata } = useAuth0()
   const sessionUser = users.find(user => user.auth0Id === auth0userdata?.sub)
-
   const items = items1.filter(item => item.claimedById === sessionUser?.id)
+
   useEffect(() => {
     dispatch(getItems())
   }, [])
 
   const handleDelete = (itemId) => {
     dispatch(deleteItem({ id: itemId }))
-    history.push('/delete')
+    history.push('/deleteMsg')
+  }
+
+  const handleEdit = (itemId) => {
+    history.push(`/edititem/${itemId}`)
   }
 
   const history = useHistory()
@@ -45,6 +49,7 @@ function ItemDetails () {
             email={item.email}
             img={item.img}
             handleDelete={handleDelete}
+            handleEdit={handleEdit}
           />
         </React.Fragment>
       )).reverse() : <h1>No Items Found</h1>}
@@ -54,6 +59,5 @@ function ItemDetails () {
 
 export default withAuthenticationRequired(ItemDetails, {
   displayName: 'Loading',
-  // Show a message while the user waits to be redirected to the login page.
   onRedirecting: () => (loading)
 })
