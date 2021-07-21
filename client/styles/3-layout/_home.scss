@@ -54,7 +54,7 @@
     z-index: -9;
     width: 300px;
 
-    // @include mixins.media-queries(tablet, max) {
-    //     display: none;
-    //   }
+    @include mixins.media-queries(tablet, max) {
+        display: none;
+      }
 }
