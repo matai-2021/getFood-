@@ -23,7 +23,7 @@ export default function ItemForm (props) {
 
   function handleSubmit (e) {
     e.preventDefault()
-    props.submitEvent(form)
+    props.submitItem(form)
     history.push('/addMsg')
   }
 
