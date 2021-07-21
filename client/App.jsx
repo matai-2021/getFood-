@@ -16,7 +16,7 @@ import Footer from './components/Footer'
 import AddMsg from './components/Messages/AddMsg'
 import DeleteMsg from './components/Messages/DeleteMsg'
 import ClaimMsg from './components/Messages/ClaimMsg'
-import EditMsg from './components/Messages/EditMsg'
+import UnclaimMsg from './components/Messages/UnclaimMsg'
 // import { cacheUser } from './auth-utils'
 
 import { useAuth0 } from '@auth0/auth0-react'
@@ -46,7 +46,7 @@ export default function App () {
           <Route path='/addMsg' component={AddMsg} />
           <Route path='/deleteMsg' component={DeleteMsg} />
           <Route path='/claimMsg' component={ClaimMsg} />
-          <Route path='/editMsg' component={EditMsg} />
+          <Route path='/unclaimMsg' component={UnclaimMsg} />
         </main>
       </div>
       <Footer />

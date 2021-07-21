@@ -10,7 +10,7 @@ export default function MySingleItem (props) {
     img,
     expiryDate,
     handleDelete,
-    handleEdit
+    handleUnClaim
   } = props
 
   return (
@@ -34,8 +34,8 @@ export default function MySingleItem (props) {
         </p>
         <div className='btn-wrapper'>
           <button className='item-details-btn'
-            onClick={() => handleEdit(id)}>
-            Edit
+            onClick={() => handleUnClaim(id)}>
+            Unclaim
           </button>
           <button className='item-details-btn'
             onClick={() => handleDelete(id)}>
