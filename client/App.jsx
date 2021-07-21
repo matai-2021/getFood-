@@ -44,7 +44,6 @@ export default function App () {
           <Route path='/message' component={AddMsg} />
           <Route path='/delete' component={DeleteMsg} />
           <Route path='/claim' component={ClaimMsg} />
-          <HomeDrawing/>
         </main>
       </div>
       <Footer />

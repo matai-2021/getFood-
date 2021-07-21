@@ -5,6 +5,7 @@
 
 .nav {
     width: auto;
+    z-index: 1;
 }
 
 .nav-link {
@@ -15,6 +16,7 @@
     text-decoration: none;
     font-size: vars.$base-size * 2;
     font-family: vars.$heading;
+    z-index: 1;
 
     &:hover {
         color: vars.$lightpurple;
@@ -25,6 +27,7 @@
         padding-left: vars.$base-size;
         font-size: vars.$base-size * 1.2;
         font-family: vars.$paragraph;
+        z-index: 1;
     }
 }
 
