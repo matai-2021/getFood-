@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { getItems, deleteItem } from '../redux/itemsSlice'
+import { getItems, deleteItem, claimItem } from '../redux/itemsSlice'
+import { getUsers } from '../redux/usersSlice'
 import { Link, useHistory } from 'react-router-dom'
-import { withAuthenticationRequired } from '@auth0/auth0-react'
+import { useAuth0, withAuthenticationRequired } from '@auth0/auth0-react'
 
 // Components
 import MySingleItem from '../components/MySingleItem'
@@ -11,9 +12,14 @@ const loading = <img src='./images/loading-buffering1.gif'/>
 
 function ItemDetails () {
   const dispatch = useDispatch()
+  const { user: auth0userdata } = useAuth0()
+  const users = useSelector(state => state.users)
+  const sessionUser = users.find(user => user.auth0Id === auth0userdata?.sub)
   const items = useSelector(state => state.items.filter(item => item.isClaimed))
+
   useEffect(() => {
     dispatch(getItems())
+    dispatch(getUsers())
   }, [])
 
   const handleDelete = (itemId) => {
@@ -21,8 +27,10 @@ function ItemDetails () {
     history.push('/deleteMsg')
   }
 
-  const handleEdit = (itemId) => {
-    history.push(`/edititem/${itemId}`)
+  const handleUnClaim = (itemId) => {
+    const claimedById = sessionUser?.id
+    dispatch(claimItem({ id: itemId, isClaimed: false, claimedById: claimedById }))
+    history.push('/unclaimMsg')
   }
 
   const history = useHistory()
@@ -44,7 +52,7 @@ function ItemDetails () {
             email={item.email}
             img={item.img}
             handleDelete={handleDelete}
-            handleEdit={handleEdit}
+            handleUnClaim={handleUnClaim}
           />
         </React.Fragment>
       )) : <h1 className='fontparagraph'>No Items Found</h1>}

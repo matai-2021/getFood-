@@ -14,13 +14,12 @@ function ItemDetails () {
   const singleItem = items.find(item => item.id === Number(id))
   const { user: auth0userdata } = useAuth0()
   const users = useSelector(state => state.users)
+  const sessionUser = users.find(user => user.auth0Id === auth0userdata?.sub)
 
   useEffect(() => {
     dispatch(getItems())
     dispatch(getUsers())
-  }, [auth0userdata])
-
-  const sessionUser = users.find(user => user.auth0Id === auth0userdata?.sub)
+  }, [])
 
   const handleClaim = (itemId) => {
     const claimedById = sessionUser?.id
