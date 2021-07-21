@@ -40,7 +40,7 @@ function Profile () {
         <div className="profile-text-container">
           {/* {isAuthenticated && (
             <> */}
-          <h2 className='page-sub-title'>
+          <h2 className='page-sub-title-bottom'>
             Name: {sessionUser?.name}
           </h2>
           <p className='page-paragraph'>
