@@ -47,7 +47,7 @@ function ItemDetails () {
             handleEdit={handleEdit}
           />
         </React.Fragment>
-      )).reverse() : <h1 className='fontparagraph'>No Items Found</h1>}
+      )) : <h1 className='fontparagraph'>No Items Found</h1>}
     </section>
   )
 }
