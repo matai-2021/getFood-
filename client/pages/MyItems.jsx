@@ -11,12 +11,12 @@ const loading = <img src='./images/loading-buffering1.gif'/>
 
 function ItemDetails () {
   const dispatch = useDispatch()
-  const items1 = useSelector(state => state.items.filter(item => item.isClaimed))
-  const users = useSelector(state => state.users)
-  const { user: auth0userdata } = useAuth0()
-  const sessionUser = users.find(user => user.auth0Id === auth0userdata?.sub)
+  const items = useSelector(state => state.items.filter(item => item.isClaimed))
+  // const users = useSelector(state => state.users)
+  // const { user: auth0userdata } = useAuth0()
+  // const sessionUser = users.find(user => user.auth0Id === auth0userdata?.sub)
 
-  const items = items1.filter(item => item.claimedById === sessionUser?.id)
+  // const items = items1.filter(item => item.claimedById === sessionUser?.id).reverse()
   useEffect(() => {
     dispatch(getItems())
   }, [])
