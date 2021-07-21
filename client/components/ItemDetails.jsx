@@ -19,7 +19,7 @@ function ItemDetails () {
   useEffect(() => {
     dispatch(getItems())
     dispatch(getUsers())
-  }, [])
+  }, [auth0userdata])
 
   const handleClaim = (itemId) => {
     const claimedById = sessionUser?.id

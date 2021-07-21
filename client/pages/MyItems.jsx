@@ -20,7 +20,7 @@ function ItemDetails () {
   useEffect(() => {
     dispatch(getItems())
     dispatch(getUsers())
-  }, [])
+  }, [auth0userdata])
 
   const handleDelete = (itemId) => {
     dispatch(deleteItem({ id: itemId }))
