@@ -10,6 +10,32 @@ https://getfoodeda.herokuapp.com/
 
 // ------------------------------------------------
 // ------------------------------------------------
+Thursday 22/07/2021
+
+Roleplay: Kris & Koko
+Intro: Kris
+Demo & technical stuff: Rodrigo
+Retro, talk about techinical stuff as well. Kritika talks about what I haven't talked about
+    Challenges: Zac
+    Positive: Kritika
+EDA Reflection: Koko
+
+Zac's prep, challenges as a team:
+- Styling
+    - classNames
+    - background
+- auth0 
+- img uploader
+- Component file structure
+- Having a big MVP meant the stretches weren't so many
+- Too much work
+    - Lack of sleep
+- File conflicts - bundle.* 
+
+
+
+// ------------------------------------------------
+// ------------------------------------------------
 Wednesday 21/07/2021 
 
 No major changes in roles, finishing touches.
@@ -33,7 +59,46 @@ Kris:
 Zac:
 - Finish off form. Found Rodrigo's additem form looks way better, to make it look same
 - Images of cohort
-- Edit Item start
+- Edit Item function
+
+End of day, presentation prep:
+NOTES FOR ALL THE THINGS WE TALKED ABOUT
+Quick role play: Koko and Kris in their chef shirts / aprons.
+
+Intro & Demo by Kris. Statistics on global food waste, also NZ.
+
+Styling
+Components
+Functionality
+MVP - what we wnanted dto achieve, did achieve, couldn't achieve
+Telling people no negative things such as bugs, only if they ask.
+
+
+Positive
+Negative
+Takeaways?
+
+Talk about role. We want it to be a 'we' thing
+Experience as a whole in EDA. - not necessary.
+How did we make decisions?
+Any issues/conflicts? What went wrong, what went right? 
+What did we learn?
+
+Don't say 'we wanted to a put a button here...'
+But say we reliased our MVP was too big and had to reduce it
+
+2. Roles and learning.
+
+Koko - what we have felt, how we have achieved over the last month etc.
+
+1. roleplay
+2. intro to context, demo
+3. overall epxerinec as a team
+4. overal expeirnece as a course
+5. One thing that we learnt as a group
+
+We spend tiem reflecting tonight to prepare for tomorrow
+
 
 // ------------------------------------------------
 // ------------------------------------------------
