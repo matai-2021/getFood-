@@ -9,16 +9,14 @@ import MySingleItem from '../components/MySingleItem'
 
 const loading = <img src='./images/loading-buffering1.gif'/>
 
-function ItemDetails () {
+function MyPostedItems () {
   const dispatch = useDispatch()
-  const items1 = useSelector(state => state.items.filter(item => item.isClaimed))
-  const users = useSelector(state => state.users)
   const { user: auth0userdata } = useAuth0()
-  const sessionUser = users.find(user => user.auth0Id === auth0userdata?.sub)
-  console.log(sessionUser)
+  const users = useSelector(state => state.users)
 
-  const items = items1.filter(item => item.userId === sessionUser?.id)
-  console.log('items', items)
+  const sessionUser = users.find(user => user.auth0Id === auth0userdata?.sub)
+  const items = useSelector(state => state.items.filter(item => item.userId === sessionUser.id))
+
   useEffect(() => {
     dispatch(getItems())
   }, [])
@@ -33,8 +31,7 @@ function ItemDetails () {
   return (
     <section className='items-wrapper'>
       <div className='item-heading-container'>
-        <h1 className='item-heading'>My Claims</h1>
-        <a href="/myposted">Items I posted</a>
+        <h1 className='item-heading'>My Items</h1>
         <Link to='/itemnew' className='btn-grad'>Add New Item</Link>
       </div>
       {items.length ? items.map(item => (
@@ -55,7 +52,7 @@ function ItemDetails () {
   )
 }
 
-export default withAuthenticationRequired(ItemDetails, {
+export default withAuthenticationRequired(MyPostedItems, {
   displayName: 'Loading',
   // Show a message while the user waits to be redirected to the login page.
   onRedirecting: () => (loading)

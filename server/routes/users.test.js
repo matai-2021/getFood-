@@ -93,7 +93,7 @@ describe('POST /api/v1/users/', () => {
       })
   })
 
-  it('Returns id of new user', () => {
+  it('Returns 201 and id of new user', () => {
     // expect.assertions(1)
     db.addUser.mockImplementation(() => {
       return Promise.resolve({ id: 2 })
@@ -105,8 +105,6 @@ describe('POST /api/v1/users/', () => {
       .then(res => {
         expect(res.status).toBe(201)
         expect(res.body.newUser).toStrictEqual({ id: 2 })
-
-        expect(res).toBeTruthy()
         return null
       })
   })
@@ -138,6 +136,20 @@ describe('DELETE /api/v1/users/', () => {
       .expect(200)
       .then(res => {
         expect(res.body).toBeTruthy()
+        return null
+      })
+  })
+
+  it('Returns success message', () => {
+    db.deleteAccount.mockImplementation(() => {
+      return Promise.resolve()
+    })
+    return request(server)
+      .delete('/api/v1/users/1')
+      .expect('Content-Type', 'application/json; charset=utf-8')
+      .expect(200)
+      .then(res => {
+        expect(res.body).toMatch('Account successfully deleted')
         return null
       })
   })

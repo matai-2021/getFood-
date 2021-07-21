@@ -116,7 +116,7 @@ exports.seed = knex =>
       description: 'Freezable G/F bread',
       email: 'qualitybakery@gmail.com',
       isClaimed: false,
-      img: '/images/loaf.jpg'
+      img: '/images/loaf1.jpg'
     },
     {
       id: 10,
@@ -246,7 +246,7 @@ exports.seed = knex =>
       description: 'catering size strawberry icecream',
       email: 'graduateday@xtra.com',
       isClaimed: true,
-      img: '/images/icecream.jpg'
+      img: '/images/icecream1.jpeg'
     },
     {
       id: 20,
@@ -260,5 +260,18 @@ exports.seed = knex =>
       email: 'william@wholesomecater.com',
       isClaimed: true,
       img: '/images/lettuce.jpg'
+    },
+    {
+      id: 21,
+      name: 'Half eaten Pita Pit',
+      user_id: '9',
+      dateCreated: '7/05 7:10',
+      expiryDate: '14/05 10:00',
+      location: 'Grafton, Auckland',
+      quantity: '1',
+      description: 'Delicious caesar pita pit',
+      email: 'pit@pita.com',
+      isClaimed: false,
+      img: '/images/pit.jpg'
     }
   ])

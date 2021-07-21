@@ -18,6 +18,7 @@ import ClaimMsg from './components/Messages/ClaimMsg'
 // import { cacheUser } from './auth-utils'
 
 import { useAuth0 } from '@auth0/auth0-react'
+import MyPostedItems from './pages/MyPostedItems'
 
 export default function App () {
 //   cacheUser(useAuth0)
@@ -38,6 +39,7 @@ export default function App () {
           <Route path='/profilesetup' component={ProfileSetup} />
           <Route path='/about' component={About} />
           <Route path='/myitems' component={MyItems} />
+          <Route path='/myposted' component={MyPostedItems} />
           <Route path='/itemnew' component={AddItem} />
           <Route path='/item/:id' component={ItemDetails} />
           <Route path='/message' component={AddMsg} />
