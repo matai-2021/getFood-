@@ -37,7 +37,7 @@ export const deleteItem = createAsyncThunk(
 
 export const editItem = createAsyncThunk(
   'item/editItem',
-  async (payload) => {
+  async (payload, updatedItem) => {
     const res = await request.patch(`/api/v1/items/edit/${payload.id}`)
     if (res.ok) {
       return payload
