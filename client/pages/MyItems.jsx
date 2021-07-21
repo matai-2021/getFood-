@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { getItems, deleteItem } from '../redux/itemsSlice'
 import { Link, useHistory } from 'react-router-dom'
-import { useAuth0, withAuthenticationRequired } from '@auth0/auth0-react'
+import { withAuthenticationRequired } from '@auth0/auth0-react'
 
 // Components
 import MySingleItem from '../components/MySingleItem'
@@ -23,7 +23,7 @@ function ItemDetails () {
 
   const handleDelete = (itemId) => {
     dispatch(deleteItem({ id: itemId }))
-    history.push('/delete')
+    history.push('/deleteMsg')
   }
 
   const history = useHistory()
