@@ -156,9 +156,11 @@ export default function EditItemForm (props) {
               onChange={handleImg}
             />
           </div>
-          <button className='btn-grad'>
+          <div className='imgcenter'>
+            <button className='btn-grad'>
             Create Item
-          </button>
+            </button>
+          </div>
         </form>
       </div>
     </div>

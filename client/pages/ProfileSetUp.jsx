@@ -122,7 +122,9 @@ function ProfileSetUp () {
                 >
           Save
                 </button> */}
-          <Link className='btn-grad' to='/profile'>Save</Link>
+          <div className='imgcenter'>
+            <Link className='btn-grad' to='/profile'>Save</Link>
+          </div>
         </form>
       </div>
 
