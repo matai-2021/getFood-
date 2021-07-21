@@ -2,32 +2,36 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { getItems, deleteItem } from '../redux/itemsSlice'
 import { Link, useHistory } from 'react-router-dom'
+import { useAuth0, withAuthenticationRequired } from '@auth0/auth0-react'
 
 // Components
 import MySingleItem from '../components/MySingleItem'
 
-export default function ItemDetails () {
-  const dispatch = useDispatch()
-  const history = useHistory()
-  const items = useSelector(state => state.items.filter(item => item.isClaimed))
+const loading = <img src='./images/loading-buffering1.gif'/>
 
+function ItemDetails () {
+  const dispatch = useDispatch()
+  const items1 = useSelector(state => state.items.filter(item => item.isClaimed))
+  const users = useSelector(state => state.users)
+  const { user: auth0userdata } = useAuth0()
+  const sessionUser = users.find(user => user.auth0Id === auth0userdata?.sub)
+
+  const items = items1.filter(item => item.claimedById === sessionUser?.id)
   useEffect(() => {
     dispatch(getItems())
   }, [])
 
   const handleDelete = (itemId) => {
     dispatch(deleteItem({ id: itemId }))
-    history.push('/deleteMsg')
+    history.push('/delete')
   }
 
-  const handleEdit = (itemId) => {
-    history.push(`/edititem/${itemId}`)
-  }
+  const history = useHistory()
 
   return (
     <section className='items-wrapper'>
       <div className='item-heading-container'>
-        <h1 className='item-heading'>My Items</h1>
+        <h1 className='item-heading'>My Claims</h1>
         <Link to='/itemnew' className='btn-grad'>Add New Item</Link>
       </div>
       {items.length ? items.map(item => (
@@ -41,10 +45,15 @@ export default function ItemDetails () {
             email={item.email}
             img={item.img}
             handleDelete={handleDelete}
-            handleEdit={handleEdit}
           />
         </React.Fragment>
       )).reverse() : <h1>No Items Found</h1>}
     </section>
   )
 }
+
+export default withAuthenticationRequired(ItemDetails, {
+  displayName: 'Loading',
+  // Show a message while the user waits to be redirected to the login page.
+  onRedirecting: () => (loading)
+})
