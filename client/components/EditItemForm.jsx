@@ -1,8 +1,13 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
+import { editItem } from '../redux/itemsSlice'
+import { useParams } from 'react-router'
 
-export default function ItemForm (props) {
+export default function EditItemForm () {
+  const { id } = useParams()
   const history = useHistory()
+  const dispatch = useDispatch()
   const [form, setForm] = useState({
     name: '',
     quantity: '',
@@ -23,8 +28,8 @@ export default function ItemForm (props) {
 
   function handleSubmit (e) {
     e.preventDefault()
-    props.submitItem(form)
-    history.push('/addMsg')
+    dispatch(editItem(Number(id)))
+    history.push('/editMsg')
   }
 
   function handleImg (e) {
@@ -40,10 +45,12 @@ export default function ItemForm (props) {
   const { name, quantity, expiryDate, location, description, email } = form
 
   return (
-    <>
+    <div className='add-item-form'>
       <div>
+
+        {/*  */}
         <div className='heading-container'>
-          <h1 className='page-title'>Add Item</h1>
+          <h1 className='page-title'>Edit Item</h1>
           <div className='horizontal-line'></div>
         </div>
         {/*  */}
@@ -156,11 +163,11 @@ export default function ItemForm (props) {
           </div>
           <div className='imgcenter'>
             <button className='btn-grad'>
-            Create Item
+              Update Item
             </button>
           </div>
         </form>
       </div>
-    </>
+    </div>
   )
 }

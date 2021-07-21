@@ -5,16 +5,16 @@
 
 .nav {
     width: auto;
+    z-index: 1;
 }
 
 .nav-link {
     display: none;
-    // font-size: 300px;
-    // font-family: vars.$paragraph;
     color: vars.$purple;
     text-decoration: none;
     font-size: vars.$base-size * 2;
     font-family: vars.$heading;
+    z-index: 1;
 
     &:hover {
         color: vars.$lightpurple;
@@ -25,6 +25,7 @@
         padding-left: vars.$base-size;
         font-size: vars.$base-size * 1.2;
         font-family: vars.$paragraph;
+        z-index: 1;
     }
 }
 
@@ -66,6 +67,7 @@
 .nav-menu {
     height: 100%;
     display: flex;
+    z-index: 1;
 	// background-color: vars.$yellow;
 
     @include mixins.media-queries(mobile, min) {
@@ -74,6 +76,7 @@
         align-items: flex-end;
         // padding-bottom: vars.$base-size;
         padding-right: vars.$base-size * 3;
+        z-index: 1;
     }
 }
 
@@ -88,9 +91,9 @@
     z-index: 100;
     animation: growDown 300ms ease-in-out forwards;
     transform-origin: top center;
-    position: relative;
-    left: -240px;
-    top: 160px;
+    position: absolute;
+    left: 0;
+    top: 0;
 
     @keyframes growDown {
         0% {

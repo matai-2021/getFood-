@@ -10,6 +10,33 @@ https://getfoodeda.herokuapp.com/
 
 // ------------------------------------------------
 // ------------------------------------------------
+Wednesday 21/07/2021 
+
+No major changes in roles, finishing touches.
+Rodrigo:
+- The website is responsive now!
+- Image upload as stretch
+- Edit Item start
+
+Kritika:
+- Main homepage images create for both corners
+
+Koko:
+- Testing on server side
+
+Kris:
+- Image upload as stretch
+- Testing
+- (Might have missed something here I can't remember lol)
+- Edit Item start
+
+Zac:
+- Finish off form. Found Rodrigo's additem form looks way better, to make it look same
+- Images of cohort
+- Edit Item start
+
+// ------------------------------------------------
+// ------------------------------------------------
 Tuesday 20/07/2021 
 
 Morning stand-up.

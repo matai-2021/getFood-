@@ -25,11 +25,14 @@ function ItemDetails () {
   const handleClaim = (itemId) => {
     const claimedById = sessionUser?.id
     dispatch(claimItem({ id: itemId, isClaimed: true, claimedById: claimedById }))
-    history.push('/claim')
+    history.push('/claimMsg')
   }
 
   return (
-    <>
+    <div className='item-details-container'>
+      <div className="item-heading-container">
+        <h1 className='item-heading'>Item Details</h1>
+      </div>
       <section className='card-container'>
         <Link to={'/'}className='link-button'>Go back</Link>
         <img className='card-img'
@@ -44,12 +47,12 @@ function ItemDetails () {
           <h1 className='page-paragraph'>Exp. Date: {singleItem?.expiryDate}</h1>
           <h1 className='page-paragraph'>Date Created: {singleItem?.dateCreated}</h1>
           <h1 className='page-paragraph'>Email: {singleItem?.email}</h1>
-          <button onClick={() => handleClaim(singleItem?.id) } className='btn-grad'>
+          <button onClick={() => handleClaim(singleItem?.id) } className='item-details-btn card-btn'>
             Claim
           </button>
         </article>
       </section>
-    </>
+    </div>
   )
 }
 

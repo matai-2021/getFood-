@@ -2,14 +2,17 @@
 @use '../1-helpers/functions';
 @use '../1-helpers/vars';
 
-// .container2 {
-//     text-align: center;
-//     margin: 30px auto;
-//     position: relative;
-//     max-width: 100%;
-//     padding: 0 vars.$base-size * 3;
-//     font-family: vars.$paragraph;
-//   }
+.add-item-form {
+  margin-top: 4rem;
+  width: 50%;
+  @include mixins.media-queries(mobile, max) {
+    width: 75%;
+  }
+}
+
+.add-item-form-wrapper {
+  width: 100%;
+}
 
 .containerif {
   display: flex;
@@ -18,124 +21,103 @@
   max-width: 100%;
 }
 .form-titleif {
-    color: vars.$black;
-    font-family: vars.$purple;
-    font-size: x-large;
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
+  color: vars.$black;
+  font-family: vars.$purple;
+  font-size: x-large;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
 
-  .flex-containerif {
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    @include mixins.media-queries(tablet, min) {
-      flex-direction: row;
-    }
+.flex-containerif {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  @include mixins.media-queries(tablet, min) {
+    flex-direction: row;
   }
+}
 
-  .heading-containerif {
-    display: flex;
-    align-items: center;
-    align-self: center;
-    align-content: center;
-    text-align: center;
-    margin: auto;
-    position: relative;
-    max-width: 100%;
-    flex-direction: column;
-    margin-top: vars.$base-size * 2;
-    margin-bottom: vars.$base-size * 2;
-  }
+.heading-containerif {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  text-align: center;
+  margin: auto;
+  position: relative;
+  max-width: 100%;
+  flex-direction: column;
+  margin-top: vars.$base-size * 2;
+  margin-bottom: vars.$base-size * 2;
+}
 
 .flex-containerleftif {
-    text-align: left;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    @include mixins.media-queries(mobile, min) {
-      flex-direction: row;
-    }
+  text-align: left;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  @include mixins.media-queries(mobile, min) {
+    flex-direction: row;
   }
-  
+}
+
+
 .fieldif {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .fieldleftif {
-    text-align: left;
-}
-
-.fieldleftinputif {
   text-align: left;
 }
 
-
-  .labelif {
-    color: vars.$purple;
-    font-family: vars.$paragraph;
-    font-weight: bold;
-  }
-
-  .labelgreyif {
-    color: vars.$grey;
-    font-family: vars.$paragraph;
-    font-weight: bold;
-  }
-
-  .labelgreyinputif{
-    color: vars.$grey;
-    font-family: vars.$paragraph;
-    font-weight: bold;
-  }
-  
+.fieldleftinputif {
+text-align: left;
+}
 
 
-  .form-boxif {
-    height: vars.$base-size * 1.75; // or 100%?
-    width: vars.$base-size * 20;
-    font-family: vars.$paragraph;
-    // margin-bottom: 1rem;
-  }
+.labelif {
+  color: vars.$purple;
+  font-family: vars.$paragraph;
+  font-weight: bold;
+}
 
-  .check-boxif {
-    // height: vars.$base-size;
-    // width: vars.$base-size;
-    font-family: vars.$paragraph;
-    // margin-bottom: 1rem;
-  }
+.labelgreyif {
+  color: vars.$grey;
+  font-family: vars.$paragraph;
+  font-weight: bold;
+}
 
-  .img-holderif {
-    width: 220px;
-    border-radius: 50%;
-    height: 220px;
-    margin: 20px auto;
-    border: 2px solid vars.$purple;
-  }
-    
-  
-    // not being used right now
-  // .form-button-primary {
-  //   background-color: vars.$black;
-  //   padding: vars.$base-size;
-  //   border-radius: vars.$base-size * 0.15;
-  //   border: none;
-  //   color: #ffffff;
-  //   text-align: center;
-  //   display: block;
-  //   width: 100%;
-  //   margin: 0 auto;
-  //   margin-top: vars.$base-size * 0.5;
-  
-  //   @include mixins.media-queries(tablet, min) {
-  //     width: 50%;
-  //   }
-  
-  //   &:hover{
-  //     background-color: whitesmoke;
-  //     border: none;
-  //     color: vars.$black;
-  //   }
-  // }
+.labelgreyinputif{
+  color: vars.$grey;
+  font-family: vars.$paragraph;
+  font-weight: bold;
+}
+
+
+.form-boxif {
+  width: 100%;
+  font-family: vars.$paragraph;
+  margin-bottom: 1rem;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgb(212, 212, 212);
+}
+
+.check-boxif {
+  // height: vars.$base-size;
+  // width: vars.$base-size;
+  font-family: vars.$paragraph;
+  // margin-bottom: 1rem;
+}
+
+.img-holderif {
+  width: 220px;
+  border-radius: 50%;
+  height: 220px;
+  margin: 20px auto;
+  border: 2px solid vars.$purple;
+}
