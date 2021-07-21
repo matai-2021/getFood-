@@ -14,7 +14,7 @@ export default function AddItem () {
   return (
     <div className='add-item-form'>
       <ItemForm
-        submitEvent={submitItem}
+        submitItem={submitItem}
       />
     </div>
   )
