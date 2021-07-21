@@ -47,7 +47,7 @@ function ItemDetails () {
             handleDelete={handleDelete}
           />
         </React.Fragment>
-      )).reverse() : <h1>No Items Found</h1>}
+      )).reverse() : <h1 className='fontparagraph'>No Items Found</h1>}
     </section>
   )
 }
