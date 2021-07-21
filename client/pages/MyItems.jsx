@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { getItems, deleteItem } from '../redux/itemsSlice'
 import { Link, useHistory } from 'react-router-dom'
-import { useAuth0, withAuthenticationRequired } from '@auth0/auth0-react'
+import { withAuthenticationRequired } from '@auth0/auth0-react'
 
 // Components
 import MySingleItem from '../components/MySingleItem'
@@ -11,12 +11,7 @@ const loading = <img src='./images/loading-buffering1.gif'/>
 
 function ItemDetails () {
   const dispatch = useDispatch()
-  const items1 = useSelector(state => state.items.filter(item => item.isClaimed))
-  const users = useSelector(state => state.users)
-  const { user: auth0userdata } = useAuth0()
-  const sessionUser = users.find(user => user.auth0Id === auth0userdata?.sub)
-  const items = items1.filter(item => item.claimedById === sessionUser?.id)
-
+  const items = useSelector(state => state.items.filter(item => item.isClaimed))
   useEffect(() => {
     dispatch(getItems())
   }, [])
@@ -52,7 +47,7 @@ function ItemDetails () {
             handleEdit={handleEdit}
           />
         </React.Fragment>
-      )).reverse() : <h1>No Items Found</h1>}
+      )).reverse() : <h1 className='fontparagraph'>No Items Found</h1>}
     </section>
   )
 }

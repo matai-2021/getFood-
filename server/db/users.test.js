@@ -39,7 +39,7 @@ describe('userExist', () => {
 })
 
 describe('deleteAccount', () => {
-  it('deletes correct user entry', () => {
+  it('deletes correct user account', () => {
     return db.deleteAccount(1, testDb)
       .then(() => db.getAllUsers(testDb))
       .then((users) => {

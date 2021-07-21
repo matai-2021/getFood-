@@ -10,7 +10,6 @@ module.exports = {
 }
 
 function getItemsById (id, db = connection) {
-  console.log('id', id)
   return db('items')
     .where('id', id)
     .select()
@@ -51,7 +50,7 @@ function updateItem (updatedItem, db = connection) {
       img,
       description
     })
-    .then((ids) => console.log(`Item successfully created at ID # ${ids[0]}`))
+    .then((id) => id)
 }
 
 function claimItem (claimedItem, db = connection) {
