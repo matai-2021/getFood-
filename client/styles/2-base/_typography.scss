@@ -15,6 +15,15 @@
     font-family: vars.$heading;
 }
 
+.page-sub-title-bottom {
+    font-size: vars.$base-size * 1.5;
+    color: vars.$lightpurple;
+    font-family: vars.$heading;
+    margin-bottom: 1rem;
+
+}
+
+
 .page-paragraph {
     font-size: vars.$base-size;
     color:  vars.$grey;

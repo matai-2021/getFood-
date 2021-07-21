@@ -8,6 +8,7 @@ import MySingleItem from '../components/MySingleItem'
 
 export default function ItemDetails () {
   const dispatch = useDispatch()
+  const history = useHistory()
   const items = useSelector(state => state.items.filter(item => item.isClaimed))
 
   useEffect(() => {
@@ -16,10 +17,12 @@ export default function ItemDetails () {
 
   const handleDelete = (itemId) => {
     dispatch(deleteItem({ id: itemId }))
-    history.push('/delete')
+    history.push('/deleteMsg')
   }
 
-  const history = useHistory()
+  const handleEdit = (itemId) => {
+    history.push(`/edititem/${itemId}`)
+  }
 
   return (
     <section className='items-wrapper'>
@@ -38,6 +41,7 @@ export default function ItemDetails () {
             email={item.email}
             img={item.img}
             handleDelete={handleDelete}
+            handleEdit={handleEdit}
           />
         </React.Fragment>
       )).reverse() : <h1>No Items Found</h1>}

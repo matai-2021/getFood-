@@ -40,7 +40,7 @@ function Profile () {
         <div className="profile-text-container">
           {/* {isAuthenticated && (
             <> */}
-          <h2 className='page-sub-title'>
+          <h2 className='page-sub-title-bottom'>
             Name: {sessionUser?.name}
           </h2>
           <p className='page-paragraph'>
@@ -51,6 +51,12 @@ function Profile () {
           </p>
           <p className='page-paragraph'>
             Member since: {sessionUser?.dateCreated}
+          </p>
+          <p className='page-paragraph'>
+            Phone: {sessionUser?.phone}
+          </p>
+          <p className='page-paragraph'>
+            Business Name: {sessionUser?.companyName}
           </p>
         </div>
         <div className='profile-button-container'>
