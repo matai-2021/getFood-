@@ -72,7 +72,9 @@ function Profile () {
 }
 
 export default withAuthenticationRequired(Profile, {
+
   displayName: 'Loading',
   // Show a message while the user waits to be redirected to the login page.
   onRedirecting: () => (loading)
+
 })
