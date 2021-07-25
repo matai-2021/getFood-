@@ -1,32 +1,37 @@
 @use '../1-helpers/vars';
 @use '../1-helpers/functions';
 @use '../1-helpers/mixins';
+@use '../2-base/typography';
 
 .nav {
     width: auto;
+    z-index: 1;
 }
 
 .nav-link {
     display: none;
-    font-size: vars.$base-size * 1.5;
-    font-family: vars.$paragraph;
     color: vars.$purple;
     text-decoration: none;
+    font-size: vars.$base-size * 2;
+    font-family: vars.$heading;
+    z-index: 1;
 
     &:hover {
-        color: vars.$purple;
+        color: vars.$lightpurple;
     }
 
     @include mixins.media-queries(mobile, min) {
         display: block;
         padding-left: vars.$base-size;
-        font-size: vars.$base-size;
+        font-size: vars.$base-size * 1.2;
+        font-family: vars.$paragraph;
+        z-index: 1;
     }
 }
 
 .hamburger {
     cursor: pointer;
-    color: #fff;
+    color: vars.$purple;
     font-size: vars.$base-size * 2.5;
     height: 100%;
     display: flex;
@@ -34,7 +39,7 @@
     padding-right: vars.$base-size;
 
     &:hover {
-        color: vars.$purple;
+        color: vars.$lightpurple;
     }
 
     @include mixins.media-queries(mobile, min) {
@@ -44,14 +49,14 @@
 
 .close-btn {
     cursor: pointer;
-    color: #fff;
+    color: vars.$purple;
     font-size: vars.$base-size * 3;
     position: absolute;
     top: 22px;
     right: 12px;
 
     &:hover {
-        color: vars.$purple;
+        color: vars.$lightpurple;
     }
 
     @include mixins.media-queries(mobile, min) {
@@ -62,7 +67,8 @@
 .nav-menu {
     height: 100%;
     display: flex;
-	background-color: vars.$yellow;
+    z-index: 1;
+	// background-color: vars.$yellow;
 
     @include mixins.media-queries(mobile, min) {
 		flex-direction: row;
@@ -70,22 +76,23 @@
         align-items: flex-end;
         // padding-bottom: vars.$base-size;
         padding-right: vars.$base-size * 3;
+        z-index: 1;
     }
 }
 
 .nav-menu-toggle {
-    background-color: vars.$yellow;
+    background: linear-gradient(0deg, rgba(188,241,208,1) 0%, rgba(255,224,156,1) 50%, rgba(177,245,221,1) 100%);
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    width:100vw;
+    width: 100vw;
     height: 50vh;
     z-index: 100;
     animation: growDown 300ms ease-in-out forwards;
     transform-origin: top center;
-    position: relative;
-    left: -240px;
+    position: absolute;
+    left: 0;
     top: 0;
 
     @keyframes growDown {

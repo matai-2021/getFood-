@@ -23,12 +23,16 @@ router.get('/', (req, res) => {
       res.json({ items: results.map(item => item) })
       return null
     })
-    .catch(err => {
-      console.log(err)
-      res.status(500).json({ message: 'Unable to get items' })
+    .catch(() => {
+      res.status(500).json({
+        error: {
+          title: 'Unable to get items'
+        }
+      })
     })
 })
 
+// adding new item
 router.post('/add', (req, res) => {
   const { name, location, userId, quantity, img, description, expiryDate, email } = req.body
   const item = { name, location, userId, quantity, img, description, expiryDate, email }
@@ -37,9 +41,12 @@ router.post('/add', (req, res) => {
       res.status(201).json({ id })
       return null
     })
-    .catch(err => {
-      console.log(err)
-      res.status(500).json({ message: 'Unable to add item' })
+    .catch(() => {
+      res.status(500).json({
+        error: {
+          title: 'Unable to add item'
+        }
+      })
     })
 })
 
@@ -47,7 +54,7 @@ router.delete('/:id', (req, res) => {
   const id = Number(req.params.id)
   db.deleteItem(id)
     .then(() => {
-      res.status(201).json('Item successfully deleted')
+      res.status(202).json('Item successfully deleted')
       return null
     })
     .catch(err => {
@@ -56,12 +63,13 @@ router.delete('/:id', (req, res) => {
     })
 })
 
-router.patch('/', (req, res) => {
-  const { id, name, location, quantity, img, description, isClaimed } = req.body
-  const updatedItem = { id, name, location, quantity, img, description, isClaimed }
+// updating item for stretch? For both Edit and Claimed?
+router.patch('/edit/:id', (req, res) => {
+  const { id, name, location, quantity, img, description } = req.body
+  const updatedItem = { id, name, location, quantity, img, description }
   db.updateItem(updatedItem)
     .then(() => {
-      res.status(201).json('Item successfully updated')
+      res.status(201).json(updatedItem)
       return null
     })
     .catch(err => {
@@ -70,28 +78,22 @@ router.patch('/', (req, res) => {
     })
 })
 
+// Claiming item, so just updating isClaimed and claimedBy?
+router.patch('/claim', (req, res) => {
+  const { id, isClaimed, claimedById } = req.body
+  const claimedItem = { id, isClaimed, claimedById }
+  db.claimItem(claimedItem)
+    .then((changedItem) => {
+      res.status(201).json(changedItem)
+      return null
+    })
+    .catch(() => {
+      res.status(500).json({
+        error: {
+          title: 'Unable to update item'
+        }
+      })
+    })
+})
+
 module.exports = router
-
-// POST DATA SHAPE
-// {
-//   "name": "Chocolate Bar",
-//   "expiryDate": "3/08 13:00",
-//   "location": "Waterview, Auckland",
-//   "quantity": 6,
-//   "description": "good shape",
-//   "img": "img"
-// }
-
-// DELETE DATA SHAPE
-// req.params :id
-
-// UPDATE DATA SHAPE
-// {
-//   "id": "",
-//   "name": "",
-//   "location": "",
-//   "quantity": "",
-//   "img": "",
-//   "description": "",
-//   "isClaimed": ""
-// }

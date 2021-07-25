@@ -2,19 +2,26 @@
 @use '../1-helpers/functions';
 @use '../1-helpers/mixins';
 
-header {
+.header-container {
+    width: auto;
     height: 100px;
-    background-color: vars.$yellow;
+    // background-color: vars.$yellow;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    z-index: 1;
 }
 
 .logo-image {
     width: 15rem;
-    height: 100%;
+    height: auto;
+    object-fit: cover;
+    padding-left: 10px;
+    z-index: 1;
 
     @include mixins.media-queries(mobile, min) {
-        padding-left: vars.$base-size * 3;
+        padding-left: 20px;
         width: 20rem;
+        z-index: 1;
     }
 }

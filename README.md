@@ -2,9 +2,213 @@
 Kris, Koko, Kritika, Rodrigo, Zac
 'The Food Waste Reducer'
 
+Digital Wireframe:
 https://whimsical.com/getfood-JfoEWmZzgLJTabRX5iejtA
 
+Deployed?! (cheeeeeeers Kris!):
+https://getfoodeda.herokuapp.com/
+
+// ------------------------------------------------
+// ------------------------------------------------
+Thursday 22/07/2021. Presentation day yo
+
+Before dry runs, order of presentation:
+
+1. Roleplay: Kris & Koko
+2. Intro: Kris
+3. Demo & technical stuff: Rodrigo
+4. Retro, talk about techinical stuff as well. Kritika talks about what I haven't talked about
+    Challenges: Zac
+    Positive: Kritika
+5. EDA Reflection: Koko
+
+Zac's prep, challenges as a team:
+- First of all had a big MVP 
+    - Meant the stretches weren't so many
+    - Overwork, burnt out
+- Too much work
+    - Lack of sleep
+- Snacks
+- On the backend, component file structure
+- auth0 
+- Styling
+    - classNames
+    - background
+- Image uploader
+- File conflicts - bundle.* , styling, dev.sqlite3
+- Deployment. This actually deploys automatically to online whenever we made changes and pushed online, but as the project went on there were more and more things to fix and so right now the online website is not
+
+Prsentation:
+Image upload in public folder
+
+Feedback:
+Prue:
+Just under 10 mins. Kris 1 min
+Rodrigo: 3 mins 10
+Zac: 3mins 12
+Kritika: 1.55
+Koko: 2mins left
+
+Cut down process(Zac's part)
+Just generally Zac to be shorter
+
+Lache:
+Kris good intro. Welcome whanau.
+Rodrigo: one person demo, one person roleplay demo, talking at the same time? Turn up the act
+General: make sure you have image in the folder. have the folder ready to open. Make sure to remove cache.
+Forms - having to fill out do it asap. Prepopulated? or opened on second tab
+
+Other than that,
+Zac: project more to the back of the room.
+Jargon expalnation. Backend, MVP, Heroku, Auth0. A new techinical term, one-liner explanation.
+Don might explain techinical terms before the presentation
+
+Cleaning up what I'm saying, talk about the things that might have gone wrong, and then talk about the roles. So.. seperate sections
+
+Kritika's reflection kinda overlapped with Zac's one.
+
+Kritika: loved points. Both borught in good anectodes (high fives etc.. not saying Agile practice etc).
+
+Don:
+Kris - solid intro.
+Rodrigo: demo.. to be checked again on the afternoon dry run.
+Make sure browser history is clean, when popping out on form. 
+Zac: challenges Refine it more. only 3-4 things. say stretches was not relevant.
+Filesystem jargon.. confusing.
+Don't talk about what app doesn't work. - rDORIGO AS WELL
+Just talk about what's next.
+Kritika: try not to use for notes. If you have to its fine, but
+    Don loved the points, trust, gratitude etc were fantastic.
+What we'd do differetnly. Seemed like an overlap, so need to check
+
+// ------------------------------------------------
+// ------------------------------------------------
+Wednesday 21/07/2021 
+
+No major changes in roles, finishing touches.
+Rodrigo:
+- The website is responsive now!
+- Image upload as stretch
+- Edit Item start
+
+Kritika:
+- Main homepage images create for both corners
+
+Koko:
+- Testing on server side
+
+Kris:
+- Image upload as stretch
+- Testing
+- (Might have missed something here I can't remember lol)
+- Edit Item start
+
+Zac:
+- Finish off form. Found Rodrigo's additem form looks way better, to make it look same
+- Images of cohort
+- Edit Item function
+
+End of day, presentation prep:
+NOTES FOR ALL THE THINGS WE TALKED ABOUT
+Quick role play: Koko and Kris in their chef shirts / aprons.
+
+Intro & Demo by Kris. Statistics on global food waste, also NZ.
+
+Styling
+Components
+Functionality
+MVP - what we wnanted dto achieve, did achieve, couldn't achieve
+Telling people no negative things such as bugs, only if they ask.
+
+
+Positive
+Negative
+Takeaways?
+
+Talk about role. We want it to be a 'we' thing
+Experience as a whole in EDA. - not necessary.
+How did we make decisions?
+Any issues/conflicts? What went wrong, what went right? 
+What did we learn?
+
+Don't say 'we wanted to a put a button here...'
+But say we reliased our MVP was too big and had to reduce it
+
+2. Roles and learning.
+
+Koko - what we have felt, how we have achieved over the last month etc.
+
+1. roleplay
+2. intro to context, demo
+3. overall epxerinec as a team
+4. overal expeirnece as a course
+5. One thing that we learnt as a group
+
+We spend tiem reflecting tonight to prepare for tomorrow
+
+
+// ------------------------------------------------
+// ------------------------------------------------
+Tuesday 20/07/2021 
+
+Morning stand-up.
+Kritika:
+- Styling changes with background and to make it look trendy
+
+Kris:
+- Auth0 progress, refreshing on any page to keep auth info
+- Help on Claim and Delete function. 
+    - Claim function to get logged in user's id (linked with auth0id)
+
+Rodrigo:
+- More styling has been done
+- Functionality to finish - help with Claim and delete
+
+Koko:
+- Finish some styling
+- Jump on writing testing in preparation for presentation
+
+Zac:
+- Finish Claim functionality
+- Help on styling
+
+Afternoon standup:
+MVP DONE!!!
+Kris:
+- Finished Auth0 refresh issue
+- Image upload function?
+- Testing
+
+Rodrigo:
+- Small changes for design
+- Improve design and styling
+
+Kritika:
+- Updates on responsiveness, fixes for styling
+
+Koko:
+- Testing improvements, more testing
+
+Zac:
+- Finished Claim function
+- Images for users (from Slack)
+- Form styling improvement, add responsiveness
+- Stretch Edit item. Need to create component + form
+- Address input form - ADDRESSFINDER (but only for one line, not seperated into address, suburb, city etc)
+
+Personal note for Zac, styling to do:
+- Form (card) to refer to Profile.jsx
+- Need all classNames to be unique - copy and paste, rename to use for each _module.scss
+- Label to be purple.
+- Responsiveness for ProfileSetUp
+
+
+Backup plans:
+- (Zac - hasn't shared yet) myItems to show only items that are isClaimed=true, not by logged in user's id?
+// ------------------------------------------------
+// ------------------------------------------------
 Monday 19/07/2021
+
 Not all notes written here, but main changes to do:
 Orders table obsolete, modify items table for createdById, claimedById to use for hiding items when claimed, and to show on myItems component.
 
@@ -16,6 +220,8 @@ Zac - table routes dbfunction, and then frontend with kris? For reducers etc
 
 Discussion with Don for Auth0
 Remove Hashrouter and use BrowserRouter, modify server.js to have the star which sends json. This should be all. Refer to Gardenz
+
+(Also, we have been utilising the kanban board on github for keeping track of our ticket/issues. Thanks for the setup Koko!)
 
 // ------------------------------------------------
 // ------------------------------------------------

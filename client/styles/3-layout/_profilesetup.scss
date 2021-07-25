@@ -10,12 +10,58 @@
 //     padding: 0 vars.$base-size * 3;
 //     font-family: vars.$paragraph;
 //   }
-.form-title2 {
+
+.containerps {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  max-width: 100%;
+}
+
+.add-item-formps {
+  margin-top: 4rem;
+  width: 50%;
+  align-items: center;
+  @include mixins.media-queries(mobile, max) {
+    width: 75%;
+  }
+
+}
+
+.add-item-form-wrapperps {
+  width: 200%;
+}
+
+.flexcontainerps {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  @include mixins.media-queries(tablet, min) {
+    flex-direction: row;
+  }
+}
+.form-titleps {
     color: vars.$black;
     font-family: vars.$purple;
     font-size: x-large;
     font-weight: bold;
     margin-bottom: 1rem;
+  }
+
+  .heading-containerps {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    text-align: center;
+    margin: auto;
+    position: relative;
+    max-width: 100%;
+    flex-direction: column;
+    margin-top: vars.$base-size * 2;
+    margin-bottom: vars.$base-size * 2;
   }
 
 .flex-containerleft {
@@ -28,73 +74,129 @@
     }
   }
   
-.field {
+  .imageps {
+    margin-bottom: 1rem;
+margin:auto;
+}
+
+.imgcenter {
+  text-align: center;  
+  align-items: center;
+  justify-content: center;
+}
+
+.fieldps {
     margin-bottom: 1rem;
 }
 
-.fieldleft {
+.fieldleftps {
     text-align: left;
     margin-bottom: 1rem;
 }
 
-.fieldleftinput {
+.fieldleftinputps {
   text-align: left;
 }
 
 
-  .label {
+  .labelps {
     color: vars.$black;
     font-family: vars.$paragraph;
     font-weight: bold;
   }
 
-  .labelgrey {
-    color: vars.$grey;
+  .labelpurpleps {
+    color: vars.$purple;
     font-family: vars.$paragraph;
     font-weight: bold;
   }
 
-  .labelgreyinput{
+  .labelgreyinputps{
     color: vars.$grey;
     font-family: vars.$paragraph;
     font-weight: bold;
   }
   
-  // not being used right now
-  .form-button-primary {
-    background-color: vars.$black;
-    padding: vars.$base-size;
-    border-radius: vars.$base-size * 0.15;
+
+  .profile-text-and-button-containerps {
+    display: flex;
+    margin: 30px;
+    width: 600px;
+    // height: 200px;
+    align-items: left;
+    flex-direction: column;
+    background-color: white;
     border: none;
-    color: #ffffff;
-    text-align: center;
-    display: block;
+    border-radius: 5px;
+    padding: vars.$base-size * 1;
+    box-shadow: 0 0 20px rgb(212, 212, 212);
+    // text-align: left;
+  }
+
+  // .form-boxps {
+  //   // width: 120%;
+  //   // height: 80%;
+  //   font-family: vars.$paragraph;
+  //   margin-bottom: 1rem;
+  //   outline: none;
+  //   border: none;
+  //   border-radius: 10px;
+  //   padding: 20px;
+  //   @include mixins.media-queries(mobile, min) {
+  //     width: 70;
+  //   }
+  // }
+
+  .form-boxps {
     width: 100%;
-    margin: 0 auto;
-    margin-top: vars.$base-size * 0.5;
-  
-    @include mixins.media-queries(tablet, min) {
-      width: 50%;
-    }
-  
-    &:hover{
-      background-color: whitesmoke;
-      border: none;
-      color: vars.$black;
-    }
-  }
-
-  .form-box {
-    height: vars.$base-size * 1.75; // or 100%?
-    width: vars.$base-size * 20;
     font-family: vars.$paragraph;
-    // margin-bottom: 1rem;
+    margin-bottom: 1rem;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgb(212, 212, 212);
   }
 
-  .check-box {
+
+  .check-boxps {
     // height: vars.$base-size;
     // width: vars.$base-size;
-    font-family: vars.$paragraph;
-    // margin-bottom: 1rem;
+    // font-family: vars.$paragraph;
+    transform: scale(2);
+    margin-bottom: 1rem;
   }
+
+  .img-holderps {
+    width: 220px;
+    border-radius: 50%;
+    height: 220px;
+    margin: 20px auto;
+    border: 2px solid vars.$purple;
+    align-items: center;
+  }
+    
   
+    // not being used right now
+  // .form-button-primary {
+  //   background-color: vars.$black;
+  //   padding: vars.$base-size;
+  //   border-radius: vars.$base-size * 0.15;
+  //   border: none;
+  //   color: #ffffff;
+  //   text-align: center;
+  //   display: block;
+  //   width: 100%;
+  //   margin: 0 auto;
+  //   margin-top: vars.$base-size * 0.5;
+  
+  //   @include mixins.media-queries(tablet, min) {
+  //     width: 50%;
+  //   }
+  
+  //   &:hover{
+  //     background-color: whitesmoke;
+  //     border: none;
+  //     color: vars.$black;
+  //   }
+  // }

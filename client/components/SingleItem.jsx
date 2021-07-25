@@ -18,6 +18,7 @@ export default function SingleItem (props) {
         <h1 className='item-title'>
           {name}
         </h1>
+        <div className='horizontal-line-single-item'></div>
         <p className='page-paragraph'>
           Description: {description}
         </p>
@@ -30,7 +31,7 @@ export default function SingleItem (props) {
         <p className='page-paragraph'>
           email: {email}
         </p>
-        <Link to={`/item/${id}`}className='item-link'>Item Details</Link>
+        <Link to={`/item/${id}`}className='item-details-btn'>Item Details</Link>
       </div>
       <div className='item-img'>
         <img src={img} alt={img} />

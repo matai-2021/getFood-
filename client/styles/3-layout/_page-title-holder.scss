@@ -1,0 +1,36 @@
+@use "sass:math";
+@use '../1-helpers/functions';
+@use '../1-helpers/mixins';
+@use '../1-helpers/vars';
+
+.horizontal-line {
+    height: math.div(vars.$base-size, 6);
+    width: vars.$base-size * 4;
+    background-color: vars.$lightpurple;
+    align-self: center;
+    margin-top: vars.$base-size;
+    margin-bottom: vars.$base-size * 2;
+  }
+
+.horizontal-line-single-item {
+    height: math.div(vars.$base-size, 4);
+    width: vars.$base-size * 3;
+    background-color: vars.$lightpurple;
+    align-self: center;
+    margin-bottom: vars.$base-size;
+  }
+ 
+
+  .heading-container {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 90%;
+  }
+
+  .welcome-container {
+    margin-top: 15rem;
+  }

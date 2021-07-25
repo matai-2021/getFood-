@@ -11,8 +11,12 @@ router.get('/', (req, res) => {
       res.json(users)
       return null
     })
-    .catch((err) => {
-      res.status(500).send('DATABASE ERROR: ' + err.message)
+    .catch(() => {
+      res.status(500).json({
+        error: {
+          title: 'Unable to get users'
+        }
+      })
     })
 })
 
@@ -24,9 +28,12 @@ router.get('/:id', (req, res) => {
       res.json(user)
       return null
     })
-    .catch(err => {
-      console.log(err)
-      res.status(500).json({ message: 'Unable to fetch user' })
+    .catch(() => {
+      res.status(500).json({
+        error: {
+          title: 'Unable to get user by id'
+        }
+      })
     })
 })
 
@@ -39,9 +46,12 @@ router.post('/', (req, res) => {
       res.status(201).json({ newUser })
       return null
     })
-    .catch(err => {
-      console.log(err)
-      res.status(500).json({ message: 'Unable to register new user' })
+    .catch(() => {
+      res.status(500).json({
+        error: {
+          title: 'Unable to add user'
+        }
+      })
     })
 })
 
@@ -49,12 +59,15 @@ router.delete('/:id', (req, res) => {
   const id = Number(req.params.id)
   db.deleteAccount(id)
     .then(() => {
-      res.status(201).json('Account successfully deleted')
+      res.status(200).json('Account successfully deleted')
       return null
     })
-    .catch(err => {
-      console.log(err)
-      res.status(500).json({ message: 'Unable to delete account' })
+    .catch(() => {
+      res.status(500).json({
+        error: {
+          title: 'Unable to delete account'
+        }
+      })
     })
 })
 

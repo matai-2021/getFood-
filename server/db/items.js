@@ -10,7 +10,6 @@ module.exports = {
 }
 
 function getItemsById (id, db = connection) {
-  console.log('id', id)
   return db('items')
     .where('id', id)
     .select()
@@ -41,7 +40,7 @@ function addItem (newItem, db = connection) {
 }
 
 function updateItem (updatedItem, db = connection) {
-  const { id, name, location, quantity, img, description, isClaimed } = updatedItem
+  const { id, name, location, quantity, img, description } = updatedItem
   return db('items')
     .where('id', id)
     .update({
@@ -49,20 +48,19 @@ function updateItem (updatedItem, db = connection) {
       location,
       quantity,
       img,
-      description,
-      isClaimed: isClaimed
+      description
     })
-    .then((ids) => console.log(`Item successfully created at ID # ${ids[0]}`))
+    .then((id) => id)
 }
 
-function claimItem (item, db = connection) {
-  const { id, isClaimed } = item
+function claimItem (claimedItem, db = connection) {
+  const { id, isClaimed, claimedById } = claimedItem
   return db('items')
     .where('id', id)
     .update({
-      isClaimed: !isClaimed
+      isClaimed,
+      claimedById
     })
-    .then((ids) => console.log(ids[0]))
 }
 
 function deleteItem (id, db = connection) {

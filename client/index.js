@@ -1,7 +1,6 @@
 import React from 'react'
 import {
   BrowserRouter as Router
-  // HashRouter
 } from 'react-router-dom'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
@@ -18,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
       redirectUri={window.location.origin}
     >
       <Provider store={store}>
-        {/* // changed from Router to HashRouter to make refresh/manual URL work */}
         <Router>
           <App />
         </Router>

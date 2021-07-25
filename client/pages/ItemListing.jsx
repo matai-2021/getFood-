@@ -16,8 +16,12 @@ export default function ItemListing () {
 
   return (
     <section className='items-wrapper'>
-      <Link to='/itemnew' className='btn-grad'>Add Item</Link>
+      <div className='item-heading-container'>
+        <h1 className='item-heading'>Live Feed</h1>
+        <Link to='/itemnew' className='btn-grad'>Add Item</Link>
+      </div>
       {items.map(item => (
+        !item.isClaimed &&
         <React.Fragment key={item.id} >
           <SingleItem
             id={item.id}
@@ -29,7 +33,7 @@ export default function ItemListing () {
             img={item.img}
           />
         </React.Fragment>
-      ))}
+      )).reverse()}
     </section>
   )
 }

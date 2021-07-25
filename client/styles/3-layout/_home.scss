@@ -1,0 +1,60 @@
+@use '../1-helpers/vars';
+@use '../1-helpers/functions';
+@use '../1-helpers/mixins';
+
+.home-center-container {
+// margin-top: calc(100vh / 2);
+    // display: flex;
+    display: table;
+    height: 650px;
+}
+
+.home-center-sub-container {
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    // background-color: rgb(255, 255, 198);
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.home-parent {
+    // height: 100%;
+    // position: absolute;
+    // width: auto;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.home-child-left{
+    height: 440px;
+    position: absolute;
+    width: 800px;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    width: 300px;
+
+    @include mixins.media-queries(tablet, max) {
+        display: none;
+      }
+}
+
+.home-child-right{
+    height: 440px;
+    position: absolute;
+    width: 800px;
+    bottom: 0;
+    right: 0;
+    z-index: -9;
+    width: 300px;
+
+    @include mixins.media-queries(tablet, max) {
+        display: none;
+      }
+}

@@ -15,6 +15,16 @@
 
 .page-container {
     flex: 1 0 auto;
+    // background-color: rgb(219, 253, 242);
+
+background: rgb(188,241,208);
+background: linear-gradient(0deg, rgba(188,241,208,1) 0%, rgba(255,224,156,1) 50%, rgba(177,245,221,1) 100%);
+
+    // background: rgb(151,255,251);
+    // background: linear-gradient(0deg, rgba(151,255,251,1) 0%, rgba(255,216,131,1) 50%, rgba(153,254,249,1) 100%);
+    
+    // background: rgb(151,255,251);
+    // background: linear-gradient(0deg, rgba(151,255,251,1) 0%, rgba(255,216,131,1) 100%);
 }
 
 footer {

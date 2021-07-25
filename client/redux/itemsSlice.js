@@ -35,16 +35,34 @@ export const deleteItem = createAsyncThunk(
   }
 )
 
+export const editItem = createAsyncThunk(
+  'item/editItem',
+  async (payload, updatedItem) => {
+    const res = await request.patch(`/api/v1/items/edit/${payload.id}`)
+    if (res.ok) {
+      return payload
+    }
+  }
+)
+
+export const claimItem = createAsyncThunk(
+  'items/claimItem',
+  async (payload) => {
+    const res = await request.patch('/api/v1/items/claim').send(payload)
+    if (res.ok) {
+      return payload
+    }
+  }
+)
+
 const itemsSlice = createSlice({
   name: 'items',
   initialState: [],
   reducers: {},
   extraReducers: {
     [getItems.pending]: (state, action) => {
-      console.log('Fetching data...')
     },
     [getItems.fulfilled]: (state, action) => {
-      console.log('Data fetched successfully')
       return action.payload.items
     },
     [addItem.fulfilled]: (state, action) => {
@@ -52,6 +70,17 @@ const itemsSlice = createSlice({
     },
     [deleteItem.fulfilled]: (state, action) => {
       return state.filter(item => item.id !== action.payload.id)
+    },
+    [editItem.fulfilled]: (state, action) => {
+      console.log(action.payload)
+    },
+    [claimItem.fulfilled]: (state, action) => {
+      return state.map(item => {
+        if (item.id === action.payload.id) {
+          return action.payload
+        }
+        return item
+      })
     }
   }
 })

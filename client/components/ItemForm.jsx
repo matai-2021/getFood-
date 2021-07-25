@@ -23,8 +23,8 @@ export default function ItemForm (props) {
 
   function handleSubmit (e) {
     e.preventDefault()
-    props.submitEvent(form)
-    history.push('/message')
+    props.submitItem(form)
+    history.push('/addMsg')
   }
 
   function handleImg (e) {
@@ -42,116 +42,123 @@ export default function ItemForm (props) {
   return (
     <>
       <div>
-        <h2 className='form-title2'>Item Details</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="fieldleftinput">
+        <div className='heading-container'>
+          <h1 className='page-title'>Add Item</h1>
+          <div className='horizontal-line'></div>
+        </div>
+        {/*  */}
+
+        <form className="add-item-form-wrapper" onSubmit={handleSubmit}>
+          <div className="fieldleftif">
             <label
               htmlFor='name'
-              className='labelgrey'>Item Name:</label>
+              className='labelif'>Item Name:</label>
           </div>
-          <div className="field">
+          <div className="fieldif">
             <input
               id='name'
               name='name'
-              className='form-box'
+              className='form-boxif'
               type='text'
-              placeholder='item name'
+              placeholder='Your item name'
               value={name}
               onChange={handleChange}
             />
           </div>
-          <div className="fieldleftinput">
+          <div className="fieldleftif">
             <label
               htmlFor='description'
-              className='labelgrey'
+              className='labelif'
             >Description:</label>
           </div>
-          <div className="field">
-            <textarea
+          <div className="fieldif">
+            <input
               id='description'
               name='description'
-              className='form-box'
-              placeholder='item description'
+              className='form-boxif'
+              placeholder='e.g. "In good condition, stored in a bag"'
               value={description}
               onChange={handleChange}
             />
           </div>
-          <div className="fieldleftinput">
+          <div className="fieldleftif">
             <label
               htmlFor='expiryDate'
-              className='labelgrey'
+              className='labelif'
             >Expiry Date:</label>
           </div>
-          <div className="field">
-            <textarea
+          <div className="fieldif">
+            <input
               id='expiryDate'
               name='expiryDate'
-              className='form-box'
-              placeholder='exp date'
+              className='form-boxif'
+              placeholder='Expiry date if applicable'
               value={expiryDate}
               onChange={handleChange}
             />
           </div>
-          <div className="fieldleftinput">
-            <label htmlFor='quantity' className='labelgrey'>Quantity:</label>
+          <div className="fieldleftif">
+            <label htmlFor='quantity' className='labelif'>Quantity:</label>
           </div>
-          <div className="field">
-            <textarea id='quantity'
+          <div className="fieldif">
+            <input id='quantity'
               name='quantity'
-              className='form-box'
-              placeholder='quantity'
+              className='form-boxif'
+              placeholder='Quantity'
               value={quantity}
               onChange={handleChange}
             />
           </div>
-          <div className="fieldleftinput">
+          <div className="fieldleftif">
             <label
               htmlFor='location'
-              className='labelgrey'
-            >Location:</label>
+              className='labelif'
+            >Pickup location:</label>
           </div>
-          <div className="field">
-            <textarea
+          <div className="fieldif">
+            <input
               id='location'
               name='location'
-              className='form-box'
-              placeholder='item location'
+              className='form-boxif'
+              placeholder='Pickup location for this item'
               value={location}
               onChange={handleChange}
             />
           </div>
-          <div className="fieldleftinput">
+          <div className="fieldleftif">
             <label
               htmlFor='email'
-              className='labelgrey'
+              className='labelif'
             >Email:</label>
           </div>
-          <div className="field">
-            <textarea
+          <div className="fieldif">
+            <input
               id='email'
               name='email'
-              className='form-box'
-              placeholder='email'
+              className='form-boxif'
+              placeholder='Email for contact'
               value={email}
               onChange={handleChange}
             />
           </div>
-          <div className="field">
+          <div>
             <label
               htmlFor='img'
-              className='labelgrey'
+              className='labelif'
             >Image:  </label>
           </div>
-          <div className="field">
+          <div className="fieldif">
             <input
               type="file"
               name="img"
               onChange={handleImg}
             />
           </div>
-          <button className='btn-grad'>
+          <div className='imgcenter'>
+            <button className='btn-grad'>
             Create Item
-          </button>
+            </button>
+          </div>
         </form>
       </div>
     </>

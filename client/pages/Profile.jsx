@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { deleteUser, addUser, getUsers } from '../redux/usersSlice'
 
+const loading = <img src='./images/loading-buffering1.gif'/>
+
 function Profile () {
   const dispatch = useDispatch()
   const { user: auth0userdata, isAuthenticated } = useAuth0()
@@ -28,38 +30,51 @@ function Profile () {
   }
 
   return (
-    <main className='container'>
-      <h1>My Profile</h1>
+    <div className='profile-container'>
+      <div className='heading-container'>
+        <h1 className='page-title'>My Profile</h1>
+        <div className='horizontal-line'></div>
+      </div>
       <img className="img-holder" src={auth0userdata?.picture} alt="Profile pic"/>
-      <div className="parent flex-container">
-        <div className="child flex-row">
+      <div className="profile-text-and-button-container">
+        <div className="profile-text-container">
           {/* {isAuthenticated && (
             <> */}
-          <h2>
-            <strong>Name: </strong>{sessionUser?.name}
+          <h2 className='page-sub-title-bottom'>
+            Name: {sessionUser?.name}
           </h2>
-          <p>
-            <strong>Email: </strong>{sessionUser?.email}
+          <p className='page-paragraph'>
+            Email: {sessionUser?.email}
           </p>
-          <p>
-            <strong>Location: </strong>{sessionUser?.location}
+          <p className='page-paragraph'>
+            Location: {sessionUser?.location}
           </p>
-          <p>
-            <strong>Member since: </strong>{sessionUser?.dateCreated}
+          <p className='page-paragraph'>
+            Member since: {sessionUser?.dateCreated}
           </p>
+          <p className='page-paragraph'>
+            Phone: {sessionUser?.phone}
+          </p>
+          <p className='page-paragraph'>
+            Business Name: {sessionUser?.companyName}
+          </p>
+        </div>
+        <div className='profile-button-container'>
           {/* Below link is not actually a button, will need to change later */}
-          <Link to={'/profilesetup'} className=''>Setup Profile</Link>
-          <button onClick={() => handleDelete(sessionUser?.id)}>Delete My Account</button>
+          <Link to={'/profilesetup'} className='btn-grad'>Edit Profile</Link>
+          <button className='btn-grad' onClick={() => handleDelete(sessionUser?.id)}>Delete My Account</button>
           {/* </>
           )} */}
         </div>
       </div>
-    </main>
+    </div>
   )
 }
 
 export default withAuthenticationRequired(Profile, {
-  displayName: 'Redirect',
-  // returnTo: window.location.origin,
-  onRedirecting: () => <p>Checking authentication please wait...</p>
+
+  displayName: 'Loading',
+  // Show a message while the user waits to be redirected to the login page.
+  onRedirecting: () => (loading)
+
 })

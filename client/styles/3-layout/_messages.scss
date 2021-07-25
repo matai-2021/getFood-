@@ -1,3 +1,29 @@
 @use '../1-helpers/vars';
 @use '../1-helpers/functions';
 @use '../1-helpers/mixins';
+
+.delete-msg,
+.add-msg,
+.claim-msg {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & h3 {
+    padding: 20px 0;
+    font-family: vars.$heading;
+    color: green;
+  }
+
+  & a {
+    font-family: vars.$paragraph;
+  }
+
+}
+
+.msg-icon {
+  font-size: 80px;
+  color: green;
+}
